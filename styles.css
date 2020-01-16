@@ -17,3 +17,12 @@ main {
 footer {
     margin: 0 auto;
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+#toggle:hover {
+    text-decoration: underline;
+}
