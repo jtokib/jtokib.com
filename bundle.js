@@ -25,6 +25,11 @@
        body.classList.toggle('dark-mode');
     }
 
+    love = () => {
+        document.getElementById('love').innerHTML = "I love you Kim!";
+    }
+
     document.getElementById('year').innerHTML = year;
     document.getElementById('toggle').addEventListener("click", toggleMode);
+    document.getElementById('kim').addEventListener("click", love);
  })();
