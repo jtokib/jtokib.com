@@ -6,6 +6,7 @@
     let d = new Date();
     let year = d.getFullYear();
     let items = document.getElementById('items');
+    let body = document.body;
 
     rotateCase = (str) => {
         setTimeout(function () {
@@ -20,5 +21,10 @@
     }
     rotateCase(arr[rando]);
 
+    toggleMode = () => {
+       body.classList.toggle('dark-mode');
+    }
+
     document.getElementById('year').innerHTML = year;
+    document.getElementById('toggle').addEventListener("click", toggleMode);
  })();
