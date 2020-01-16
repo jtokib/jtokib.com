@@ -1,2 +1,2 @@
 # jtokib.com
-Personal site
+A simple personal site listing things I'm not.
