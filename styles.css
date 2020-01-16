@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: monospace;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin: 0;
+}
+
+main {
+    margin: 0 1em;
+}
+
+footer {
+    margin: 0 auto;
+}
