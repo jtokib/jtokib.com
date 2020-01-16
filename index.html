@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="description" content="A site about Toki BUrke">
     <meta name="author" content="Toki Burke">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <script src="rotate.js"></script>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="bundle.js" defer></script>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || []; w[l].push({
@@ -17,18 +18,17 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TM7DV4L');</script>
     <!-- End Google Tag Manager -->
-    <style>
-        body {
-            font-family: monospace;
-            padding: 1em;
-        }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM7DV4L" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <h1 id="promo">Toki is not a... </h1>
+    <main>
+        <h1>Toki is not a... <span id="items"></span></h1>
+    </main>
+    <footer>
+        <p>Things Toki Burke Is Not &copy; <span id="year"></span></p>
+    </footer>
 </body>
 </html>
