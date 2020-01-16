@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["rabbit", "panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow"];
+    let arr = ["rabbit", "monsta", "panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow"];
     let rando = Math.floor(Math.random() * arr.length);
     let wait = 250;
     let i = 0;
@@ -7,6 +7,8 @@
     let year = d.getFullYear();
     let items = document.getElementById('items');
     let body = document.body;
+    let special = document.getElementById('l');
+    let mode = localStorage.getItem('dm');
 
     rotateCase = (str) => {
         setTimeout(function () {
@@ -19,17 +21,44 @@
             }
         }, wait)
     }
-    rotateCase(arr[rando]);
 
     toggleMode = () => {
-       body.classList.toggle('dark-mode');
+        if (mode === null) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('dm', '1');
+        }
+        if (mode === '0') {
+            body.classList.add('dark-mode');
+            localStorage.setItem('dm', '1');
+        }
+        if (mode === '1') {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('dm', '0');
+        }
+    }
+
+    checkMode = () => {
+        if (mode === '0') {
+            body.classList.remove('dark-mode');
+        }
+        if (mode === '1') {
+            body.classList.add('dark-mode');
+        }
     }
 
     love = () => {
-        document.getElementById('love').innerHTML = "I love you Kim!";
+        if (!special.classList.contains('shown')) {
+            special.innerHTML = "I love you Kim!";
+            special.classList.add('shown');
+        } else {
+            special.innerHTML = "";
+            special.classList.remove('shown');
+        }
     }
 
+    checkMode();
+    rotateCase(arr[rando]);
     document.getElementById('year').innerHTML = year;
-    document.getElementById('toggle').addEventListener("click", toggleMode);
-    document.getElementById('kim').addEventListener("click", love);
- })();
+    document.getElementById('toggle').addEventListener("mousedown", toggleMode);
+    document.getElementById('k').addEventListener("mousedown", love);
+})();
