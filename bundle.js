@@ -26,11 +26,10 @@
     }
 
     love = () => {
-        console.log('LOVE')
         document.getElementById('love').innerHTML = "I love you Kim!";
     }
 
     document.getElementById('year').innerHTML = year;
     document.getElementById('toggle').addEventListener("click", toggleMode);
-    document.getElementById('footer').addEventListener("click", love);
+    document.getElementById('kim').addEventListener("click", love);
  })();
