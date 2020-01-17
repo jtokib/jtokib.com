@@ -10,11 +10,11 @@
     let special = document.getElementById('l');
     let mode = localStorage.getItem('dm');
 
-    rotateCase = (str) => {
+    printItem = (str) => {
         setTimeout(function () {
             items.innerHTML += str.charAt(i).toUpperCase();
             if (i < str.length) {
-                rotateCase(str);
+                printItem(str);
                 i++;
             } else {
                 items.innerHTML += "!";
@@ -23,17 +23,12 @@
     }
 
     toggleMode = () => {
-        if (mode === null) {
-            body.classList.add('dark-mode');
-            localStorage.setItem('dm', '1');
-        }
-        if (mode === '0') {
-            body.classList.add('dark-mode');
-            localStorage.setItem('dm', '1');
-        }
-        if (mode === '1') {
-            body.classList.remove('dark-mode');
-            localStorage.setItem('dm', '0');
+        body.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            localStorage.dm = '1';
+        } else {
+            localStorage.dm = '0';
         }
     }
 
@@ -57,7 +52,7 @@
     }
 
     checkMode();
-    rotateCase(arr[rando]);
+    printItem(arr[rando]);
     document.getElementById('year').innerHTML = year;
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
     document.getElementById('k').addEventListener("mousedown", love);
