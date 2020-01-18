@@ -58,7 +58,6 @@
 
     //push to data layer
     jtokib.push({'item':item});
-    console.log(jtokib)
     //check dark-mode setting
     checkMode();
     //echo item to page
