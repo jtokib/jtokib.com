@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.jtokib.com/sitemap.xml
+Sitemap: https://jtokib.com/sitemap.xml

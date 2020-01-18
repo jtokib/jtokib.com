@@ -56,9 +56,17 @@
         }
     }
 
+    //push to data layer
+    jtokib.push({'item':item});
+    console.log(jtokib)
+    //check dark-mode setting
     checkMode();
+    //echo item to page
     printItem(item);
+    //add copyright year
     document.getElementById('year').innerHTML = year;
+    //add click handler to support dark-mod
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
+    //add easter egg
     document.getElementById('k').addEventListener("mousedown", love);
 })();
