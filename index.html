@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>jTokiB | Things Toki Burke Is Not</title>
     <meta charset="utf-8">
+    <title>jTokiB | Things Toki Burke Is Not</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="bundle.js" defer></script>
     <meta name="description" content="jTokiB Dot Com. A site about Toki Burke.">
     <meta name="author" content="Toki Burke">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <script src="bundle.js" defer></script>
     <script type='application/ld+json'>
     {
       "@context": "http://www.schema.org",
@@ -23,18 +23,21 @@
       ]
     }
     </script>
+    <script>
+        jtokib = [];
+    </script>
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
                     new Date().getTime(), event: 'gtm.js'
             }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TM7DV4L');</script>
+                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'jtokib', 'GTM-TM7DV4L');</script>
 </head>
 
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TM7DV4L" height="0" width="0"
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TM7DV4L" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <main class="content">
         <h1>Toki is not a... <span id="items"></span></h1>
