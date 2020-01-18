@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>jTokiB</title>
+    <title>jTokiB | Things Toki Burke Is Not</title>
     <meta charset="utf-8">
-    <meta name="description" content="A site about Toki BUrke">
+    <meta name="description" content="jTokiB Dot Com. A site about Toki Burke.">
     <meta name="author" content="Toki Burke">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -39,9 +39,15 @@
         <div id="l"></div>
     </main>
     <footer>
-        <p>Things <span id="k">Toki Burke</span> Is Not &copy; <span id="year"></span>.&nbsp;<span id="toggle">Toggle
+        <p>Things <span id="k">Toki Burke</span> Is Not. &copy;<span id="year"></span>.&nbsp;<span id="toggle">Toggle
                 Dark Mode</span></p>
+
     </footer>
+    <script>
+        if (navigator.userAgent.indexOf('msie') > -1 || navigator.userAgent.indexOf('Trident') > -1) {
+            document.querySelector('body').innerHTML = "<p>Try a different browser</p>";
+        }
+    </script>
 </body>
 
 </html>

@@ -1,25 +1,30 @@
 (() => {
-    let arr = ["rabbit", "monsta", "panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow"];
+    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
     let rando = Math.floor(Math.random() * arr.length);
+    let item = arr[rando];
     let wait = 250;
     let i = 0;
     let d = new Date();
     let year = d.getFullYear();
-    let items = document.getElementById('items');
+    let itemDiv = document.getElementById('items');
     let body = document.body;
     let special = document.getElementById('l');
     let mode = localStorage.getItem('dm');
 
     printItem = (str) => {
-        setTimeout(function () {
-            items.innerHTML += str.charAt(i).toUpperCase();
-            if (i < str.length) {
-                printItem(str);
-                i++;
-            } else {
-                items.innerHTML += "!";
-            }
-        }, wait)
+        if (navigator.userAgent.includes('Googlebot')) {
+            itemDiv.innerHTML = item + "!";
+        } else {
+            setTimeout(function () {
+                itemDiv.innerHTML += str.charAt(i).toUpperCase();
+                if (i < str.length) {
+                    printItem(str);
+                    i++;
+                } else {
+                    itemDiv.innerHTML += "!";
+                }
+            }, wait)
+        }
     }
 
     toggleMode = () => {
@@ -52,7 +57,7 @@
     }
 
     checkMode();
-    printItem(arr[rando]);
+    printItem(item);
     document.getElementById('year').innerHTML = year;
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
     document.getElementById('k').addEventListener("mousedown", love);
