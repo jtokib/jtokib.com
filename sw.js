@@ -1,6 +1,7 @@
-var CACHE_NAME = 'jtokib-cache-v2';
+var CACHE_NAME = 'jtokib-cache-v1';
 var urlsToCache = [
     '/',
+    'files/images/favicon-32x32.png',
     '/files/js/bundle.js',
     '/files/css/styles.css'
 ];
