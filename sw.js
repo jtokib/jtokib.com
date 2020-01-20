@@ -1,8 +1,8 @@
 var CACHE_NAME = 'jtokib-cache-v1';
 var urlsToCache = [
     '/',
-    '/jtokib.com/bundle.js',
-    '/jtokib.com/styles.css'
+    '/bundle.js',
+    '/styles.css'
 ];
 
 self.addEventListener('install', (event) => {
