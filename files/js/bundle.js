@@ -56,6 +56,11 @@
         }
     }
 
+    swap = () => {
+        let image = document.querySelector('img');
+        image.src = image.dataset.src;
+    }
+
     //push to data layer
     jtokib.push({'item':item});
     //check dark-mode setting
@@ -68,6 +73,8 @@
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById('k').addEventListener("mousedown", love);
+    //swap image
+    window.addEventListener('load', swap);
 })();
 
 if('serviceWorker' in navigator) {
