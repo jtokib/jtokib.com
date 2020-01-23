@@ -6,16 +6,16 @@ body {
     font-family: monospace;
     min-height: 100%;
     display: grid;
-    grid-template-rows: 1fr auto;
-    margin: 0;
+    grid-template-rows: 5.5em 1fr;
+    margin: 0 1em;
 }
 
-main {
+header {
     margin: 0 1em;
 }
 
 footer {
-    margin: 0 auto;
+    margin: 0 1em;
 }
 
 .dark-mode {
@@ -24,10 +24,24 @@ footer {
 }
 
 #l {
-    font-size: 10em;
+    width: 100%;
+    height: 100%;
+    font-size: 9em;
 }
 
 #toggle:hover {
     text-decoration: underline;
     cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 375px) {
+    #l {
+        max-width: 375px;
+        max-height: 100%;
+    }
 }
