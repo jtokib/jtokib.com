@@ -56,11 +56,6 @@
         }
     }
 
-    swap = () => {
-        let image = document.querySelector('img');
-        image.src = image.dataset.src;
-    }
-
     //push to data layer
     jtokib.push({'item':item});
     //check dark-mode setting
@@ -73,8 +68,6 @@
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById('k').addEventListener("mousedown", love);
-    //swap image
-    window.addEventListener('load', swap);
 })();
 
 if('serviceWorker' in navigator) {
@@ -86,3 +79,14 @@ if('serviceWorker' in navigator) {
         });
     });
 }
+
+docRef.get().then(function (doc) {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function (error) {
+    console.log("Error getting document:", error);
+});
