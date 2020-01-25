@@ -1,4 +1,4 @@
-(() => {
+var ready = () => {
     let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
@@ -68,7 +68,7 @@
     document.getElementById('toggle').addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById('k').addEventListener("mousedown", love);
-})();
+};
 
 if('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -90,3 +90,5 @@ docRef.get().then(function (doc) {
 }).catch(function (error) {
     console.log("Error getting document:", error);
 });
+
+ready();
