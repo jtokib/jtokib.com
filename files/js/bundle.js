@@ -1,74 +1,111 @@
-(() => {
-    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
-    let rando = Math.floor(Math.random() * arr.length);
-    let item = arr[rando];
-    let wait = 250;
-    let i = 0;
-    let d = new Date();
-    let year = d.getFullYear();
-    let itemDiv = document.getElementById('items');
-    let body = document.body;
-    let special = document.getElementById('l');
-    let mode = localStorage.getItem('dm');
-
-    printItem = (str) => {
-        if (navigator.userAgent.includes('Googlebot')) {
-            itemDiv.innerHTML = item + "!";
-        } else {
-            setTimeout(function () {
-                itemDiv.innerHTML += str.charAt(i).toUpperCase();
-                if (i < str.length) {
-                    printItem(str);
-                    i++;
-                } else {
-                    itemDiv.innerHTML += "!";
-                }
-            }, wait)
-        }
+let data = {};
+let item;
+docRef.get().then(function (doc) {
+    if (doc.exists) {
+        console.log("Document data found");
+        data = doc.data();
+        exe();
+    } else {
+        console.log("No such document!");
     }
+}).catch(function (error) {
+    console.log("Error getting document:", error);
+});
 
-    toggleMode = () => {
-        body.classList.toggle('dark-mode');
+// Valid options for source are 'server', 'cache', or
+// 'default'. See https://firebase.google.com/docs/reference/js/firebase.firestore.GetOptions
+// for more information.
+var getOptions = {
+    source: 'cache'
+};
 
-        if (body.classList.contains('dark-mode')) {
-            localStorage.dm = '1';
-        } else {
-            localStorage.dm = '0';
+// Get a document, forcing the SDK to fetch from the offline cache.
+docRef.get(getOptions).then(function (doc) {
+    // Document was found in the cache. If no cached document exists,
+    // an error will be returned to the 'catch' block below.
+    console.log("Cached document data found");
+    data = doc.data();
+    exe();
+}).catch(function (error) {
+    console.log("Error getting cached document:", error);
+});
+
+var exe = () => {
+    (() => {
+        let arr = data.items;
+        let rando = Math.floor(Math.random() * arr.length);
+        item = arr[rando];
+        let wait = 250;
+        let i = 0;
+        let d = new Date();
+        let year = d.getFullYear();
+        let itemDiv = document.getElementById('items');
+        let body = document.body;
+        let special = document.getElementById('l');
+        let mode = localStorage.getItem('dm');
+
+        printItem = (str) => {
+            if (navigator.userAgent.includes('Googlebot')) {
+                itemDiv.innerHTML = item + "!";
+            } else {
+                setTimeout(function () {
+                    itemDiv.innerHTML += str.charAt(i).toUpperCase();
+                    if (i < str.length) {
+                        printItem(str);
+                        i++;
+                    } else {
+                        itemDiv.innerHTML += "!";
+                    }
+                }, wait)
+            }
         }
-    }
 
-    checkMode = () => {
-        if (mode === '0') {
-            body.classList.remove('dark-mode');
-        }
-        if (mode === '1') {
-            body.classList.add('dark-mode');
-        }
-    }
+        toggleMode = () => {
+            body.classList.toggle('dark-mode');
 
-    love = () => {
-        if (!special.classList.contains('shown')) {
-            special.innerHTML = "I love you Kim!";
-            special.classList.add('shown');
-        } else {
-            special.innerHTML = "";
-            special.classList.remove('shown');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.dm = '1';
+            } else {
+                localStorage.dm = '0';
+            }
         }
-    }
 
-    //push to data layer
-    jtokib.push({'item':item});
-    //check dark-mode setting
-    checkMode();
-    //echo item to page
-    printItem(item);
-    //add copyright year
-    document.getElementById('year').innerHTML = year;
-    //add click handler to support dark-mod
-    document.getElementById('toggle').addEventListener("mousedown", toggleMode);
-    //add easter egg
-    document.getElementById('k').addEventListener("mousedown", love);
-})();
+        checkMode = () => {
+            if (mode === '0') {
+                body.classList.remove('dark-mode');
+            }
+            if (mode === '1') {
+                body.classList.add('dark-mode');
+            }
+        }
+
+        love = () => {
+            if (!special.classList.contains('shown')) {
+                // special.innerHTML = "I love you Kim!";
+                special.innerHTML = data.special;
+                special.classList.add('shown');
+            } else {
+                special.innerHTML = "";
+                special.classList.remove('shown');
+            }
+        }
+
+        //push to data layer
+        jtokib.push({
+            'item': item
+        });
+        //check dark-mode setting
+        checkMode();
+        //echo item to page
+        printItem(item);
+        //add copyright year
+        document.getElementById('year').innerHTML = year;
+        //add click handler to support dark-mod
+        document.getElementById('toggle').addEventListener("mousedown", toggleMode);
+        //add easter egg
+        document.getElementById('k').addEventListener("mousedown", love);
+    })();
+}
 
 if('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -79,14 +116,3 @@ if('serviceWorker' in navigator) {
         });
     });
 }
-
-docRef.get().then(function (doc) {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function (error) {
-    console.log("Error getting document:", error);
-});
