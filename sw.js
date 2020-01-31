@@ -13,6 +13,7 @@ self.addEventListener('install', (event) => {
             console.log('Opened cache');
             return cache.addAll(urlsToCache);
         })
+        .catch((e) => {console.error(e) })
     );
 });
 
@@ -33,10 +34,19 @@ self.addEventListener('fetch', (event) => {
                     caches.open(CACHE_NAME)
                         .then((cache) => {
                             cache.put(event.request, responseToCache)
-                        });
+                        })
+                        .catch((e) => {
+                            console.error(e)
+                        })
                     return response;
                 }
-            );
+            )
+            .catch((e) => {
+                console.error(e)
+            })
+        })
+        .catch((e) => {
+            console.error(e)
         })
     );
 });
@@ -52,6 +62,9 @@ self.addEventListener('activate', (event) => {
                     }
                 })
             );
+        })
+        .catch((e) => {
+            console.error(e)
         })
     );
 });
