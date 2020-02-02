@@ -14,7 +14,7 @@ var ready = () => {
     printItem = (str) => {
         if (navigator.userAgent.includes('Googlebot')) {
             itemDiv.innerHTML = item + "!";
-        } else {
+        } else if (itemDiv !== null) {
             setTimeout(function () {
                 itemDiv.innerHTML += str.charAt(i).toUpperCase();
                 if (i < str.length) {
@@ -24,6 +24,8 @@ var ready = () => {
                     itemDiv.innerHTML += "!";
                 }
             }, wait)
+        } else {
+            return;
         }
     }
 
