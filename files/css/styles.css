@@ -18,15 +18,20 @@ footer {
     margin: 0 1em;
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
+img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 #l {
     width: 100%;
-    height: 100%;
     font-size: 9em;
+}
+
+#surf {
+    max-width: 50em;
+    margin: 2em auto;
 }
 
 #toggle:hover {
@@ -34,13 +39,14 @@ footer {
     cursor: pointer;
 }
 
-img {
-    width: 100%;
-    height: auto;
-}
-
 .right { 
     text-align: right;
+    margin-right: 3em;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
 }
 
 @media screen and (max-width: 375px) {
