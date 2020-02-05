@@ -6,13 +6,13 @@ var ready = () => {
     let i = 0;
     let d = new Date();
     let year = d.getFullYear();
-    let itemDiv = document.getElementById('items');
+    let itemDiv = document.getElementById("items");
     let body = document.body;
-    let special = document.getElementById('l');
-    let mode = localStorage.getItem('dm');
+    let special = document.getElementById("l");
+    let mode = localStorage.getItem("dm");
 
-    printItem = (str) => {
-        if (navigator.userAgent.includes('Googlebot')) {
+    let printItem = (str) => {
+        if (navigator.userAgent.includes("Googlebot")) {
             itemDiv.innerHTML = item + "!";
         } else if (itemDiv !== null) {
             setTimeout(function () {
@@ -29,50 +29,68 @@ var ready = () => {
         }
     }
 
-    toggleMode = () => {
-        body.classList.toggle('dark-mode');
+    let toggleMode = () => {
+        body.classList.toggle("dark-mode");
 
-        if (body.classList.contains('dark-mode')) {
-            localStorage.dm = '1';
+        if (body.classList.contains("dark-mode")) {
+            localStorage.dm = "1";
         } else {
-            localStorage.dm = '0';
+            localStorage.dm = "0";
         }
     }
 
-    checkMode = () => {
-        if (mode === '0') {
-            body.classList.remove('dark-mode');
+    let checkMode = () => {
+        if (mode === "0") {
+            body.classList.remove("dark-mode");
         }
-        if (mode === '1') {
-            body.classList.add('dark-mode');
+        if (mode === "1") {
+            body.classList.add("dark-mode");
         }
     }
 
-    love = () => {
-        if (!special.classList.contains('shown')) {
+    let love = () => {
+        if (!special.classList.contains("shown")) {
             special.innerHTML = "I love you Kim!";
-            special.classList.add('shown');
+            special.classList.add("shown");
         } else {
             special.innerHTML = "";
-            special.classList.remove('shown');
+            special.classList.remove("shown");
         }
+    }
+
+    let mail = () => {
+        let url = "https://us-central1-jtokib.cloudfunctions.net/fulfill";
+        fetch(url)
+            .then(data => {
+                return data.json()
+            })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(e => {
+                console.log(e)
+            })
     }
 
     //push to data layer
-    jtokib.push({'item':item});
+    jtokib.push({
+        "item": item
+    });
     //check dark-mode setting
     checkMode();
     //echo item to page
     printItem(item);
     //add copyright year
-    document.getElementById('year').innerHTML = year;
+    document.getElementById("year").innerHTML = year;
     //add click handler to support dark-mod
-    document.getElementById('toggle').addEventListener("mousedown", toggleMode);
+    document.getElementById("toggle").addEventListener("mousedown", toggleMode);
     //add easter egg
-    document.getElementById('k').addEventListener("mousedown", love);
+    document.getElementById("k").addEventListener("mousedown", love);
+    //add fulfill call
+    document.querySelectorAll('img')[0].addEventListener("dblclick", mail)
 };
 
-if('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').then((registration) => {
             console.log('ServiceWorker registration successful with scope: ', registration.scope);
