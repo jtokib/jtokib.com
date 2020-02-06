@@ -58,18 +58,17 @@ var ready = () => {
         }
     }
 
-    let mail = () => {
+    let fulfill = () => {
         let url = "https://us-central1-jtokib.cloudfunctions.net/fulfill";
-        fetch(url)
-            .then(data => {
-                return data.json()
+        fetch(url, {method: "GET", mode:"cors"})
+            .then((res) => {
+                console.log("Fetch success " + res.body)
             })
-            .then(res => {
-                console.log(res)
+            .catch((e) => {
+                console.log("Fetch failed "  + e)
             })
-            .catch(e => {
-                console.log(e)
-            })
+        document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
+        document.querySelectorAll('img')[0].removeEventListener("touchend", fulfill);
     }
 
     //push to data layer
@@ -87,7 +86,8 @@ var ready = () => {
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
     //add fulfill call
-    document.querySelectorAll('img')[0].addEventListener("dblclick", mail)
+    document.querySelectorAll('img')[0].addEventListener("dblclick", fulfill);
+    document.querySelectorAll('img')[0].addEventListener("touchend", fulfill);
 };
 
 if ('serviceWorker' in navigator) {
