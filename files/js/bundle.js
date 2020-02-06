@@ -1,94 +1,111 @@
-var ready = () => {
-    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
-    let rando = Math.floor(Math.random() * arr.length);
-    let item = arr[rando];
-    let wait = 250;
-    let i = 0;
-    let d = new Date();
-    let year = d.getFullYear();
-    let itemDiv = document.getElementById("items");
-    let body = document.body;
-    let special = document.getElementById("l");
-    let mode = localStorage.getItem("dm");
+let ready = {
+    run : () => {
+        let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
+        let rando = Math.floor(Math.random() * arr.length);
+        let item = arr[rando];
+        let wait = 250;
+        let i = 0;
+        let d = new Date();
+        let year = d.getFullYear();
+        let itemDiv = document.getElementById("items");
+        let body = document.body;
+        let special = document.getElementById("l");
+        let mode = localStorage.getItem("dm");
 
-    let printItem = (str) => {
-        if (navigator.userAgent.includes("Googlebot")) {
-            itemDiv.innerHTML = item + "!";
-        } else if (itemDiv !== null) {
-            setTimeout(function () {
-                itemDiv.innerHTML += str.charAt(i).toUpperCase();
-                if (i < str.length) {
-                    printItem(str);
-                    i++;
-                } else {
-                    itemDiv.innerHTML += "!";
-                }
-            }, wait)
-        } else {
-            return;
+        let printItem = (str) => {
+            if (navigator.userAgent.includes("Googlebot")) {
+                itemDiv.innerHTML = item + "!";
+            } else if (itemDiv !== null) {
+                setTimeout(function () {
+                    itemDiv.innerHTML += str.charAt(i).toUpperCase();
+                    if (i < str.length) {
+                        printItem(str);
+                        i++;
+                    } else {
+                        itemDiv.innerHTML += "!";
+                    }
+                }, wait)
+            } else {
+                return;
+            }
         }
-    }
 
-    let toggleMode = () => {
-        body.classList.toggle("dark-mode");
+        let toggleMode = () => {
+            body.classList.toggle("dark-mode");
 
-        if (body.classList.contains("dark-mode")) {
-            localStorage.dm = "1";
-        } else {
-            localStorage.dm = "0";
+            if (body.classList.contains("dark-mode")) {
+                localStorage.dm = "1";
+            } else {
+                localStorage.dm = "0";
+            }
         }
-    }
 
-    let checkMode = () => {
-        if (mode === "0") {
-            body.classList.remove("dark-mode");
+        let checkMode = () => {
+            if (mode === "0") {
+                body.classList.remove("dark-mode");
+            }
+            if (mode === "1") {
+                body.classList.add("dark-mode");
+            }
         }
-        if (mode === "1") {
-            body.classList.add("dark-mode");
+
+        let love = () => {
+            if (!special.classList.contains("shown")) {
+                special.innerHTML = "I love you Kim!";
+                special.classList.add("shown");
+            } else {
+                special.innerHTML = "";
+                special.classList.remove("shown");
+            }
         }
-    }
 
-    let love = () => {
-        if (!special.classList.contains("shown")) {
-            special.innerHTML = "I love you Kim!";
-            special.classList.add("shown");
-        } else {
-            special.innerHTML = "";
-            special.classList.remove("shown");
+        let getUrl = (p) => {
+            fetch(p, {
+                    method: "GET",
+                    mode: "cors"
+                })
+                .then((res) => {
+                    console.log("Fetch success ");
+                })
+                .catch((e) => {
+                    console.log("Fetch failed " + e);
+                })
+            document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
+            document.querySelectorAll('img')[0].removeEventListener("touchend", fulfill);
+
         }
-    }
 
-    let fulfill = () => {
-        let url = "https://us-central1-jtokib.cloudfunctions.net/fulfill";
-        fetch(url, {method: "GET", mode:"cors"})
-            .then((res) => {
-                console.log("Fetch success " + res.body)
-            })
-            .catch((e) => {
-                console.log("Fetch failed "  + e)
-            })
-        document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
-        document.querySelectorAll('img')[0].removeEventListener("touchend", fulfill);
-    }
+        let fulfill = () => {
+            let base = "https://us-central1-jtokib.cloudfunctions.net/fulfill";
+            let qs = window.location.search.substring(0);
+            if (qs === "?kc=test") {
+                getUrl(base + qs);
+            } else {
+                getUrl(base);
+            }
+        }
 
-    //push to data layer
-    jtokib.push({
-        "item": item
-    });
-    //check dark-mode setting
-    checkMode();
-    //echo item to page
-    printItem(item);
-    //add copyright year
-    document.getElementById("year").innerHTML = year;
-    //add click handler to support dark-mod
-    document.getElementById("toggle").addEventListener("mousedown", toggleMode);
-    //add easter egg
-    document.getElementById("k").addEventListener("mousedown", love);
-    //add fulfill call
-    document.querySelectorAll('img')[0].addEventListener("dblclick", fulfill);
-    document.querySelectorAll('img')[0].addEventListener("touchend", fulfill);
+        //push to data layer
+        jtokib.push({
+            "item": item
+        });
+        //check dark-mode setting
+        checkMode();
+        //echo item to page
+        printItem(item);
+        //add copyright year
+        document.getElementById("year").innerHTML = year;
+        //add click handler to support dark-mod
+        document.getElementById("toggle").addEventListener("mousedown", toggleMode);
+        //add easter egg
+        document.getElementById("k").addEventListener("mousedown", love);
+        //add fulfill call
+        document.querySelectorAll('img')[0].addEventListener("dblclick", fulfill);
+        document.querySelectorAll('img')[0].addEventListener("touchend", fulfill);
+    }
 };
+
+ready.run();
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -99,5 +116,3 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
-
-ready();
