@@ -1,5 +1,5 @@
 let ready = {
-    run : () => {
+    run: () => {
         let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
         let rando = Math.floor(Math.random() * arr.length);
         let item = arr[rando];
@@ -90,10 +90,12 @@ let ready = {
             if (qs === "?kc=test") {
                 getUrl(base + qs);
             } else {
-                if(confirm("Send mesage?")) {
+                if (confirm("Send mesage?")) {
                     getUrl(base);
                 } else {
                     console.log('Message request rejected');
+                    document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
+                    document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
                 }
             }
         }
