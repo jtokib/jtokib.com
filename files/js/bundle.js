@@ -90,7 +90,11 @@ let ready = {
             if (qs === "?kc=test") {
                 getUrl(base + qs);
             } else {
-                getUrl(base);
+                if(confirm("Send mesage?")) {
+                    getUrl(base);
+                } else {
+                    console.log('Message request rejected');
+                }
             }
         }
 
