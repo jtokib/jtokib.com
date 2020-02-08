@@ -7,9 +7,10 @@ let ready = {
         let i = 0;
         let d = new Date();
         let year = d.getFullYear();
-        let itemDiv = document.getElementById("items");
         let body = document.body;
+        let itemDiv = document.getElementById("items");
         let special = document.getElementById("l");
+        let surf = document.getElementById("s");
         let mode = localStorage.getItem("dm");
 
         let printItem = (str) => {
@@ -65,13 +66,21 @@ let ready = {
                     mode: "cors"
                 })
                 .then((res) => {
-                    console.log("Fetch success ");
+                    return res.text(0);
+                }).then((data) => {
+                    let p = document.createElement("p");
+                    let text = document.createTextNode(data);
+                    p.appendChild(text);
+                    surf.appendChild(p);
+                    p.className = "right";
+                    console.log("Fetch success " + data);
+
                 })
                 .catch((e) => {
                     console.log("Fetch failed " + e);
                 })
             document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
-            document.querySelectorAll('img')[0].removeEventListener("touchend", fulfill);
+            document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
 
         }
 
@@ -101,7 +110,7 @@ let ready = {
         document.getElementById("k").addEventListener("mousedown", love);
         //add fulfill call
         document.querySelectorAll('img')[0].addEventListener("dblclick", fulfill);
-        document.querySelectorAll('img')[0].addEventListener("touchend", fulfill);
+        document.querySelectorAll('img')[0].addEventListener("touchstart", fulfill);
     }
 };
 
