@@ -1,4 +1,4 @@
-let ready = {
+const jtokib = {
     run: () => {
         let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
         let rando = Math.floor(Math.random() * arr.length);
@@ -120,7 +120,7 @@ let ready = {
     }
 };
 
-ready.run();
+jtokib.run();
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
