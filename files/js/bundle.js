@@ -1,4 +1,4 @@
-const jtokib = {
+const theGoodStuff = {
     run: () => {
         let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
         let rando = Math.floor(Math.random() * arr.length);
@@ -120,7 +120,7 @@ const jtokib = {
     }
 };
 
-jtokib.run();
+theGoodStuff.run();
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
