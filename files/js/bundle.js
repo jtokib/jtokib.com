@@ -63,7 +63,7 @@ const theGoodStuff = {
         let getUrl = (p) => {
             fetch(p, {
                     method: "GET",
-                    mode: "cors"
+                    mode: "no-cors"
                 })
                 .then((res) => {
                     return res.text(0);
