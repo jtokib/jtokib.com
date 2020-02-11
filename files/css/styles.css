@@ -28,6 +28,32 @@ img {
     margin: 0 auto;
 }
 
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+thead {
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: midnightblue;
+    color: ghostwhite
+}
+
+thead tr td {
+    padding: 1em;
+}
+
+tbody tr td {
+    font-size: 1em;
+    border-bottom: .01em solid black;
+    padding: .25em;
+}
+
+tfoot tr td {
+    padding: .25em;
+}
+
 #l {
     width: 100%;
     font-size: 9em;
@@ -42,8 +68,8 @@ img {
     cursor: pointer;
 }
 
-.right { 
-    text-align: right;
+.center { 
+    text-align: center;
 }
 
 .dark-mode {
