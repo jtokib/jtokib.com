@@ -59,29 +59,34 @@ const theGoodStuff = {
                 special.classList.remove("shown");
             }
         }
+        
+        let formatter = (data) => {
+            let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+            let tableRows = ``;
+            let tableEnd = `</tbody><tfoot><tr><td colspan="4">Source: <a href='URL HERE' title="Surfline OB Forecast" target="_blank" >URL HERE</a></td></tr></tfoot></table>`;
+            let length = Object.keys(data).length;
+            for (let i = 0; i < length; i++) {
+                tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
+            }
+            return tableStart + tableRows + tableEnd;
+        }
 
         let getUrl = (p) => {
             fetch(p, {
                     method: "GET",
-                    mode: "no-cors"
+                    mode: "cors"
                 })
                 .then((res) => {
-                    return res.text(0);
+                    return res.text();
                 }).then((data) => {
-                    let p = document.createElement("p");
-                    let text = document.createTextNode(data);
-                    p.appendChild(text);
-                    surf.appendChild(p);
-                    p.className = "right";
+                    surf.innerHTML += formatter(data);
                     console.log("Fetch success " + data);
-
                 })
                 .catch((e) => {
                     console.log("Fetch failed " + e);
                 })
             document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
             document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
-
         }
 
         let fulfill = () => {
@@ -90,13 +95,9 @@ const theGoodStuff = {
             if (qs === "?kc=test") {
                 getUrl(base + qs);
             } else {
-                if (confirm("Send mesage?")) {
-                    getUrl(base);
-                } else {
-                    console.log('Message request rejected');
-                    document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
-                    document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
-                }
+                getUrl(base);
+                document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
+                document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
             }
         }
 
