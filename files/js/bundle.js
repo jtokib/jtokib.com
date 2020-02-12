@@ -7,11 +7,12 @@ const theGoodStuff = {
         let i = 0;
         let d = new Date();
         let year = d.getFullYear();
-        let body = document.body;
-        let itemDiv = document.getElementById("items");
-        let special = document.getElementById("l");
-        let surf = document.getElementById("s");
-        let mode = localStorage.getItem("dm");
+        const body = document.body;
+        const itemDiv = document.getElementById("items");
+        const special = document.getElementById("l");
+        const surf = document.getElementById("s");
+        const mode = localStorage.getItem("dm");
+        const img = document.querySelectorAll("img")[0];
 
         let printItem = (str) => {
             if (navigator.userAgent.includes("Googlebot")) {
@@ -33,7 +34,6 @@ const theGoodStuff = {
 
         let toggleMode = () => {
             body.classList.toggle("dark-mode");
-
             if (body.classList.contains("dark-mode")) {
                 localStorage.dm = "1";
             } else {
@@ -63,7 +63,7 @@ const theGoodStuff = {
         let formatter = (data) => {
             let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
             let tableRows = ``;
-            let tableEnd = `</tbody><tfoot><tr><td colspan="4">Source: <a href='URL HERE' title="Surfline OB Forecast" target="_blank" >URL HERE</a></td></tr></tfoot></table>`;
+            let tableEnd = `</tbody><tfoot><tr><td colspan="4">Source: <a href='https://www.surfline.com/surf-forecasts/san-francisco/58581a836630e24c44879010' title="Surfline OB Forecast" target="_blank" >SurfLie</a></td></tr></tfoot></table>`;
             let length = Object.keys(data).length;
             for (let i = 0; i < length; i++) {
                 tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
@@ -71,22 +71,25 @@ const theGoodStuff = {
             return tableStart + tableRows + tableEnd;
         }
 
-        let getUrl = (p) => {
-            fetch(p, {
+        let getUrl = (url) => {
+            fetch(url, {
                     method: "GET",
                     mode: "cors"
                 })
                 .then((res) => {
                     return res.text();
                 }).then((data) => {
-                    surf.innerHTML += formatter(data);
-                    console.log("Fetch success " + data);
+                    let content = formatter(JSON.parse(data));
+                    surf.insertAdjacentHTML("afterend", content);
+                    img.addEventListener("click", function() {
+                        document.getElementById('forecastTable').classList.toggle('hide');
+                    });
                 })
                 .catch((e) => {
                     console.log("Fetch failed " + e);
                 })
-            document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
-            document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
+            img.removeEventListener("dblclick", fulfill);
+            img.removeEventListener("touchstart", fulfill);
         }
 
         let fulfill = () => {
@@ -96,8 +99,8 @@ const theGoodStuff = {
                 getUrl(base + qs);
             } else {
                 getUrl(base);
-                document.querySelectorAll('img')[0].removeEventListener("dblclick", fulfill);
-                document.querySelectorAll('img')[0].removeEventListener("touchstart", fulfill);
+                img.removeEventListener("dblclick", fulfill);
+                img.removeEventListener("touchstart", fulfill);
             }
         }
 
@@ -111,13 +114,14 @@ const theGoodStuff = {
         printItem(item);
         //add copyright year
         document.getElementById("year").innerHTML = year;
-        //add click handler to support dark-mod
+        //add click handler to support dark-mode
         document.getElementById("toggle").addEventListener("mousedown", toggleMode);
         //add easter egg
         document.getElementById("k").addEventListener("mousedown", love);
-        //add fulfill call
-        document.querySelectorAll('img')[0].addEventListener("dblclick", fulfill);
-        document.querySelectorAll('img')[0].addEventListener("touchstart", fulfill);
+        //add fulfill call for desktop
+        img.addEventListener("dblclick", fulfill);
+        //ad fulfill call for mobile
+        img.addEventListener("touchstart", fulfill);
     }
 };
 

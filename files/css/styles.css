@@ -77,6 +77,10 @@ tfoot tr td {
     color: white;
 }
 
+.hide {
+    display: none;
+}
+
 @media screen and (max-width: 375px) {
     #l {
         max-width: 375px;
