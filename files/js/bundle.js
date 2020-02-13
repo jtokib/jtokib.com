@@ -63,7 +63,7 @@ const theGoodStuff = {
         let formatter = (data) => {
             let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
             let tableRows = ``;
-            let tableEnd = `</tbody><tfoot><tr><td colspan="4">Source: <a href='https://www.surfline.com/surf-forecasts/san-francisco/58581a836630e24c44879010' title="Surfline OB Forecast" target="_blank" >SurfLie</a></td></tr></tfoot></table>`;
+            let tableEnd = `</tbody><tfoot><tr><td colspan="4"></td></tr></tfoot></table>`;
             let length = Object.keys(data).length;
             for (let i = 0; i < length; i++) {
                 tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
