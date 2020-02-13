@@ -93,7 +93,7 @@ const theGoodStuff = {
         }
 
         let fulfill = () => {
-            let base = "https://us-central1-jtokib.cloudfunctions.net/fulfill";
+            let base = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
             let qs = window.location.search.substring(0);
             if (qs === "?kc=test") {
                 getUrl(base + qs);
