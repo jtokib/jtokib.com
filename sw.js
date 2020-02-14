@@ -1,4 +1,4 @@
-var CACHE_NAME = 'jtokib-cache';
+var CACHE_NAME = 'jtokib-cache-v1';
 var urlsToCache = [
     '/',
     '/files/js/bundle.js',
@@ -52,7 +52,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-    var cacheWhitelist = ['jtokib-cache'];
+    var cacheWhitelist = ['jtokib-cache-v1'];
     event.waitUntil(
         caches.keys().then((cacheNames) => {
             return Promise.all(
