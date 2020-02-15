@@ -59,7 +59,7 @@ const theGoodStuff = {
                 special.classList.remove("shown");
             }
         }
-        
+
         let formatter = (data) => {
             let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
             let tableRows = ``;
@@ -77,30 +77,30 @@ const theGoodStuff = {
                     mode: "cors"
                 })
                 .then((res) => {
-                    return res.text();
+                    return res.json();
                 }).then((data) => {
-                    let content = formatter(JSON.parse(data));
+                    let content = formatter(data);
                     surf.insertAdjacentHTML("afterend", content);
-                    img.addEventListener("click", function() {
+                    img.addEventListener("click", function () {
                         document.getElementById('forecastTable').classList.toggle('hide');
                     });
                 })
                 .catch((e) => {
                     console.log("Fetch failed " + e);
                 })
-            img.removeEventListener("dblclick", fulfill);
-            img.removeEventListener("touchstart", fulfill);
+            img.removeEventListener("dblclick", forecast);
+            img.removeEventListener("touchstart", forecast);
         }
 
-        let fulfill = () => {
+        let forecast = () => {
             let base = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
             let qs = window.location.search.substring(0);
             if (qs === "?kc=test") {
                 getUrl(base + qs);
             } else {
                 getUrl(base);
-                img.removeEventListener("dblclick", fulfill);
-                img.removeEventListener("touchstart", fulfill);
+                img.removeEventListener("dblclick", forecast);
+                img.removeEventListener("touchstart", forecast);
             }
         }
 
@@ -119,9 +119,9 @@ const theGoodStuff = {
         //add easter egg
         document.getElementById("k").addEventListener("mousedown", love);
         //add fulfill call for desktop
-        img.addEventListener("dblclick", fulfill);
+        img.addEventListener("dblclick", forecast);
         //ad fulfill call for mobile
-        img.addEventListener("touchstart", fulfill);
+        img.addEventListener("touchstart", forecast);
     }
 };
 
