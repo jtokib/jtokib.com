@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey"];
+    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey", "depressed pirate"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
     let wait = 250;
@@ -15,6 +15,7 @@
     const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
 
+    //Print out random string to page
     let printItem = (str) => {
         if (navigator.userAgent.includes("Googlebot")) {
             itemDiv.innerHTML = item + "!";
@@ -32,7 +33,7 @@
             return;
         }
     }
-
+    //Toggle dark-mode
     let toggleMode = () => {
         body.classList.toggle("dark-mode");
         if (body.classList.contains("dark-mode")) {
@@ -41,7 +42,7 @@
             localStorage.dm = "0";
         }
     }
-
+    //Check if dark-mode is enabled on load
     let checkMode = () => {
         if (mode === "0") {
             body.classList.remove("dark-mode");
@@ -51,6 +52,7 @@
         }
     }
 
+    //Easter egg
     let love = () => {
         if (!special.classList.contains("shown")) {
             special.innerHTML = "I love you Kim!";
@@ -61,17 +63,7 @@
         }
     }
 
-    let formatter = (data) => {
-        let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
-        let tableRows = ``;
-        let tableEnd = `</tbody><tfoot><tr><td colspan="4"></td></tr></tfoot></table>`;
-        let length = Object.keys(data).length;
-        for (let i = 0; i < length; i++) {
-            tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
-        }
-        return tableStart + tableRows + tableEnd;
-    }
-
+    //GET request to URL with optional callback to manipulate results
     let getUrl = (url, callback = false) => {
         fetch(url, {
                 method: "GET",
@@ -89,6 +81,19 @@
             })
     }
 
+    //Format results of forecast data
+    let formatter = (data) => {
+        let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableRows = ``;
+        let tableEnd = `</tbody><tfoot><tr><td colspan="4"></td></tr></tfoot></table>`;
+        let length = Object.keys(data).length;
+        for (let i = 0; i < length; i++) {
+            tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
+        }
+        return tableStart + tableRows + tableEnd;
+    }
+
+    //Add the forecast in a table to the page
     let addForecast = (data) => {
         let content = formatter(data);
         surf.insertAdjacentHTML("afterend", content);
@@ -97,27 +102,31 @@
         });
     }
 
+    //Call the forecast endpoint and add the table to the page
     let forecast = (url) => {
         let qs = window.location.search.substring(0);
         if (qs === "?kc=test") {
             getUrl(url + qs);
         } else {
             getUrl(url, addForecast);
-            img.removeEventListener("dblclick", function () {
-                forecast(fURL)
-            });
-            img.removeEventListener("touchstart", function () {
-                forecast(fURL)
-            });
+            img.removeEventListener("dblclick", forecastHandler);
+            img.removeEventListener("touchstart", forecastHandler);
         }
     }
 
+    //Used to attach the forecast() to event handlers
+    let forecastHandler = () => {
+        forecast(fURL);
+    };
+
+    //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
         let content = `<p class="center"><strong>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></strong><br>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p>`;
         surf.insertAdjacentHTML("afterbegin", content);
     }
 
+    //Call the buoy endpoint and add the buoy data to the page
     let conditions = (url) => {
         getUrl(url, addConditions);
     }
@@ -139,13 +148,9 @@
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
     //add fulfill call for desktop
-    img.addEventListener("dblclick", function () {
-        forecast(fURL)
-    });
+    img.addEventListener("dblclick", forecastHandler);
     //ad fulfill call for mobile
-    img.addEventListener("touchstart", function () {
-        forecast(fURL)
-    });
+    img.addEventListener("touchstart", forecastHandler);
 
 })();
 
