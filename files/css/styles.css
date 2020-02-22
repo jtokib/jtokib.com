@@ -22,6 +22,10 @@ footer {
     margin: 0 auto;
 }
 
+p {
+    font-size: 1.2em;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -41,7 +45,7 @@ thead {
 }
 
 thead tr td {
-    padding: 1em;
+    padding: 1em .15em;
 }
 
 tbody tr td {
@@ -75,6 +79,10 @@ tfoot tr td {
 .dark-mode {
     background-color: black;
     color: white;
+}
+
+.dark-mode a:visited {
+    color: blue;
 }
 
 .hide {
