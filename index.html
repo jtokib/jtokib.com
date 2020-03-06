@@ -65,16 +65,28 @@
     </header>
     <main>
         <div id="l"></div>
-        <div id="s">
-            <img src="https://cdip.ucsd.edu/recent/model_images/sf.png" title="CDIP Surf Conditions"
-                alt="Latest Surf Model from CDIP" height="790" width="623">
-            <p class="center">Data courtesy of <a href="http://cdip.ucsd.edu/m/classic_models/"
-                    title="CDIP Classic Models" target="_blank">CDIP</a>
-            </p>
+        <div class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="surf">
+            <div class="current">
+                <img src="https://cdip.ucsd.edu/recent/model_images/sf.png" title="CDIP Surf Conditions"
+                    alt="Latest Surf Model from CDIP" height="790" width="623">
+                <p>Data courtesy of <a href="http://cdip.ucsd.edu/m/classic_models/" title="CDIP Classic Models"
+                        target="_blank">CDIP</a>
+                </p>
+            </div>
+        </div>
+        <div class="loader" style="display:none">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </main>
     <footer>
-        <p class="center">Things <span id="k">Toki Burke</span> Is Not | &copy;<span id="year"></span>&nbsp;|&nbsp;<span
+        <p>Things <span id="k">Toki Burke</span> Is Not | &copy;<span id="year"></span>&nbsp;|&nbsp;<span
                 id="toggle">Toggle
                 Dark Mode</span></p>
 
