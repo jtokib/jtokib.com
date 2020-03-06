@@ -9,7 +9,7 @@
     const body = document.body;
     const itemDiv = document.getElementById("items");
     const special = document.getElementById("l");
-    const surf = document.getElementById("s");
+    const surf = document.getElementById("surf");
     const mode = localStorage.getItem("dm");
     const img = document.querySelectorAll("img")[0];
     const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
@@ -83,9 +83,9 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableStart = `<div class="forecast"><table id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
         let tableRows = ``;
-        let tableEnd = `</tbody><tfoot><tr><td colspan="4"></td></tr></tfoot></table>`;
+        let tableEnd = `</tbody><tfoot><tr><td colspan="4"></td></tr></tfoot></table></div>`;
         let length = Object.keys(data).length;
         for (let i = 0; i < length; i++) {
             tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
@@ -100,6 +100,7 @@
         img.addEventListener("click", function () {
             document.getElementById("forecastTable").classList.toggle("hide");
         });
+        document.getElementsByClassName("loader")[1].style.display = "none";
     }
 
     //Call the forecast endpoint and add the table to the page
@@ -117,13 +118,15 @@
     //Used to attach the forecast() to event handlers
     let forecastHandler = () => {
         forecast(fURL);
+        document.getElementsByClassName("loader")[1].style.display = "block";
     };
 
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<p class="center"><strong>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></strong><br>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p>`;
+        let content = `<div class="conditions"><p><strong>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></strong><br>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p></div>`;
         surf.insertAdjacentHTML("afterbegin", content);
+        document.getElementsByClassName("loader")[0].style.display = "none";
     }
 
     //Call the buoy endpoint and add the buoy data to the page
@@ -154,14 +157,14 @@
 
 })();
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js', {
-            updateViaCache: 'all'
-        }).then((registration) => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }, (err) => {
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    });
-}
+// if ('serviceWorker' in navigator) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('sw.js', {
+//             updateViaCache: 'all'
+//         }).then((registration) => {
+//             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+//         }, (err) => {
+//             console.log('ServiceWorker registration failed: ', err);
+//         });
+//     });
+// }
