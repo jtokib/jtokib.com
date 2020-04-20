@@ -60,36 +60,35 @@
 </head>
 
 <body>
-    <nav>
-        <div class="black nav-wrapper">
-            <a href="#" class="brand-logo"><img src="files/images/favicon/apple-icon-57x57.png"></a>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <main class="center-align">
-                <h1>Toki is not a... <span id="items"></span></h1>
-                <div id="l"></div>
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
-                <div id="surf">
-
-                    <img class="responsive-img" src="https://cdip.ucsd.edu/recent/model_images/sf.png"
-                        title="CDIP Surf Conditions" alt="Latest Surf Model from CDIP" height="790" width="623">
-                    <p>Data courtesy of <a href="http://cdip.ucsd.edu/m/classic_models/" title="CDIP Classic Models"
-                            target="_blank">CDIP</a>
-                    </p>
-
-                </div>
-            </main>
-            <footer class="center-align">
-                <p>Things <span id="k">Toki Burke</span> Is Not | &copy;<span id="year"></span>&nbsp;|&nbsp;<span
-                        id="toggle">Toggle
-                        Dark Mode</span></p>
-            </footer>
-        </div>
+    <div class="hide-on-large-only">
+        <nav>
+            <div class="black nav-wrapper">
+                <a href="#" class="brand-logo left"><img src="files/images/favicon/android-icon-192x192.png" alt="Logo"
+                        height="50px" width="50px"></a>
+            </div>
+        </nav>
     </div>
+    <div class="container row">
+        <main class="center-align">
+            <h1>Toki is not a... <span id="items"></span></h1>
+            <div id="l"></div>
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+            <div id="surf">
+                <img id="map" class="responsive-img" src="https://cdip.ucsd.edu/recent/model_images/sf.png"
+                    title="CDIP Surf Conditions" alt="Latest Surf Model from CDIP" height="790" width="623">
+                <p>Data courtesy of <a href="http://cdip.ucsd.edu/m/classic_models/" title="CDIP Classic Models"
+                        target="_blank">CDIP</a>
+                </p>
+
+            </div>
+        </main>
+        <footer class="center-align">
+            <p>Things <span id="k">Toki Burke</span> Is Not | &copy;<span id="year"></span>&nbsp;|&nbsp;<span
+                    id="toggle">Toggle
+                    Dark Mode</span></p>
+        </footer>
     </div>
     <script>
         if (navigator.userAgent.indexOf('msie') > -1 || navigator.userAgent.indexOf('Trident') > -1) {

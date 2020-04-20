@@ -11,7 +11,7 @@
     const special = document.getElementById("l");
     const surf = document.getElementById("surf");
     const mode = localStorage.getItem("dm");
-    const img = document.querySelectorAll("img")[0];
+    const img = document.getElementById("map");
     const loader = document.getElementsByClassName("progress");
     const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
@@ -84,7 +84,7 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<div class="forecast"><table class="highlight responsive-table" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableStart = `<div class="forecast"><table class="highlight responsive-table col offset-m2 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table></div>`;
         let length = Object.keys(data).length;
@@ -123,7 +123,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<div class="conditions"><h5>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></h5><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p></div>`;
+        let content = `<h5>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></h5><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p>`;
         surf.insertAdjacentHTML("afterbegin", content);
         loader[0].style.display = "none";
     }
