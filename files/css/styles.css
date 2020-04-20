@@ -1,3 +1,13 @@
+body {
+    background-image: url(https://source.unsplash.com/random/);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    background-color: #fff;
+}
+
 /* Table Styling */
 thead {
     font-weight: bold;
@@ -19,6 +29,11 @@ a:hover {
 
 /* Dark Mode Styling */
 .dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.dark-mode > .container {
     background-color: black;
     color: white;
 }

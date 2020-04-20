@@ -132,6 +132,7 @@
     let conditions = (url) => {
         getUrl(url, addConditions);
     }
+
     //push to data layer
     jtokib.push({
         "item": item
@@ -152,7 +153,6 @@
     img.addEventListener("dblclick", forecastHandler);
     //ad fulfill call for mobile
     img.addEventListener("touchstart", forecastHandler);
-
 })();
 
 // if ('serviceWorker' in navigator) {
