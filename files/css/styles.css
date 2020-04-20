@@ -1,101 +1,16 @@
-html {
-    height: 100%;
-}
-
-body {
-    font-family: monospace;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: 5.5em 1fr;
-    margin: 0 1em;
-}
-
-header {
-    margin: 0 auto;
-}
-
-main {
-    margin: 2em auto;
-}
-
-footer {
-    margin: 0 auto;
-}
-
-p {
-    font-size: 1.2em;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
 /* Table Styling */
-table {
-    margin: 0 auto;
-    width: 100%;
-}
-
 thead {
-    font-size: 1.2em;
     font-weight: bold;
-    background-color: midnightblue;
-    color: ghostwhite
-}
-
-thead tr td {
-    padding: 1em .15em;
-}
-
-tbody tr td {
-    font-size: 1em;
-    border-bottom: .01em solid black;
-    padding: .25em;
-}
-
-tfoot tr td {
-    padding: .25em;
 }
 
 /* IDs and Class Specific Styling */
 #l {
-    width: 100%;
     font-size: 9em;
-}
-
-#s {
-    max-width: 50em;
-}
-
-header > h1:hover {
-    transform: rotate(-6deg);
-}
-
-.conditions:hover {
-    transform: rotate(5deg);
-}
-
-.current:hover {
-    transform: rotate(-3deg);
-}
-
-.current > p:hover {
-    transform: rotate(-3deg);
-}
-
-footer>p:hover {
-    transform: rotate(3deg);
 }
 
 #toggle:hover {
     text-decoration: underline;
     cursor: pointer;
-}
-
-a {
-    text-decoration: none;
 }
 
 a:hover {
@@ -109,61 +24,24 @@ a:hover {
 }
 
 .dark-mode a {
-    color: #505daa;
+    color: #e1f5fe;
 }
 
 .dark-mode a:visited {
-    color: #6e1ccc;
-    text-decoration: underline;
-}
-
-.hide {
-    display: none;
-}
-
-/* CSS for Animated Loader */
-.loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 2em;
-}
-
-.loader>span {
-    background: rgb(0, 250, 217);
-    border-radius: 50%;
-    margin: 5rem 0.5rem;
-    animation: bouncingLoader 1s infinite alternate;
-}
-
-.loader>span:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.loader>span:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-@keyframes bouncingLoader {
-    from {
-        width: 0.1rem;
-        height: 0.1rem;
-        opacity: 1;
-        transform: translate3d(0);
-    }
-
-    to {
-        width: 1rem;
-        height: 1rem;
-        opacity: 0.1;
-        transform: translate3d(0, -1rem, 0);
-    }
+    color: #e040fb;
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 411px) {
     #l {
         max-width: 375px;
         max-height: 100%;
+    }
+    .dark-mode .responsive-table thead {
+        border: 0;
+        border-right: 1px solid #eceff1;
+    }
+    nav .nav-wrapper {
+        height: 102%;
     }
 }
