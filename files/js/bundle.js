@@ -84,7 +84,7 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<div class="forecast"><table class="highlight responsive-table col offset-m2 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableStart = `<div class="forecast"><table class="highlight responsive-table col offset-m1 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table></div>`;
         let length = Object.keys(data).length;
