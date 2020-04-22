@@ -84,9 +84,9 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<div class="forecast"><table class="highlight responsive-table col offset-m1 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableStart = `<table class="highlight responsive-table col offset-m1 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
         let tableRows = ``;
-        let tableEnd = `</tbody></table></div>`;
+        let tableEnd = `</tbody></table>`;
         let length = Object.keys(data).length;
         for (let i = 0; i < length; i++) {
             tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
@@ -123,7 +123,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h5>Current Conditions at <a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar" target="_blank">SF Buoy</a></h5><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p>`;
+        let content = `<div class="col offset-m3 m6 left-align"><h4>Current Conditions</h4><h5><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar Buoy</a></h5><h5>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</h5></div>`;
         surf.insertAdjacentHTML("afterbegin", content);
         loader[0].style.display = "none";
     }
