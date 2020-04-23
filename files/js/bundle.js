@@ -84,12 +84,12 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<table class="highlight responsive-table col offset-m1 m10" id="forecastTable" cellspacing="0"><thead><tr><td align="left" valign="top">Date</td><td align="left" valign="top">Time</td><td align="left" valign="top">Conditions</td><td align="left" valign="top">Size</td></tr></thead>`;
+        let tableStart = `<table class="highlight responsive-table col offset-m1 m10" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table>`;
         let length = Object.keys(data).length;
         for (let i = 0; i < length; i++) {
-            tableRows += `<tr><td align="left" valign="center">${data[i].date}</td><td align="left" valign="top">AM</td><td align="left" valign="top">${data[i].report.am.conditions}</td><td align="left" valign="top">${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
+            tableRows += `<tr><td>${data[i].date}</td><td>AM</td><td>${data[i].report.am.conditions}</td><td>${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
         }
         return tableStart + tableRows + tableEnd;
     }
