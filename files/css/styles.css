@@ -1,12 +1,15 @@
-.container {
-    background-color: #fff;
-}
-
 thead {
     font-weight: bold;
 }
 
-/* IDs and Class Specific Styling */
+.container {
+    background-color: #fff;
+}
+
+main.container {
+    margin: 1em auto;
+}
+
 #l {
     font-size: 9em;
 }
@@ -55,7 +58,7 @@ a:hover {
         height: 200px;
     }
 
-    .parallax-container .parallax {
+    /* .parallax-container .parallax {
         bottom: 100px;
-    }
+    } */
 }
