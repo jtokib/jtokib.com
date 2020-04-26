@@ -1,3 +1,21 @@
+body {
+    font-family: monospace;
+}
+
+h1, h2 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+p, a {
+    font-size: 1em;
+}
+
 thead {
     font-weight: bold;
 }

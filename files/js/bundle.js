@@ -123,7 +123,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h4>Current Conditions</h4><h5><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar Buoy</a></h5><h5>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</h5>`;
+        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar CDIP 142</a>`;
         surf.insertAdjacentHTML("afterbegin", content);
         loader[0].style.display = "none";
     }
