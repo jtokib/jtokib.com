@@ -84,7 +84,7 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<table class="highlight responsive-table col offset-m1 m10" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
+        let tableStart = `<table class="col offset-m1 m10 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table>`;
         let length = Object.keys(data).length;
@@ -123,7 +123,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<div class="col offset-m3 m6 left-align"><h4>Current Conditions</h4><h5><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar Buoy</a></h5><h5>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</h5></div>`;
+        let content = `<h4>Current Conditions</h4><h5><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar Buoy</a></h5><h5>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</h5>`;
         surf.insertAdjacentHTML("afterbegin", content);
         loader[0].style.display = "none";
     }
@@ -149,11 +149,41 @@
     document.getElementById("toggle").addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
-    //add fulfill call for desktop
+    //fulfill call for desktop
     img.addEventListener("dblclick", forecastHandler);
-    //ad fulfill call for mobile
+    //fulfill call for mobile
     img.addEventListener("touchstart", forecastHandler);
+    //Initalize parallax effect
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.parallax');
+        var instance = M.Parallax.init(elems);
+    });
+    //Lazyload images
+    document.addEventListener("DOMContentLoaded", function () {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+        if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+            lazyImages.forEach(function (lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        } else {
+            // Possibly fall back to a more compatible method here
+            return;
+        }
+    });
 })();
+
+
 
 // if ('serviceWorker' in navigator) {
 //     window.addEventListener('load', () => {
