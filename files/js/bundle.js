@@ -97,7 +97,7 @@
     //Add the forecast in a table to the page
     let addForecast = (data) => {
         let content = formatter(data);
-        surf.insertAdjacentHTML("afterend", content);
+        surf.insertAdjacentHTML("beforeend", content);
         img.addEventListener("click", function () {
             document.getElementById("forecastTable").classList.toggle("hide");
         });
@@ -123,8 +123,8 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">SF Bar CDIP 142</a>`;
-        surf.insertAdjacentHTML("afterbegin", content);
+        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">CDIP 142</a>`;
+        document.getElementById('conditions').innerHTML = content;
         loader[0].style.display = "none";
     }
 
@@ -153,46 +153,19 @@
     img.addEventListener("dblclick", forecastHandler);
     //fulfill call for mobile
     img.addEventListener("touchstart", forecastHandler);
-    //Initalize parallax effect
+    // Intialize Materialize effects
     document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.parallax');
-        var instance = M.Parallax.init(elems);
-    });
-    //Lazyload images
-    document.addEventListener("DOMContentLoaded", function () {
+        //Parallax effect
+        var parallaxEl = document.querySelectorAll('.parallax');
+        M.Parallax.init(parallaxEl);
+        //Tabs effect
+        var tabsEl = document.querySelector('.tabs');
+        var tabInstance = M.Tabs.init(tabsEl);
+        //Lazyload Images
         var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.classList.remove("lazy");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-            lazyImages.forEach(function (lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        } else {
-            // Possibly fall back to a more compatible method here
-            return;
-        }
+        lazyImages.forEach((x)=>{
+            x.src = x.dataset.src
+            x.classList.remove("lazy");
+        })
     });
 })();
-
-
-
-// if ('serviceWorker' in navigator) {
-//     window.addEventListener('load', () => {
-//         navigator.serviceWorker.register('sw.js', {
-//             updateViaCache: 'all'
-//         }).then((registration) => {
-//             console.log('ServiceWorker registration successful with scope: ', registration.scope);
-//         }, (err) => {
-//             console.log('ServiceWorker registration failed: ', err);
-//         });
-//     });
-// }
