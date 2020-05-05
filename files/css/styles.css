@@ -1,5 +1,6 @@
 body {
     font-family: monospace;
+    font-variant: small-caps;
 }
 
 h1,
@@ -11,6 +12,7 @@ h2 {
 h3 {
     font-size: 1.25em;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 p,
@@ -18,14 +20,14 @@ a {
     font-size: 1em;
 }
 
-thead {
-    font-weight: bold;
-}
-
 main.container {
     margin-top: -15em;
     background-color: #fff;
     border-radius: .5em;
+}
+
+thead {
+    font-weight: bold;
 }
 
 #l {
@@ -41,6 +43,27 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Override tab styles */
+.tabs {
+    margin-bottom: 1em;
+}
+
+.tabs .tab a,
+.tabs .tab a.active,
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.tabs .indicator {
+    background-color: steelblue;
+}
+
+.custom-border {
+    border-right: solid 1px black;
+}
 /* Dark Mode Styling */
 .dark-mode {
     background-color: black;
@@ -56,14 +79,6 @@ a:hover {
 .dark-mode>main.container {
     background-color: white;
     color: black;
-}
-
-.dark-mode a {
-    color: #e1f5fe;
-}
-
-.dark-mode a:visited {
-    color: #e040fb;
 }
 
 /* Mobile Styles */
