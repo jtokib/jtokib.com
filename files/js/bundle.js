@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["rabbit", "monsta", "drunk panda", "punk", "kook", "jello shot", "bird", "plane", "designer handbag", "manatee", "cow", "cheap whiskey", "depressed pirate"];
+    let arr = ["moon rabbit", "monsta killa", "sad panda", "punk ass bitch", "kook", "jello shot", "bird", "Sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "horny zombie", "drunk koala", "part-time stripper"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
     let wait = 250;
@@ -111,7 +111,9 @@
         } else {
             getUrl(url, addForecast);
             img.removeEventListener("dblclick", forecastHandler);
-            img.removeEventListener("touchstart", forecastHandler);
+            img.removeEventListener("touchstart", forecastHandler, { 
+                passive: true 
+            });
         }
     }
 
@@ -123,7 +125,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank">CDIP 142</a>`;
+        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
         document.getElementById('conditions').innerHTML = content;
         loader[0].style.display = "none";
     }
@@ -152,7 +154,9 @@
     //fulfill call for desktop
     img.addEventListener("dblclick", forecastHandler);
     //fulfill call for mobile
-    img.addEventListener("touchstart", forecastHandler);
+    img.addEventListener("touchstart", forecastHandler, {
+        passive: true
+    });
     // Intialize Materialize effects
     document.addEventListener('DOMContentLoaded', function () {
         //Parallax effect
