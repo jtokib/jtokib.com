@@ -19,7 +19,7 @@
     //Print out random string to page
     let printItem = (str) => {
         if (navigator.userAgent.includes("Googlebot")) {
-            itemDiv.innerHTML = item + "!";
+            itemDiv.innerHTML = item;
         } else if (itemDiv !== null) {
             setTimeout(function () {
                 itemDiv.innerHTML += str.charAt(i).toUpperCase();
@@ -27,7 +27,7 @@
                     printItem(str);
                     i++;
                 } else {
-                    itemDiv.innerHTML += "!";
+                    itemDiv.innerHTML;
                 }
             }, wait)
         } else {
