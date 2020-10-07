@@ -94,7 +94,7 @@
             <div class="row">
                 <div class="col s12 offset-m3 m6">
                     <ul class="tabs">
-                        <li class="tab col m3"><a href="#nowcast">CDIP Nowcast</a></li>
+                        <li class="tab col m3"><a href="#nowcast">Nowcast</a></li>
                         <li class="tab col m3"><a href="#sfbuoy">SF Buoy</a></li>
                         <li class="tab col m3"><a href="#winds">Winds</a></li>
                         <li class="tab col m3"><a href="#forecast">Forecast</a></li>
@@ -111,11 +111,15 @@
                     <img id="buoyData" class="lazy responsive-img" src=""
                         data-src="http://cdip.ucsd.edu/themes/media/images/plots/buoy_ww3.gd?stn=142&stream=p1&pub=public&tz=PDT&units=english"
                         title="CDIP Data Image" alt="Latest Data from CDIP">
+                    <p>Data courtesy of <a href="http://cdip.ucsd.edu/m/products/?stn=142p1&tz=PDT"
+                            title="CDIP - San Francisco Bar Buoy Data" target="_blank" rel="noopener">CDIP</a></p>
                 </div>
                 <div id="winds" class="col s12 offset-m3 m6 custom-tab">
                     <iframe width="650" height="800" src="" class="lazy"
                         data-src="https://embed.windy.com/embed2.html?lat=37.670&lon=-122.555&detailLat=37.767&detailLon=-122.517&width=650&height=800&zoom=10&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=true&metricWind=kt&metricTemp=%C2%B0F&radarRange=-1"
                         frameborder="0"></iframe>
+                    <p>Data courtesy of <a href="https://www.windy.com/?37.670,-122.555,10"
+                            title="Windy.com - San Francisco Winds" target="_blank" rel="noopener">Windy.com</a></p>
                 </div>
                 <div id="forecast" class="col s12 offset-m3 m6 custom-tab"></div>
             </div>
