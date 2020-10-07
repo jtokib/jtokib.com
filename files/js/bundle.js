@@ -9,9 +9,8 @@
     const body = document.body;
     const itemDiv = document.getElementById("items");
     const special = document.getElementById("l");
-    const surf = document.getElementById("surf");
+    const surf = document.getElementById("forecast");
     const mode = localStorage.getItem("dm");
-    const img = document.getElementById("map");
     const loader = document.getElementsByClassName("progress");
     const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
@@ -84,7 +83,7 @@
 
     //Format results of forecast data
     let formatter = (data) => {
-        let tableStart = `<table class="col offset-m1 m10 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
+        let tableStart = `<table class="col m12 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table>`;
         let length = Object.keys(data).length;
@@ -98,9 +97,6 @@
     let addForecast = (data) => {
         let content = formatter(data);
         surf.insertAdjacentHTML("beforeend", content);
-        img.addEventListener("click", function () {
-            document.getElementById("forecastTable").classList.toggle("hide");
-        });
     }
 
     //Call the forecast endpoint and add the table to the page
@@ -110,10 +106,6 @@
             getUrl(url + qs);
         } else {
             getUrl(url, addForecast);
-            img.removeEventListener("dblclick", forecastHandler);
-            img.removeEventListener("touchstart", forecastHandler, { 
-                passive: true 
-            });
         }
     }
 
@@ -151,25 +143,22 @@
     document.getElementById("toggle").addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
-    //fulfill call for desktop
-    img.addEventListener("dblclick", forecastHandler);
-    //fulfill call for mobile
-    img.addEventListener("touchstart", forecastHandler, {
-        passive: true
-    });
-    // Intialize Materialize effects
+    //load after DCL
     document.addEventListener('DOMContentLoaded', function () {
-        //Parallax effect
-        var parallaxEl = document.querySelectorAll('.parallax');
-        M.Parallax.init(parallaxEl);
-        //Tabs effect
-        var tabsEl = document.querySelector('.tabs');
-        var tabInstance = M.Tabs.init(tabsEl);
-        //Lazyload Images
-        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-        lazyImages.forEach((x)=>{
+        //Load forecast
+        forecastHandler();
+        //Lazyload images
+        var lazyImages = [].slice.call(document.querySelectorAll(".lazy"));
+        lazyImages.forEach((x) => {
             x.src = x.dataset.src
             x.classList.remove("lazy");
         })
+        //Intialize Materialize Effects
+        //parallax
+        var parallaxEl = document.querySelectorAll('.parallax');
+        M.Parallax.init(parallaxEl);
+        //tabs
+        var tabsEl = document.querySelector('.tabs');
+        var tabInstance = M.Tabs.init(tabsEl);
     });
 })();

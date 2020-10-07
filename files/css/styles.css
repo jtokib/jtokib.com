@@ -64,6 +64,7 @@ a:hover {
 .custom-border {
     border-right: solid 1px black;
 }
+
 /* Dark Mode Styling */
 .dark-mode {
     background-color: black;
@@ -103,5 +104,9 @@ a:hover {
     .dark-mode .responsive-table thead {
         border: 0;
         border-right: 1px solid #eceff1;
+    }
+
+    #winds iframe {
+        width: 100%;
     }
 }
