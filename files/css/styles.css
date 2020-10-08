@@ -48,12 +48,23 @@ a:hover {
     margin-bottom: 1em;
 }
 
-.tabs .tab a,
+.tabs .tab a {
+    color: black;
+    background-color: #c1dadc;
+    text-decoration: none;
+    border-right: 1px solid white;
+    border-radius: 1px;
+}
+
+.tab:hover {
+    background-color: #649094;
+}
+
 .tabs .tab a.active,
 .tabs .tab a:focus,
 .tabs .tab a:focus.active {
     color: black;
-    background-color: transparent;
+    background-color: white;
     text-decoration: none;
 }
 
