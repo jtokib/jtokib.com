@@ -56,6 +56,10 @@ a:hover {
     border-radius: 1px;
 }
 
+.tab:hover {
+    background-color: #649094;
+}
+
 .tabs .tab a.active,
 .tabs .tab a:focus,
 .tabs .tab a:focus.active {
