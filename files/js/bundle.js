@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["moon rabbit", "monsta killa", "sad panda", "punk ass bitch", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina"];
+    let arr = ["rabbit", "monsta killa", "sad panda", "punk ass bitch", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
     let wait = 250;
@@ -8,12 +8,11 @@
     let year = d.getFullYear();
     const body = document.body;
     const itemDiv = document.getElementById("items");
-    const special = document.getElementById("l");
-    const surf = document.getElementById("forecast");
     const mode = localStorage.getItem("dm");
     const loader = document.getElementsByClassName("progress");
     const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
+    const tURL = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=today&datum=MLLW&station=9414290&time_zone=lst_ldt&units=english&interval=hilo&format=json";
 
     //Print out random string to page
     let printItem = (str) => {
@@ -51,19 +50,7 @@
             body.classList.add("dark-mode");
         }
     }
-
-    //Easter egg
-    let love = () => {
-        if (!special.classList.contains("shown")) {
-            special.innerHTML = "I love you Kim!";
-            special.classList.add("shown");
-        } else {
-            special.innerHTML = "";
-            special.classList.remove("shown");
-        }
-    }
-
-    //GET request to URL with optional callback to manipulate results
+    //Helper function to make a GET request to a URL with optional callback to manipulate data as needed
     let getUrl = (url, callback = false) => {
         fetch(url, {
                 method: "GET",
@@ -80,9 +67,8 @@
                 console.log("Fetch failed " + e);
             })
     }
-
-    //Format results of forecast data
-    let formatter = (data) => {
+    //Format results of forecast data and add to page
+    let addForecast = (data) => {
         let tableStart = `<table class="col m12 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table>`;
@@ -90,17 +76,11 @@
         for (let i = 0; i < length; i++) {
             tableRows += `<tr><td>${data[i].date}</td><td>AM</td><td>${data[i].report.am.conditions}</td><td>${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
         }
-        return tableStart + tableRows + tableEnd;
+        let content = tableStart + tableRows + tableEnd;
+        document.getElementById("forecast").insertAdjacentHTML("beforeend", content);
     }
-
-    //Add the forecast in a table to the page
-    let addForecast = (data) => {
-        let content = formatter(data);
-        surf.insertAdjacentHTML("beforeend", content);
-    }
-
-    //Call the forecast endpoint and add the table to the page
-    let forecast = (url) => {
+    //Call the forecast endpoint
+    let getForecast = (url) => {
         let qs = window.location.search.substring(0);
         if (qs === "?kc=test") {
             getUrl(url + qs);
@@ -108,25 +88,46 @@
             getUrl(url, addForecast);
         }
     }
-
-    //Used to attach the forecast() to event handlers
-    let forecastHandler = () => {
-        forecast(fURL);
-    };
-
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h3>Buoys</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
+        let content = `<h3>Stn 142</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
         document.getElementById('conditions').innerHTML = content;
         loader[0].style.display = "none";
     }
-
     //Call the buoy endpoint and add the buoy data to the page
-    let conditions = (url) => {
+    let getConditions = (url) => {
         getUrl(url, addConditions);
     }
-
+    //Add the tide data to the page
+    let addTides = (data) => {
+        //format the tide chart
+        let tableStart = `<table class="col m12 highlight responsive-table" id="tideTable"><thead><tr><td>Time</td><td>Predicted</td><td>Low/High</td></tr></thead>`;
+        let tableRows = ``;
+        let tableEnd = `</tbody></table>`;
+        let length = data.predictions.length;
+        for (let i = 0; i < length; i++) {
+            tableRows += `<tr><td>${data.predictions[i].t}</td><td>${(data.predictions[i].v)} ft</td><td>${data.predictions[i].type}</td></tr>`;
+        }
+        let tideChart = tableStart + tableRows + tableEnd;
+        //Add tide chart to div
+        document.getElementById('tides').insertAdjacentHTML("beforeend", tideChart);
+    }
+    //Call the tides endpoint and add the tide data to the page
+    let getTides = (url) => {
+        getUrl(url, addTides);
+    }
+    //Easter egg
+    let love = () => {
+        let special = document.getElementById("l");
+        if (!special.classList.contains("shown")) {
+            special.innerHTML = "I love you Kim!";
+            special.classList.add("shown");
+        } else {
+            special.innerHTML = "";
+            special.classList.remove("shown");
+        }
+    }
     //push to data layer
     jtokib.push({
         "item": item
@@ -135,8 +136,12 @@
     checkMode();
     //echo item to page
     printItem(item);
+    //get forecast
+    getForecast(fURL);
     //get buoy data
-    conditions(bURL);
+    getConditions(bURL);
+    //get tide data
+    getTides(tURL);
     //add copyright year
     document.getElementById("year").innerHTML = year;
     //add click handler to support dark-mode
@@ -145,9 +150,7 @@
     document.getElementById("k").addEventListener("mousedown", love);
     //load after DCL
     document.addEventListener('DOMContentLoaded', function () {
-        //Load forecast
-        forecastHandler();
-        //Lazyload images
+        //Lazyload images and iframes
         var lazyImages = [].slice.call(document.querySelectorAll(".lazy"));
         lazyImages.forEach((x) => {
             x.src = x.dataset.src
@@ -159,6 +162,6 @@
         M.Parallax.init(parallaxEl);
         //tabs
         var tabsEl = document.querySelector('.tabs');
-        var tabInstance = M.Tabs.init(tabsEl);
+        M.Tabs.init(tabsEl);
     });
 })();
