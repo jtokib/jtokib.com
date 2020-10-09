@@ -91,7 +91,7 @@
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h3>Stn 142</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
+        let content = `<h3>SF Buoy</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
         document.getElementById('conditions').innerHTML = content;
         loader[0].style.display = "none";
     }
@@ -102,12 +102,12 @@
     //Add the tide data to the page
     let addTides = (data) => {
         //format the tide chart
-        let tableStart = `<table class="col m12 highlight responsive-table" id="tideTable"><thead><tr><td>Time</td><td>Predicted</td><td>Low/High</td></tr></thead>`;
+        let tableStart = `<table class="col m12 highlight" id="tideTable"><thead><tr><td>Date & Time</td><td>Predicted</td><td>Low/High</td></tr></thead>`;
         let tableRows = ``;
         let tableEnd = `</tbody></table>`;
         let length = data.predictions.length;
         for (let i = 0; i < length; i++) {
-            tableRows += `<tr><td>${data.predictions[i].t}</td><td>${(data.predictions[i].v)} ft</td><td>${data.predictions[i].type}</td></tr>`;
+            tableRows += `<tr><td>${(data.predictions[i].t).slice(5)}</td><td>${(data.predictions[i].v)} ft</td><td>${data.predictions[i].type}</td></tr>`;
         }
         let tideChart = tableStart + tableRows + tableEnd;
         //Add tide chart to div
