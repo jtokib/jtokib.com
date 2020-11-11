@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["rabbit", "monsta killa", "sad panda", "punk ass bitch", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
+    let arr = ["rabbit", "monsta killa", "sad panda", "lamp shade", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
     let wait = 250;
@@ -119,9 +119,10 @@
     }
     //Easter egg
     let love = () => {
+        var m = String.fromCharCode(73, 32, 76, 79, 86, 69, 32, 89, 79, 85, 32, 75, 73, 77, 33);
         let special = document.getElementById("l");
         if (!special.classList.contains("shown")) {
-            special.innerHTML = "I love you Kim!";
+            special.innerHTML = m;
             special.classList.add("shown");
         } else {
             special.innerHTML = "";
