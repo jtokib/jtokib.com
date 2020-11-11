@@ -1,5 +1,5 @@
 (() => {
-    let arr = ["rabbit", "monsta killa", "sad panda", "punk ass bitch", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
+    let arr = ["rabbit", "monsta killa", "sad panda", "lamp shade", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
     let rando = Math.floor(Math.random() * arr.length);
     let item = arr[rando];
     let wait = 250;
