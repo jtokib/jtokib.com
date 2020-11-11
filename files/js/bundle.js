@@ -119,9 +119,10 @@
     }
     //Easter egg
     let love = () => {
+        var m = String.fromCharCode(73, 32, 76, 79, 86, 69, 32, 89, 79, 85, 32, 75, 73, 77, 33);
         let special = document.getElementById("l");
         if (!special.classList.contains("shown")) {
-            special.innerHTML = "I love you Kim!";
+            special.innerHTML = m;
             special.classList.add("shown");
         } else {
             special.innerHTML = "";
