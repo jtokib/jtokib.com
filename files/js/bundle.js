@@ -149,6 +149,14 @@
     document.getElementById("toggle").addEventListener("mousedown", toggleMode);
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
+    //magic 8 ball
+    document.querySelector("#decide").addEventListener("click", function () {
+        var random = Math.random();
+        var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
+        alert(results);
+        this.style.display = "none";
+        document.getElementById('magic').innerText = results;
+    });
     //load after DCL
     document.addEventListener('DOMContentLoaded', function () {
         //Lazyload images and iframes
