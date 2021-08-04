@@ -150,7 +150,7 @@
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
     //magic 8 ball
-    document.querySelector("#decide").addEventListener("click", function () {
+    document.querySelector("#decide").addEventListener("mousedown", function () {
         var random = Math.random();
         var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
         alert(results);
