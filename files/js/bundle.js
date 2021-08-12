@@ -130,7 +130,7 @@
         }
     }
     //push to data layer
-    jtokib.push({
+    window.jtokib.push({
         "item": item
     });
     //check dark-mode setting
@@ -153,7 +153,9 @@
     document.querySelector("#decide").addEventListener("mousedown", function () {
         var random = Math.random();
         var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
-        alert(results);
+        window.jtokib.push({
+            "answer": results,
+        });
         this.style.display = "none";
         document.getElementById('magic').innerText = results;
     });
