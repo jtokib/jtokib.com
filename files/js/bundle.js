@@ -10,7 +10,7 @@
     const itemDiv = document.getElementById("items");
     const mode = localStorage.getItem("dm");
     const loader = document.getElementsByClassName("progress");
-    const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
+    //const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
     const tURL = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=today&datum=MLLW&station=9414290&time_zone=lst_ldt&units=english&interval=hilo&format=json";
 
@@ -68,26 +68,26 @@
             })
     }
     //Format results of forecast data and add to page
-    let addForecast = (data) => {
-        let tableStart = `<table class="col m12 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
-        let tableRows = ``;
-        let tableEnd = `</tbody></table>`;
-        let length = Object.keys(data).length;
-        for (let i = 0; i < length; i++) {
-            tableRows += `<tr><td>${data[i].date}</td><td>AM</td><td>${data[i].report.am.conditions}</td><td>${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
-        }
-        let content = tableStart + tableRows + tableEnd;
-        document.getElementById("forecast").insertAdjacentHTML("beforeend", content);
-    }
-    //Call the forecast endpoint
-    let getForecast = (url) => {
-        let qs = window.location.search.substring(0);
-        if (qs === "?kc=test") {
-            getUrl(url + qs);
-        } else {
-            getUrl(url, addForecast);
-        }
-    }
+    // let addForecast = (data) => {
+    //     let tableStart = `<table class="col m12 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
+    //     let tableRows = ``;
+    //     let tableEnd = `</tbody></table>`;
+    //     let length = Object.keys(data).length;
+    //     for (let i = 0; i < length; i++) {
+    //         tableRows += `<tr><td>${data[i].date}</td><td>AM</td><td>${data[i].report.am.conditions}</td><td>${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
+    //     }
+    //     let content = tableStart + tableRows + tableEnd;
+    //     document.getElementById("forecast").insertAdjacentHTML("beforeend", content);
+    // }
+    // //Call the forecast endpoint
+    // let getForecast = (url) => {
+    //     let qs = window.location.search.substring(0);
+    //     if (qs === "?kc=test") {
+    //         getUrl(url + qs);
+    //     } else {
+    //         getUrl(url, addForecast);
+    //     }
+    // }
     //Add the buoy data to the page
     let addConditions = (data) => {
         let ft = (data.Hs * 3.281).toFixed(2);
@@ -129,6 +129,16 @@
             special.classList.remove("shown");
         }
     }
+    //Magic 8 ball
+    let magic8b = () => {
+        var random = Math.random();
+        var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
+        window.jtokib.push({
+            "answer": results,
+        });
+        this.style.display = "none";
+        document.getElementById('magic').innerText = results;
+    }
     //push to data layer
     window.jtokib.push({
         "item": item
@@ -137,8 +147,8 @@
     checkMode();
     //echo item to page
     printItem(item);
-    //get forecast
-    getForecast(fURL);
+    // //get forecast
+    // getForecast(fURL);
     //get buoy data
     getConditions(bURL);
     //get tide data
@@ -150,15 +160,7 @@
     //add easter egg
     document.getElementById("k").addEventListener("mousedown", love);
     //magic 8 ball
-    document.querySelector("#decide").addEventListener("mousedown", function () {
-        var random = Math.random();
-        var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
-        window.jtokib.push({
-            "answer": results,
-        });
-        this.style.display = "none";
-        document.getElementById('magic').innerText = results;
-    });
+    document.querySelector("#decide").addEventListener("mousedown", magic8b);
     //load after DCL
     document.addEventListener('DOMContentLoaded', function () {
         //Lazyload images and iframes
