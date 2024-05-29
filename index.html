@@ -4,16 +4,17 @@
 <head>
     <meta charset="utf-8">
     <title>jTokiB | Things Toki Burke Is Not</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="jTokiB Dot Com.">
+    <meta name="author" content="Toki Burke">
+
     <link rel="preconnect" href="https://source.unsplash.com/">
     <link rel="preconnect" href="https://images.unsplash.com/">
     <link rel="preconnect" href="http://cdip.ucsd.edu/">
     <link rel="preconnect" href="https://us-central1-jtokib.cloudfunctions.net">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="files/css/styles.css">
-    <script src="files/js/bundle.js" defer></script>
-    <meta name="description" content="jTokiB Dot Com.">
-    <meta name="author" content="Toki Burke">
+
     <link rel="apple-touch-icon" sizes="57x57" href="files/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="files/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="files/images/favicon/apple-icon-72x72.png">
@@ -31,34 +32,36 @@
     <meta name="msapplication-TileColor" content="#000">
     <meta name="msapplication-TileImage" content="files/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#000">
+
     <script type='application/ld+json'>
-    {
-        "@context": "https://schema.org/",
-        "@type": "WebSite",
-        "name": "Things Toki Burke Is Not",
-        "url": "https://jtokib.com",
-        "about": {
-            "@type": "Person",
-            "name": "Toki Burke",
-            "sameAs": [
-            "https://github.com/jtokib",
-            "https://jtokib.github.io/jtokib.com/",
-            "https://www.linkedin.com/in/toki-burke"
-            ]
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "name": "Things Toki Burke Is Not",
+            "url": "https://jtokib.com",
+            "about": {
+                "@type": "Person",
+                "name": "Toki Burke",
+                "sameAs": [
+                    "https://github.com/jtokib",
+                    "https://jtokib.github.io/jtokib.com/",
+                    "https://www.linkedin.com/in/toki-burke"
+                ]
+            }
         }
-    }
     </script>
+
     <script>
-        jtokib = [];
+        var jtokib = [];
     </script>
     <script>
         (function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            w[l] = w[l] || [];
+            w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'jtokib', 'GTM-TM7DV4L');
     </script>
 </head>
@@ -67,10 +70,12 @@
     <!-- <header class="container">
         <h1 class="center-align">Toki is not a... <span id="items"></span></h1>
     </header> -->
+
     <div class="parallax-container">
         <div class="parallax"><img class="lazy" src="" data-src="https://source.unsplash.com/daily/?surfing,ocean"
                 alt="Random image of surfing and the ocean from Unsplash"></div>
     </div>
+
     <main class="container row z-depth-5">
         <div class="row">
             <div class="col s12 offset-m3 m6">
@@ -98,7 +103,7 @@
                         <li class="tab col m3"><a href="#nowcast">Nowcast</a></li>
                         <li class="tab col m3"><a href="#sfbuoy">Buoy</a></li>
                         <li class="tab col m3"><a href="#winds">Winds</a></li>
-                        <!-- li class="tab col m3"><a href="#forecast">Forecast</a></li -->
+                        <!-- <li class="tab col m3"><a href="#forecast">Forecast</a></li> -->
                         <li class="tab col m3"><a href="#tides">Tides</a></li>
                     </ul>
                 </div>
@@ -126,9 +131,9 @@
                     <p>Data courtesy of <a href="https://www.windy.com/?37.748,-122.513,11"
                             title="Windy.com - San Francisco Winds" target="_blank" rel="noopener">Windy.com</a></p>
                 </div>
-                <!-- div id="forecast" class="col s12 offset-m3 m6 custom-tab">
+                <!-- <div id="forecast" class="col s12 offset-m3 m6 custom-tab">
                     <p>Near-Term Forecast</p>
-                </div -->
+                </div> -->
                 <div id="tides" class="col s12 offset-m3 m6 custom-tab">
                     <p>Today's tides</p>
                 </div>
@@ -136,16 +141,19 @@
         </div>
         <p class="col offset-m3">See ya in the water.</p>
     </main>
+
     <div class="parallax-container">
         <div class="parallax"><img class="lazy" src="" data-src="https://source.unsplash.com/daily/?surfing,ocean"
                 alt="Random image of surfing and the ocean from Unsplash"></div>
     </div>
+
     <div id="l" class="container"></div>
+
     <footer class="container">
         <p class="center-align">Things <span id="k">Toki Burke</span> Is Not | &copy;<span
-                id="year"></span>&nbsp;|&nbsp;<span id="toggle">Toggle
-                Dark Mode</span></p>
+                id="year"></span>&nbsp;|&nbsp;<span id="toggle">Toggle Dark Mode</span></p>
     </footer>
+
     <script>
         if (navigator.userAgent.indexOf('msie') > -1 || navigator.userAgent.indexOf('Trident') > -1) {
             document.querySelector('body').innerHTML = "<p>Unsupported browser. Please try visiting this site on Firefox, Opera, Safari, Edge, Vivaldi, Epic or Brave.</p>";

@@ -1,126 +1,98 @@
 (() => {
-    let arr = ["rabbit", "monsta killa", "sad panda", "lamp shade", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
-    let rando = Math.floor(Math.random() * arr.length);
-    let item = arr[rando];
-    let wait = 250;
+    const arr = ["rabbit", "monsta killa", "sad panda", "lamp shade", "kook", "jello shot", "bird", "sea anemone", "designer handbag", "pink manatee", "cow", "cheap whiskey", "depressed pirate", "fake zombie", "drunk koala", "part-time model", "friendly ballerina", "fashionista"];
+    const rando = Math.floor(Math.random() * arr.length);
+    const item = arr[rando];
+    const wait = 250;
     let i = 0;
-    let d = new Date();
-    let year = d.getFullYear();
+
+    const d = new Date();
+    const year = d.getFullYear();
+
     const body = document.body;
-    const itemDiv = document.getElementById("items");
+    const itemDiv = document.querySelector("#items");
     const mode = localStorage.getItem("dm");
     const loader = document.getElementsByClassName("progress");
-    //const fURL = "https://us-central1-jtokib.cloudfunctions.net/forecaster";
+
     const bURL = "https://us-central1-jtokib.cloudfunctions.net/buoy";
     const tURL = "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter?product=predictions&application=NOS.COOPS.TAC.WL&date=today&datum=MLLW&station=9414290&time_zone=lst_ldt&units=english&interval=hilo&format=json";
 
-    //Print out random string to page
-    let printItem = (str) => {
+    // Print out random string to page
+    const printItem = (str) => {
         if (navigator.userAgent.includes("Googlebot")) {
             itemDiv.innerHTML = item;
         } else if (itemDiv !== null) {
-            setTimeout(function () {
+            setTimeout(() => {
                 itemDiv.innerHTML += str.charAt(i).toUpperCase();
                 if (i < str.length) {
-                    printItem(str);
                     i++;
-                } else {
-                    itemDiv.innerHTML;
+                    printItem(str);
                 }
-            }, wait)
-        } else {
-            return;
+            }, wait);
         }
-    }
-    //Toggle dark-mode
-    let toggleMode = () => {
+    };
+
+    // Toggle dark mode
+    const toggleMode = () => {
         body.classList.toggle("dark-mode");
-        if (body.classList.contains("dark-mode")) {
-            localStorage.dm = "1";
-        } else {
-            localStorage.dm = "0";
-        }
-    }
-    //Check if dark-mode is enabled on load
-    let checkMode = () => {
-        if (mode === "0") {
-            body.classList.remove("dark-mode");
-        }
+        localStorage.setItem("dm", body.classList.contains("dark-mode") ? "1" : "0");
+    };
+
+    // Check if dark mode is enabled on load
+    const checkMode = () => {
         if (mode === "1") {
             body.classList.add("dark-mode");
+        } else {
+            body.classList.remove("dark-mode");
         }
-    }
-    //Helper function to make a GET request to a URL with optional callback to manipulate data as needed
-    let getUrl = (url, callback = false) => {
-        fetch(url, {
-                method: "GET",
-                mode: "cors"
-            })
-            .then((res) => {
-                return res.json();
-            }).then((data) => {
+    };
+
+    // Helper function to make a GET request to a URL with optional callback to manipulate data as needed
+    const getUrl = (url, callback) => {
+        fetch(url, { method: "GET", mode: "cors" })
+            .then((res) => res.json())
+            .then((data) => {
                 if (callback) {
-                    callback(data)
+                    callback(data);
                 }
             })
             .catch((e) => {
-                console.log("Fetch failed " + e);
-            })
-    }
-    //Format results of forecast data and add to page
-    // let addForecast = (data) => {
-    //     let tableStart = `<table class="col m12 highlight responsive-table" id="forecastTable"><thead><tr><td>Date</td><td>Time</td><td>Conditions</td><td>Size</td></tr></thead>`;
-    //     let tableRows = ``;
-    //     let tableEnd = `</tbody></table>`;
-    //     let length = Object.keys(data).length;
-    //     for (let i = 0; i < length; i++) {
-    //         tableRows += `<tr><td>${data[i].date}</td><td>AM</td><td>${data[i].report.am.conditions}</td><td>${data[i].report.am.size}</td></tr><tr><td>${data[i].date}</td><td>PM</td><td>${data[i].report.pm.conditions}</td><td>${data[i].report.pm.size}</td></tr>`
-    //     }
-    //     let content = tableStart + tableRows + tableEnd;
-    //     document.getElementById("forecast").insertAdjacentHTML("beforeend", content);
-    // }
-    // //Call the forecast endpoint
-    // let getForecast = (url) => {
-    //     let qs = window.location.search.substring(0);
-    //     if (qs === "?kc=test") {
-    //         getUrl(url + qs);
-    //     } else {
-    //         getUrl(url, addForecast);
-    //     }
-    // }
-    //Add the buoy data to the page
-    let addConditions = (data) => {
-        let ft = (data.Hs * 3.281).toFixed(2);
-        let content = `<h3>SF Buoy</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
-        document.getElementById('conditions').innerHTML = content;
+                console.error("Fetch failed", e);
+            });
+    };
+
+    // Add the buoy data to the page
+    const addConditions = (data) => {
+        const ft = (data.Hs * 3.281).toFixed(2);
+        const content = `<h3>SF Buoy</h3><p>${ft}ft @ ${data.Tp}s ${data.Dp}&deg;</p><a style="display:none" href="http://cdip.ucsd.edu/m/products/?stn=142p1" title="SF Bar Buoy" target="_blank" rel="noopener">CDIP 142</a>`;
+        document.querySelector('#conditions').innerHTML = content;
         loader[0].style.display = "none";
-    }
-    //Call the buoy endpoint and add the buoy data to the page
-    let getConditions = (url) => {
+    };
+
+    // Call the buoy endpoint and add the buoy data to the page
+    const getConditions = (url) => {
         getUrl(url, addConditions);
-    }
-    //Add the tide data to the page
-    let addTides = (data) => {
-        //format the tide chart
-        let tableStart = `<table class="col m12 highlight" id="tideTable"><thead><tr><td>Date & Time</td><td>Predicted</td><td>Low/High</td></tr></thead>`;
-        let tableRows = ``;
-        let tableEnd = `</tbody></table>`;
-        let length = data.predictions.length;
-        for (let i = 0; i < length; i++) {
-            tableRows += `<tr><td>${(data.predictions[i].t).slice(5)}</td><td>${(data.predictions[i].v)} ft</td><td>${data.predictions[i].type}</td></tr>`;
-        }
-        let tideChart = tableStart + tableRows + tableEnd;
-        //Add tide chart to div
-        document.getElementById('tides').insertAdjacentHTML("beforeend", tideChart);
-    }
-    //Call the tides endpoint and add the tide data to the page
-    let getTides = (url) => {
+    };
+
+    // Add the tide data to the page
+    const addTides = (data) => {
+        const tableStart = `<table class="col m12 highlight" id="tideTable"><thead><tr><td>Date & Time</td><td>Predicted</td><td>Low/High</td></tr></thead>`;
+        const tableRows = data.predictions.map(prediction => 
+            `<tr><td>${prediction.t.slice(5)}</td><td>${prediction.v} ft</td><td>${prediction.type}</td></tr>`
+        ).join('');
+        const tableEnd = `</tbody></table>`;
+        const tideChart = tableStart + tableRows + tableEnd;
+        document.querySelector('#tides').insertAdjacentHTML("beforeend", tideChart);
+    };
+
+    // Call the tides endpoint and add the tide data to the page
+    const getTides = (url) => {
         getUrl(url, addTides);
-    }
-    //Easter egg
-    let love = () => {
-        var m = String.fromCharCode(73, 32, 76, 79, 86, 69, 32, 89, 79, 85, 32, 75, 73, 77, 33);
-        let special = document.getElementById("l");
+    };
+
+    // Easter egg
+    const love = () => {
+        const m = String.fromCharCode(73, 32, 76, 79, 86, 69, 32, 89, 79, 85, 32, 75, 73, 77, 33);
+        const special = document.querySelector("#l");
         if (!special.classList.contains("shown")) {
             special.innerHTML = m;
             special.classList.add("shown");
@@ -128,53 +100,57 @@
             special.innerHTML = "";
             special.classList.remove("shown");
         }
-    }
-    //Magic 8 ball
-    let magic8b = () => {
-        var random = Math.random();
-        var results = Math.floor(random * 2) === 0 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
-        window.jtokib.push({
-            "answer": results,
-        });
-        this.style.display = "none";
-        document.getElementById('magic').innerText = results;
-    }
-    //push to data layer
-    window.jtokib.push({
-        "item": item
-    });
-    //check dark-mode setting
+    };
+
+    // Magic 8 ball
+    const magic8b = () => {
+        const results = Math.random() < 0.5 ? "Yeaaa brah!" : "Maybe tomorrow kook!";
+        window.jtokib.push({ "answer": results });
+        document.querySelector("#decide").style.display = "none";
+        document.querySelector('#magic').innerText = results;
+    };
+
+    // Push to data layer
+    window.jtokib.push({ "item": item });
+
+    // Check dark-mode setting
     checkMode();
-    //echo item to page
+
+    // Echo item to page
     printItem(item);
-    // //get forecast
-    // getForecast(fURL);
-    //get buoy data
+
+    // Get buoy data
     getConditions(bURL);
-    //get tide data
+
+    // Get tide data
     getTides(tURL);
-    //add copyright year
-    document.getElementById("year").innerHTML = year;
-    //add click handler to support dark-mode
-    document.getElementById("toggle").addEventListener("mousedown", toggleMode);
-    //add easter egg
-    document.getElementById("k").addEventListener("mousedown", love);
-    //magic 8 ball
+
+    // Add copyright year
+    document.querySelector("#year").innerHTML = year;
+
+    // Add click handler to support dark-mode
+    document.querySelector("#toggle").addEventListener("mousedown", toggleMode);
+
+    // Add easter egg
+    document.querySelector("#k").addEventListener("mousedown", love);
+
+    // Magic 8 ball
     document.querySelector("#decide").addEventListener("mousedown", magic8b);
-    //load after DCL
-    document.addEventListener('DOMContentLoaded', function () {
-        //Lazyload images and iframes
-        var lazyImages = [].slice.call(document.querySelectorAll(".lazy"));
-        lazyImages.forEach((x) => {
-            x.src = x.dataset.src
-            x.classList.remove("lazy");
-        })
-        //Intialize Materialize Effects
-        //parallax
-        var parallaxEl = document.querySelectorAll('.parallax');
+
+    // Load after DCL
+    document.addEventListener('DOMContentLoaded', () => {
+        // Lazyload images and iframes
+        const lazyImages = Array.from(document.querySelectorAll(".lazy"));
+        lazyImages.forEach((img) => {
+            img.src = img.dataset.src;
+            img.classList.remove("lazy");
+        });
+
+        // Initialize Materialize Effects
+        const parallaxEl = document.querySelectorAll('.parallax');
         M.Parallax.init(parallaxEl);
-        //tabs
-        var tabsEl = document.querySelector('.tabs');
+
+        const tabsEl = document.querySelector('.tabs');
         M.Tabs.init(tabsEl);
     });
 })();

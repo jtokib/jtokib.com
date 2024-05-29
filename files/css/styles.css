@@ -23,7 +23,7 @@ a {
 main.container {
     margin-top: -15em;
     background-color: #fff;
-    border-radius: .5em;
+    border-radius: 0.5em;
 }
 
 thead {
@@ -34,13 +34,10 @@ thead {
     font-size: 9em;
 }
 
-#toggle:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
+#toggle:hover,
 a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* Override tab styles */
@@ -56,7 +53,7 @@ a:hover {
     border-radius: 1px;
 }
 
-.tab:hover {
+.tabs .tab:hover {
     background-color: #649094;
 }
 
@@ -82,13 +79,12 @@ a:hover {
     color: white;
 }
 
-.dark-mode>.container {
+.dark-mode .container {
     background-color: black;
     color: white;
 }
 
-
-.dark-mode>main.container {
+.dark-mode main.container {
     background-color: white;
     color: black;
 }
@@ -122,7 +118,6 @@ a:hover {
     }
 
     #winds iframe {
-        width: 100%;
         height: 350px;
     }
 }
