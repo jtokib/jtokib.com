@@ -1,4 +1,4 @@
 This is a Brave Creators publisher verification file.
 
 Domain: jtokib.com
-Token: dd36adf6323f9fa250a5c5e496180c8ac1c5ba526a30fc521f77c10b04b38b4c
+Token: cd320f726f3cf8f95198ca30c500ee37d07ddb6a929f349eb09681bdd90c5cbe
