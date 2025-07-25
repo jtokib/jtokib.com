@@ -7,32 +7,45 @@ export default function Home() {
       <Navigation />
       
       <main>
+        <div style={{textAlign: 'center', padding: '1rem', background: 'linear-gradient(45deg, #FFD700, #FF1493)', color: 'white', fontFamily: 'Comic Sans MS', fontWeight: 'bold', fontSize: '1.2rem', animation: 'blink 1s infinite'}}>
+          🚧 UNDER CONSTRUCTION 🚧 BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 🚧 LAST UPDATED: 12/31/1995 🚧
+        </div>
+        
+        <div style={{textAlign: 'center', padding: '0.5rem', background: '#000080', color: '#00FF00', fontFamily: 'Comic Sans MS', fontSize: '1rem'}}>
+          👁️ VISITOR COUNT: 000042069 👁️ YOU ARE VISITOR #42070! 👁️ 
+        </div>
+
         <section id="home" className="hero">
           <div className="hero-content">
             <div className="hero-text">
-              <h1>Hi, I&apos;m <span className="highlight">Toki Burke</span></h1>
-              <h2>AI-Driven Marketing Technologist & Digital Innovator</h2>
+              <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
+              <h2>⚡ RADICAL WEB WIZARD & DIGITAL SURF MASTER ⚡</h2>
               <p className="hero-description">
-                I lead MarTech initiatives, applying AI and code to scale digital outcomes. 
-                I&apos;m obsessed with product-led growth, automated personalization, and building 
-                elegant mobile experiences. Outside work? I surf breaks across the Pacific, 
-                repair surfboards, and cultivate California native plants with precision.
+                🤖 Greetings, fellow netizen! 🤖 I&apos;m the ultimate MarTech ninja, coding the future 
+                with AI superpowers and sick web skills! When I&apos;m not hacking the matrix or building 
+                tubular mobile apps, you&apos;ll find me shredding gnarly waves across the Pacific Ocean! 
+                🏄‍♂️ I also grow wicked cool California plants and fix surfboards like a total boss! 
+                Welcome to my digital domain! ✨
               </p>
               <div className="hero-buttons">
-                <a href="#projects" className="btn btn-primary">View My Work</a>
-                <a href="#ai-demo" className="btn btn-secondary">Try AI Demo</a>
+                <a href="#projects" className="btn btn-primary">🔥 CHECK OUT MY RAD PROJECTS! 🔥</a>
+                <a href="#ai-demo" className="btn btn-secondary">🤖 TRY MY SICK AI DEMO! 🤖</a>
               </div>
             </div>
             <div className="hero-image">
               <div className="profile-card">
                 <div className="profile-placeholder">
-                  🤖🏄‍♂️
+                  🤖💻🏄‍♂️✨
+                </div>
+                <div style={{marginBottom: '1rem', color: 'white', fontFamily: 'Comic Sans MS', fontSize: '1.1rem', fontWeight: 'bold'}}>
+                  ⚡ WEBMASTER TOKI ⚡
                 </div>
                 <div className="floating-tags">
-                  <span className="tag">AI Expert</span>
-                  <span className="tag">MarTech Lead</span>
-                  <span className="tag">Cloud Architect</span>
-                  <span className="tag">Pacific Surfer</span>
+                  <span className="tag">🚀 CYBER WIZARD</span>
+                  <span className="tag">🌊 WAVE RIDER</span>
+                  <span className="tag">☁️ CLOUD NINJA</span>
+                  <span className="tag">🤖 AI GURU</span>
+                  <span className="tag">🌱 PLANT MASTER</span>
                 </div>
               </div>
             </div>
@@ -41,60 +54,74 @@ export default function Home() {
 
         <section id="about" className="about">
           <div className="container">
-            <h2>About Me</h2>
+            <h2>🎯 ABOUT THE WEBMASTER 🎯</h2>
+            <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.3)', border: '3px dashed #FF1493', fontFamily: 'Comic Sans MS'}}>
+              <strong>📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧</strong>
+            </div>
             <div className="about-content">
               <div className="about-text">
                 <p>
-                  I&apos;m a Marketing Technology Team Lead who blends strategic thinking with 
-                  technical execution to drive digital innovation. My expertise spans cloud 
-                  platforms (Google Firebase, Google Cloud, Supabase), modern development tools 
-                  (GitHub, Vercel, Lovable), and AI platforms (Claude Code, ChatGPT, Meta AI).
+                  🌐 Greetings from cyberspace! 🌐 I&apos;m your friendly neighborhood MarTech wizard, 
+                  blending wicked coding skills with radical digital innovation! My cyber toolkit includes 
+                  the most tubular cloud platforms (Google Firebase, Google Cloud, Supabase), cutting-edge 
+                  development tools (GitHub, Vercel, Lovable), and mind-blowing AI platforms (Claude Code, 
+                  ChatGPT, Meta AI) that are totally off the hook! 🚀
                 </p>
                 <p>
-                  My technical foundation includes full-stack web development (HTML, CSS, JavaScript), 
-                  marketing technology platforms (Tealium, Sitecore, WordPress, Wix), analytics and tracking 
-                  (Google Tag Manager, Google Analytics, Facebook Pixel, Facebook CAPI), and infrastructure 
-                  (Akamai, Cloudflare, Rackspace). I enjoy creating digital solutions that bridge technology and creativity.
+                  💾 My technical arsenal is loaded with full-stack web wizardry (HTML, CSS, JavaScript), 
+                  gnarly marketing tech platforms (Tealium, Sitecore, WordPress, Wix), and sick analytics 
+                  tools (Google Tag Manager, Google Analytics, Facebook Pixel, Facebook CAPI). Plus I&apos;ve 
+                  got mad skills with infrastructure systems (Akamai, Cloudflare, Rackspace) that keep the 
+                  digital world spinning! I live to create cyber solutions that are both functional AND totally cool! ✨
                 </p>
                 <p>
-                  When I&apos;m not architecting marketing technology solutions, you&apos;ll find me 
-                  surfing breaks across the Pacific—from Washington and Oregon down the California coast, 
-                  the North Shore of Oahu, the reefs of Okinawa, the points of Peru, and New Zealand&apos;s 
-                  powerful swells. I repair surfboards as a meditative hobby and tend to my California 
-                  native plant garden, with a particular fondness for Ceanothus and Ray Hartman cultivars.
+                  🏄‍♂️ When I&apos;m not coding up a storm or building the next killer app, you&apos;ll catch me 
+                  riding the most epic waves across the Pacific Ocean! From the cold swells of Washington and Oregon 
+                  to the tropical breaks of Hawaii&apos;s North Shore, from Japan&apos;s reef breaks to Peru&apos;s perfect 
+                  points, and New Zealand&apos;s powerful southern swells - I&apos;ve surfed them all! 🌊 I also fix 
+                  surfboards like a zen master and grow the most righteous California native plants (especially 
+                  my prized Ceanothus collection)! 🌱
                 </p>
                 <div className="skills">
-                  <h3>What I Do</h3>
+                  <h3>⚡ MY CYBER POWERS ⚡</h3>
                   <div className="skill-grid">
                     <div className="skill-item">
-                      <span className="skill-icon">🚀</span>
-                      <h4>Marketing Technology</h4>
-                      <p>Tealium, Sitecore, WordPress, Google Analytics, Facebook CAPI, GTM</p>
+                      <span className="skill-icon">🚀💥</span>
+                      <h4>MarTech Wizardry</h4>
+                      <p>Tealium sorcery, Sitecore mastery, WordPress magic, Google Analytics domination, Facebook CAPI hacking, GTM ninja skills!</p>
                     </div>
                     <div className="skill-item">
-                      <span className="skill-icon">🤖</span>
-                      <h4>AI & Cloud Platforms</h4>
-                      <p>Claude Code, ChatGPT, Meta AI, Firebase, Google Cloud, Supabase</p>
+                      <span className="skill-icon">🤖🧠</span>
+                      <h4>AI & Cloud Supremacy</h4>
+                      <p>Claude Code genius, ChatGPT whispering, Meta AI commanding, Firebase ruling, Google Cloud conquering, Supabase mastering!</p>
                     </div>
                     <div className="skill-item">
-                      <span className="skill-icon">📱</span>
-                      <h4>Development & Infrastructure</h4>
-                      <p>HTML/CSS/JS, GitHub, Vercel, Akamai, Cloudflare, Android development</p>
+                      <span className="skill-icon">💻⚡</span>
+                      <h4>Code & Infrastructure Domination</h4>
+                      <p>HTML/CSS/JS excellence, GitHub mastery, Vercel deployment, Akamai acceleration, Cloudflare protection, Android creation!</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="about-sidebar">
                 <div className="fun-facts">
-                  <h3>Fun Facts</h3>
+                  <h3>🌟 TOTALLY RADICAL FACTS! 🌟</h3>
+                  <div style={{marginBottom: '1rem', textAlign: 'center', background: 'rgba(255,20,147,0.3)', padding: '0.5rem', border: '2px solid #FFD700', fontFamily: 'Comic Sans MS'}}>
+                    ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
+                  </div>
                   <ul>
-                    <li>🌊 Surfed breaks across WA, OR, CA, HI, Okinawa, Peru, and New Zealand</li>
-                    <li>🏄‍♂️ Repair surfboards as a meditative hobby between coding sessions</li>
-                    <li>🌼 Cultivate California natives, especially Ceanothus and Ray Hartman</li>
-                    <li>🔨 Tiled a full bathroom solo with handmade templates</li>
-                    <li>🎨 Design digital solutions that blend creativity with functionality</li>
-                    <li>🐕 Daily dog walks = brainstorming sessions for new features</li>
+                    <li>🌊 Gnarliest wave rider across WA, OR, CA, HI, Okinawa, Peru, and New Zealand!</li>
+                    <li>🏄‍♂️ Zen surfboard repair master between epic coding marathons!</li>
+                    <li>🌼 California native plant wizard (Ceanothus collection is LEGENDARY!)</li>
+                    <li>🔨 Bathroom tiling champion with handcrafted templates!</li>
+                    <li>🎨 Digital solution architect blending art with killer functionality!</li>
+                    <li>🐕 Daily dog walks = brainstorming sessions for world domination!</li>
+                    <li>💾 Started coding on a Commodore 64 (totally retro!)</li>
+                    <li>🌈 Favorite browser: Netscape Navigator 4.0!</li>
                   </ul>
+                  <div style={{marginTop: '1rem', textAlign: 'center', background: 'rgba(0,255,0,0.2)', padding: '0.5rem', border: '2px dashed #FF4500', fontFamily: 'Comic Sans MS', fontSize: '0.9rem'}}>
+                    📨 Want to be cyber friends? Email me! 📨
+                  </div>
                 </div>
               </div>
             </div>
@@ -103,83 +130,92 @@ export default function Home() {
 
         <section id="projects" className="projects">
           <div className="container">
-            <h2>Featured Projects</h2>
+            <h2>🚀 MY WICKED COOL PROJECTS 🚀</h2>
+            <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(0,255,255,0.3)', border: '4px double #FF1493', fontFamily: 'Comic Sans MS'}}>
+              <strong>⚡ CHECK OUT THESE TOTALLY TUBULAR CREATIONS! ⚡</strong><br/>
+              <span style={{fontSize: '0.9rem'}}>🌟 Featured on Yahoo! GeoCities Hall of Fame 🌟</span>
+            </div>
             <div className="projects-grid">
               <div className="project-card featured">
                 <div className="project-header">
-                  <h3>obsf.surf</h3>
-                  <span className="project-status">Featured Project</span>
+                  <h3>🌊 OBSF.SURF - THE ULTIMATE WAVE MACHINE! 🌊</h3>
+                  <span className="project-status">🏆 AWARD WINNER 🏆</span>
                 </div>
                 <p>
-                  Ocean Beach SF surf forecast dashboard built with HTML/CSS/JavaScript, 
-                  integrating NOAA and CDIP APIs. Deployed on Vercel with Cloudflare CDN. 
-                  Features real-time buoy data, wind analysis, and tide predictions 
-                  optimized for mobile surfers checking conditions at dawn.
+                  🏄‍♂️ THE MOST RADICAL SURF FORECAST SITE ON THE ENTIRE WORLD WIDE WEB! 🏄‍♂️ 
+                  Built with sick HTML/CSS/JavaScript wizardry and powered by gnarly NOAA and CDIP APIs! 
+                  Deployed with lightning-fast Vercel hosting and protected by Cloudflare&apos;s cyber shield! 
+                  Features real-time buoy data, wind analysis mastery, and tide predictions that are 
+                  totally dialed for dawn patrol warriors! This site is OFF THE HOOK! 🚀
                 </p>
                 <div className="project-tags">
-                  <span className="tag">JavaScript</span>
-                  <span className="tag">Vercel</span>
-                  <span className="tag">NOAA APIs</span>
-                  <span className="tag">Cloudflare</span>
+                  <span className="tag">⚡ JAVASCRIPT POWER</span>
+                  <span className="tag">🚀 VERCEL SPEED</span>
+                  <span className="tag">🌊 NOAA DATA</span>
+                  <span className="tag">☁️ CLOUDFLARE</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://obsf.surf" target="_blank" rel="noopener">Visit obsf.surf</a>
+                  <a href="https://obsf.surf" target="_blank" rel="noopener">🌊 SURF THE WEB! 🌊</a>
                 </div>
               </div>
 
               <div className="project-card">
                 <div className="project-header">
-                  <h3>Mobile App Portfolio</h3>
+                  <h3>📱 MOBILE APP EMPIRE 📱</h3>
                 </div>
                 <p>
-                  A collection of Android applications including Hydrate (water intake tracker), 
-                  TresMade (NBA three-point statistics), and productivity tools. Built with Java, 
-                  utilizing GitHub for version control and exploring mobile UX patterns 
-                  for data visualization and user engagement.
+                  🤖 A TOTALLY SICK COLLECTION OF ANDROID APPS THAT RULE THE DIGITAL WORLD! 🤖 
+                  Featuring Hydrate (the ultimate H2O tracking machine), TresMade (NBA stats domination), 
+                  and productivity tools that are absolutely OFF THE CHARTS! Crafted with Java mastery, 
+                  powered by GitHub version control wizardry, and featuring mobile UX patterns that 
+                  will blow your cyber mind! These apps are the FUTURE! ⚡
                 </p>
                 <div className="project-tags">
-                  <span className="tag">Android</span>
-                  <span className="tag">Java</span>
-                  <span className="tag">GitHub</span>
-                  <span className="tag">Mobile UX</span>
+                  <span className="tag">🤖 ANDROID POWER</span>
+                  <span className="tag">☕ JAVA MAGIC</span>
+                  <span className="tag">🐙 GITHUB MASTER</span>
+                  <span className="tag">📱 UX GENIUS</span>
                 </div>
                 <div className="project-links">
-                  <a href="https://github.com/jtokib" target="_blank" rel="noopener">View GitHub</a>
+                  <a href="https://github.com/jtokib" target="_blank" rel="noopener">🚀 CHECK THE CODE! 🚀</a>
                 </div>
               </div>
 
               <div className="project-card">
                 <div className="project-header">
-                  <h3>Marketing Technology Innovation</h3>
+                  <h3>🚀 MARTECH DOMINATION SYSTEM 🚀</h3>
                 </div>
                 <p>
-                  Architecting marketing technology solutions using Tealium for tag management, 
-                  Sitecore for content delivery, and Google Analytics with Facebook CAPI for 
-                  attribution. Integrating AI platforms like ChatGPT and Claude Code for 
-                  automated personalization and campaign optimization.
+                  💥 THE MOST RADICAL MARKETING TECHNOLOGY EMPIRE ON THE PLANET! 💥 
+                  Architecting cyber solutions with Tealium tag wizardry, Sitecore content mastery, 
+                  and Google Analytics plus Facebook CAPI for total digital attribution supremacy! 
+                  Powered by AI platforms like ChatGPT and Claude Code for automated personalization 
+                  that will REVOLUTIONIZE the marketing universe! This is the FUTURE OF ADVERTISING! ⚡
                 </p>
                 <div className="project-tags">
-                  <span className="tag">Tealium</span>
-                  <span className="tag">Sitecore</span>
-                  <span className="tag">Google Analytics</span>
-                  <span className="tag">Facebook CAPI</span>
+                  <span className="tag">🏷️ TEALIUM MAGIC</span>
+                  <span className="tag">🌐 SITECORE POWER</span>
+                  <span className="tag">📊 ANALYTICS MASTER</span>
+                  <span className="tag">📘 FACEBOOK NINJA</span>
                 </div>
               </div>
 
               <div className="project-card">
                 <div className="project-header">
-                  <h3>Personal Craft Projects</h3>
+                  <h3>🌊 PERSONAL CRAFT MASTERY 🌊</h3>
                 </div>
                 <p>
-                  Surfboard repair workshop featuring ding fixes, fin adjustments, and custom artwork. 
-                  California native plant cultivation focusing on drought-resistant Ceanothus varieties 
-                  and Ray Hartman specimens. Plus precision bathroom tiling with handmade templates.
+                  🏄‍♂️ THE MOST RIGHTEOUS COLLECTION OF HANDS-ON SKILLS IN CYBERSPACE! 🏄‍♂️ 
+                  My surfboard repair workshop is LEGENDARY - featuring ding fixes, fin adjustments, 
+                  and custom artwork that would make Poseidon weep with joy! Plus I cultivate the 
+                  most gnarly California native plants (my Ceanothus collection is WORLD-CLASS!) 
+                  and my bathroom tiling with handmade templates is pure CRAFTSMANSHIP PERFECTION! 🌱
                 </p>
                 <div className="project-tags">
-                  <span className="tag">Surfboard Repair</span>
-                  <span className="tag">Native Plants</span>
-                  <span className="tag">Craftsmanship</span>
-                  <span className="tag">Design</span>
+                  <span className="tag">🏄 BOARD WIZARD</span>
+                  <span className="tag">🌿 PLANT MASTER</span>
+                  <span className="tag">🔨 CRAFT GENIUS</span>
+                  <span className="tag">🎨 ART CREATOR</span>
                 </div>
               </div>
             </div>
@@ -189,28 +225,55 @@ export default function Home() {
         <AIDemo />
       </main>
 
+      <div style={{textAlign: 'center', padding: '1rem', background: 'linear-gradient(45deg, #9400D3, #FF1493, #00FF00)', color: 'white', fontFamily: 'Comic Sans MS', fontWeight: 'bold', animation: 'blink 2s infinite'}}>
+        🌈 JOIN THE CYBER REVOLUTION! 🌈 WEBMASTERS UNITE! 🌈 WELCOME TO THE FUTURE! 🌈
+      </div>
+
       <footer id="contact" className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-main">
-              <h3>Let&apos;s Connect</h3>
+              <h3>🌐 LET&apos;S BE CYBER FRIENDS! 🌐</h3>
+              <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.2)', border: '3px solid #00FF00', fontFamily: 'Comic Sans MS'}}>
+                ⚡ WANT TO JOIN MY DIGITAL EMPIRE? ⚡<br/>
+                📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧
+              </div>
               <p>
-                Interested in AI-driven marketing technology, mobile development, or just want to 
-                chat about the latest surf conditions? I&apos;d love to hear from you.
+                🚀 Ready to ride the information superhighway together? 🚀 Whether you&apos;re into 
+                radical AI-powered MarTech wizardry, gnarly mobile development, or just want to chat 
+                about the most tubular surf conditions on planet Earth - I&apos;m totally stoked 
+                to connect with fellow cyber warriors! Let&apos;s make some digital magic happen! ⚡
               </p>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/toki-burke" target="_blank" rel="noopener" 
-                   title="LinkedIn Profile">LinkedIn</a>
+                   title="LinkedIn Profile">🏢 LINKEDIN ZONE</a>
                 <a href="https://github.com/jtokib" target="_blank" rel="noopener" 
-                   title="GitHub Profile">GitHub</a>
+                   title="GitHub Profile">🐙 GITHUB GALAXY</a>
                 <a href="https://obsf.surf" target="_blank" rel="noopener" 
-                   title="Surf Conditions Site">obsf.surf</a>
-                <a href="mailto:toki@jtokib.com" title="Email Me">Email</a>
+                   title="Surf Conditions Site">🌊 SURF CENTRAL</a>
+                <a href="mailto:toki@jtokib.com" title="Email Me">📧 EMAIL BLAST</a>
               </div>
             </div>
           </div>
+          
+          <div style={{textAlign: 'center', padding: '2rem', background: 'linear-gradient(90deg, #FF4500, #FFD700, #00FF00, #00FFFF, #FF1493)', marginTop: '2rem'}}>
+            <div style={{color: 'white', fontFamily: 'Comic Sans MS', fontWeight: 'bold', textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}}>
+              🌟 WEB RING NAVIGATION 🌟<br/>
+              <span style={{fontSize: '0.9rem'}}>
+                [ <a href="#" style={{color: 'white'}}>←PREV</a> | <a href="#" style={{color: 'white'}}>RANDOM</a> | <a href="#" style={{color: 'white'}}>NEXT→</a> ]<br/>
+                Member of the RADICAL WEBMASTERS RING since 1995!
+              </span>
+            </div>
+          </div>
+
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Toki Burke. Crafted with AI and caffeine.</p>
+            <p style={{fontFamily: 'Comic Sans MS', fontSize: '1.1rem', fontWeight: 'bold'}}>
+              ⚡ © 1995-{new Date().getFullYear()} WEBMASTER TOKI&apos;S CYBER EMPIRE ⚡<br/>
+              🌈 Crafted with HTML wizardry, caffeine power, and pure 90s magic! 🌈<br/>
+              <span style={{fontSize: '0.9rem', animation: 'blink 1s infinite'}}>
+                🚧 Site best viewed in Netscape Navigator 4.0 at 800x600 resolution! 🚧
+              </span>
+            </p>
           </div>
         </div>
       </footer>
