@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/react'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jtokib.com'),
   title: 'Toki Burke | AI-Driven Marketing Technologist',
   description: 'Toki Burke - Marketing Technology Team Lead specializing in AI, cloud platforms, and digital innovation. Expert in Tealium, Google Cloud, Firebase, and Vercel. Pacific Ocean surfer and California native plant enthusiast.',
   keywords: 'Toki Burke, Marketing Technology, AI, Firebase, Google Cloud, Tealium, Sitecore, Vercel, Cloudflare, Surfing, California Native Plants, Ceanothus, obsf.surf, Android Development',

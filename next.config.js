@@ -1,13 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false,
   images: {
     unoptimized: true
-  },
-  // Enable static optimization for Vercel
-  experimental: {
-    optimizeCss: true
   }
 }
 
