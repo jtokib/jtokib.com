@@ -20,12 +20,12 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-text">
               <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
-              <h2>⚡ MARTECH PROFESSIONAL & SEMI-PROFESSIONAL AMATEUR SURFER ⚡</h2>
+              <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL SURFER ⚡</h2>
               <p className="hero-description">
                 🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional with expertise in ad tech,
                 tag management, and web development! When I&apos;m not building digital solutions or working 
                 with platforms like Tealium and Sitecore, you&apos;ll find me out in the water as a 
-                semi-professional amateur trying to catch waves across the Pacific Ocean! 🏄‍♂️ I also enjoy 
+                semi-amateur professional trying to catch waves across the Pacific Ocean! 🏄‍♂️ I also enjoy 
                 growing California native plants and tinkering with surfboard repairs. Welcome to my digital corner! ✨
               </p>
               <div className="hero-buttons">
@@ -118,7 +118,7 @@ export default function Home() {
                     ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
                   </div>
                   <ul>
-                    <li>🌊 Semi-professional amateur surfer who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
+                    <li>🌊 Semi-amateur professional surfer who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
                     <li>🏄‍♂️ Learning surfboard repair (and ding fixing) between coding sessions!</li>
                     <li>🌼 California native plant enthusiast (my Ceanothus collection is growing!)</li>
                     <li>🔨 Enjoys bathroom tiling projects with handmade templates!</li>
@@ -214,8 +214,8 @@ export default function Home() {
               <p>
                 🚀 Ready to connect and share ideas? 🚀 Whether you&apos;re interested in MarTech solutions, 
                 ad tech implementations, web development, surfing adventures, or just want to chat about life - 
-                I&apos;d love to hear from you! As a professional in digital marketing tech and a semi-professional 
-                amateur in most other things, I&apos;m always learning and happy to connect! ⚡
+                I&apos;d love to hear from you! As a professional in digital marketing tech and a semi-amateur 
+                professional in most other things, I&apos;m always learning and happy to connect! ⚡
               </p>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/toki-burke" target="_blank" rel="noopener" 
