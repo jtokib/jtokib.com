@@ -31,11 +31,7 @@ export default function Navigation() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="nav-brand">
-          <Link href="#home" onClick={() => scrollToSection('home')}>
-            Toki Burke
-          </Link>
-        </div>
+        {/* nav-brand removed as requested */}
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <Link 
             href="#home" 
