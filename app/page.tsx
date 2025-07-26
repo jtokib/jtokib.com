@@ -1,5 +1,6 @@
 import Navigation from './components/Navigation'
 import AIDemo from './components/AIDemo'
+import Guestbook from './components/Guestbook'
 
 export default function Home() {
   return (
@@ -223,6 +224,8 @@ export default function Home() {
         </section>
 
         <AIDemo />
+        
+        <Guestbook />
       </main>
 
       <div style={{textAlign: 'center', padding: '1rem', background: 'linear-gradient(45deg, #9400D3, #FF1493, #00FF00)', color: 'white', fontFamily: 'Comic Sans MS', fontWeight: 'bold', animation: 'blink 2s infinite'}}>
