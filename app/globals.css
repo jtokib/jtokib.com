@@ -777,7 +777,7 @@ a:hover {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    max-width: 600px;
+    /* max-width: 600px; */
 }
 
 .social-links {

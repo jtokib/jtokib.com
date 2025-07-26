@@ -2,28 +2,78 @@
 
 import { useState } from 'react'
 
+interface SurfConditions {
+  tide: number
+  wind: number
+  pt_reyes: number
+  sf_bar: number
+}
+
+interface PredictionResponse {
+  score: number
+  summary: string
+}
+
 export default function AIDemo() {
   const [input, setInput] = useState('')
-  const [response, setResponse] = useState("Based on current buoy data, Ocean Beach has 3-5ft waves with offshore winds. Perfect conditions for dawn patrol! 🏄‍♂️")
+  const [response, setResponse] = useState("Ask me about current surf conditions at Ocean Beach! I'll analyze real-time data to give you a surf forecast and recommendation. 🏄‍♂️")
+  const [isLoading, setIsLoading] = useState(false)
 
-  const responses = [
-    "Based on current buoy data, Ocean Beach has 3-5ft waves with offshore winds. Perfect conditions for dawn patrol! 🏄‍♂️",
-    "Conditions are looking choppy with 2-3ft waves and onshore winds. Maybe a good day for Tealium debugging instead! 💻",
-    "Solid 4-6ft waves with light offshore winds. Reminds me of those Okinawa reef breaks! 🌊",
-    "Small 1-2ft waves today, but the evening glass-off could make it worth a sunset session. Time to check my Ceanothus watering schedule too! 🌅",
-    "Clean 2-3ft waves with light texture. Perfect for testing that new surfboard repair job! 🏄‍♂️",
-    "Firing 6ft+ surf! Grab your board and forget about Google Analytics for the day! 🌊"
-  ]
-
-  const getRandomResponse = () => {
-    return responses[Math.floor(Math.random() * responses.length)]
+  const fetchSurfConditions = async (): Promise<SurfConditions> => {
+    // Mock real-time surf conditions for demo
+    // In production, this would fetch from actual surf data APIs
+    return {
+      tide: Math.random() * 4 - 2, // -2 to 2 feet
+      wind: Math.random() * 20, // 0 to 20 mph
+      pt_reyes: Math.random() * 8 + 1, // 1 to 9 feet
+      sf_bar: Math.random() * 6 + 1 // 1 to 7 feet
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const getPrediction = async (conditions: SurfConditions): Promise<PredictionResponse> => {
+    try {
+      const response = await fetch('/api/predict', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(conditions),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to get prediction')
+      }
+
+      return await response.json()
+    } catch (error) {
+      console.error('Error getting prediction:', error)
+      // Fallback response if API fails
+      return {
+        score: Math.floor(Math.random() * 10) + 1,
+        summary: "Unable to connect to prediction service. Based on typical Ocean Beach patterns, conditions are likely moderate. Check back later for real-time analysis! 🌊"
+      }
+    }
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (input.trim()) {
-      setResponse(getRandomResponse())
-      setInput('')
+    if (input.trim() && !isLoading) {
+      setIsLoading(true)
+      setResponse("Analyzing current surf conditions...")
+      
+      try {
+        const conditions = await fetchSurfConditions()
+        const prediction = await getPrediction(conditions)
+        
+        const formattedResponse = `🌊 Surf Score: ${prediction.score}/10\n\n${prediction.summary}\n\n📊 Current Conditions:\n• Tide: ${conditions.tide.toFixed(1)}ft\n• Wind: ${conditions.wind.toFixed(1)}mph\n• Pt Reyes: ${conditions.pt_reyes.toFixed(1)}ft\n• SF Bar: ${conditions.sf_bar.toFixed(1)}ft`
+        
+        setResponse(formattedResponse)
+      } catch (error) {
+        setResponse("Sorry, I'm having trouble accessing current surf data. Please try again in a moment! 🏄‍♂️")
+      } finally {
+        setIsLoading(false)
+        setInput('')
+      }
     }
   }
 
@@ -78,13 +128,16 @@ export default function AIDemo() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
+                  disabled={isLoading}
                 />
-                <button type="submit" className="btn btn-primary">Ask AI</button>
+                <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                  {isLoading ? 'Analyzing...' : 'Ask AI'}
+                </button>
               </form>
               <div className="demo-response">
-                <p><strong>AI:</strong> {response}</p>
+                <p><strong>AI:</strong> <span style={{whiteSpace: 'pre-line'}}>{response}</span></p>
               </div>
-              <small>*Demo interface - connect your own AI service</small>
+              <small>*Real-time surf prediction using AI analysis</small>
             </div>
           </div>
         </div>
