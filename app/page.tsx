@@ -124,7 +124,7 @@ export default function Home() {
                     <li>🔨 Enjoys bathroom tiling projects with handmade templates!</li>
                     <li>🎨 Aspiring digital creator who likes blending function with style!</li>
                     <li>🐕 Daily dog walks = brainstorming sessions for world domination!</li>
-                    <li>💾 Started coding on a Commodore 64 (totally retro!)</li>
+
                     <li>🌈 Favorite browser: Netscape Navigator 4.0!</li>
                   </ul>
                   <div className="cyber-friends-cta">
