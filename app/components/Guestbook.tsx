@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { supabaseClient } from '../../lib/supabase-client'
 
 interface GuestbookEntry {
   id: string
@@ -26,15 +27,21 @@ export default function Guestbook() {
 
   const fetchEntries = async () => {
     try {
-      const response = await fetch('/api/guestbook')
-      if (response.ok) {
-        const data = await response.json()
-        setEntries(data)
+      const { data: entries, error } = await supabaseClient
+        .from('guestbook')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(10)
+
+      if (error) {
+        console.error('Error fetching guestbook entries:', error)
+        setError('Failed to load entries')
       } else {
-        console.error('Failed to fetch entries')
+        setEntries(entries || [])
       }
     } catch (error) {
       console.error('Error fetching entries:', error)
+      setError('Failed to load entries')
     } finally {
       setIsLoading(false)
     }
@@ -46,25 +53,54 @@ export default function Guestbook() {
     setError('')
     setSuccess('')
 
+    const trimmedName = name.trim()
+    const trimmedMessage = message.trim()
+
+    // Client-side validation
+    if (!trimmedName || !trimmedMessage) {
+      setError('Name and message are required')
+      setIsSubmitting(false)
+      return
+    }
+
+    if (trimmedName.length > 50) {
+      setError('Name must be 50 characters or less')
+      setIsSubmitting(false)
+      return
+    }
+
+    if (trimmedMessage.length > 1000) {
+      setError('Message must be 1000 characters or less')
+      setIsSubmitting(false)
+      return
+    }
+
+    if (wordCount > 250) {
+      setError('Message must be 250 words or less')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
-      const response = await fetch('/api/guestbook', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: name.trim(), message: message.trim() }),
-      })
+      const { data, error } = await supabaseClient
+        .from('guestbook')
+        .insert([
+          {
+            name: trimmedName,
+            message: trimmedMessage
+          }
+        ])
+        .select()
 
-      const data = await response.json()
-
-      if (response.ok) {
+      if (error) {
+        console.error('Error inserting guestbook entry:', error)
+        setError('Failed to save entry. Please try again.')
+      } else if (data && data[0]) {
         setSuccess('🌟 Thanks for signing my guestbook! 🌟')
         setName('')
         setMessage('')
         // Add the new entry to the top of the list
-        setEntries(prev => [data, ...prev.slice(0, 9)])
-      } else {
-        setError(data.error || 'Failed to submit entry')
+        setEntries(prev => [data[0], ...prev.slice(0, 9)])
       }
     } catch (error) {
       console.error('Error submitting entry:', error)
