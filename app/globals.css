@@ -1067,6 +1067,180 @@ a:hover {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 
+/* 90s THEMED PAGE STYLES */
+.under-construction {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(45deg, #FFD700, #FF1493);
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: blink 1s infinite;
+}
+
+.visitor-counter {
+    text-align: center;
+    padding: 0.5rem;
+    background: #000080;
+    color: #00FF00;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1rem;
+}
+
+.about-email-cta {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255,215,0,0.3);
+    border: 3px dashed #FF1493;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.about-email-cta strong {
+    font-weight: bold;
+}
+
+.about-email-cta a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.about-email-cta a:hover {
+    color: var(--secondary-color);
+}
+
+.profile-card-content {
+    margin-bottom: 1rem;
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.profile-card-details {
+    color: white;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.profile-card-quote {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.webmaster-info {
+    margin-bottom: 1rem;
+    text-align: center;
+    background: rgba(255,20,147,0.3);
+    padding: 0.5rem;
+    border: 2px solid #FFD700;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.cyber-friends-cta {
+    margin-top: 1rem;
+    text-align: center;
+    background: rgba(0,255,0,0.2);
+    padding: 0.5rem;
+    border: 2px dashed #FF4500;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 0.9rem;
+}
+
+.cyber-friends-cta a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: var(--transition);
+}
+
+.cyber-friends-cta a:hover {
+    color: var(--secondary-color);
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    color: var(--text-white);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Comic Sans MS', cursive;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    border: 1px solid var(--text-white);
+    animation: blink 2s infinite alternate;
+    box-shadow: var(--shadow-light);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.ai-demo-section {
+    padding: 5rem 0;
+    background: var(--bg-white);
+}
+
+.ai-demo-section h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+    font-family: 'Comic Sans MS', cursive;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    animation: rainbow 3s linear infinite;
+}
+
+.ai-demo-disclaimer {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(0,255,255,0.2);
+    border: 3px dashed #00FFFF;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.footer-empire-cta {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: rgba(255,215,0,0.2);
+    border: 3px solid #00FF00;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.footer-empire-cta a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    margin-right: 1rem;
+    transition: var(--transition);
+}
+
+.footer-empire-cta a:hover {
+    color: var(--accent-color);
+}
+
 /* Dark mode support (future enhancement) */
 @media (prefers-color-scheme: dark) {
     :root {
