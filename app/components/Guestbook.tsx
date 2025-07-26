@@ -86,7 +86,7 @@ export default function Guestbook() {
   }
 
   return (
-    <section className="guestbook" style={{
+    <section id="guestbook" className="guestbook" style={{
       padding: '3rem 0',
       background: 'var(--bg-light)',
       border: '5px solid var(--accent-color)',
@@ -162,10 +162,11 @@ export default function Guestbook() {
                   padding: '0.75rem',
                   border: '2px solid var(--border-light)',
                   borderRadius: 'var(--border-radius)',
-                  fontSize: '1rem',
-                  fontFamily: 'Comic Sans MS',
+                  fontSize: '16px', /* PREVENT ZOOM ON iOS */
+                  fontFamily: 'Comic Sans MS, Trebuchet MS, cursive, sans-serif',
                   background: 'var(--bg-light)',
-                  color: 'var(--text-light)'
+                  color: 'var(--text-light)',
+                  minHeight: '44px' /* TOUCH TARGET SIZE */
                 }}
                 placeholder="Enter your awesome name here!"
               />
@@ -199,11 +200,12 @@ export default function Guestbook() {
                   padding: '0.75rem',
                   border: '2px solid var(--border-light)',
                   borderRadius: 'var(--border-radius)',
-                  fontSize: '1rem',
-                  fontFamily: 'Comic Sans MS',
+                  fontSize: '16px', /* PREVENT ZOOM ON iOS */
+                  fontFamily: 'Comic Sans MS, Trebuchet MS, cursive, sans-serif',
                   resize: 'vertical',
                   background: 'var(--bg-light)',
-                  color: 'var(--text-light)'
+                  color: 'var(--text-light)',
+                  lineHeight: '1.5' /* IMPROVED READABILITY */
                 }}
                 placeholder="Share your thoughts about my cyber domain!"
               />

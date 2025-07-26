@@ -114,7 +114,7 @@ Mobile-first design that works perfectly across all device sizes, from mobile ph
 - **LinkedIn**: [toki-burke](https://www.linkedin.com/in/toki-burke)
 - **GitHub**: [jtokib](https://github.com/jtokib)
 - **Website**: [obsf.surf](https://obsf.surf)
-- **Email**: toki@jtokib.com
+- **Email**: jtokib@gmail.com
 
 ---
 

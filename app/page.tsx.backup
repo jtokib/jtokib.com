@@ -20,17 +20,17 @@ export default function Home() {
           <div className="hero-content">
             <div className="hero-text">
               <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
-              <h2>⚡ RADICAL WEB WIZARD & DIGITAL SURF MASTER ⚡</h2>
+              <h2>⚡ MARTECH PROFESSIONAL & SEMI-PROFESSIONAL AMATEUR SURFER ⚡</h2>
               <p className="hero-description">
-                🤖 Greetings, fellow netizen! 🤖 I&apos;m the ultimate MarTech ninja, coding the future 
-                with AI superpowers and sick web skills! When I&apos;m not hacking the matrix or building 
-                tubular mobile apps, you&apos;ll find me shredding gnarly waves across the Pacific Ocean! 
-                🏄‍♂️ I also grow wicked cool California plants and fix surfboards like a total boss! 
-                Welcome to my digital domain! ✨
+                🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional with expertise in ad tech,
+                tag management, and web development! When I&apos;m not building digital solutions or working 
+                with platforms like Tealium and Sitecore, you&apos;ll find me out in the water as a 
+                semi-professional amateur trying to catch waves across the Pacific Ocean! 🏄‍♂️ I also enjoy 
+                growing California native plants and tinkering with surfboard repairs. Welcome to my digital corner! ✨
               </p>
               <div className="hero-buttons">
-                <a href="#projects" className="btn btn-primary">🔥 CHECK OUT MY RAD PROJECTS! 🔥</a>
-                <a href="#ai-demo" className="btn btn-secondary">🤖 TRY MY SICK AI DEMO! 🤖</a>
+                <a href="#projects" className="btn btn-primary">🔥 CHECK OUT MY PROJECTS! 🔥</a>
+                <a href="#ai-demo" className="btn btn-secondary">🤖 TRY MY AI DEMO! 🤖</a>
               </div>
             </div>
             <div className="hero-image">
@@ -57,49 +57,54 @@ export default function Home() {
           <div className="container">
             <h2>🎯 ABOUT THE WEBMASTER 🎯</h2>
             <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.3)', border: '3px dashed #FF1493', fontFamily: 'Comic Sans MS'}}>
-              <strong>📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧</strong>
+              <strong>
+                <a href="mailto:jtokib@gmail.com" style={{color: 'var(--primary-color)', textDecoration: 'underline', marginRight: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--secondary-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--primary-color)'}}>📧 EMAIL ME!</a>
+                📧 
+                <a href="#guestbook" style={{color: 'var(--primary-color)', textDecoration: 'underline', marginLeft: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--secondary-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--primary-color)'}}>SIGN MY GUESTBOOK!</a>
+                📧
+              </strong>
             </div>
             <div className="about-content">
               <div className="about-text">
                 <p>
-                  🌐 Greetings from cyberspace! 🌐 I&apos;m your friendly neighborhood MarTech wizard, 
-                  blending wicked coding skills with radical digital innovation! My cyber toolkit includes 
-                  the most tubular cloud platforms (Google Firebase, Google Cloud, Supabase), cutting-edge 
-                  development tools (GitHub, Vercel, Lovable), and mind-blowing AI platforms (Claude Code, 
-                  ChatGPT, Meta AI) that are totally off the hook! 🚀
+                  🌐 Greetings from cyberspace! 🌐 I&apos;m an experienced MarTech professional with deep 
+                  expertise in ad tech and web development! I specialize in platforms like Tealium, Sitecore, 
+                  and Selligent, with strong skills in HTML, CSS, and JavaScript. I&apos;ve also been exploring 
+                  cloud platforms (Google Firebase, Google Cloud, Supabase), development tools (GitHub, Vercel, 
+                  Lovable), and AI platforms (Claude Code, ChatGPT, Meta AI) - always learning new tech! 🚀
                 </p>
                 <p>
-                  💾 My technical arsenal is loaded with full-stack web wizardry (HTML, CSS, JavaScript), 
-                  gnarly marketing tech platforms (Tealium, Sitecore, WordPress, Wix), and sick analytics 
-                  tools (Google Tag Manager, Google Analytics, Facebook Pixel, Facebook CAPI). Plus I&apos;ve 
-                  got mad skills with infrastructure systems (Akamai, Cloudflare, Rackspace) that keep the 
-                  digital world spinning! I live to create cyber solutions that are both functional AND totally cool! ✨
+                  💾 I&apos;m very proficient in web development fundamentals (HTML, CSS, JavaScript) and 
+                  have deep expertise in the ad tech stack. I&apos;m highly skilled with marketing platforms 
+                  like Tealium, Sitecore, and Selligent, specializing in both client-side and server-side 
+                  tag management. I also work with analytics tools (Google Tag Manager, Google Analytics, 
+                  Facebook Pixel, Facebook CAPI) and infrastructure systems (Akamai, Cloudflare, Rackspace). 
+                  I love creating robust digital solutions that perform well and look great! ✨
                 </p>
                 <p>
-                  🏄‍♂️ When I&apos;m not coding up a storm or building the next killer app, you&apos;ll catch me 
-                  riding the most epic waves across the Pacific Ocean! From the cold swells of Washington and Oregon 
-                  to the tropical breaks of Hawaii&apos;s North Shore, from Japan&apos;s reef breaks to Peru&apos;s perfect 
-                  points, and New Zealand&apos;s powerful southern swells - I&apos;ve surfed them all! 🌊 I also fix 
-                  surfboards like a zen master and grow the most righteous California native plants (especially 
-                  my prized Ceanothus collection)! 🌱
+                  🏄‍♂️ When I&apos;m not experimenting with code, you&apos;ll find me in the water trying to catch waves 
+                  across the Pacific Ocean! I&apos;ve been fortunate to surf in Washington, Oregon, California, 
+                  Hawaii, Japan, Peru, and New Zealand - always learning and usually getting worked by the ocean! 
+                  🌊 I also enjoy fixing up old surfboards (still learning that craft too) and growing 
+                  California native plants, especially my growing Ceanothus collection! 🌱
                 </p>
                 <div className="skills">
-                  <h3>⚡ MY CYBER POWERS ⚡</h3>
+                  <h3>⚡ MY SKILLS & EXPERTISE ⚡</h3>
                   <div className="skill-grid">
                     <div className="skill-item">
                       <span className="skill-icon">🚀💥</span>
-                      <h4>MarTech Wizardry</h4>
-                      <p>Tealium sorcery, Sitecore mastery, WordPress magic, Google Analytics domination, Facebook CAPI hacking, GTM ninja skills!</p>
+                      <h4>MarTech & Ad Tech Expertise</h4>
+                      <p>Highly proficient in Tealium, Sitecore, and Selligent! Deep knowledge of the ad tech stack with expertise in both client-side and server-side tag management, Google Analytics, Facebook CAPI, and GTM implementation.</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon">🤖🧠</span>
-                      <h4>AI & Cloud Supremacy</h4>
-                      <p>Claude Code genius, ChatGPT whispering, Meta AI commanding, Firebase ruling, Google Cloud conquering, Supabase mastering!</p>
+                      <h4>AI & Cloud Learning</h4>
+                      <p>Playing with Claude Code, chatting with ChatGPT, trying Meta AI, building with Firebase, exploring Google Cloud, and discovering Supabase!</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon">💻⚡</span>
-                      <h4>Code & Infrastructure Domination</h4>
-                      <p>HTML/CSS/JS excellence, GitHub mastery, Vercel deployment, Akamai acceleration, Cloudflare protection, Android creation!</p>
+                      <h4>Web Development & Infrastructure</h4>
+                      <p>Very proficient in HTML, CSS, and JavaScript! Experienced with GitHub workflows, Vercel deployments, and infrastructure platforms like Akamai & Cloudflare. Still exploring Android development!</p>
                     </div>
                   </div>
                 </div>
@@ -111,11 +116,11 @@ export default function Home() {
                     ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
                   </div>
                   <ul>
-                    <li>🌊 Gnarliest wave rider across WA, OR, CA, HI, Okinawa, Peru, and New Zealand!</li>
-                    <li>🏄‍♂️ Zen surfboard repair master between epic coding marathons!</li>
-                    <li>🌼 California native plant wizard (Ceanothus collection is LEGENDARY!)</li>
-                    <li>🔨 Bathroom tiling champion with handcrafted templates!</li>
-                    <li>🎨 Digital solution architect blending art with killer functionality!</li>
+                    <li>🌊 Semi-professional amateur surfer who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
+                    <li>🏄‍♂️ Learning surfboard repair (and ding fixing) between coding sessions!</li>
+                    <li>🌼 California native plant enthusiast (my Ceanothus collection is growing!)</li>
+                    <li>🔨 Enjoys bathroom tiling projects with handmade templates!</li>
+                    <li>🎨 Aspiring digital creator who likes blending function with style!</li>
                     <li>🐕 Daily dog walks = brainstorming sessions for world domination!</li>
                     <li>💾 Started coding on a Commodore 64 (totally retro!)</li>
                     <li>🌈 Favorite browser: Netscape Navigator 4.0!</li>
@@ -239,13 +244,16 @@ export default function Home() {
               <h3>🌐 LET&apos;S BE CYBER FRIENDS! 🌐</h3>
               <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.2)', border: '3px solid #00FF00', fontFamily: 'Comic Sans MS'}}>
                 ⚡ WANT TO JOIN MY DIGITAL EMPIRE? ⚡<br/>
-                📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧
+                <a href="mailto:jtokib@gmail.com" style={{color: 'var(--secondary-color)', textDecoration: 'underline', marginRight: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--secondary-color)'}}>📧 EMAIL ME!</a>
+                📧 
+                <a href="#guestbook" style={{color: 'var(--secondary-color)', textDecoration: 'underline', marginLeft: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--secondary-color)'}}>SIGN MY GUESTBOOK!</a>
+                📧
               </div>
               <p>
-                🚀 Ready to ride the information superhighway together? 🚀 Whether you&apos;re into 
-                radical AI-powered MarTech wizardry, gnarly mobile development, or just want to chat 
-                about the most tubular surf conditions on planet Earth - I&apos;m totally stoked 
-                to connect with fellow cyber warriors! Let&apos;s make some digital magic happen! ⚡
+                🚀 Ready to connect and share ideas? 🚀 Whether you&apos;re interested in MarTech solutions, 
+                ad tech implementations, web development, surfing adventures, or just want to chat about life - 
+                I&apos;d love to hear from you! As a professional in digital marketing tech and a semi-professional 
+                amateur in most other things, I&apos;m always learning and happy to connect! ⚡
               </p>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/toki-burke" target="_blank" rel="noopener" 
@@ -254,7 +262,7 @@ export default function Home() {
                    title="GitHub Profile">🐙 GITHUB GALAXY</a>
                 <a href="https://obsf.surf" target="_blank" rel="noopener" 
                    title="Surf Conditions Site">🌊 SURF CENTRAL</a>
-                <a href="mailto:toki@jtokib.com" title="Email Me">📧 EMAIL BLAST</a>
+                <a href="mailto:jtokib@gmail.com" title="Email Me">📧 EMAIL BLAST</a>
               </div>
             </div>
           </div>
