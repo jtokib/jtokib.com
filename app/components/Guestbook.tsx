@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { supabaseClient } from '../../lib/supabase-client'
 
 interface GuestbookEntry {
   id: string
@@ -27,17 +26,13 @@ export default function Guestbook() {
 
   const fetchEntries = async () => {
     try {
-      const { data: entries, error } = await supabaseClient
-        .from('guestbook')
-        .select('*')
-        .order('created_at', { ascending: false })
-        .limit(10)
-
-      if (error) {
-        console.error('Error fetching guestbook entries:', error)
-        setError('Failed to load entries')
+      const response = await fetch('/api/guestbook')
+      if (response.ok) {
+        const data = await response.json()
+        setEntries(data)
       } else {
-        setEntries(entries || [])
+        console.error('Failed to fetch entries')
+        setError('Failed to load entries')
       }
     } catch (error) {
       console.error('Error fetching entries:', error)
@@ -82,25 +77,24 @@ export default function Guestbook() {
     }
 
     try {
-      const { data, error } = await supabaseClient
-        .from('guestbook')
-        .insert([
-          {
-            name: trimmedName,
-            message: trimmedMessage
-          }
-        ])
-        .select()
+      const response = await fetch('/api/guestbook', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: trimmedName, message: trimmedMessage }),
+      })
 
-      if (error) {
-        console.error('Error inserting guestbook entry:', error)
-        setError('Failed to save entry. Please try again.')
-      } else if (data && data[0]) {
+      const data = await response.json()
+
+      if (response.ok) {
         setSuccess('🌟 Thanks for signing my guestbook! 🌟')
         setName('')
         setMessage('')
         // Add the new entry to the top of the list
-        setEntries(prev => [data[0], ...prev.slice(0, 9)])
+        setEntries(prev => [data, ...prev.slice(0, 9)])
+      } else {
+        setError(data.error || 'Failed to submit entry')
       }
     } catch (error) {
       console.error('Error submitting entry:', error)
