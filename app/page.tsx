@@ -8,19 +8,19 @@ export default function Home() {
       <Navigation />
       
       <main>
-        <div className="under-construction">
+        <div className="under-construction" style={{ background: 'linear-gradient(90deg, #222 60%, #ffe066 100%)', color: 'white', padding: '1rem', borderRadius: '1rem', marginBottom: '1rem' }}>
           🚧 UNDER CONSTRUCTION 🚧 BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 🚧 LAST UPDATED: 12/31/1995 🚧
         </div>
-        
-        <div className="visitor-counter">
+
+        <div className="visitor-counter" style={{ background: 'linear-gradient(90deg, #222 60%, #ffb6c1 100%)', color: 'white', padding: '1rem', borderRadius: '1rem', marginBottom: '1rem' }}>
           👁️ VISITOR COUNT: 000042069 👁️ YOU ARE VISITOR #42070! 👁️ 
         </div>
 
         <section id="home" className="hero">
-          <div className="hero-content">
-            <div className="hero-text">
+          <div className="hero-content" style={{ background: 'rgba(34,34,34,0.85)', borderRadius: '1rem', padding: '2rem', boxShadow: '0 2px 16px rgba(0,0,0,0.15)' }}>
+            <div className="hero-text" style={{ color: 'white' }}>
               <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
-              <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL SURFER ⚡</h2>
+              <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL KOOK ⚡</h2>
               <p className="hero-description">
                 🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional with expertise in ad tech,
                 tag management, and web development! When I&apos;m not building digital solutions or working 
@@ -34,7 +34,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-image">
-              <div className="profile-card">
+              <div className="profile-card" style={{ background: 'rgba(34,34,34,0.85)', color: 'white', borderRadius: '1rem', padding: '1rem' }}>
                 <div className="profile-placeholder">
                   🤖💻🏄‍♂️✨
                 </div>
@@ -43,7 +43,7 @@ export default function Home() {
                 </div>
                 <div className="profile-card-details">
                   🌐 MarTech Expert<br/>
-                  🏄‍♂️ Semi-Pro Amateur Surfer<br/>
+                  🏄‍♂️ Semi-Amateur Professional Kook<br/>
                   🤖 AI Explorer<br/>
                   🌱 Plant Enthusiast
                 </div>
@@ -118,7 +118,7 @@ export default function Home() {
                     ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
                   </div>
                   <ul>
-                    <li>🌊 Semi-amateur professional surfer who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
+                    <li>🌊 Semi-amateur professional kook who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
                     <li>🏄‍♂️ Learning surfboard repair (and ding fixing) between coding sessions!</li>
                     <li>🌼 California native plant enthusiast (my Ceanothus collection is growing!)</li>
                     <li>🔨 Enjoys bathroom tiling projects with handmade templates!</li>
@@ -199,7 +199,7 @@ export default function Home() {
         <Guestbook />
       </main>
 
-      <footer id="contact" className="footer">
+      <footer id="contact" className="footer" style={{ background: 'linear-gradient(90deg, #222 80%, #ffe066 100%)', color: 'white', padding: '2rem 0', marginTop: '2rem' }}>
         <div className="container">
           <div className="footer-content">
             <div className="footer-main">
