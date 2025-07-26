@@ -39,16 +39,18 @@ This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14
 app/
 ├── components/
 │   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu
-│   └── AIDemo.tsx        # Interactive demo with simulated responses
+│   ├── AIDemo.tsx        # Interactive demo with simulated responses
+│   └── Guestbook.tsx     # Interactive guestbook with Supabase integration
 ├── globals.css           # All styles (uses CSS custom properties)
 ├── layout.tsx            # SEO metadata, fonts, analytics setup
-└── page.tsx              # Main page content (hero, about, projects, contact)
+└── page.tsx              # Main page content (hero, about, projects, contact, guestbook)
 ```
 
 ### Component Architecture
 
 - **Navigation**: Client-side component with scroll detection, mobile menu, and smooth scrolling
 - **AIDemo**: Interactive widget with predefined responses simulating an AI surf assistant
+- **Guestbook**: Interactive guestbook component with Supabase database integration for visitor messages
 - **Layout**: Contains comprehensive SEO metadata, Google Tag Manager, and Vercel Analytics
 - **Main Page**: Server component with all content sections in a single file
 
@@ -65,6 +67,7 @@ app/
 - **Vercel Analytics**: Integrated via `@vercel/analytics/react`
 - **Google Tag Manager**: Embedded script in layout with GTM-TM7DV4L ID
 - **Inter Font**: Google Fonts integration via Next.js font optimization
+- **Supabase**: Database integration for guestbook functionality via `@supabase/supabase-js`
 - **Static Assets**: Comprehensive favicon set and PWA manifest in `/public`
 
 ### Deployment Configuration

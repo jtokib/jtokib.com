@@ -57,7 +57,12 @@ export default function Home() {
           <div className="container">
             <h2>🎯 ABOUT THE WEBMASTER 🎯</h2>
             <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.3)', border: '3px dashed #FF1493', fontFamily: 'Comic Sans MS'}}>
-              <strong>📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧</strong>
+              <strong>
+                <a href="mailto:jtokib@gmail.com" style={{color: 'var(--primary-color)', textDecoration: 'underline', marginRight: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--secondary-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--primary-color)'}}>📧 EMAIL ME!</a>
+                📧 
+                <a href="#guestbook" style={{color: 'var(--primary-color)', textDecoration: 'underline', marginLeft: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--secondary-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--primary-color)'}}>SIGN MY GUESTBOOK!</a>
+                📧
+              </strong>
             </div>
             <div className="about-content">
               <div className="about-text">
@@ -111,7 +116,7 @@ export default function Home() {
                     ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
                   </div>
                   <ul>
-                    <li>🌊 Gnarliest wave rider across WA, OR, CA, HI, Okinawa, Peru, and New Zealand!</li>
+                    <li>🌊 Waves across WA, OR, CA, HI, Okinawa, Peru, and New Zealand!</li>
                     <li>🏄‍♂️ Zen surfboard repair master between epic coding marathons!</li>
                     <li>🌼 California native plant wizard (Ceanothus collection is LEGENDARY!)</li>
                     <li>🔨 Bathroom tiling champion with handcrafted templates!</li>
@@ -121,7 +126,7 @@ export default function Home() {
                     <li>🌈 Favorite browser: Netscape Navigator 4.0!</li>
                   </ul>
                   <div style={{marginTop: '1rem', textAlign: 'center', background: 'rgba(0,255,0,0.2)', padding: '0.5rem', border: '2px dashed #FF4500', fontFamily: 'Comic Sans MS', fontSize: '0.9rem'}}>
-                    📨 Want to be cyber friends? Email me! 📨
+                    📨 Want to be cyber friends? <a href="mailto:jtokib@gmail.com" style={{color: 'var(--primary-color)', textDecoration: 'underline', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--secondary-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--primary-color)'}}>Email me!</a> 📨
                   </div>
                 </div>
               </div>
@@ -239,7 +244,9 @@ export default function Home() {
               <h3>🌐 LET&apos;S BE CYBER FRIENDS! 🌐</h3>
               <div style={{textAlign: 'center', marginBottom: '2rem', padding: '1rem', background: 'rgba(255,215,0,0.2)', border: '3px solid #00FF00', fontFamily: 'Comic Sans MS'}}>
                 ⚡ WANT TO JOIN MY DIGITAL EMPIRE? ⚡<br/>
-                📧 EMAIL ME! 📧 SIGN MY GUESTBOOK! 📧 ADD ME TO YOUR HOTLIST! 📧
+                <a href="mailto:jtokib@gmail.com" style={{color: 'var(--secondary-color)', textDecoration: 'underline', marginRight: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--secondary-color)'}}>📧 EMAIL ME!</a>
+                📧 
+                <a href="#guestbook" style={{color: 'var(--secondary-color)', textDecoration: 'underline', marginLeft: '1rem', transition: 'var(--transition)'}} onMouseEnter={(e) => e.target.style.color = 'var(--accent-color)'} onMouseLeave={(e) => e.target.style.color = 'var(--secondary-color)'}}>SIGN MY GUESTBOOK!</a>
               </div>
               <p>
                 🚀 Ready to ride the information superhighway together? 🚀 Whether you&apos;re into 
@@ -254,7 +261,7 @@ export default function Home() {
                    title="GitHub Profile">🐙 GITHUB GALAXY</a>
                 <a href="https://obsf.surf" target="_blank" rel="noopener" 
                    title="Surf Conditions Site">🌊 SURF CENTRAL</a>
-                <a href="mailto:toki@jtokib.com" title="Email Me">📧 EMAIL BLAST</a>
+                <a href="mailto:jtokib@gmail.com" title="Email Me">📧 EMAIL BLAST</a>
               </div>
             </div>
           </div>

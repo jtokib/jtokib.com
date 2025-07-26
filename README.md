@@ -7,6 +7,7 @@ A modern, responsive portfolio website built with Next.js 14 and TypeScript, sho
 - 🚀 **Modern Stack**: Next.js 14, TypeScript, modular component architecture
 - 📱 **Responsive Design**: Mobile-first approach with modern CSS Grid and Flexbox
 - 🤖 **AI Demo**: Interactive surf condition assistant showcasing AI integration
+- 📝 **Interactive Guestbook**: Visitor messaging system with Supabase database integration
 - 🎨 **Professional Design**: Clean, modern UI with smooth animations and accessibility
 - ⚡ **Performance Optimized**: Static site generation with security headers
 - 📊 **Analytics**: Integrated Vercel Analytics for performance tracking
@@ -16,6 +17,7 @@ A modern, responsive portfolio website built with Next.js 14 and TypeScript, sho
 ## Tech Stack
 
 - **Frontend**: Next.js 14 (App Router), React 18, TypeScript
+- **Database**: Supabase for guestbook functionality
 - **Styling**: Modern CSS with custom properties, responsive design
 - **Deployment**: Vercel with static site generation and CDN
 - **Analytics**: Vercel Analytics with privacy-focused tracking
@@ -28,6 +30,7 @@ A modern, responsive portfolio website built with Next.js 14 and TypeScript, sho
 - **About**: Professional background and personal interests
 - **Projects**: Featured work including obsf.surf and mobile apps
 - **AI Demo**: Interactive demonstration of AI capabilities
+- **Guestbook**: Interactive visitor messaging system
 - **Contact**: Social links and contact information
 
 ## Local Development
@@ -60,7 +63,8 @@ This site is optimized for deployment on Vercel:
 ├── app/
 │   ├── components/          # React components
 │   │   ├── Navigation.tsx   # Main navigation
-│   │   └── AIDemo.tsx      # AI demonstration widget
+│   │   ├── AIDemo.tsx      # AI demonstration widget
+│   │   └── Guestbook.tsx   # Interactive guestbook component
 │   ├── globals.css         # Global styles
 │   ├── layout.tsx          # Root layout with metadata
 │   └── page.tsx           # Main page content
@@ -77,6 +81,9 @@ This site is optimized for deployment on Vercel:
 
 ### AI Demo
 Interactive demonstration showcasing how I combine AI with domain expertise, featuring a surf condition assistant trained on Ocean Beach data.
+
+### Interactive Guestbook
+Visitor messaging system powered by Supabase, allowing guests to leave messages and view previous entries with real-time updates.
 
 ### Responsive Design
 Mobile-first design that works perfectly across all device sizes, from mobile phones to large desktop screens.
@@ -100,7 +107,8 @@ Mobile-first design that works perfectly across all device sizes, from mobile ph
 - **Marketing Technology**: Tealium, Sitecore, WordPress, Wix
 - **Analytics & Tracking**: Google Analytics, Facebook CAPI, Google Tag Manager
 - **Infrastructure**: Akamai, Cloudflare, Rackspace
-- **Languages**: HTML, CSS, JavaScript, Java (Android development)
+- **Languages**: HTML, CSS, JavaScript, TypeScript, Java (Android development)
+- **Database**: Supabase, real-time data integration
 
 ## Personal Interests Featured
 
