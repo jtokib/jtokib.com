@@ -8,17 +8,17 @@ export default function Home() {
       <Navigation />
       
       <main>
-        <div className="under-construction" style={{ background: 'linear-gradient(90deg, #222 60%, #ffe066 100%)', color: 'white', padding: '1rem', borderRadius: '1rem', marginBottom: '1rem' }}>
+        <div className="under-construction block-dark-yellow">
           🚧 UNDER CONSTRUCTION 🚧 BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 🚧 LAST UPDATED: 12/31/1995 🚧
         </div>
 
-        <div className="visitor-counter" style={{ background: 'linear-gradient(90deg, #222 60%, #ffb6c1 100%)', color: 'white', padding: '1rem', borderRadius: '1rem', marginBottom: '1rem' }}>
+        <div className="visitor-counter block-dark-pink">
           👁️ VISITOR COUNT: 000042069 👁️ YOU ARE VISITOR #42070! 👁️ 
         </div>
 
         <section id="home" className="hero">
-          <div className="hero-content" style={{ background: 'rgba(34,34,34,0.85)', borderRadius: '1rem', padding: '2rem', boxShadow: '0 2px 16px rgba(0,0,0,0.15)' }}>
-            <div className="hero-text" style={{ color: 'white' }}>
+          <div className="hero-content block-dark">
+            <div className="hero-text text-white">
               <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
               <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL KOOK ⚡</h2>
               <p className="hero-description">
@@ -34,7 +34,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-image">
-              <div className="profile-card" style={{ background: 'rgba(34,34,34,0.85)', color: 'white', borderRadius: '1rem', padding: '1rem' }}>
+              <div className="profile-card block-dark text-white">
                 <div className="profile-placeholder">
                   🤖💻🏄‍♂️✨
                 </div>
@@ -199,17 +199,17 @@ export default function Home() {
         <Guestbook />
       </main>
 
-      <footer id="contact" className="footer" style={{ background: 'linear-gradient(90deg, #222 80%, #ffe066 100%)', color: 'white', padding: '2rem 0', marginTop: '2rem' }}>
+      <footer id="contact" className="footer block-dark-yellow-footer" style={{ background: 'linear-gradient(90deg, #222 80%, #ffe066 100%)' }}>
         <div className="container">
           <div className="footer-content">
             <div className="footer-main">
               <h3>🌐 LET&apos;S BE CYBER FRIENDS! 🌐</h3>
               <div className="footer-empire-cta">
                 ⚡ WANT TO JOIN MY DIGITAL EMPIRE? ⚡<br/>
-                <a href="mailto:jtokib@gmail.com">📧 EMAIL ME!</a>
-                📧 
-                <a href="#guestbook">SIGN MY GUESTBOOK!</a>
                 📧
+                <a href="mailto:jtokib@gmail.com">EMAIL ME!</a>
+                📧
+                <a href="#guestbook">SIGN MY GUESTBOOK!</a>
               </div>
               <p>
                 🚀 Ready to connect and share ideas? 🚀 Whether you&apos;re interested in MarTech solutions, 
