@@ -1,0 +1,17 @@
+name = "jtokib-com"
+main = ".open-next/worker.js"
+compatibility_date = "2025-03-25"
+compatibility_flags = ["nodejs_compat"]
+
+# Custom route for jtokib.com domain
+route = { pattern = "jtokib.com/*", zone_name = "jtokib.com" }
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Security headers configuration (migrated from vercel.json)
+[vars]
+X_FRAME_OPTIONS = "DENY"
+X_CONTENT_TYPE_OPTIONS = "nosniff"
+REFERRER_POLICY = "strict-origin-when-cross-origin"

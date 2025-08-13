@@ -11,11 +11,20 @@ npm install
 # Start development server
 npm run dev
 
-# Build for production (static export)
+# Build for production (Cloudflare Workers)
 npm run build
 
-# Start production server (after build)
-npm start
+# Preview with Cloudflare Workers runtime (Windows compatibility issues)
+npm run preview
+
+# Build and deploy to Cloudflare Workers
+npm run deploy
+
+# Deploy directly with wrangler (Windows-compatible)
+npx wrangler deploy
+
+# Generate Cloudflare Worker types
+npm run cf-typegen
 
 # Run linting
 npm run lint
@@ -23,15 +32,23 @@ npm run lint
 
 ## Project Architecture
 
-This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14** application configured for **static site generation**. The site is deployed on Vercel with static export capabilities.
+This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14** application deployed on **Cloudflare Workers** using the OpenNext adapter for edge computing performance.
+
+## Migration History
+
+1. **GitHub Pages** → Initial static deployment with Jekyll
+2. **Vercel** → Migration to Next.js with static site generation
+3. **Cloudflare Workers** → Latest migration for edge computing and improved global performance
 
 ### Key Architecture Decisions
 
-- **Static Export**: Configured with `output: 'export'` in `next.config.js` for static site generation
+- **Cloudflare Workers**: Deployed using `@opennextjs/cloudflare` adapter for edge computing
+- **Custom Domain**: Configured for `jtokib.com` with zone-level routing in `wrangler.toml`
 - **Single Page Application**: All content lives in one page (`app/page.tsx`) with smooth scrolling navigation
 - **Client-Side Components**: Navigation and AI Demo use `'use client'` directive for interactivity
 - **CSS Modules Approach**: Global CSS in `app/globals.css` with CSS custom properties for theming
 - **SEO Optimized**: Comprehensive metadata configuration in `app/layout.tsx`
+- **Edge Performance**: Global edge network for optimal loading speeds worldwide
 
 ### File Structure Overview
 
@@ -64,17 +81,25 @@ app/
 
 ### External Integrations
 
-- **Vercel Analytics**: Integrated via `@vercel/analytics/react`
-- **Google Tag Manager**: Embedded script in layout with GTM-TM7DV4L ID
+- **Google Tag Manager**: Embedded script in layout with GTM-TM7DV4L ID for analytics
 - **Inter Font**: Google Fonts integration via Next.js font optimization
 - **Supabase**: Database integration for guestbook functionality via `@supabase/supabase-js`
 - **Static Assets**: Comprehensive favicon set and PWA manifest in `/public`
+- **Cloudflare Workers**: Edge computing platform for optimal global performance
 
 ### Deployment Configuration
 
-- **Next.js Config**: Static export with unoptimized images and trailing slashes
-- **Vercel Config**: Security headers, redirects, and build configuration
-- **Domain**: Uses CNAME file for custom domain (jtokib.com)
+- **Wrangler Config**: `wrangler.toml` with custom domain routing and security headers
+- **OpenNext Config**: `open-next.config.ts` for Cloudflare Workers adapter
+- **Next.js Config**: Optimized for Cloudflare Workers with external packages configuration
+- **Custom Domain**: `jtokib.com` configured with zone-level routing in Cloudflare
+- **Security Headers**: Migrated from Vercel to Wrangler environment variables
+
+### Windows Development Notes
+
+- **Local Preview**: `npm run preview` has Windows compatibility issues
+- **Deployment**: Use `npx wrangler deploy` directly for Windows compatibility
+- **Build Process**: OpenNext build works correctly, deployment tool has path issues
 
 ## Content Focus
 
