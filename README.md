@@ -6,9 +6,9 @@ A modern, responsive portfolio website built with Next.js 14 and TypeScript, sho
 
 This portfolio has evolved through multiple deployment platforms, demonstrating platform migration expertise:
 
-1. **GitHub Pages (2024)** → Initial static deployment with Jekyll
-2. **Vercel (2024)** → Migration to Next.js with static site generation and Vercel Analytics
-3. **Cloudflare Workers (2024)** → Latest migration leveraging edge computing with OpenNext adapter
+1. **GitHub Pages (2020)** → Initial static deployment with Jekyll
+2. **Vercel (2025)** → Migration to Next.js with static site generation and Vercel Analytics
+3. **Cloudflare Workers (2025)** → Latest migration leveraging edge computing with OpenNext adapter
 
 Each migration improved performance, scalability, and development experience while maintaining zero downtime.
 
