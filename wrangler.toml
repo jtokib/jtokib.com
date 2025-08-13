@@ -3,8 +3,11 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
 
-# Custom route for jtokib.com domain
-route = { pattern = "jtokib.com/*", zone_name = "jtokib.com" }
+# Custom routes for jtokib.com domain and www subdomain
+routes = [
+  { pattern = "jtokib.com/*", zone_name = "jtokib.com" },
+  { pattern = "www.jtokib.com/*", zone_name = "jtokib.com" }
+]
 
 [assets]
 directory = ".open-next/assets"
