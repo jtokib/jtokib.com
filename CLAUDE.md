@@ -68,7 +68,7 @@ app/
 - **Navigation**: Client-side component with scroll detection, mobile menu, and smooth scrolling
 - **AIDemo**: Interactive widget with predefined responses simulating an AI surf assistant
 - **Guestbook**: Interactive guestbook component with Supabase database integration for visitor messages
-- **Layout**: Contains comprehensive SEO metadata, Google Tag Manager, and Vercel Analytics
+- **Layout**: Contains comprehensive SEO metadata and Google Tag Manager
 - **Main Page**: Server component with all content sections in a single file
 
 ### Styling System

@@ -72,7 +72,7 @@ export default function Home() {
                   🌐 Greetings from cyberspace! 🌐 I&apos;m an experienced MarTech professional with deep 
                   expertise in ad tech and web development! I specialize in platforms like Tealium, Sitecore, 
                   and Selligent, with strong skills in HTML, CSS, and JavaScript. I&apos;ve also been exploring 
-                  cloud platforms (Google Firebase, Google Cloud, Supabase), development tools (GitHub, Vercel, 
+                  cloud platforms (Google Firebase, Google Cloud, Supabase), development tools (GitHub, Cloudflare Workers, 
                   Lovable), and AI platforms (Claude Code, ChatGPT, Meta AI) - always learning new tech! 🚀
                 </p>
                 <p>
@@ -106,7 +106,7 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon">💻⚡</span>
                       <h4>Web Development & Infrastructure</h4>
-                      <p>Very proficient in HTML, CSS, and JavaScript! Experienced with GitHub workflows, Vercel deployments, and infrastructure platforms like Akamai & Cloudflare. Still exploring Android development!</p>
+                      <p>Very proficient in HTML, CSS, and JavaScript! Experienced with GitHub workflows, Cloudflare Workers deployments, and infrastructure platforms like Akamai & Cloudflare. Still exploring Android development!</p>
                     </div>
                   </div>
                 </div>

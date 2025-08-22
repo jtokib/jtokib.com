@@ -2,105 +2,101 @@
 
 import { useState, useEffect } from 'react'
 
-interface GuestbookEntry {
-  id: string
+export interface GuestbookEntry {
+  id: number
   name: string
   message: string
   created_at: string
 }
 
-export default function Guestbook() {
-  const [entries, setEntries] = useState<GuestbookEntry[]>([])
-  const [name, setName] = useState('')
-  const [message, setMessage] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
+interface GuestbookProps {
+  initialEntries?: GuestbookEntry[]
+}
+
+export default function Guestbook({ initialEntries = [] }: GuestbookProps) {
+  const [entries, setEntries] = useState<GuestbookEntry[]>(initialEntries)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const wordCount = message.trim().split(/\s+/).filter(word => word.length > 0).length
-
+  // Load entries on component mount
   useEffect(() => {
-    fetchEntries()
-  }, [])
-
-  const fetchEntries = async () => {
-    try {
-      const response = await fetch('/api/guestbook')
-      if (response.ok) {
-        const data = await response.json()
-        setEntries(data)
-      } else {
-        console.error('Failed to fetch entries')
-        setError('Failed to load entries')
+    const loadEntries = async () => {
+      try {
+        const response = await fetch('/api/guestbook')
+        if (response.ok) {
+          const data = await response.json()
+          setEntries(data)
+        } else {
+          console.error('Failed to load guestbook entries')
+        }
+      } catch (error) {
+        console.error('Error loading guestbook entries:', error)
       }
-    } catch (error) {
-      console.error('Error fetching entries:', error)
-      setError('Failed to load entries')
-    } finally {
-      setIsLoading(false)
     }
-  }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+    if (initialEntries.length === 0) {
+      loadEntries()
+    }
+  }, [initialEntries.length])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setIsSubmitting(true)
     setError('')
     setSuccess('')
+    setIsLoading(true)
 
-    const trimmedName = name.trim()
-    const trimmedMessage = message.trim()
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('name') as string
+    const message = formData.get('message') as string
 
     // Client-side validation
-    if (!trimmedName || !trimmedMessage) {
+    if (!name?.trim() || !message?.trim()) {
       setError('Name and message are required')
-      setIsSubmitting(false)
+      setIsLoading(false)
       return
     }
 
-    if (trimmedName.length > 50) {
+    if (name.trim().length > 50) {
       setError('Name must be 50 characters or less')
-      setIsSubmitting(false)
+      setIsLoading(false)
       return
     }
 
-    if (trimmedMessage.length > 1000) {
+    if (message.trim().length > 1000) {
       setError('Message must be 1000 characters or less')
-      setIsSubmitting(false)
+      setIsLoading(false)
       return
     }
 
+    const wordCount = message.trim().split(/\s+/).filter(word => word.length > 0).length
     if (wordCount > 250) {
       setError('Message must be 250 words or less')
-      setIsSubmitting(false)
+      setIsLoading(false)
       return
     }
 
     try {
       const response = await fetch('/api/guestbook', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: trimmedName, message: trimmedMessage }),
+        body: formData
       })
 
-      const data = await response.json()
-
       if (response.ok) {
+        const newEntry = await response.json()
         setSuccess('🌟 Thanks for signing my guestbook! 🌟')
-        setName('')
-        setMessage('')
         // Add the new entry to the top of the list
-        setEntries(prev => [data, ...prev.slice(0, 9)])
+        setEntries(prev => [newEntry, ...prev.slice(0, 9)])
+        // Reset form
+        e.currentTarget.reset()
       } else {
-        setError(data.error || 'Failed to submit entry')
+        const errorData = await response.json()
+        setError(errorData.error || 'Failed to submit entry')
       }
     } catch (error) {
-      console.error('Error submitting entry:', error)
-      setError('Failed to submit entry. Please try again.')
+      setError('Network error - please try again')
     } finally {
-      setIsSubmitting(false)
+      setIsLoading(false)
     }
   }
 
@@ -170,7 +166,7 @@ export default function Guestbook() {
             ⚡ JOIN THE GUEST LIST ⚡
           </h3>
 
-          <form onSubmit={handleSubmit}>
+          <form id="guestbook-form" onSubmit={handleSubmit}>
             <div style={{ marginBottom: '1.5rem' }}>
               <label style={{
                 display: 'block',
@@ -183,8 +179,7 @@ export default function Guestbook() {
               </label>
               <input
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                name="name"
                 maxLength={50}
                 required
                 style={{
@@ -205,7 +200,7 @@ export default function Guestbook() {
                 fontSize: '0.8rem',
                 fontFamily: 'Comic Sans MS'
               }}>
-                {name.length}/50 characters
+                0/50 characters
               </small>
             </div>
 
@@ -220,8 +215,7 @@ export default function Guestbook() {
                 💫 Your Radical Message: *
               </label>
               <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                name="message"
                 maxLength={1000}
                 required
                 rows={4}
@@ -246,19 +240,18 @@ export default function Guestbook() {
                 marginTop: '0.5rem'
               }}>
                 <small style={{
-                  color: wordCount > 250 ? 'var(--primary-color)' : 'var(--text-light)',
+                  color: 'var(--text-light)',
                   fontSize: '0.8rem',
-                  fontFamily: 'Comic Sans MS',
-                  fontWeight: wordCount > 250 ? 'bold' : 'normal'
+                  fontFamily: 'Comic Sans MS'
                 }}>
-                  {wordCount}/250 words
+                  0/250 words
                 </small>
                 <small style={{
                   color: 'var(--text-light)',
                   fontSize: '0.8rem',
                   fontFamily: 'Comic Sans MS'
                 }}>
-                  {message.length}/1000 characters
+                  0/1000 characters
                 </small>
               </div>
             </div>
@@ -298,15 +291,15 @@ export default function Guestbook() {
 
             <button
               type="submit"
-              disabled={isSubmitting || wordCount > 250}
+              disabled={isLoading}
               className="btn btn-primary"
               style={{
                 width: '100%',
-                opacity: (isSubmitting || wordCount > 250) ? 0.6 : 1,
-                cursor: (isSubmitting || wordCount > 250) ? 'not-allowed' : 'pointer'
+                opacity: isLoading ? 0.6 : 1,
+                cursor: isLoading ? 'not-allowed' : 'pointer'
               }}
             >
-              {isSubmitting ? '🚀 SUBMITTING TO CYBERSPACE... 🚀' : '✨ SIGN THE GUESTBOOK! ✨'}
+              {isLoading ? '🚀 SUBMITTING TO CYBERSPACE... 🚀' : '✨ SIGN THE GUESTBOOK! ✨'}
             </button>
           </form>
         </div>
@@ -331,17 +324,7 @@ export default function Guestbook() {
             🌟 RECENT VISITORS TO MY CYBER REALM 🌟
           </h3>
 
-          {isLoading ? (
-            <div style={{
-              textAlign: 'center',
-              padding: '2rem',
-              color: 'var(--text-light)',
-              fontFamily: 'Comic Sans MS',
-              animation: 'pulse 1s infinite alternate'
-            }}>
-              💫 Loading guestbook entries from the matrix... 💫
-            </div>
-          ) : entries.length === 0 ? (
+          {entries.length === 0 ? (
             <div style={{
               textAlign: 'center',
               padding: '2rem',

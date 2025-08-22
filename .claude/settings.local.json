@@ -4,7 +4,9 @@
       "Bash(mkdir:*)",
       "Bash(xcopy:*)",
       "Bash(cp:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages"
     ],
     "deny": []
   }
