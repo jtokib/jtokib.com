@@ -1251,3 +1251,450 @@ a:hover {
         --border-light: #374151;
     }
 }
+
+/* ===== RESUME PAGE STYLES ===== */
+/* Professional styling for the resume page with Anthropic brand colors */
+
+/* Resume-specific CSS variables */
+:root {
+    --resume-primary: #D97706;
+    --resume-primary-dark: #B45309;
+    --resume-bg-light: #FFF7ED;
+    --resume-bg-accent: #FED7AA;
+    --resume-text-dark: #2c3e50;
+    --resume-text-muted: #7f8c8d;
+}
+
+/* Reset animations and background for resume pages */
+.resume-container {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    max-width: 8.5in;
+    margin: 2rem auto 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    color: var(--resume-text-dark);
+    padding: 0;
+    animation: none !important;
+}
+
+/* Resume header styling */
+.resume-header {
+    background: linear-gradient(135deg, var(--resume-primary) 0%, var(--resume-primary-dark) 100%);
+    color: #ffffff;
+    padding: 40px;
+    text-align: center;
+}
+
+.resume-name {
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    letter-spacing: 1px;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-title {
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    margin: 0 0 20px 0 !important;
+    opacity: 0.9;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+}
+
+.resume-contact a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    font-weight: normal !important;
+}
+
+.resume-contact a:hover {
+    color: var(--resume-bg-accent) !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Resume grid layout */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+/* Section styling */
+.resume-section {
+    margin-bottom: 40px;
+}
+
+.resume-section-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    color: var(--resume-text-dark) !important;
+    margin-bottom: 20px !important;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--resume-primary);
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    text-transform: none !important;
+}
+
+/* Job styling */
+.resume-job {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--resume-bg-accent);
+    border-radius: 8px;
+}
+
+.resume-job-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--resume-text-dark) !important;
+    margin: 0 !important;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-job-company {
+    font-size: 14px !important;
+    color: var(--resume-primary) !important;
+    margin: 2px 0 0 0 !important;
+    font-weight: 500 !important;
+}
+
+.resume-job-responsibilities {
+    margin-top: 8px;
+    padding-left: 16px;
+}
+
+.resume-responsibility {
+    margin-bottom: 4px;
+    font-size: 14px !important;
+    color: var(--resume-text-dark) !important;
+}
+
+/* Project styling */
+.resume-project {
+    margin-bottom: 25px;
+    padding: 15px;
+    border: 1px solid var(--resume-bg-accent);
+    border-radius: 8px;
+}
+
+.resume-project-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: var(--resume-text-dark) !important;
+    margin: 0 0 8px 0 !important;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-project-link {
+    color: var(--resume-primary) !important;
+    text-decoration: none !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.resume-project-link:hover {
+    text-decoration: underline !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.resume-project-description {
+    font-size: 14px !important;
+    margin: 8px 0 0 0 !important;
+    line-height: 1.5;
+    color: var(--resume-text-dark) !important;
+}
+
+.resume-subprojects {
+    margin-left: 16px;
+}
+
+.resume-subproject {
+    margin-bottom: 8px;
+}
+
+.resume-subproject-link {
+    color: var(--resume-primary) !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.resume-subproject-description {
+    font-size: 12px !important;
+    color: var(--resume-text-muted) !important;
+    margin: 2px 0 0 0 !important;
+}
+
+/* Sidebar styling */
+.resume-sidebar {
+    /* No specific styles needed, inherits from section */
+}
+
+.resume-skill-category {
+    margin-bottom: 20px;
+}
+
+.resume-skill-category-title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--resume-text-dark) !important;
+    margin-bottom: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-skill-tags {
+    /* Container for skill tags */
+}
+
+.resume-skill-tag {
+    background-color: var(--resume-bg-light);
+    color: var(--resume-primary);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    border: 1px solid var(--resume-bg-accent);
+    margin-right: 6px;
+    margin-bottom: 6px;
+    display: inline-block;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Education styling */
+.resume-education {
+    margin-bottom: 15px;
+}
+
+.resume-education-institution {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: var(--resume-text-dark) !important;
+    margin: 0 0 4px 0 !important;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.resume-education-degree {
+    font-size: 13px !important;
+    color: var(--resume-text-muted) !important;
+    margin: 0 0 2px 0 !important;
+}
+
+.resume-education-details {
+    font-size: 12px !important;
+    color: var(--resume-primary) !important;
+    margin: 0 !important;
+    font-style: italic;
+}
+
+/* Certification styling */
+.resume-certification {
+    background-color: var(--resume-bg-light);
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--resume-bg-accent);
+}
+
+.resume-certification-name {
+    font-size: 13px !important;
+    color: var(--resume-text-dark) !important;
+    margin: 0 0 4px 0 !important;
+    font-weight: 500 !important;
+}
+
+.resume-certification-link {
+    font-size: 12px !important;
+    color: var(--resume-primary) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Navigation for resume page */
+.resume-navigation {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.back-link {
+    color: var(--resume-primary) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    font-size: 16px !important;
+    text-shadow: none !important;
+    animation: none !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.back-link:hover {
+    text-decoration: underline !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Print actions styling */
+.print-actions {
+    max-width: 8.5in;
+    margin: 1rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.print-button {
+    background: linear-gradient(135deg, var(--resume-primary), var(--resume-primary-dark));
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.print-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(217, 119, 6, 0.3);
+}
+
+.print-hint {
+    margin-top: 8px;
+    font-size: 12px !important;
+    color: var(--resume-text-muted) !important;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Footer styling */
+.resume-footer {
+    max-width: 8.5in;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    color: var(--resume-text-muted) !important;
+    font-size: 14px !important;
+    border-top: 1px solid var(--resume-bg-accent);
+}
+
+.resume-footer a {
+    color: var(--resume-primary) !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+.resume-footer a:hover {
+    text-decoration: underline !important;
+    text-shadow: none !important;
+    animation: none !important;
+}
+
+/* Print media queries */
+@media print {
+    body {
+        background: white !important;
+        animation: none !important;
+        background-image: none !important;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    }
+    
+    .resume-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    .resume-grid {
+        padding: 20px !important;
+    }
+    
+    .resume-header {
+        padding: 30px !important;
+    }
+    
+    /* Ensure proper page breaks */
+    .resume-job, .resume-project {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .resume-section {
+        break-after: auto;
+        page-break-after: auto;
+    }
+}
+
+/* Mobile responsiveness for resume */
+@media (max-width: 768px) {
+    .resume-container {
+        margin: 1rem !important;
+        max-width: none !important;
+    }
+    
+    .resume-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 20px !important;
+    }
+    
+    .resume-header {
+        padding: 20px !important;
+    }
+    
+    .resume-name {
+        font-size: 28px !important;
+    }
+    
+    .resume-title {
+        font-size: 16px !important;
+    }
+    
+    .resume-contact {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

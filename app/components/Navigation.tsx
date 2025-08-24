@@ -68,6 +68,12 @@ export default function Navigation() {
           >
             Contact
           </Link>
+          <Link 
+            href="/resume" 
+            className="nav-link"
+          >
+            Resume
+          </Link>
         </div>
         <div 
           className={`nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
