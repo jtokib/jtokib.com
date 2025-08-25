@@ -25,9 +25,6 @@ npx wrangler deploy
 
 # Generate Cloudflare Worker types
 npm run cf-typegen
-
-# Run linting
-npm run lint
 ```
 
 ## Project Architecture
@@ -115,25 +112,41 @@ app/
 
 ### Deployment Configuration
 
-- **Wrangler Config**: `wrangler.toml` with custom domain routing and security headers
-- **OpenNext Config**: `open-next.config.ts` for Cloudflare Workers adapter
+- **Wrangler Config**: `wrangler.toml` with simplified configuration for reliable deployment
+- **OpenNext Config**: `open-next.config.ts` for Cloudflare Workers adapter configuration
 - **Next.js Config**: Optimized for Cloudflare Workers with external packages configuration
-- **Custom Domain**: `jtokib.com` configured with zone-level routing in Cloudflare
-- **Security Headers**: Migrated from Vercel to Wrangler environment variables
+- **Custom Domain**: `jtokib.com` configured directly in Cloudflare dashboard (not in wrangler.toml)
+- **Build Process**: Uses latest `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`
 
 ### Windows Development Notes
 
-- **Local Preview**: `npm run preview` has Windows compatibility issues
-- **Deployment**: Use `npx wrangler deploy` directly for Windows compatibility
-- **Build Process**: OpenNext build works correctly, deployment tool has path issues
+- **Local Preview**: `npm run preview` has Windows compatibility issues due to ESM URL scheme errors
+- **Deployment**: Use `npx wrangler deploy` directly for Windows compatibility - the npm script approach fails
+- **Build Process**: OpenNext build works correctly, but preview/deploy scripts have Windows path issues
+
+### Clean Rebuild Process (Nuclear Option)
+
+If experiencing build caching issues or worker.js not reflecting latest code changes:
+
+1. **Nuclear Clean**: `rm -rf .next .open-next node_modules .vercel package-lock.json`
+2. **Fresh Install**: `npm install` 
+3. **Verify Config**: Ensure `wrangler.toml` has valid worker name (alphanumeric + dashes only)
+4. **Test Build**: `npm run build` should complete successfully
+5. **Deploy**: Use `npx wrangler deploy` (Windows-compatible) instead of npm scripts
+6. **Verify**: Check new BUILD_ID in assets directory and confirm site serves latest code
 
 ### Recent Updates (August 2024)
 
+- **Complete Cloudflare Workers Rebuild** (August 25, 2024): Nuclear clean and rebuild of entire deployment pipeline
+  - Removed all Vercel configuration remnants and build artifacts
+  - Fresh installation of `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`
+  - Simplified `wrangler.toml` configuration without custom routes (configured in Cloudflare dashboard)
+  - Clean `package.json` scripts optimized for Cloudflare Workers
+  - Added `open-next.config.ts` for proper OpenNext configuration
+  - Resolved worker.js caching issues - deployments now reflect latest code changes
 - **Resume Page**: Added professional `/resume` route with modular Next.js App Router architecture
-- **File Cleanup**: Moved implementation prompts to `/.claude/` directory
+- **File Cleanup**: Moved implementation prompts to `/.claude/` directory  
 - **Print Functionality**: Removed custom print component in favor of browser's native print functionality
-- **OpenNext Configuration**: Added `open-next.config.ts` for proper Cloudflare Workers deployment
-- **Routing Fix**: Added `assets_navigation_has_no_effect` compatibility flag to resolve 404 issues
 
 ## Content Focus
 

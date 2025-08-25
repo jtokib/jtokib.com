@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ResumeView } from './components/ResumeView';
-import { PrintActions } from './components/PrintActions';
 import { createResumeData } from './lib/resume-factory';
 
 export const metadata: Metadata = {
@@ -24,14 +23,7 @@ export default function ResumePage() {
   const resumeData = createResumeData();
   
   return (
-    <>
-      <div className="resume-navigation no-print">
-        <Link href="/" className="back-link">
-          ← Back to Main Site
-        </Link>
-      </div>
-      
-      <PrintActions />
+    <>     
       <ResumeView data={resumeData} />
       
       <footer className="resume-footer no-print">

@@ -2329,17 +2329,22 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
-      "bytes": 4226,
+      "bytes": 4738,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-      "bytes": 4314,
+      "bytes": 4826,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/resume/page_client-reference-manifest.js": {
+      "bytes": 5024,
       "imports": [],
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-      "bytes": 11145,
+      "bytes": 12360,
       "imports": [
         {
           "path": "fs",
@@ -2365,9 +2370,23 @@
           "path": ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\app\\_not-found\\page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/resume/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\app\\resume\\page_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
+    },
+    "optional-deps-missing-dependency:/critters": {
+      "bytes": 57,
+      "imports": []
+    },
+    ".open-next/cloudflare-templates/shims/throw.js": {
+      "bytes": 42,
+      "imports": [],
+      "format": "esm"
     },
     ".open-next/server-functions/default/node_modules/react/cjs/react.production.min.js": {
       "bytes": 6930,
@@ -2406,68 +2425,6 @@
         }
       ],
       "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/chunks/480.js": {
-      "bytes": 152903,
-      "imports": [],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/chunks/682.js": {
-      "bytes": 33636,
-      "imports": [
-        {
-          "path": "@builder.io/partytown/integration",
-          "kind": "require-call",
-          "external": true
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-      "bytes": 1653,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/.next/server/chunks/480.js",
-          "kind": "require-call",
-          "original": "./chunks/480.js"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/chunks/682.js",
-          "kind": "require-call",
-          "original": "./chunks/682.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    ".open-next/server-functions/default/.next/server/pages/_app.js": {
-      "bytes": 3291,
-      "imports": [
-        {
-          "path": ".open-next/server-functions/default/node_modules/react/index.js",
-          "kind": "require-call",
-          "original": "react"
-        },
-        {
-          "path": ".open-next/server-functions/default/node_modules/react/jsx-runtime.js",
-          "kind": "require-call",
-          "original": "react/jsx-runtime"
-        },
-        {
-          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
-          "kind": "require-call",
-          "original": "../webpack-runtime.js"
-        }
-      ],
-      "format": "cjs"
-    },
-    "optional-deps-missing-dependency:/critters": {
-      "bytes": 57,
-      "imports": []
-    },
-    ".open-next/cloudflare-templates/shims/throw.js": {
-      "bytes": 42,
-      "imports": [],
-      "format": "esm"
     },
     ".open-next/server-functions/default/node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": {
       "bytes": 35019,
@@ -2599,6 +2556,58 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/.next/server/chunks/276.js": {
+      "bytes": 58113,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/chunks/404.js": {
+      "bytes": 25305,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/chunks/682.js": {
+      "bytes": 33636,
+      "imports": [
+        {
+          "path": "@builder.io/partytown/integration",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/chunks/82.js": {
+      "bytes": 94839,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
+      "bytes": 1771,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/276.js",
+          "kind": "require-call",
+          "original": "./chunks/276.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/404.js",
+          "kind": "require-call",
+          "original": "./chunks/404.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/682.js",
+          "kind": "require-call",
+          "original": "./chunks/682.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/chunks/82.js",
+          "kind": "require-call",
+          "original": "./chunks/82.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/.next/server/pages/_error.js": {
       "bytes": 8619,
       "imports": [
@@ -2621,6 +2630,27 @@
           "path": "path",
           "kind": "require-call",
           "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/pages/_app.js": {
+      "bytes": 3291,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/react/index.js",
+          "kind": "require-call",
+          "original": "react"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/react/jsx-runtime.js",
+          "kind": "require-call",
+          "original": "react/jsx-runtime"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
@@ -2757,7 +2787,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
-      "bytes": 5952,
+      "bytes": 5702,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
@@ -2788,7 +2818,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/app/page.js": {
-      "bytes": 54772,
+      "bytes": 159637,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
@@ -2818,8 +2848,1081 @@
       ],
       "format": "cjs"
     },
+    ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js": {
+      "bytes": 47752,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/static-generation-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/static-generation-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/server/lib/trace/tracer.js",
+          "kind": "require-call",
+          "original": "next/dist/server/lib/trace/tracer"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/request-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/request-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/action-async-storage.external.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/webidl-conversions/lib/index.js": {
+      "bytes": 5056,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/whatwg-url/lib/utils.js": {
+      "bytes": 562,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/tr46/lib/mappingTable.json": {
+      "bytes": 260049,
+      "imports": []
+    },
+    ".open-next/server-functions/default/node_modules/tr46/index.js": {
+      "bytes": 7567,
+      "imports": [
+        {
+          "path": "punycode",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/tr46/lib/mappingTable.json",
+          "kind": "require-call",
+          "original": "./lib/mappingTable.json"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js": {
+      "bytes": 33573,
+      "imports": [
+        {
+          "path": "punycode",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/tr46/index.js",
+          "kind": "require-call",
+          "original": "tr46"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL-impl.js": {
+      "bytes": 3804,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL.js": {
+      "bytes": 4212,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/webidl-conversions/lib/index.js",
+          "kind": "require-call",
+          "original": "webidl-conversions"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/utils.js",
+          "kind": "require-call",
+          "original": "./utils.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL-impl.js",
+          "kind": "require-call",
+          "original": ".//URL-impl.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/whatwg-url/lib/public-api.js": {
+      "bytes": 625,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL.js",
+          "kind": "require-call",
+          "original": "./URL"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js",
+          "kind": "require-call",
+          "original": "./url-state-machine"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js": {
+      "bytes": 45733,
+      "imports": [
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/whatwg-url/lib/public-api.js",
+          "kind": "require-call",
+          "original": "whatwg-url"
+        },
+        {
+          "path": "https",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "zlib",
+          "kind": "require-call",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/helper.js": {
+      "bytes": 1609,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/types.js": {
+      "bytes": 2064,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/FunctionsClient.js": {
+      "bytes": 5954,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/helper.js",
+          "kind": "require-call",
+          "original": "./helper"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/types.js",
+          "kind": "require-call",
+          "original": "./types"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/index.js": {
+      "bytes": 1161,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/FunctionsClient.js",
+          "kind": "require-call",
+          "original": "./FunctionsClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/types.js",
+          "kind": "require-call",
+          "original": "./types"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js": {
+      "bytes": 529,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js": {
+      "bytes": 9284,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js",
+          "kind": "require-call",
+          "original": "./PostgrestError"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js": {
+      "bytes": 8892,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestBuilder"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js": {
+      "bytes": 13644,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestTransformBuilder"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js": {
+      "bytes": 9392,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestFilterBuilder"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.js": {
+      "bytes": 4439,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestQueryBuilder"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestFilterBuilder"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/index.js": {
+      "bytes": 1695,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.js",
+          "kind": "require-call",
+          "original": "./PostgrestClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestQueryBuilder"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestFilterBuilder"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestTransformBuilder"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js",
+          "kind": "require-call",
+          "original": "./PostgrestBuilder"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js",
+          "kind": "require-call",
+          "original": "./PostgrestError"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/websocket-factory.js": {
+      "bytes": 4300,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/version.js": {
+      "bytes": 166,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/constants.js": {
+      "bytes": 2168,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/version.js",
+          "kind": "require-call",
+          "original": "./version"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/serializer.js": {
+      "bytes": 1494,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/timer.js": {
+      "bytes": 1279,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/transformers.js": {
+      "bytes": 8571,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/push.js": {
+      "bytes": 3165,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "../lib/constants"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimePresence.js": {
+      "bytes": 8361,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeChannel.js": {
+      "bytes": 24983,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./lib/constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/push.js",
+          "kind": "require-call",
+          "original": "./lib/push"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/timer.js",
+          "kind": "require-call",
+          "original": "./lib/timer"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimePresence.js",
+          "kind": "require-call",
+          "original": "./RealtimePresence"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/transformers.js",
+          "kind": "require-call",
+          "original": "./lib/transformers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/transformers.js",
+          "kind": "require-call",
+          "original": "./lib/transformers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeClient.js": {
+      "bytes": 27909,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/websocket-factory.js",
+          "kind": "require-call",
+          "original": "./lib/websocket-factory"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./lib/constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/serializer.js",
+          "kind": "require-call",
+          "original": "./lib/serializer"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/timer.js",
+          "kind": "require-call",
+          "original": "./lib/timer"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/transformers.js",
+          "kind": "require-call",
+          "original": "./lib/transformers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeChannel.js",
+          "kind": "require-call",
+          "original": "./RealtimeChannel"
+        },
+        {
+          "path": "<runtime>",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/index.js": {
+      "bytes": 3235,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeClient.js",
+          "kind": "require-call",
+          "original": "./RealtimeClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeChannel.js",
+          "kind": "require-call",
+          "original": "./RealtimeChannel"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimePresence.js",
+          "kind": "require-call",
+          "original": "./RealtimePresence"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/websocket-factory.js",
+          "kind": "require-call",
+          "original": "./lib/websocket-factory"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js": {
+      "bytes": 1313,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/helpers.js": {
+      "bytes": 3860,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/fetch.js": {
+      "bytes": 4465,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./helpers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageFileApi.js": {
+      "bytes": 24754,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "../lib/errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/fetch.js",
+          "kind": "require-call",
+          "original": "../lib/fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "../lib/helpers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/version.js": {
+      "bytes": 193,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/constants.js": {
+      "bytes": 270,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/version.js",
+          "kind": "require-call",
+          "original": "./version"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageBucketApi.js": {
+      "bytes": 8108,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "../lib/constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "../lib/errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/fetch.js",
+          "kind": "require-call",
+          "original": "../lib/fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "../lib/helpers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/StorageClient.js": {
+      "bytes": 867,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageFileApi.js",
+          "kind": "require-call",
+          "original": "./packages/StorageFileApi"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageBucketApi.js",
+          "kind": "require-call",
+          "original": "./packages/StorageBucketApi"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/types.js": {
+      "bytes": 110,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/index.js": {
+      "bytes": 1098,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/StorageClient.js",
+          "kind": "require-call",
+          "original": "./StorageClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/types.js",
+          "kind": "require-call",
+          "original": "./lib/types"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./lib/errors"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/version.js": {
+      "bytes": 166,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/constants.js": {
+      "bytes": 1026,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/version.js",
+          "kind": "require-call",
+          "original": "./version"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/fetch.js": {
+      "bytes": 3385,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js": {
+      "bytes": 2760,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/version.js": {
+      "bytes": 166,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/constants.js": {
+      "bytes": 1556,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/version.js",
+          "kind": "require-call",
+          "original": "./version"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js": {
+      "bytes": 5338,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/base64url.js": {
+      "bytes": 9357,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js": {
+      "bytes": 14445,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/base64url.js",
+          "kind": "require-call",
+          "original": "./base64url"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js",
+          "kind": "require-call",
+          "original": "@supabase/node-fetch"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/fetch.js": {
+      "bytes": 8352,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./helpers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./errors"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/types.js": {
+      "bytes": 201,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js": {
+      "bytes": 10794,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/fetch.js",
+          "kind": "require-call",
+          "original": "./lib/fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./lib/helpers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/types.js",
+          "kind": "require-call",
+          "original": "./lib/types"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./lib/errors"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/local-storage.js": {
+      "bytes": 617,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/polyfills.js": {
+      "bytes": 899,
+      "imports": [],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/locks.js": {
+      "bytes": 8365,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./helpers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueClient.js": {
+      "bytes": 112519,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js",
+          "kind": "require-call",
+          "original": "./GoTrueAdminApi"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./lib/constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./lib/errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/fetch.js",
+          "kind": "require-call",
+          "original": "./lib/fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./lib/helpers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/local-storage.js",
+          "kind": "require-call",
+          "original": "./lib/local-storage"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/polyfills.js",
+          "kind": "require-call",
+          "original": "./lib/polyfills"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/version.js",
+          "kind": "require-call",
+          "original": "./lib/version"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/locks.js",
+          "kind": "require-call",
+          "original": "./lib/locks"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/base64url.js",
+          "kind": "require-call",
+          "original": "./lib/base64url"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./lib/helpers"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthAdminApi.js": {
+      "bytes": 406,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js",
+          "kind": "require-call",
+          "original": "./GoTrueAdminApi"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthClient.js": {
+      "bytes": 394,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueClient.js",
+          "kind": "require-call",
+          "original": "./GoTrueClient"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/index.js": {
+      "bytes": 2253,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js",
+          "kind": "require-call",
+          "original": "./GoTrueAdminApi"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueClient.js",
+          "kind": "require-call",
+          "original": "./GoTrueClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthAdminApi.js",
+          "kind": "require-call",
+          "original": "./AuthAdminApi"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthClient.js",
+          "kind": "require-call",
+          "original": "./AuthClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/types.js",
+          "kind": "require-call",
+          "original": "./lib/types"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js",
+          "kind": "require-call",
+          "original": "./lib/errors"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/locks.js",
+          "kind": "require-call",
+          "original": "./lib/locks"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/SupabaseAuthClient.js": {
+      "bytes": 372,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/auth-js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js": {
+      "bytes": 10682,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/functions-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/index.js",
+          "kind": "require-call",
+          "original": "@supabase/postgrest-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/realtime-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/storage-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/constants.js",
+          "kind": "require-call",
+          "original": "./lib/constants"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/fetch.js",
+          "kind": "require-call",
+          "original": "./lib/fetch"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js",
+          "kind": "require-call",
+          "original": "./lib/helpers"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/SupabaseAuthClient.js",
+          "kind": "require-call",
+          "original": "./lib/SupabaseAuthClient"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/index.js": {
+      "bytes": 3756,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js",
+          "kind": "require-call",
+          "original": "./SupabaseClient"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/auth-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/index.js",
+          "kind": "require-call",
+          "original": "@supabase/postgrest-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/functions-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/realtime-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js",
+          "kind": "require-call",
+          "original": "./SupabaseClient"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/api/guestbook/route.js": {
+      "bytes": 173408,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-route.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/index.js",
+          "kind": "require-call",
+          "original": "@supabase/supabase-js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    ".open-next/server-functions/default/.next/server/app/resume/page.js": {
+      "bytes": 16039,
+      "imports": [
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/action-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/action-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/request-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/request-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/client/components/static-generation-async-storage.external.js",
+          "kind": "require-call",
+          "original": "next/dist/client/components/static-generation-async-storage.external.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js",
+          "kind": "require-call",
+          "original": "next/dist/compiled/next-server/app-page.runtime.prod.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/webpack-runtime.js",
+          "kind": "require-call",
+          "original": "../../webpack-runtime.js"
+        }
+      ],
+      "format": "cjs"
+    },
     ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-      "bytes": 22510,
+      "bytes": 22481,
       "imports": [
         {
           "path": "path",
@@ -2867,14 +3970,14 @@
           "external": true
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/pages/_app.js",
-          "kind": "require-call",
-          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_app.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/pages/_error.js",
           "kind": "require-call",
           "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_error.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/pages/_app.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_app.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/pages/_document.js",
@@ -2890,6 +3993,16 @@
           "path": ".open-next/server-functions/default/.next/server/app/page.js",
           "kind": "require-call",
           "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\app\\page.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/api/guestbook/route.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\app\\api\\guestbook\\route.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/resume/page.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\app\\resume\\page.js"
         }
       ],
       "format": "cjs"
@@ -3274,14 +4387,14 @@
       "bytes": 956,
       "imports": [
         {
-          "path": ".open-next/server-functions/default/.next/server/pages/_app.js",
-          "kind": "require-call",
-          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_app.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/pages/_error.js",
           "kind": "require-call",
           "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_error.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/pages/_app.js",
+          "kind": "require-call",
+          "original": "C:\\Users\\toki\\Documents\\Projects\\jtokib.com\\.open-next\\server-functions\\default\\.next\\server\\pages\\_app.js"
         },
         {
           "path": ".open-next/server-functions/default/.next/server/pages/_document.js",
@@ -3556,7 +4669,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/serve-static.js": {
-      "bytes": 1822,
+      "bytes": 1948,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/compiled/send/index.js",
@@ -3639,7 +4752,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/next/dist/server/image-optimizer.js": {
-      "bytes": 28324,
+      "bytes": 30005,
       "imports": [
         {
           "path": "crypto",
@@ -4161,12 +5274,12 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/open-next.config.mjs": {
-      "bytes": 6496,
+      "bytes": 6444,
       "imports": [],
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 71483,
+      "bytes": 71668,
       "imports": [
         {
           "path": "node:module",
@@ -4326,17 +5439,17 @@
           "external": true
         },
         {
-          "path": "@builder.io/partytown/integration",
-          "kind": "require-call",
-          "external": true
-        },
-        {
           "path": "crypto",
           "kind": "require-call",
           "external": true
         },
         {
           "path": "path",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "@builder.io/partytown/integration",
           "kind": "require-call",
           "external": true
         },
@@ -4372,6 +5485,41 @@
         },
         {
           "path": "util",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "punycode",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "punycode",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "stream",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "http",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "url",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "https",
+          "kind": "require-call",
+          "external": true
+        },
+        {
+          "path": "zlib",
           "kind": "require-call",
           "external": true
         },
@@ -5129,7 +6277,7 @@
           "bytesInOutput": 319
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/jsonwebtoken/index.js": {
-          "bytesInOutput": 125656
+          "bytesInOutput": 125687
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/crypto-utils.js": {
           "bytesInOutput": 1810
@@ -5147,13 +6295,22 @@
           "bytesInOutput": 586
         },
         ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
-          "bytesInOutput": 4051
+          "bytesInOutput": 4528
         },
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-          "bytesInOutput": 4151
+          "bytesInOutput": 4628
+        },
+        ".open-next/server-functions/default/.next/server/app/resume/page_client-reference-manifest.js": {
+          "bytesInOutput": 4822
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.js": {
-          "bytesInOutput": 9596
+          "bytesInOutput": 10560
+        },
+        "optional-deps-missing-dependency:/critters": {
+          "bytesInOutput": 141
+        },
+        ".open-next/cloudflare-templates/shims/throw.js": {
+          "bytesInOutput": 215
         },
         ".open-next/server-functions/default/node_modules/react/cjs/react.production.min.js": {
           "bytesInOutput": 6806
@@ -5166,24 +6323,6 @@
         },
         ".open-next/server-functions/default/node_modules/react/jsx-runtime.js": {
           "bytesInOutput": 198
-        },
-        ".open-next/server-functions/default/.next/server/chunks/480.js": {
-          "bytesInOutput": 157996
-        },
-        ".open-next/server-functions/default/.next/server/chunks/682.js": {
-          "bytesInOutput": 34818
-        },
-        ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
-          "bytesInOutput": 1754
-        },
-        ".open-next/server-functions/default/.next/server/pages/_app.js": {
-          "bytesInOutput": 3513
-        },
-        "optional-deps-missing-dependency:/critters": {
-          "bytesInOutput": 141
-        },
-        ".open-next/cloudflare-templates/shims/throw.js": {
-          "bytesInOutput": 215
         },
         ".open-next/server-functions/default/node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js": {
           "bytesInOutput": 34550
@@ -5206,8 +6345,26 @@
         ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js": {
           "bytesInOutput": 70102
         },
+        ".open-next/server-functions/default/.next/server/chunks/276.js": {
+          "bytesInOutput": 60343
+        },
+        ".open-next/server-functions/default/.next/server/chunks/404.js": {
+          "bytesInOutput": 26126
+        },
+        ".open-next/server-functions/default/.next/server/chunks/682.js": {
+          "bytesInOutput": 34818
+        },
+        ".open-next/server-functions/default/.next/server/chunks/82.js": {
+          "bytesInOutput": 97818
+        },
+        ".open-next/server-functions/default/.next/server/webpack-runtime.js": {
+          "bytesInOutput": 1827
+        },
         ".open-next/server-functions/default/.next/server/pages/_error.js": {
           "bytesInOutput": 9088
+        },
+        ".open-next/server-functions/default/.next/server/pages/_app.js": {
+          "bytesInOutput": 3513
         },
         ".open-next/server-functions/default/.next/server/pages/_document.js": {
           "bytesInOutput": 462
@@ -5228,13 +6385,211 @@
           "bytesInOutput": 352801
         },
         ".open-next/server-functions/default/.next/server/app/_not-found/page.js": {
-          "bytesInOutput": 6071
+          "bytesInOutput": 5821
         },
         ".open-next/server-functions/default/.next/server/app/page.js": {
-          "bytesInOutput": 56006
+          "bytesInOutput": 165295
+        },
+        ".open-next/server-functions/default/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js": {
+          "bytesInOutput": 49951
+        },
+        ".open-next/server-functions/default/node_modules/webidl-conversions/lib/index.js": {
+          "bytesInOutput": 3239
+        },
+        ".open-next/server-functions/default/node_modules/whatwg-url/lib/utils.js": {
+          "bytesInOutput": 611
+        },
+        ".open-next/server-functions/default/node_modules/tr46/lib/mappingTable.json": {
+          "bytesInOutput": 260171
+        },
+        ".open-next/server-functions/default/node_modules/tr46/index.js": {
+          "bytesInOutput": 6262
+        },
+        ".open-next/server-functions/default/node_modules/whatwg-url/lib/url-state-machine.js": {
+          "bytesInOutput": 22093
+        },
+        ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL-impl.js": {
+          "bytesInOutput": 2670
+        },
+        ".open-next/server-functions/default/node_modules/whatwg-url/lib/URL.js": {
+          "bytesInOutput": 3373
+        },
+        ".open-next/server-functions/default/node_modules/whatwg-url/lib/public-api.js": {
+          "bytesInOutput": 696
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/node-fetch/lib/index.js": {
+          "bytesInOutput": 25606
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/helper.js": {
+          "bytesInOutput": 1339
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/types.js": {
+          "bytesInOutput": 1835
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/FunctionsClient.js": {
+          "bytesInOutput": 3055
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/functions-js/dist/main/index.js": {
+          "bytesInOutput": 1138
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestError.js": {
+          "bytesInOutput": 438
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestBuilder.js": {
+          "bytesInOutput": 3601
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestTransformBuilder.js": {
+          "bytesInOutput": 2803
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestFilterBuilder.js": {
+          "bytesInOutput": 3893
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestQueryBuilder.js": {
+          "bytesInOutput": 2972
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/PostgrestClient.js": {
+          "bytesInOutput": 1586
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/postgrest-js/dist/cjs/index.js": {
+          "bytesInOutput": 1591
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/websocket-factory.js": {
+          "bytesInOutput": 2791
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/version.js": {
+          "bytesInOutput": 258
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/constants.js": {
+          "bytesInOutput": 1978
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/serializer.js": {
+          "bytesInOutput": 1018
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/timer.js": {
+          "bytesInOutput": 610
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/transformers.js": {
+          "bytesInOutput": 4089
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/lib/push.js": {
+          "bytesInOutput": 2019
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimePresence.js": {
+          "bytesInOutput": 4334
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeChannel.js": {
+          "bytesInOutput": 14657
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/RealtimeClient.js": {
+          "bytesInOutput": 13699
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/realtime-js/dist/main/index.js": {
+          "bytesInOutput": 2816
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/errors.js": {
+          "bytesInOutput": 1146
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/helpers.js": {
+          "bytesInOutput": 2909
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/fetch.js": {
+          "bytesInOutput": 3248
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageFileApi.js": {
+          "bytesInOutput": 10416
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/version.js": {
+          "bytesInOutput": 258
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/constants.js": {
+          "bytesInOutput": 354
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/packages/StorageBucketApi.js": {
+          "bytesInOutput": 3306
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/StorageClient.js": {
+          "bytesInOutput": 737
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/lib/types.js": {
+          "bytesInOutput": 206
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/storage-js/dist/main/index.js": {
+          "bytesInOutput": 1008
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/version.js": {
+          "bytesInOutput": 259
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/constants.js": {
+          "bytesInOutput": 908
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/fetch.js": {
+          "bytesInOutput": 2655
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/helpers.js": {
+          "bytesInOutput": 2195
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/version.js": {
+          "bytesInOutput": 255
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/constants.js": {
+          "bytesInOutput": 1234
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/errors.js": {
+          "bytesInOutput": 4458
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/base64url.js": {
+          "bytesInOutput": 4570
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/helpers.js": {
+          "bytesInOutput": 9135
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/fetch.js": {
+          "bytesInOutput": 5606
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/types.js": {
+          "bytesInOutput": 286
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueAdminApi.js": {
+          "bytesInOutput": 5382
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/local-storage.js": {
+          "bytesInOutput": 478
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/polyfills.js": {
+          "bytesInOutput": 565
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/lib/locks.js": {
+          "bytesInOutput": 3432
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/GoTrueClient.js": {
+          "bytesInOutput": 54390
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthAdminApi.js": {
+          "bytesInOutput": 461
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/AuthClient.js": {
+          "bytesInOutput": 447
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/auth-js/dist/main/index.js": {
+          "bytesInOutput": 2030
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/lib/SupabaseAuthClient.js": {
+          "bytesInOutput": 434
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/SupabaseClient.js": {
+          "bytesInOutput": 5075
+        },
+        ".open-next/server-functions/default/node_modules/@supabase/supabase-js/dist/main/index.js": {
+          "bytesInOutput": 2878
+        },
+        ".open-next/server-functions/default/.next/server/app/api/guestbook/route.js": {
+          "bytesInOutput": 180132
+        },
+        ".open-next/server-functions/default/.next/server/app/resume/page.js": {
+          "bytesInOutput": 16286
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/require.js": {
-          "bytesInOutput": 19200
+          "bytesInOutput": 18876
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/interop-default.js": {
           "bytesInOutput": 363
@@ -5267,10 +6622,10 @@
           "bytesInOutput": 1688
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/response-cache/types.js": {
-          "bytesInOutput": 202
+          "bytesInOutput": 203
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/response-cache/index.js": {
-          "bytesInOutput": 2961
+          "bytesInOutput": 2962
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/lib/incremental-cache/fetch-cache.js": {
           "bytesInOutput": 7193
@@ -5363,22 +6718,22 @@
           "bytesInOutput": 1251
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/send/index.js": {
-          "bytesInOutput": 65000
+          "bytesInOutput": 65002
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/serve-static.js": {
-          "bytesInOutput": 1240
+          "bytesInOutput": 1306
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/url.js": {
           "bytesInOutput": 755
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/jest-worker/index.js": {
-          "bytesInOutput": 23970
+          "bytesInOutput": 23972
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/lib/squoosh/main.js": {
-          "bytesInOutput": 2990
+          "bytesInOutput": 2991
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/image-optimizer.js": {
-          "bytesInOutput": 16954
+          "bytesInOutput": 17792
         },
         ".open-next/server-functions/default/node_modules/next/dist/lib/format-server-error.js": {
           "bytesInOutput": 2141
@@ -5387,16 +6742,16 @@
           "bytesInOutput": 1126
         },
         ".open-next/server-functions/default/node_modules/next/dist/experimental/testmode/fetch.js": {
-          "bytesInOutput": 2463
+          "bytesInOutput": 2464
         },
         ".open-next/server-functions/default/node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/index.js": {
           "bytesInOutput": 36651
         },
         ".open-next/server-functions/default/node_modules/next/dist/experimental/testmode/httpget.js": {
-          "bytesInOutput": 727
+          "bytesInOutput": 728
         },
         ".open-next/server-functions/default/node_modules/next/dist/experimental/testmode/server.js": {
-          "bytesInOutput": 1216
+          "bytesInOutput": 1217
         },
         ".open-next/server-functions/default/cache.cjs": {
           "bytesInOutput": 11033
@@ -5405,13 +6760,13 @@
           "bytesInOutput": 28212
         },
         ".open-next/server-functions/default/open-next.config.mjs": {
-          "bytesInOutput": 4959
+          "bytesInOutput": 4957
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 49390
+          "bytesInOutput": 49550
         }
       },
-      "bytes": 1903700
+      "bytes": 2820953
     }
   }
 }
