@@ -55,27 +55,53 @@ This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14
 ```
 app/
 ├── components/
-│   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu
+│   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu + resume link
 │   ├── AIDemo.tsx        # Interactive demo with simulated responses
 │   └── Guestbook.tsx     # Interactive guestbook with Supabase integration
-├── globals.css           # All styles (uses CSS custom properties)
+├── resume/               # Professional resume page with modular architecture
+│   ├── components/       # Reusable resume components
+│   │   ├── types.ts      # TypeScript data models for resume
+│   │   ├── ResumeView.tsx        # Main resume display component
+│   │   ├── ResumeHeader.tsx      # Header with contact info
+│   │   ├── ExperienceSection.tsx # Work experience component
+│   │   ├── ProjectsSection.tsx   # Technical projects component
+│   │   └── SidebarSection.tsx    # Skills/education sidebar
+│   ├── lib/
+│   │   └── resume-factory.ts     # Resume data factory/service
+│   └── page.tsx          # Resume page with SEO metadata
+├── api/
+│   └── guestbook/
+│       └── route.ts      # Supabase API integration for guestbook
+├── globals.css           # All styles + professional resume CSS
 ├── layout.tsx            # SEO metadata, fonts, analytics setup
 └── page.tsx              # Main page content (hero, about, projects, contact, guestbook)
 ```
 
 ### Component Architecture
 
-- **Navigation**: Client-side component with scroll detection, mobile menu, and smooth scrolling
+- **Navigation**: Client-side component with scroll detection, mobile menu, smooth scrolling, and resume page link
 - **AIDemo**: Interactive widget with predefined responses simulating an AI surf assistant
 - **Guestbook**: Interactive guestbook component with Supabase database integration for visitor messages
+- **Resume**: Professional resume page with modular component architecture:
+  - **Modular Design**: Follows SOLID principles with composable components
+  - **TypeScript Data Models**: Proper data abstraction and factory patterns
+  - **Professional Styling**: Anthropic brand colors, print-optimized, separate from main site theme
+  - **SEO Optimized**: Complete metadata and social sharing tags
 - **Layout**: Contains comprehensive SEO metadata and Google Tag Manager
 - **Main Page**: Server component with all content sections in a single file
 
 ### Styling System
 
-- Uses CSS custom properties (CSS variables) defined in `:root`
-- Mobile-first responsive design
-- Color scheme: Primary (#6366f1), Secondary (#06b6d4), Accent (#f59e0b)
+- **Main Site**: Uses CSS custom properties (CSS variables) defined in `:root`
+  - 90s GeoCities retro theme with animations and rainbow effects
+  - Color scheme: Hot Pink (#FF1493), Lime Green (#00DD00), Gold (#FFD700)
+  - Comic Sans MS font for playful aesthetic
+- **Resume Page**: Professional styling completely separate from main site
+  - Anthropic brand colors: Orange (#D97706), Brown (#B45309), Cream (#FFF7ED)
+  - Segoe UI font for professional appearance
+  - Print-optimized CSS with proper page breaks
+  - No animations or effects for professional presentation
+- Mobile-first responsive design across both themes
 - Consistent spacing and typography scale
 - Box shadows and border radius defined as variables
 
@@ -101,6 +127,14 @@ app/
 - **Deployment**: Use `npx wrangler deploy` directly for Windows compatibility
 - **Build Process**: OpenNext build works correctly, deployment tool has path issues
 
+### Recent Updates (August 2024)
+
+- **Resume Page**: Added professional `/resume` route with modular Next.js App Router architecture
+- **File Cleanup**: Moved implementation prompts to `/.claude/` directory
+- **Print Functionality**: Removed custom print component in favor of browser's native print functionality
+- **OpenNext Configuration**: Added `open-next.config.ts` for proper Cloudflare Workers deployment
+- **Routing Fix**: Added `assets_navigation_has_no_effect` compatibility flag to resolve 404 issues
+
 ## Content Focus
 
 The site showcases Toki Burke's expertise in:
@@ -108,3 +142,26 @@ The site showcases Toki Burke's expertise in:
 - AI and Cloud Platforms (Firebase, Google Cloud, ChatGPT, Claude)
 - Web Development (JavaScript, React, Next.js)
 - Featured project: obsf.surf (surf forecast dashboard)
+
+## Important Development Guidelines - CRITICAL
+
+### File Creation Rules
+- **NEVER create files unless absolutely necessary for the current task**
+- **ALWAYS prefer editing existing files over creating new ones**
+- **NEVER refactor working code without explicit user request**
+- **NEVER create "improved" versions of existing working files**
+
+### Architecture Guidelines  
+- **AVOID enterprise patterns (factories, services, repositories) for simple use cases**
+- **Prefer simple direct implementations over complex architectures**
+- **Don't add abstraction layers unless managing 5+ related files**
+- **One feature should = minimal files needed**
+
+### Quality Control
+- **ALWAYS test builds immediately after creating/modifying files**  
+- **Remove unused files immediately rather than trying to fix them**
+- **If you create utilities/helpers, ensure they are actually imported and used**
+- **Flag and remove dead code rather than improving it**
+
+### Development Principle
+**"Working > Perfect"** - Simple solutions that work are preferred over complex solutions that might be more "correct" architecturally.
