@@ -1,20 +1,12 @@
-name = "jtokib"
 main = ".open-next/worker.js"
+name = "jtokib"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
 
-# Custom routes for jtokib.com domain and www subdomain
-routes = [
-  { pattern = "jtokib.com/*", zone_name = "jtokib.com" },
-  { pattern = "www.jtokib.com/*", zone_name = "jtokib.com" }
-]
-
 [assets]
-directory = ".open-next/assets"
+directory = ".open-next/assets"  
 binding = "ASSETS"
 
-# Security headers configuration (migrated from vercel.json)
-[vars]
-X_FRAME_OPTIONS = "DENY"
-X_CONTENT_TYPE_OPTIONS = "nosniff"
-REFERRER_POLICY = "strict-origin-when-cross-origin"
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = true
