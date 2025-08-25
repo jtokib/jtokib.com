@@ -1,8 +1,0 @@
-# Robots.txt for jtokib.com updated 8/17/2020
-
-# Global rules
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://jtokib.com/sitemap.xml

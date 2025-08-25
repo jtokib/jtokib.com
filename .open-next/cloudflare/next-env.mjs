@@ -1,3 +1,0 @@
-export const production = {"SUPABASE_KEY":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxdGJodXRwaGNzZnVoZ2xwbmR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1MDI4MjQsImV4cCI6MjA2OTA3ODgyNH0.TW_BOaXRqx0w9K48Ale-qPJ6eiitohqKHx4XaXg7bKI","NEXT_PUBLIC_PREDICT_API_URL":"https://us-central1-jtokib.cloudfunctions.net/predict_surf_score"};
-export const development = {"SUPABASE_KEY":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxdGJodXRwaGNzZnVoZ2xwbmR0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM1MDI4MjQsImV4cCI6MjA2OTA3ODgyNH0.TW_BOaXRqx0w9K48Ale-qPJ6eiitohqKHx4XaXg7bKI","NEXT_PUBLIC_PREDICT_API_URL":"https://us-central1-jtokib.cloudfunctions.net/predict_surf_score"};
-export const test = {};
