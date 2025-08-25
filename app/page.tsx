@@ -1,6 +1,6 @@
 import Navigation from './components/Navigation'
 import AIDemo from './components/AIDemo'
-import Guestbook from './components/Guestbook'
+import GuestbookContainer from './components/guestbook/GuestbookContainer'
 
 export default function Home() {
   return (
@@ -11,22 +11,16 @@ export default function Home() {
         <div className="under-construction block-dark-yellow">
           🚧 UNDER CONSTRUCTION 🚧 BEST VIEWED IN NETSCAPE NAVIGATOR 4.0 🚧 LAST UPDATED: 12/31/1995 🚧
         </div>
-
-        <div className="visitor-counter block-dark-pink">
-          👁️ VISITOR COUNT: 000042069 👁️ YOU ARE VISITOR #42070! 👁️ 
-        </div>
-
         <section id="home" className="hero">
           <div className="hero-content block-dark">
             <div className="hero-text text-white">
               <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
               <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL KOOK ⚡</h2>
               <p className="hero-description">
-                🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional with expertise in ad tech,
-                tag management, and web development! When I&apos;m not building digital solutions or working 
-                with platforms like Tealium and Sitecore, you&apos;ll find me out in the water as a 
-                semi-amateur professional trying to catch waves across the Pacific Ocean! 🏄‍♂️ I also enjoy 
-                growing California native plants and tinkering with surfboard repairs. Welcome to my digital corner! ✨
+                🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional specializing in ad tech, 
+                tag management, and web development with deep expertise in Tealium, Sitecore, and Selligent platforms.
+                When I&apos;m not building digital solutions, you&apos;ll find me surfing across the Pacific 🏄‍♂️, 
+                growing California native plants 🌱, or fixing up old surfboards! Welcome to my digital escape! ✨
               </p>
               <div className="hero-buttons">
                 <a href="#projects" className="btn btn-primary">🔥 CHECK OUT MY PROJECTS! 🔥</a>
@@ -42,7 +36,7 @@ export default function Home() {
                   ⚡ THE CYBER WARRIOR HIMSELF ⚡
                 </div>
                 <div className="profile-card-details">
-                  🌐 MarTech Expert<br/>
+                  🌐 MarTech<br/>
                   🏄‍♂️ Semi-Amateur Professional Kook<br/>
                   🤖 AI Explorer<br/>
                   🌱 Plant Enthusiast
@@ -60,35 +54,22 @@ export default function Home() {
             <h2>🎯 ABOUT THE WEBMASTER 🎯</h2>
             <div className="about-email-cta">
               <strong>
-                <a href="mailto:jtokib@gmail.com">📧 EMAIL ME!</a>
-                📧 
-                <a href="#guestbook">SIGN MY GUESTBOOK!</a>
-                📧
+                💬 <a href="mailto:jtokib@gmail.com">GET IN TOUCH</a> or <a href="#guestbook">SIGN MY GUESTBOOK!</a> 💬
               </strong>
             </div>
             <div className="about-content">
               <div className="about-text">
                 <p>
-                  🌐 Greetings from cyberspace! 🌐 I&apos;m an experienced MarTech professional with deep 
-                  expertise in ad tech and web development! I specialize in platforms like Tealium, Sitecore, 
-                  and Selligent, with strong skills in HTML, CSS, and JavaScript. I&apos;ve also been exploring 
-                  cloud platforms (Google Firebase, Google Cloud, Supabase), development tools (GitHub, Cloudflare Workers, 
-                  Lovable), and AI platforms (Claude Code, ChatGPT, Meta AI) - always learning new tech! 🚀
+                  🌐 Welcome to my corner of cyberspace! 🌐 I&apos;ve been exploring the intersection of 
+                  marketing technology and web development, always learning new platforms and tools. 
+                  I&apos;ve been diving into cloud platforms (Google Firebase, Google Cloud, Supabase), 
+                  development tools (GitHub, Cloudflare Workers), and AI platforms (Claude Code, ChatGPT, Meta AI). 
+                  The tech landscape keeps evolving, and I love the challenge of keeping up! 🚀
                 </p>
                 <p>
-                  💾 I&apos;m very proficient in web development fundamentals (HTML, CSS, JavaScript) and 
-                  have deep expertise in the ad tech stack. I&apos;m highly skilled with marketing platforms 
-                  like Tealium, Sitecore, and Selligent, specializing in both client-side and server-side 
-                  tag management. I also work with analytics tools (Google Tag Manager, Google Analytics, 
-                  Facebook Pixel, Facebook CAPI) and infrastructure systems (Akamai, Cloudflare, Rackspace). 
-                  I love creating robust digital solutions that perform well and look great! ✨
-                </p>
-                <p>
-                  🏄‍♂️ When I&apos;m not experimenting with code, you&apos;ll find me in the water trying to catch waves 
-                  across the Pacific Ocean! I&apos;ve been fortunate to surf in Washington, Oregon, California, 
+                  🏄‍♂️ I&apos;m a semi-amateur professional kook who&apos;s been fortunate to surf in Washington, Oregon, California, 
                   Hawaii, Japan, Peru, and New Zealand - always learning and usually getting worked by the ocean! 
-                  🌊 I also enjoy fixing up old surfboards (still learning that craft too) and growing 
-                  California native plants, especially my growing Ceanothus collection! 🌱
+                  🌊 I also enjoy fixing up old surfboards, growing California native plants, and the occasional bathroom tiling project! 🌱
                 </p>
                 <div className="skills">
                   <h3>⚡ MY SKILLS & EXPERTISE ⚡</h3>
@@ -96,7 +77,7 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon">🚀💥</span>
                       <h4>MarTech & Ad Tech Expertise</h4>
-                      <p>Highly proficient in Tealium, Sitecore, and Selligent! Deep knowledge of the ad tech stack with expertise in both client-side and server-side tag management, Google Analytics, Facebook CAPI, and GTM implementation.</p>
+                      <p>Deep expertise in marketing technology platforms including Tealium, Sitecore, and Selligent. Specialized in both client-side and server-side tag management, analytics implementation (Google Tag Manager, Google Analytics, Facebook Pixel, Facebook CAPI), and infrastructure systems (Akamai, Cloudflare, Rackspace). I love creating robust digital solutions that perform well and look great!</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon">🤖🧠</span>
@@ -118,17 +99,14 @@ export default function Home() {
                     ⭐ WEBMASTER&apos;S PERSONAL INFO ⭐
                   </div>
                   <ul>
-                    <li>🌊 Semi-amateur professional kook who's been lucky to ride waves in WA, OR, CA, HI, Japan, Peru, and New Zealand!</li>
-                    <li>🏄‍♂️ Learning surfboard repair (and ding fixing) between coding sessions!</li>
-                    <li>🌼 California native plant enthusiast (my Ceanothus collection is growing!)</li>
-                    <li>🔨 Enjoys bathroom tiling projects with handmade templates!</li>
                     <li>🎨 Aspiring digital creator who likes blending function with style!</li>
                     <li>🐕 Daily dog walks = brainstorming sessions for world domination!</li>
-
                     <li>🌈 Favorite browser: Netscape Navigator 4.0!</li>
+                    <li>💾 Thinks the 90s internet was peak civilization!</li>
+                    <li>⚡ Believes in the power of Comic Sans MS for serious business!</li>
                   </ul>
                   <div className="cyber-friends-cta">
-                    📨 Want to be cyber friends? <a href="mailto:jtokib@gmail.com">Email me!</a> 📨
+                    🌐 WELCOME TO MY CYBER REALM! 🌐
                   </div>
                 </div>
               </div>
@@ -196,7 +174,7 @@ export default function Home() {
           </div>
         </section>
 
-        <Guestbook />
+        <GuestbookContainer />
       </main>
 
       <footer id="contact" className="footer block-dark-yellow-footer" style={{ background: 'linear-gradient(90deg, #222 80%, #ffe066 100%)' }}>
@@ -205,17 +183,13 @@ export default function Home() {
             <div className="footer-main">
               <h3>🌐 LET&apos;S BE CYBER FRIENDS! 🌐</h3>
               <div className="footer-empire-cta">
-                ⚡ WANT TO JOIN MY DIGITAL EMPIRE? ⚡<br/>
-                📧
-                <a href="mailto:jtokib@gmail.com">EMAIL ME!</a>
-                📧
-                <a href="#guestbook">SIGN MY GUESTBOOK!</a>
+                ⚡ CONNECT & SHARE IDEAS! ⚡
               </div>
               <p>
-                🚀 Ready to connect and share ideas? 🚀 Whether you&apos;re interested in MarTech solutions, 
-                ad tech implementations, web development, surfing adventures, or just want to chat about life - 
-                I&apos;d love to hear from you! As a professional in digital marketing tech and a semi-amateur 
-                professional in most other things, I&apos;m always learning and happy to connect! ⚡
+                🚀 Ready to connect and share ideas? 🚀 Whether you&apos;re interested in web development, 
+                surfing adventures, plant growing, or just want to chat about life - I&apos;d love to hear from you! 
+                As a professional in some things and a semi-amateur professional in most other things, 
+                I&apos;m always learning and happy to connect! ⚡
               </p>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/toki-burke" target="_blank" rel="noopener" 
