@@ -12,17 +12,15 @@ export function createResumeData(): ResumeData {
     },
     experience: [
       {
-        title: "Marketing Technology Team Lead",
+        title: "Marketing Technology Group Manager",
         company: "Fisher Investments",
         duration: "July 2021 – Present",
         location: "San Francisco, CA",
         responsibilities: [
           "Lead a 6-person technical team to drive marketing technology initiatives across web, mobile, and emerging digital channels",
-          "Maintain an enterprise-scale tag management infrastructure supporting 80+ vendor configurations for client-side and server-side data collection",
-          "Architect and deployed 25+ Conversion API (CAPI) integrations to optimize data quality for digital advertising platforms",
-          "Manage MarTech ecosystem that includes Content Management (Sitecore), Marketing Automation (Selligent/Marigold), and Customer Data Platforms (Tealium)",
-          "Technical business lead supporting cloud architecture migrations to Sitecore XM (Headless CMS) and Selligent Marketing Cloud platforms",
-          "Create the data pipelines to support advanced analytics using GA4 and Google Cloud - Cloud Run + Storage + Big Query ML",
+          "Develop and maintain the technology roadmap, setting project and development priorities, while leading the evaluation and onboarding of new technologies.",
+          "Manage MarTech integrations across Customer Data Platform and Tag Management Systems (Tealium),Content Management System(Sitecore), Marketing Automation Platform(Selligent), Analytics(GA4 + Google BigQuery), and Data Management Platforms(Redpoint Global).",
+          "Serve as technical business lead for cloud architecture migrations to Sitecore XM (Headless CMS) and Selligent Marketing Cloud platforms.",
           "Managed a comprehensive browser automation program with 293+ browser-based tests using Ghost Inspector, reducing manual testing overhead"
         ]
       },
@@ -51,15 +49,13 @@ export function createResumeData(): ResumeData {
         ]
       },
       {
-        title: "Digital Media Specialist",
+        title: "Digital Marketing and Communications Manager",
         company: "California Institute of Integral Studies",
         duration: "October 2016 – August 2018",
         location: "San Francisco, CA",
         responsibilities: [
-          "Developed alumni and students digital communications strategy",
-          "Managed social media channels increasing follower count by 150%",
+          "Developed a comprehensive digital marketing & communications strategy",
           "Managed social media marketing including creative design, audience targeting, and campaign management",
-          "Conducted A/B testing to analyze user engagement across social media and web properties"
         ]
       },
       {
@@ -121,7 +117,17 @@ export function createResumeData(): ResumeData {
             title: "Global Surf Resorts Finder",
             url: "https://claude.ai/public/artifacts/894236c8-1a20-4aff-9096-4e39bbf033cb",
             description: "Interactive map for discovering surf spots worldwide"
-          }
+          },
+          {
+            title: "Japanese Furigana Helper",
+            url: "https://claude.ai/public/artifacts/da2182c2-995d-428b-97b3-6aaa45709ca0",
+            description: "An app that adds furigana (phonetic reading aids) to Japanese text"
+          },
+          {
+            title: "Prompt MadLibs",
+            url: "https://claude.ai/public/artifacts/c68a8383-7d78-4d31-94ea-a09e68f7aef9",
+            description: "An app that helps create fun and engaging prompts for AI models"
+          },
         ]
       }
     ],
