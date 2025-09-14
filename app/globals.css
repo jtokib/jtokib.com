@@ -1269,7 +1269,7 @@ a:hover {
 .resume-container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
     max-width: 8.5in;
-    margin: 2rem auto 0;
+    margin: 0 auto;
     background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     line-height: 1.6;
