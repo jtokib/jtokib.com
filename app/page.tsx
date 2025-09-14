@@ -14,10 +14,9 @@ export default function Home() {
         <section id="home" className="hero">
           <div className="hero-content block-dark">
             <div className="hero-text text-white">
-              <h1>🌟 WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! 🌟</h1>
-              <h2>⚡ MARTECH PROFESSIONAL & SEMI-AMATEUR PROFESSIONAL KOOK ⚡</h2>
+              <h1>⚡ WELCOME TO <span className="highlight">TOKI&apos;S</span> CYBER ZONE! ⚡</h1>
               <p className="hero-description">
-                🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech professional specializing in ad tech, 
+                🤖 Greetings, fellow netizen! 🤖 I&apos;m a MarTech aficionado  specializing in ad tech, 
                 tag management, and web development with deep expertise in Tealium, Sitecore, and Selligent platforms.
                 When I&apos;m not building digital solutions, you&apos;ll find me surfing across the Pacific 🏄‍♂️, 
                 growing California native plants 🌱, or fixing up old surfboards! Welcome to my digital escape! ✨
@@ -42,7 +41,7 @@ export default function Home() {
                   🌱 Plant Enthusiast
                 </div>
                 <div className="profile-card-quote">
-                  "Building digital solutions by day, 🏄‍♂️ chasing waves by... also day!"
+                  "Building digital solutions by day, taking care of babies by night!"
                 </div>
               </div>
             </div>
@@ -61,15 +60,13 @@ export default function Home() {
               <div className="about-text">
                 <p>
                   🌐 Welcome to my corner of cyberspace! 🌐 I&apos;ve been exploring the intersection of 
-                  marketing technology and web development, always learning new platforms and tools. 
+                  marketing technology and web development, learning new platforms and tools. 
                   I&apos;ve been diving into cloud platforms (Google Firebase, Google Cloud, Supabase), 
                   development tools (GitHub, Cloudflare Workers), and AI platforms (Claude Code, ChatGPT, Meta AI). 
                   The tech landscape keeps evolving, and I love the challenge of keeping up! 🚀
                 </p>
                 <p>
-                  🏄‍♂️ I&apos;m a semi-amateur professional kook who&apos;s been fortunate to surf in Washington, Oregon, California, 
-                  Hawaii, Japan, Peru, and New Zealand - always learning and usually getting worked by the ocean! 
-                  🌊 I also enjoy fixing up old surfboards, growing California native plants, and the occasional bathroom tiling project! 🌱
+                  🌊 I also enjoy going on adventures with my family, surfing, fixing up old surfboards, growing California native plants, and the occasional bathroom tiling project! 🌱
                 </p>
                 <div className="skills">
                   <h3>⚡ MY SKILLS & EXPERTISE ⚡</h3>
@@ -82,7 +79,7 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon">🤖🧠</span>
                       <h4>AI & Cloud Learning</h4>
-                      <p>Playing with Claude Code, chatting with ChatGPT, trying Meta AI, building with Firebase, exploring Google Cloud, and discovering Supabase!</p>
+                      <p>Playing with Claude Code, chatting with ChatGPT, trying Meta AI, building with Firebase, exploring Google Gemini, and discovering Supabase!</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon">💻⚡</span>

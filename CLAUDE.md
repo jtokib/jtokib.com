@@ -135,8 +135,35 @@ If experiencing build caching issues or worker.js not reflecting latest code cha
 5. **Deploy**: Use `npx wrangler deploy` (Windows-compatible) instead of npm scripts
 6. **Verify**: Check new BUILD_ID in assets directory and confirm site serves latest code
 
+### Deployment Troubleshooting
+
+#### Common Deployment Issues & Solutions
+
+**Issue**: `worker.js` not found during deployment
+- **Cause**: Empty or missing `.open-next` directory
+- **Solution**: Rebuild OpenNext bundle before deploying:
+  ```bash
+  npm run build
+  npx @opennextjs/cloudflare build
+  npx wrangler deploy
+  ```
+
+**Issue**: Windows ESM URL scheme errors with `npm run deploy`
+- **Cause**: OpenNext deploy command has Windows path compatibility issues
+- **Solution**: Use direct wrangler deployment instead of npm script:
+  ```bash
+  npx @opennextjs/cloudflare build  # Generate .open-next bundle
+  npx wrangler deploy               # Deploy with Windows compatibility
+  ```
+
+**Important**: The `.open-next` directory should remain in `.gitignore` as it's a build artifact that gets generated during CI/CD.
+
 ### Recent Updates (August 2024)
 
+- **Deployment Fix** (August 26, 2024): Resolved missing `worker.js` deployment error
+  - Added proper OpenNext build step before deployment
+  - Documented Windows-compatible deployment workflow
+  - Confirmed `.open-next` directory should stay in `.gitignore`
 - **Complete Cloudflare Workers Rebuild** (August 25, 2024): Nuclear clean and rebuild of entire deployment pipeline
   - Removed all Vercel configuration remnants and build artifacts
   - Fresh installation of `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`

@@ -136,7 +136,7 @@ export function createResumeData(): ResumeData {
         category: "Platforms",
         skills: [
           "Tealium (CDP/TMS)", "Sitecore (CMS)", "WordPress (CMS)", "Selligent/Marigold",
-          "Google Marketing Platform", "Google Cloud", "Optimizely", "Akamai", "Vercel", 
+          "Google Marketing Platform", "Google Cloud", "Optimizely", "Cloudflare","Akamai", "Vercel", 
           "Firebase", "Atlassian (JIRA/Confluence/Bitbucket)", "Git/GitHub"
         ]
       },
