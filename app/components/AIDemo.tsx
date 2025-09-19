@@ -86,12 +86,11 @@ export default function AIDemo() {
   return (
     <section id="ai-demo" className="ai-demo">
       <div className="container">
-        <h2>AI in Action</h2>
+        <h2>AI Surf Assistant Demo</h2>
         <div className="ai-demo-content">
           <div className="ai-demo-text">
             <p>
-              Experience how I combine AI with domain expertise. This demo showcases 
-              an AI assistant trained on surf forecasting data and Ocean Beach conditions.
+              This demo showcases an AI assistant trained on surf forecasting data and Ocean Beach conditions.
             </p>
             <div className="ai-features">
               <div className="ai-feature">

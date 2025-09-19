@@ -1,6 +1,6 @@
 # Toki Burke - Personal Portfolio
 
-A modern, responsive portfolio website built with Next.js 14 and TypeScript, showcasing expertise as an AI-Driven Marketing Technologist with comprehensive experience across cloud platforms, development tools, and digital innovation.
+A sophisticated, responsive portfolio website built with Next.js 14 and TypeScript, featuring a **Midnight Luxury** design theme with Apple-inspired glass morphism aesthetics. Showcases expertise as an AI-Driven Marketing Technologist with comprehensive experience across cloud platforms, development tools, and digital innovation.
 
 ## Migration History
 
@@ -18,7 +18,7 @@ Each migration improved performance, scalability, and development experience whi
 - 📱 **Responsive Design**: Mobile-first approach with modern CSS Grid and Flexbox
 - 🤖 **AI Demo**: Interactive surf condition assistant showcasing AI integration
 - 📝 **Interactive Guestbook**: Visitor messaging system with Supabase database integration
-- 🎨 **Professional Design**: Clean, modern UI with smooth animations and accessibility
+- 🎨 **Midnight Luxury Design**: Sophisticated glass morphism with Apple-inspired aesthetics and premium animations
 - ⚡ **Performance Optimized**: Edge computing with Cloudflare Workers and security headers
 - 📊 **Analytics**: Google Tag Manager integration for comprehensive tracking
 - 🔍 **SEO Optimized**: Comprehensive meta tags, structured data, and Open Graph
@@ -28,7 +28,7 @@ Each migration improved performance, scalability, and development experience whi
 
 - **Frontend**: Next.js 14 (App Router), React 18, TypeScript
 - **Database**: Supabase for guestbook functionality
-- **Styling**: Modern CSS with custom properties, responsive design
+- **Styling**: Midnight Luxury theme with glass morphism, Apple system fonts, premium animations
 - **Deployment**: Cloudflare Workers with OpenNext adapter
 - **Edge Computing**: Global edge network for optimal performance
 - **Analytics**: Google Tag Manager with comprehensive tracking
@@ -39,7 +39,7 @@ Each migration improved performance, scalability, and development experience whi
 
 - **Hero**: Introduction with key skills and call-to-actions
 - **About**: Professional background and personal interests
-- **Projects**: Featured work including obsf.surf and mobile apps
+- **Projects**: Featured work including obsf.surf and TokiCoin blockchain project
 - **AI Demo**: Interactive demonstration of AI capabilities
 - **Guestbook**: Interactive visitor messaging system
 - **Contact**: Social links and contact information

@@ -1,27 +1,44 @@
-/* 🌈✨ TOTALLY RADICAL 90s GEOCITIES WEBSITE CSS ✨🌈 */
-/* Last Updated: 1995-12-31 by TOKI_THE_WEBMASTER */
+/* Midnight Luxury Portfolio - Sophisticated Apple-Inspired Design */
+/* Professional transformation with glass morphism and premium aesthetics */
 
-/* CSS Variables - IMPROVED ACCESSIBILITY EDITION! */
+/* CSS Variables - Midnight Luxury Palette */
 :root {
-    --primary-color: #FF1493; /* HOT PINK! */
-    --primary-dark: #DC143C;
-    --secondary-color: #00DD00; /* BRIGHTER LIME GREEN! */
-    --accent-color: #FFD700; /* GOLD! */
-    --text-dark: #FFFFFF; /* WHITE FOR BETTER CONTRAST */
-    --text-light: #E0E0E0; /* LIGHT GRAY FOR READABILITY */
-    --text-white: #FFFFFF;
-    --bg-light: #1A1A2E; /* DARKER NAVY FOR CONTRAST */
-    --bg-white: #0F0F23; /* DARKER BLACK FOR CONTRAST */
-    --border-light: #FF6500; /* BRIGHTER ORANGE RED! */
-    --shadow-light: 0 0 10px #FF1493, 0 0 20px #FF1493;
-    --shadow-medium: 0 0 15px #00DD00, 0 0 30px #00DD00;
-    --shadow-large: 0 0 25px #FFD700, 0 0 50px #FFD700;
-    --border-radius: 4px; /* SLIGHT ROUNDING FOR MOBILE */
-    --transition: all 0.3s ease; /* FASTER TRANSITIONS */
-    --min-touch-target: 44px; /* MINIMUM TOUCH TARGET SIZE */
+    /* Primary Colors */
+    --primary: #007AFF; /* Apple blue */
+    --secondary: #5856D6; /* Apple purple */
+    --accent: #30D158; /* Apple green */
+    --accent2: #FF9F0A; /* Apple orange */
+    
+    /* Background System */
+    --bg-main: linear-gradient(180deg, #000000 0%, #1C1C1E 50%, #2C2C2E 100%);
+    --bg-card: rgba(28, 28, 30, 0.8);
+    --bg-nav: rgba(0, 0, 0, 0.95);
+    --bg-accent: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    
+    /* Text Colors */
+    --text-primary: #FFFFFF;
+    --text-secondary: #E5E5E7;
+    --text-muted: #8E8E93;
+    --text-accent: #007AFF;
+    
+    /* Shadows & Effects */
+    --shadow-luxury: 0 25px 50px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.4);
+    
+    /* Borders */
+    --border-accent: rgba(255, 255, 255, 0.2);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    
+    /* Transitions */
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --min-touch-target: 44px;
+    --border-radius: 12px;
 }
 
-/* ✨ TOTALLY AWESOME BASE STYLES ✨ */
+/* Base Styles */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -30,73 +47,75 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px; /* BASE FONT SIZE FOR MOBILE */
+    font-size: 16px;
 }
 
 body {
-    line-height: 1.6; /* IMPROVED READABILITY */
-    color: var(--text-light);
-    background: var(--bg-white);
-    background-image: 
-        radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.3) 2px, transparent 2px),
-        radial-gradient(circle at 75% 75%, rgba(255, 20, 147, 0.3) 2px, transparent 2px),
-        radial-gradient(circle at 50% 50%, rgba(0, 221, 0, 0.2) 1px, transparent 1px);
-    background-size: 50px 50px, 60px 60px, 30px 30px;
-    background-position: 0 0, 25px 25px, 10px 10px;
-    animation: twinkle 6s infinite; /* SLOWER FOR ACCESSIBILITY */
-    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif !important;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    background: var(--bg-main);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     overflow-x: hidden;
     font-size: 16px;
     min-height: 100vh;
+    font-weight: 300;
+    letter-spacing: 0.01em;
 }
 
-/* ⭐ TWINKLE ANIMATION FOR STARRY BACKGROUND ⭐ */
-@keyframes twinkle {
-    0% { background-position: 0 0, 25px 25px, 10px 10px; }
-    50% { background-position: 10px 10px, 35px 35px, 20px 20px; }
-    100% { background-position: 0 0, 25px 25px, 10px 10px; }
-}
 
-/* 🔗 TOTALLY RADICAL LINKS 🔗 */
+/* Premium link styling */
 a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    text-decoration-color: var(--secondary-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    transition: all var(--transition);
-    font-weight: bold;
+    color: var(--text-accent);
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: 500;
+    position: relative;
 }
 
 a:hover {
-    color: var(--secondary-color);
-    text-decoration-color: var(--primary-color);
-    text-shadow: 0 0 10px currentColor, 2px 2px 4px rgba(0,0,0,0.8);
-    animation: blink 0.5s infinite alternate;
+    color: var(--primary);
+    transform: translateY(-1px);
 }
 
-/* 🚀 NAVIGATION - CYBER SPACE EDITION 🚀 */
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 50%;
+    background: var(--primary);
+    transition: var(--transition-fast);
+    transform: translateX(-50%);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* Navigation - Glass Morphism Luxury Design */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(45deg, var(--bg-light), var(--primary-color), var(--secondary-color), var(--accent-color));
-    background-size: 300% 300%;
-    animation: gradientShift 2s ease infinite;
-    border-bottom: 5px solid var(--border-light);
-    border-top: 3px solid var(--accent-color);
+    background: var(--bg-nav);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-bottom: 1px solid var(--border-glass);
     z-index: 1000;
     transition: var(--transition);
     padding: 1rem 0;
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-card);
 }
 
 .navbar.scrolled {
-    animation: gradientShift 1s ease infinite, pulse 0.8s ease infinite;
-    box-shadow: var(--shadow-large);
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(60px);
+    box-shadow: var(--shadow-luxury);
 }
 
 .nav-container {
@@ -109,19 +128,18 @@ a:hover {
 }
 
 .nav-brand a {
-    font-size: 2rem;
-    font-weight: 900;
-    color: var(--text-white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
     text-decoration: none;
-    text-shadow: 3px 3px 0px var(--text-dark), 6px 6px 10px rgba(0,0,0,0.8);
     transition: var(--transition);
-    font-family: 'Comic Sans MS', cursive, fantasy !important;
-    animation: rainbow 2s linear infinite;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .nav-brand a:hover {
-    transform: scale(1.1) rotate(-2deg);
-    animation: rainbow 0.5s linear infinite, shake 0.5s infinite;
+    color: var(--primary);
+    transform: translateY(-1px);
 }
 
 .nav-menu {
@@ -131,18 +149,19 @@ a:hover {
 }
 
 .nav-link {
-    color: var(--text-white);
+    color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 500;
     position: relative;
     transition: var(--transition);
-    padding: 0.9rem 1.4rem; /* LARGER TOUCH TARGETS */
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-    border: 3px solid var(--accent-color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif !important;
-    font-size: 1.1rem;
-    text-transform: uppercase;
+    padding: 0.8rem 1.2rem;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--border-radius);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
     min-height: var(--min-touch-target);
     min-width: var(--min-touch-target);
     display: inline-flex;
@@ -151,27 +170,27 @@ a:hover {
 }
 
 .nav-link:hover {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: var(--shadow-medium);
-    animation: pulse 0.3s infinite;
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
 }
 
-.nav-link::after {
-    content: '★';
+.nav-link::before {
+    content: '';
     position: absolute;
-    width: auto;
-    height: auto;
-    top: -10px;
-    right: -10px;
-    color: var(--accent-color);
-    font-size: 1.2rem;
+    inset: 0;
+    border-radius: var(--border-radius);
+    padding: 1px;
+    background: var(--bg-accent);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: subtract;
     opacity: 0;
     transition: var(--transition);
-    animation: spin 2s linear infinite;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::before {
     opacity: 1;
 }
 
@@ -180,22 +199,24 @@ a:hover {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
-    background: var(--accent-color);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
     padding: 0.5rem;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--border-radius);
 }
 
 .nav-toggle span {
     width: 25px;
-    height: 4px;
-    background: var(--primary-color);
+    height: 2px;
+    background: var(--text-secondary);
     transition: var(--transition);
-    box-shadow: 0 0 5px var(--primary-color);
+    border-radius: 1px;
 }
 
 .nav-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    background: var(--secondary-color);
+    background: var(--primary);
 }
 
 .nav-toggle.active span:nth-child(2) {
@@ -204,83 +225,72 @@ a:hover {
 
 .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
-    background: var(--secondary-color);
+    background: var(--primary);
 }
 
-/* 📦 CONTAINER - WEB 1.0 STYLE 📦 */
+/* Container - Clean Professional Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
-    border: 3px dashed var(--border-light);
-    background: rgba(0, 0, 255, 0.1);
 }
 
-/* 🔥 BUTTONS - TOTALLY RADICAL 🔥 */
+/* Buttons - Premium Glass Morphism */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.1rem 2.2rem; /* LARGER TOUCH TARGETS */
+    padding: 1rem 2rem;
     border-radius: var(--border-radius);
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 600;
     transition: var(--transition);
-    border: 4px solid var(--accent-color);
+    border: 1px solid var(--border-glass);
     cursor: pointer;
     text-align: center;
-    font-family: 'Comic Sans MS', 'Trebuchet MS', cursive, sans-serif !important;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1rem;
     position: relative;
-    animation: buttonGlow 2s ease-in-out infinite alternate;
     min-height: var(--min-touch-target);
     min-width: 120px;
     line-height: 1.2;
+    backdrop-filter: blur(20px);
+    letter-spacing: 0.01em;
 }
 
 .btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-white);
-    box-shadow: var(--shadow-medium);
+    background: var(--bg-accent);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-card);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
-    transform: translateY(-5px) rotate(-1deg) scale(1.05);
-    box-shadow: var(--shadow-large);
-    animation: shake 0.3s infinite, buttonGlow 0.3s ease-in-out infinite alternate;
+    background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn-secondary {
-    background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-    color: var(--text-white);
-    border: 4px solid var(--primary-color);
+    background: var(--bg-glass);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-accent);
 }
 
 .btn-secondary:hover {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-white);
-    transform: translateY(-5px) rotate(1deg) scale(1.05);
-    box-shadow: var(--shadow-large);
-    animation: shake 0.3s infinite, buttonGlow 0.3s ease-in-out infinite alternate;
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-card);
 }
 
-/* 🌟 HERO SECTION - CYBERSPACE WELCOME 🌟 */
+/* Hero Section - Midnight Luxury */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: 
-        linear-gradient(45deg, #FF1493 0%, #00FF00 25%, #FFD700 50%, #00FFFF 75%, #FF1493 100%),
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 20, 147, 0.4) 0%, transparent 50%);
-    background-size: 400% 400%, 100% 100%, 100% 100%;
-    animation: heroGradient 3s ease infinite, float 4s ease-in-out infinite;
+    background: var(--bg-main);
     padding: 8rem 1rem 5rem;
-    border: 5px solid var(--accent-color);
-    border-style: dotted;
     position: relative;
     overflow: hidden;
 }
@@ -297,56 +307,40 @@ a:hover {
 }
 
 .hero-text h1 {
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: 3.5rem;
+    font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.1;
-    font-family: 'Comic Sans MS', cursive, fantasy !important;
-    text-shadow: 5px 5px 0px var(--text-dark), 10px 10px 20px rgba(0,0,0,0.8);
-    animation: bounce 2s infinite, rainbow 3s linear infinite;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .highlight {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
-    background-size: 400% 400%;
+    background: var(--bg-accent);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientShift 2s ease infinite;
     display: inline-block;
-    text-shadow: none;
-    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.8));
 }
 
 .hero-text h2 {
-    font-size: 1.8rem;
-    color: var(--text-white);
+    font-size: 1.5rem;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
-    font-weight: 900;
-    font-family: 'Comic Sans MS', cursive, fantasy !important;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-    animation: blink 1.5s infinite alternate;
-    text-transform: uppercase;
-    border: 3px solid var(--accent-color);
-    padding: 1rem;
-    background: rgba(255, 20, 147, 0.3);
+    font-weight: 300;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 0.01em;
 }
 
 .hero-description {
-    font-size: 1.3rem;
-    color: var(--text-white);
+    font-size: 1.1rem;
+    color: var(--text-secondary);
     margin-bottom: 2rem;
-    line-height: 1.9;
+    line-height: 1.6;
     max-width: 600px;
-    font-family: 'Comic Sans MS', cursive, fantasy !important;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    background: rgba(0, 255, 255, 0.2);
-    border: 2px dashed var(--secondary-color);
-    padding: 1.5rem;
-    animation: pulse 2s infinite alternate;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .hero-buttons {
@@ -360,34 +354,31 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: float 3s ease-in-out infinite;
 }
 
 .profile-card {
     position: relative;
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color), var(--accent-color));
-    border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
     padding: 3rem;
-    box-shadow: var(--shadow-large);
+    box-shadow: var(--shadow-luxury);
     text-align: center;
     max-width: 350px;
     transition: var(--transition);
-    border: 5px solid var(--text-white);
-    animation: rotate 10s linear infinite, pulse 2s ease-in-out infinite alternate;
+    border: 1px solid var(--border-glass);
 }
 
 .profile-card:hover {
-    transform: translateY(-10px) scale(1.05) rotate(5deg);
-    box-shadow: var(--shadow-large);
-    animation: shake 0.5s infinite, rotate 2s linear infinite;
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-accent);
 }
 
 .profile-placeholder {
-    font-size: 6rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
-    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.8));
-    animation: bounce 1.5s infinite, spin 4s linear infinite;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
 }
 
 .floating-tags {
@@ -398,30 +389,23 @@ a:hover {
 }
 
 .tag {
-    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
-    color: var(--text-white);
+    background: var(--bg-glass);
+    color: var(--text-secondary);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 900;
-    font-family: 'Comic Sans MS', cursive, fantasy !important;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-    border: 2px solid var(--text-white);
-    animation: blink 2s infinite alternate;
-    box-shadow: var(--shadow-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
 }
 
-/* 🎯 ABOUT SECTION - GET TO KNOW THE WEBMASTER 🎯 */
+/* About Section - Professional Glass Design */
 .about {
     padding: 5rem 0;
-    background: 
-        linear-gradient(90deg, var(--bg-light) 0%, var(--primary-color) 50%, var(--bg-light) 100%),
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
-    border-top: 8px solid var(--accent-color);
-    border-bottom: 8px solid var(--secondary-color);
+    background: var(--bg-main);
     position: relative;
-    animation: sectionFloat 6s ease-in-out infinite;
 }
 
 .about h2 {
@@ -429,7 +413,9 @@ a:hover {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .about-content {
@@ -441,9 +427,10 @@ a:hover {
 
 .about-text p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .skills {
@@ -454,7 +441,9 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.01em;
 }
 
 .skill-grid {
@@ -464,16 +453,19 @@ a:hover {
 }
 
 .skill-item {
-    background: var(--bg-light);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
     padding: 1.5rem;
     border-radius: var(--border-radius);
     text-align: center;
     transition: var(--transition);
+    border: 1px solid var(--border-glass);
 }
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-card);
+    border-color: var(--border-accent);
 }
 
 .skill-icon {
@@ -486,26 +478,31 @@ a:hover {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .skill-item p {
-    color: var(--text-light);
+    color: var(--text-secondary);
     font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .about-sidebar {
-    background: var(--bg-light);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
     padding: 2rem;
     border-radius: var(--border-radius);
     height: fit-content;
+    border: 1px solid var(--border-glass);
 }
 
 .fun-facts h3 {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .fun-facts ul {
@@ -514,19 +511,20 @@ a:hover {
 
 .fun-facts li {
     padding: 0.5rem 0;
-    color: var(--text-light);
+    color: var(--text-secondary);
     font-size: 0.95rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-glass);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .fun-facts li:last-child {
     border-bottom: none;
 }
 
-/* Projects Section */
+/* Projects Section - Glass Morphism Cards */
 .projects {
     padding: 5rem 0;
-    background: var(--bg-light);
+    background: var(--bg-main);
 }
 
 .projects h2 {
@@ -534,7 +532,9 @@ a:hover {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .projects-grid {
@@ -544,23 +544,25 @@ a:hover {
 }
 
 .project-card {
-    background: var(--bg-white);
+    background: var(--bg-glass);
+    backdrop-filter: blur(40px);
     padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
+    border-radius: 20px;
+    box-shadow: var(--shadow-luxury);
     transition: var(--transition);
     position: relative;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-glass);
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-large);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-accent);
 }
 
 .project-card.featured {
-    border: 2px solid var(--primary-color);
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(6, 182, 212, 0.02));
+    border: 2px solid var(--primary);
+    background: rgba(0, 122, 255, 0.05);
 }
 
 .project-header {
@@ -573,23 +575,26 @@ a:hover {
 .project-header h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-status {
-    background: var(--accent-color);
-    color: var(--text-white);
+    background: var(--accent);
+    color: var(--text-primary);
     padding: 0.2rem 0.6rem;
     border-radius: 1rem;
     font-size: 0.7rem;
     font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-card p {
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-size: 0.95rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-tags {
@@ -600,25 +605,28 @@ a:hover {
 }
 
 .project-tags .tag {
-    background: var(--secondary-color);
+    background: var(--bg-glass);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
     font-size: 0.8rem;
+    backdrop-filter: blur(10px);
 }
 
 .project-links a {
-    color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
-    transition: var(--transition);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-links a:hover {
-    color: var(--primary-dark);
+    color: var(--text-primary);
+    transform: translateY(-1px);
 }
 
-/* AI Demo Section - New from ChatGPT suggestion */
+/* AI Demo Section - Luxury Glass Interface */
 .ai-demo {
     padding: 5rem 0;
-    background: var(--bg-white);
+    background: var(--bg-main);
 }
 
 .ai-demo h2 {
@@ -626,7 +634,9 @@ a:hover {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
 }
 
 .ai-demo-content {
@@ -638,9 +648,10 @@ a:hover {
 
 .ai-demo-text p {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-bottom: 2rem;
     line-height: 1.7;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .ai-features {
@@ -654,14 +665,17 @@ a:hover {
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
-    background: var(--bg-light);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
     border-radius: var(--border-radius);
     transition: var(--transition);
+    border: 1px solid var(--border-glass);
 }
 
 .ai-feature:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-card);
+    border-color: var(--border-accent);
 }
 
 .feature-icon {
@@ -673,22 +687,26 @@ a:hover {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .ai-feature p {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin: 0;
     line-height: 1.4;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .ai-demo-widget {
-    background: var(--bg-light);
+    background: var(--bg-glass);
+    backdrop-filter: blur(40px);
     border-radius: var(--border-radius);
     padding: 2rem;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--border-accent);
     position: relative;
+    box-shadow: var(--shadow-card);
 }
 
 .demo-placeholder {
@@ -699,12 +717,14 @@ a:hover {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .demo-placeholder p {
-    color: var(--text-light);
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .demo-input {
@@ -718,15 +738,19 @@ a:hover {
     flex: 1;
     min-width: 200px;
     padding: 0.75rem;
-    border: 1px solid var(--border-light);
+    border: 1px solid var(--border-glass);
     border-radius: var(--border-radius);
     font-size: 0.9rem;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .demo-input input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
 }
 
 .demo-input button {
@@ -736,11 +760,13 @@ a:hover {
 }
 
 .demo-response {
-    background: var(--bg-white);
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
     padding: 1rem;
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--secondary-color);
+    border-left: 4px solid var(--secondary);
     margin-bottom: 1rem;
+    border: 1px solid var(--border-glass);
 }
 
 .demo-response p {
@@ -750,16 +776,18 @@ a:hover {
 }
 
 .demo-placeholder small {
-    color: var(--text-light);
+    color: var(--text-muted);
     font-size: 0.8rem;
     font-style: italic;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Footer - Enhanced from ChatGPT */
+/* Footer - Premium Luxury Design */
 .footer {
-    background: var(--text-dark);
-    color: var(--text-white);
+    background: var(--bg-main);
+    color: var(--text-secondary);
     padding: 3rem 0 1rem;
+    border-top: 1px solid var(--border-glass);
 }
 
 .footer-content {
@@ -770,7 +798,8 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: var(--text-white);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .footer-main p {
@@ -788,19 +817,24 @@ a:hover {
 }
 
 .social-links a {
-    color: var(--text-white);
+    color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border-glass);
     border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .social-links a:hover {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-primary);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
 }
 
 .footer-bottom {
@@ -819,14 +853,16 @@ a:hover {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background: var(--bg-white);
+        background: var(--bg-nav);
+        backdrop-filter: blur(40px);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
         padding-top: 2rem;
         transition: var(--transition);
-        box-shadow: var(--shadow-medium);
+        box-shadow: var(--shadow-luxury);
         z-index: 999;
+        border-top: 1px solid var(--border-glass);
     }
     
     .nav-link {
@@ -950,82 +986,23 @@ a:hover {
     }
 }
 
-/* 🌈✨ TOTALLY RADICAL 90s ANIMATIONS ✨🌈 */
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0.3; }
-}
-
-@keyframes rainbow {
-    0% { color: #FF1493; }
-    16.67% { color: #00FF00; }
-    33.33% { color: #FFD700; }
-    50% { color: #00FFFF; }
-    66.67% { color: #FF4500; }
-    83.33% { color: #9400D3; }
-    100% { color: #FF1493; }
-}
+/* Luxury Animation System */
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
+    0%, 100% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
-    20%, 40%, 60%, 80% { transform: translateX(2px); }
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-@keyframes heroGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-@keyframes buttonGlow {
-    0% { box-shadow: 0 0 5px currentColor; }
-    100% { box-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes sectionFloat {
-    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
 }
+
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -1033,13 +1010,41 @@ a:hover {
     }
 }
 
-/* Apply some animations to sections - REDUCED FOR ACCESSIBILITY */
-.hero-text,
-.hero-image,
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply luxury animations to sections */
+.hero-text {
+    animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-image {
+    animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
 .about-content,
 .project-card,
 .ai-demo-content {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ACCESSIBILITY: RESPECT REDUCED MOTION PREFERENCE */
@@ -1052,65 +1057,8 @@ a:hover {
     }
 }
 
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
 
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
 
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-
-/* 90s THEMED PAGE STYLES */
-.under-construction {
-    text-align: center;
-    padding: 1rem;
-    background: linear-gradient(45deg, #FFD700, #FF1493);
-    color: white;
-    font-family: 'Comic Sans MS', cursive;
-    font-weight: bold;
-    font-size: 1.2rem;
-    animation: blink 1s infinite;
-}
-
-.visitor-counter {
-    text-align: center;
-    padding: 0.5rem;
-    background: #000080;
-    color: #00FF00;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 1rem;
-}
-
-.about-email-cta {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255,215,0,0.3);
-    border: 3px dashed #FF1493;
-    font-family: 'Comic Sans MS', cursive;
-}
-
-.about-email-cta strong {
-    font-weight: bold;
-}
-
-.about-email-cta a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    margin-right: 1rem;
-    transition: var(--transition);
-}
-
-.about-email-cta a:hover {
-    color: var(--secondary-color);
-}
 
 .profile-card-content {
     margin-bottom: 1rem;
@@ -1134,34 +1082,6 @@ a:hover {
     font-family: 'Comic Sans MS', cursive;
 }
 
-.webmaster-info {
-    margin-bottom: 1rem;
-    text-align: center;
-    background: rgba(255,20,147,0.3);
-    padding: 0.5rem;
-    border: 2px solid #FFD700;
-    font-family: 'Comic Sans MS', cursive;
-}
-
-.cyber-friends-cta {
-    margin-top: 1rem;
-    text-align: center;
-    background: rgba(0,255,0,0.2);
-    padding: 0.5rem;
-    border: 2px dashed #FF4500;
-    font-family: 'Comic Sans MS', cursive;
-    font-size: 0.9rem;
-}
-
-.cyber-friends-cta a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    transition: var(--transition);
-}
-
-.cyber-friends-cta a:hover {
-    color: var(--secondary-color);
-}
 
 .project-tech {
     display: flex;
@@ -1191,66 +1111,9 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
 
-.ai-demo-section {
-    padding: 5rem 0;
-    background: var(--bg-white);
-}
 
-.ai-demo-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-dark);
-    font-family: 'Comic Sans MS', cursive;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-    animation: rainbow 3s linear infinite;
-}
 
-.ai-demo-disclaimer {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(0,255,255,0.2);
-    border: 3px dashed #00FFFF;
-    font-family: 'Comic Sans MS', cursive;
-}
-
-.footer-empire-cta {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: rgba(255,215,0,0.2);
-    border: 3px solid #00FF00;
-    font-family: 'Comic Sans MS', cursive;
-}
-
-.footer-empire-cta a {
-    color: var(--secondary-color);
-    text-decoration: underline;
-    margin-right: 1rem;
-    transition: var(--transition);
-}
-
-.footer-empire-cta a:hover {
-    color: var(--accent-color);
-}
-
-/* Dark mode support (future enhancement) */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text-dark: #f9fafb;
-        --text-light: #d1d5db;
-        --bg-light: #1f2937;
-        --bg-white: #111827;
-        --border-light: #374151;
-    }
-}
 
 /* ===== RESUME PAGE STYLES ===== */
 /* Professional styling for the resume page with Anthropic brand colors */

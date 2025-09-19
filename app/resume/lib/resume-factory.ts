@@ -17,7 +17,7 @@ export function createResumeData(): ResumeData {
         duration: "July 2021 – Present",
         location: "San Francisco, CA",
         responsibilities: [
-          "Lead a 6-person technical team to drive marketing technology initiatives across web, mobile, and emerging digital channels",
+          "Lead a technical team driving marketing technology initiatives across web, mobile, and emerging digital channels",
           "Develop and maintain the technology roadmap, setting project and development priorities, while leading the evaluation and onboarding of new technologies.",
           "Manage MarTech integrations across Customer Data Platform and Tag Management Systems (Tealium),Content Management System(Sitecore), Marketing Automation Platform(Selligent), Analytics(GA4 + Google BigQuery), and Data Management Platforms(Redpoint Global).",
           "Serve as technical business lead for cloud architecture migrations to Sitecore XM (Headless CMS) and Selligent Marketing Cloud platforms.",
