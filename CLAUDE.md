@@ -221,3 +221,6 @@ The site showcases Toki Burke's expertise in:
 
 ### Development Principle
 **"Working > Perfect"** - Simple solutions that work are preferred over complex solutions that might be more "correct" architecturally.
+- npm run build
+  npx @opennextjs/cloudflare build
+  npx wrangler deploy

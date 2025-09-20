@@ -106,7 +106,7 @@ temp/
 *.local
 
 # Claude Code settings (contains user-specific configurations)
-.claude/settings.local.json
+/.claude/
 
 # Old/legacy files
 index.html
