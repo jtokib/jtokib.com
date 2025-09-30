@@ -114,15 +114,19 @@ app/
 
 - **Wrangler Config**: `wrangler.toml` with simplified configuration for reliable deployment
 - **OpenNext Config**: `open-next.config.ts` for Cloudflare Workers adapter configuration
-- **Next.js Config**: Optimized for Cloudflare Workers with external packages configuration
+- **Next.js Config**: Optimized for Cloudflare Workers with `output: 'standalone'` for OpenNext compatibility
 - **Custom Domain**: `jtokib.com` configured directly in Cloudflare dashboard (not in wrangler.toml)
 - **Build Process**: Uses latest `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`
 
 ### Windows Development Notes
 
 - **Local Preview**: `npm run preview` has Windows compatibility issues due to ESM URL scheme errors
-- **Deployment**: Use `npx wrangler deploy` directly for Windows compatibility - the npm script approach fails
-- **Build Process**: OpenNext build works correctly, but preview/deploy scripts have Windows path issues
+- **Build Process**: OpenNext build requires `output: 'standalone'` in `next.config.js` and `--skipNextBuild` flag
+- **Reliable Windows Workflow**:
+  1. `npx next build` (with standalone output)
+  2. `npx @opennextjs/cloudflare build --skipNextBuild`
+  3. `npx wrangler deploy`
+- **Package.json**: Updated build script includes `--skipNextBuild` flag to prevent infinite loops
 
 ### Clean Rebuild Process (Nuclear Option)
 
@@ -148,17 +152,27 @@ If experiencing build caching issues or worker.js not reflecting latest code cha
   npx wrangler deploy
   ```
 
-**Issue**: Windows ESM URL scheme errors with `npm run deploy`
-- **Cause**: OpenNext deploy command has Windows path compatibility issues
-- **Solution**: Use direct wrangler deployment instead of npm script:
+**Issue**: Windows ESM URL scheme errors and infinite build loops
+- **Cause**: OpenNext trying to run full build script which includes deploy step
+- **Solution**: Use `--skipNextBuild` flag and ensure `output: 'standalone'` in next.config.js:
   ```bash
-  npx @opennextjs/cloudflare build  # Generate .open-next bundle
-  npx wrangler deploy               # Deploy with Windows compatibility
+  npx next build                                    # Build with standalone output
+  npx @opennextjs/cloudflare build --skipNextBuild  # Generate .open-next bundle
+  npx wrangler deploy                                # Deploy with Windows compatibility
   ```
 
 **Important**: The `.open-next` directory should remain in `.gitignore` as it's a build artifact that gets generated during CI/CD.
 
 ### Recent Updates (September 2024)
+
+- **Copywriting Optimization** (September 29, 2024): Comprehensive content audit and optimization
+  - Eliminated 5 major redundancies across MarTech expertise descriptions
+  - Replaced tentative "exploring" language with confident implementation statements
+  - Consolidated technology lists to focus on business value over tool names
+  - Established consistent "Marketing Technology Team Lead" positioning across all sections
+  - Achieved 35% content reduction while maintaining all essential information
+  - Aligned SEO metadata with updated professional authority
+  - Streamlined personal interest integration for strategic professional context
 
 - **Design Transformation** (September 18, 2024): Complete transformation from cyberpunk GeoCities aesthetic to sophisticated **Midnight Luxury** theme
   - Implemented Apple-inspired glass morphism design with backdrop blur effects
@@ -221,6 +235,14 @@ The site showcases Toki Burke's expertise in:
 
 ### Development Principle
 **"Working > Perfect"** - Simple solutions that work are preferred over complex solutions that might be more "correct" architecturally.
-- npm run build
-  npx @opennextjs/cloudflare build
-  npx wrangler deploy
+
+### Windows-Compatible Build Commands
+```bash
+# Full build and deploy (Windows-compatible)
+npm run build
+
+# Manual step-by-step (for troubleshooting)
+npx next build
+npx @opennextjs/cloudflare build --skipNextBuild
+npx wrangler deploy
+```

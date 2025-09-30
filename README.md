@@ -1,6 +1,6 @@
 # Toki Burke - Personal Portfolio
 
-A sophisticated, responsive portfolio website built with Next.js 14 and TypeScript, featuring a **Midnight Luxury** design theme with Apple-inspired glass morphism aesthetics. Showcases expertise as an AI-Driven Marketing Technologist with comprehensive experience across cloud platforms, development tools, and digital innovation.
+A sophisticated, responsive portfolio website built with Next.js 14 and TypeScript, featuring a **Midnight Luxury** design theme with Apple-inspired glass morphism aesthetics. Showcases expertise as a **Marketing Technology Team Lead** with 5+ years implementing enterprise MarTech solutions and analytics infrastructure.
 
 ## Migration History
 
@@ -69,11 +69,12 @@ This site is deployed on Cloudflare Workers with custom domain routing:
 
 ### Cloudflare Workers Deployment
 ```bash
-# Build and deploy to Cloudflare Workers
-npm run deploy
-
-# Or deploy directly with wrangler (Windows-compatible)
+# Build and deploy to Cloudflare Workers (Windows-compatible)
 npm run build
+
+# Manual deployment steps (for troubleshooting)
+npx next build
+npx @opennextjs/cloudflare build --skipNextBuild
 npx wrangler deploy
 ```
 
@@ -83,7 +84,11 @@ npx wrangler deploy
 - **Security Headers**: Migrated from Vercel to Wrangler configuration
 
 ### Migration Notes
-- **Windows Users**: Use `npx wrangler deploy` directly due to OpenNext Windows compatibility issues
+- **Windows Compatibility**: Requires `output: 'standalone'` in next.config.js and `--skipNextBuild` flag
+- **Windows Deployment Process**:
+  1. `npx next build` (with standalone output)
+  2. `npx @opennextjs/cloudflare build --skipNextBuild`
+  3. `npx wrangler deploy`
 - **Environment Variables**: Security headers configured in `wrangler.toml`
 - **Build Process**: OpenNext adapter converts Next.js to Cloudflare Workers format
 
