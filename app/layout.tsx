@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jtokib.com'),
-  title: 'Toki Burke | AI-Driven Marketing Technologist',
-  description: 'Toki Burke - Marketing Technology Team Lead specializing in AI, cloud platforms, and digital innovation. Pacific Ocean surfer and California native plant enthusiast.',
+  title: 'Toki Burke | Marketing Technology Team Lead',
+  description: 'Toki Burke - Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions. Expert in Tealium, Sitecore, analytics infrastructure, and cloud platforms.',
   keywords: 'Toki Burke, Marketing Technology, Surfing, California Native Plants, Ceanothus, obsf.surf',
   authors: [{ name: 'Toki Burke' }],
   creator: 'Toki Burke',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://jtokib.com',
-    title: 'Toki Burke | AI-Driven Marketing Technologist',
-    description: 'Marketing Technology Team Lead specializing in AI, cloud platforms, and digital innovation.',
+    title: 'Toki Burke | Marketing Technology Team Lead',
+    description: 'Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions and analytics infrastructure.',
     siteName: 'Toki Burke Portfolio',
     images: [
       {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toki Burke | AI-Driven Marketing Technologist',
-    description: 'Marketing Technology Team Lead specializing in AI, cloud platforms, and digital innovation.',
+    title: 'Toki Burke | Marketing Technology Team Lead',
+    description: 'Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions and analytics infrastructure.',
     images: ['/apple-icon-180x180.png'],
   },
   icons: {
