@@ -10,37 +10,16 @@ export default function Home() {
       <main>
         <section id="home" className="hero">
           <div className="hero-content block-dark">
-            <div className="hero-text text-white">
-              <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
-              <p className="hero-description">
-                Marketing Technology Team Lead delivering scalable solutions for enterprise clients.
-                Expert in Tealium, Sitecore, and Selligent implementations with 5+ years specializing in
-                client-side/server-side tag management and analytics infrastructure.
-              </p>
-              <div className="hero-buttons">
-                <a href="#projects" className="btn btn-primary">View Projects</a>
-                <a href="#ai-demo" className="btn btn-secondary">Try AI Demo</a>
-                <a href="#guestbook" className="btn btn-secondary">Sign Guestbook</a>
-              </div>
-            </div>
-            <div className="hero-image">
-              <div className="profile-card block-dark text-white">
-                <div className="profile-placeholder">
-                  🚀
-                </div>
-                <div className="profile-card-content">
-                  Digital Professional
-                </div>
-                <div className="profile-card-details">
-                  MarTech Specialist<br/>
-                  Surf Enthusiast<br/>
-                  AI Explorer<br/>
-                  Plant Lover
-                </div>
-                <div className="profile-card-quote">
-                  "Building digital solutions by day, chasing waves by weekend!"
-                </div>
-              </div>
+            <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
+            <p className="hero-description">
+              Marketing Technology Team Lead delivering scalable solutions for enterprise clients.
+              Expert in Tealium, Sitecore, and Selligent implementations with 5+ years specializing in
+              client-side/server-side tag management and analytics infrastructure.
+            </p>
+            <div className="hero-buttons">
+              <a href="#projects" className="btn btn-primary">View Projects</a>
+              <a href="#ai-demo" className="btn btn-secondary">Try AI Demo</a>
+              <a href="#guestbook" className="btn btn-secondary">Sign Guestbook</a>
             </div>
           </div>
         </section>
@@ -101,44 +80,62 @@ export default function Home() {
             <h2>Projects</h2>
             <div className="projects-grid">
               <div className="project-card">
-                <div className="project-header">
-                  <h3>obsf.surf - Ocean Beach Surf Forecast</h3>
-                  <div className="project-status">Live</div>
+                <div className="project-image">
+                  <img
+                    src="/images/obsf-surf-preview.webp"
+                    alt="Ocean Beach Surf Forecast Dashboard Interface"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="project-description">
-                  <p>
-                    Comprehensive surf forecast dashboard tailored for Ocean Beach, San Francisco. 
-                    Consolidates multiple data sources into one reliable interface for local surf conditions.
-                  </p>
-                  <div className="project-tech">
-                    <span className="tech-tag">Web App</span>
-                    <span className="tech-tag">Real-time Data</span>
-                    <span className="tech-tag">Surf Analytics</span>
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3>obsf.surf - Ocean Beach Surf Forecast</h3>
+                    <div className="project-status">Live</div>
                   </div>
-                </div>
-                <div className="project-links">
-                  <a href="https://obsf.surf" target="_blank" rel="noopener" className="btn btn-primary">Visit Site</a>
+                  <div className="project-description">
+                    <p>
+                      Comprehensive surf forecast dashboard tailored for Ocean Beach, San Francisco.
+                      Consolidates multiple data sources into one reliable interface for local surf conditions.
+                    </p>
+                    <div className="project-tech">
+                      <span className="tech-tag">Web App</span>
+                      <span className="tech-tag">Real-time Data</span>
+                      <span className="tech-tag">Surf Analytics</span>
+                    </div>
+                  </div>
+                  <div className="project-links">
+                    <a href="https://obsf.surf" target="_blank" rel="noopener" className="btn btn-primary">Visit Site</a>
+                  </div>
                 </div>
               </div>
 
               <div className="project-card">
-                <div className="project-header">
-                  <h3>TokiCoin - Algorand Standard Asset</h3>
-                  <div className="project-status">Deployed</div>
+                <div className="project-image">
+                  <img
+                    src="/images/tokicoin-preview.webp"
+                    alt="TokiCoin Algorand Token Interface"
+                    loading="lazy"
+                  />
                 </div>
-                <div className="project-description">
-                  <p>
-                    Custom cryptocurrency token built on the Algorand blockchain. Demonstrates blockchain development 
-                    skills and understanding of tokenomics, smart contracts, and DeFi concepts on a high-performance network.
-                  </p>
-                  <div className="project-tech">
-                    <span className="tech-tag">Blockchain</span>
-                    <span className="tech-tag">Algorand</span>
-                    <span className="tech-tag">Tokenomics</span>
+                <div className="project-content">
+                  <div className="project-header">
+                    <h3>TokiCoin - Algorand Standard Asset</h3>
+                    <div className="project-status">Deployed</div>
                   </div>
-                </div>
-                <div className="project-links">
-                  <a href="https://tokicoin.netlify.app" target="_blank" rel="noopener" className="btn btn-primary">View Project</a>
+                  <div className="project-description">
+                    <p>
+                      Custom cryptocurrency token built on the Algorand blockchain. Demonstrates blockchain development
+                      skills and understanding of tokenomics, smart contracts, and DeFi concepts on a high-performance network.
+                    </p>
+                    <div className="project-tech">
+                      <span className="tech-tag">Blockchain</span>
+                      <span className="tech-tag">Algorand</span>
+                      <span className="tech-tag">Tokenomics</span>
+                    </div>
+                  </div>
+                  <div className="project-links">
+                    <a href="https://tokicoin.netlify.app" target="_blank" rel="noopener" className="btn btn-primary">View Project</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -154,7 +151,7 @@ export default function Home() {
         <GuestbookContainer />
       </main>
 
-      <footer id="contact" className="footer block-dark-yellow-footer" style={{ background: 'linear-gradient(90deg, #222 80%, #ffe066 100%)' }}>
+      <footer id="contact" className="footer">
         <div className="container">
           <div className="footer-content">
             <div className="footer-main">

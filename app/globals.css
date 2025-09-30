@@ -30,6 +30,7 @@
     /* Borders */
     --border-accent: rgba(255, 255, 255, 0.2);
     --border-glass: rgba(255, 255, 255, 0.1);
+    --border-light: rgba(243, 232, 232, 0.884);
     
     /* Transitions */
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -284,24 +285,50 @@ a:hover::after {
     box-shadow: var(--shadow-card);
 }
 
-/* Hero Section - Midnight Luxury */
+/* Hero Section - Midnight Luxury with Ocean Depth */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: var(--bg-main);
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 122, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(88, 86, 214, 0.12) 0%, transparent 50%),
+        linear-gradient(135deg, #0A1F44 0%, #1C1C1E 50%, #2C2C2E 100%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+    animation: gradientShift 15s ease infinite;
     padding: 8rem 1rem 5rem;
     position: relative;
     overflow: hidden;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(30, 144, 255, 0.06) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, #1C1C1E, transparent);
+    pointer-events: none;
+}
+
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
     position: relative;
     z-index: 2;
 }
@@ -401,11 +428,26 @@ a:hover::after {
     transition: var(--transition);
 }
 
-/* About Section - Professional Glass Design */
+/* About Section - Professional Glass Design with Subtle Gradient */
 .about {
     padding: 5rem 0;
-    background: var(--bg-main);
+    background: linear-gradient(180deg, #1C1C1E 0%, #252527 100%);
     position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 122, 255, 0.5) 50%,
+        transparent 100%
+    );
 }
 
 .about h2 {
@@ -472,6 +514,46 @@ a:hover::after {
     font-size: 2rem;
     display: block;
     margin-bottom: 1rem;
+    position: relative;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon::before {
+    content: '';
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    box-shadow: 0 8px 24px rgba(0, 122, 255, 0.3);
+    transition: var(--transition);
+}
+
+.skill-item:hover .skill-icon::before {
+    transform: scale(1.1);
+    box-shadow: 0 12px 32px rgba(0, 122, 255, 0.4);
+}
+
+.skill-icon::after {
+    content: '';
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-item:nth-child(1) .skill-icon::after {
+    content: '📊'; /* MarTech & Ad Tech */
+}
+
+.skill-item:nth-child(2) .skill-icon::after {
+    content: '🤖'; /* AI & Cloud Platforms */
+}
+
+.skill-item:nth-child(3) .skill-icon::after {
+    content: '⚡'; /* Web Development & Infrastructure */
 }
 
 .skill-item h4 {
@@ -521,10 +603,26 @@ a:hover::after {
     border-bottom: none;
 }
 
-/* Projects Section - Glass Morphism Cards */
+/* Projects Section - Glass Morphism Cards with Ocean Wave */
 .projects {
     padding: 5rem 0;
-    background: var(--bg-main);
+    background: linear-gradient(135deg,
+        #0A1F44 0%,
+        #1C1C1E 35%,
+        #1C1C1E 65%,
+        #0A1F44 100%
+    );
+    position: relative;
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 30% 20%, rgba(30, 144, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 70% 80%, rgba(0, 122, 255, 0.06) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .projects h2 {
@@ -546,12 +644,42 @@ a:hover::after {
 .project-card {
     background: var(--bg-glass);
     backdrop-filter: blur(40px);
-    padding: 2rem;
+    padding: 0;
     border-radius: 20px;
     box-shadow: var(--shadow-luxury);
     transition: var(--transition);
     position: relative;
     border: 1px solid var(--border-glass);
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg,
+        rgba(0, 122, 255, 0.1),
+        rgba(88, 86, 214, 0.1)
+    );
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: var(--transition);
+    filter: brightness(0.9);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+.project-content {
+    padding: 2rem;
 }
 
 .project-card:hover {
@@ -623,10 +751,38 @@ a:hover::after {
     transform: translateY(-1px);
 }
 
-/* AI Demo Section - Luxury Glass Interface */
+/* AI Demo Section - Luxury Glass Interface with Tech Grid */
+.ai-demo-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #1C1C1E 0%, #252527 100%);
+    position: relative;
+}
+
+.ai-demo-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 122, 255, 0.03) 2px,
+            rgba(0, 122, 255, 0.03) 4px
+        ),
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 122, 255, 0.03) 2px,
+            rgba(0, 122, 255, 0.03) 4px
+        );
+    opacity: 0.3;
+    pointer-events: none;
+}
+
 .ai-demo {
     padding: 5rem 0;
-    background: var(--bg-main);
+    background: transparent;
+    position: relative;
 }
 
 .ai-demo h2 {
@@ -706,7 +862,10 @@ a:hover::after {
     padding: 2rem;
     border: 1px solid var(--border-accent);
     position: relative;
-    box-shadow: var(--shadow-card);
+    box-shadow:
+        var(--shadow-card),
+        0 0 0 1px rgba(0, 122, 255, 0.1),
+        0 0 40px rgba(0, 122, 255, 0.15);
 }
 
 .demo-placeholder {
@@ -760,13 +919,17 @@ a:hover::after {
 }
 
 .demo-response {
-    background: var(--bg-glass);
+    background: linear-gradient(135deg,
+        rgba(0, 122, 255, 0.05),
+        rgba(88, 86, 214, 0.05)
+    );
     backdrop-filter: blur(20px);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: var(--border-radius);
     border-left: 4px solid var(--secondary);
     margin-bottom: 1rem;
     border: 1px solid var(--border-glass);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .demo-response p {
@@ -782,12 +945,31 @@ a:hover::after {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Footer - Premium Luxury Design */
+/* Footer - Premium Luxury Design with Ocean Accent */
 .footer {
-    background: var(--bg-main);
+    background: linear-gradient(135deg,
+        #0A1F44 0%,
+        #1C1C1E 100%
+    );
     color: var(--text-secondary);
     padding: 3rem 0 1rem;
-    border-top: 1px solid var(--border-glass);
+    border-top: 1px solid rgba(0, 122, 255, 0.2);
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(0, 122, 255, 0.6) 50%,
+        transparent 100%
+    );
 }
 
 .footer-content {
@@ -880,9 +1062,7 @@ a:hover::after {
     }
 
     .hero-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+        padding: 1.5rem;
     }
 
     .hero-text h1 {
@@ -989,8 +1169,12 @@ a:hover::after {
 /* Luxury Animation System */
 
 @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%, 100% {
+        background-position: 0% 50%, 0% 50%, 0% 0%;
+    }
+    50% {
+        background-position: 100% 50%, 100% 50%, 0% 0%;
+    }
 }
 
 @keyframes float {
@@ -1114,6 +1298,296 @@ a:hover::after {
 
 
 
+
+/* ===== GUESTBOOK SECTION STYLES ===== */
+/* Midnight Luxury Edition - Matches main design system */
+
+.guestbook {
+    padding: 5rem 0;
+    background: linear-gradient(180deg,
+        #1C1C1E 0%,
+        #0A1F44 50%,
+        #1C1C1E 100%
+    );
+    position: relative;
+}
+
+.guestbook::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(30, 144, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.guestbook-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -0.02em;
+    background: var(--bg-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.guestbook-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--border-radius);
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    box-shadow: var(--shadow-card);
+}
+
+.guestbook-form-container {
+    background: var(--bg-glass);
+    backdrop-filter: blur(40px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-glass);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-luxury);
+}
+
+.guestbook-form-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
+}
+
+.guestbook-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.guestbook-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.95rem;
+}
+
+.guestbook-input,
+.guestbook-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    color: var(--text-primary);
+    min-height: var(--min-touch-target);
+    transition: var(--transition);
+}
+
+.guestbook-input:focus,
+.guestbook-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.guestbook-input.error,
+.guestbook-textarea.error {
+    border-color: var(--accent2);
+}
+
+.guestbook-textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.guestbook-char-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.guestbook-char-count small {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.guestbook-char-count small.error {
+    color: var(--accent2);
+}
+
+.guestbook-alert {
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.guestbook-alert.error {
+    background: rgba(255, 159, 10, 0.1);
+    border: 1px solid var(--accent2);
+    color: var(--accent2);
+}
+
+.guestbook-alert.success {
+    background: rgba(48, 209, 88, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.guestbook-entries-container {
+    background: var(--bg-glass);
+    backdrop-filter: blur(40px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--shadow-luxury);
+}
+
+.guestbook-entries-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
+}
+
+.guestbook-loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.1rem;
+}
+
+.guestbook-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    background: rgba(0, 122, 255, 0.03);
+    border: 2px dashed var(--border-glass);
+    border-radius: var(--border-radius);
+}
+
+.guestbook-empty-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.guestbook-empty-message {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.guestbook-entries-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.guestbook-entry {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-glass);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guestbook-entry:nth-child(odd) {
+    border-left: 3px solid var(--primary);
+}
+
+.guestbook-entry:nth-child(even) {
+    border-left: 3px solid var(--secondary);
+}
+
+.guestbook-entry:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-accent);
+}
+
+.guestbook-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.guestbook-entry-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    word-break: break-word;
+}
+
+.guestbook-entry-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.guestbook-entry-message {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: calc(var(--border-radius) * 0.5);
+    border-left: 2px solid rgba(0, 122, 255, 0.3);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.guestbook-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--border-radius);
+    color: var(--text-muted);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .guestbook-header {
+        font-size: 2rem;
+    }
+
+    .guestbook-form-container,
+    .guestbook-entries-container {
+        padding: 1.5rem;
+    }
+}
 
 /* ===== RESUME PAGE STYLES ===== */
 /* Professional styling for the resume page with Anthropic brand colors */
