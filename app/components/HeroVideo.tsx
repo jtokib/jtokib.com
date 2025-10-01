@@ -52,7 +52,7 @@ export default function HeroVideo() {
       playsInline
       className="hero-video"
     >
-      <source src="/1918465-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+      <source src="/hero-wave.mp4" type="video/mp4" />
     </video>
   );
 }

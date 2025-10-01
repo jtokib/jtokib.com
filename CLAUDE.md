@@ -78,7 +78,7 @@ app/
 └── page.tsx              # Main page content (hero, about, projects, contact, guestbook)
 
 public/
-└── 1918465-uhd_3840_2160_24fps.mp4  # Hero background video (47MB, 4K UHD)
+└── hero-wave.mp4  # Hero background video (5.7MB, 1080p, 7s)
 ```
 
 ### Component Architecture
@@ -141,8 +141,7 @@ public/
 - **Build Process**: Uses latest `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`
 - **Asset Size Limits**:
   - **CRITICAL**: Cloudflare Workers has a **25MB maximum per asset** limit
-  - The hero video (`1918465-uhd_3840_2160_24fps.mp4`) is 47MB - under the limit
-  - **DO NOT** add the 57MB GIF version - it exceeds Cloudflare's limit and will fail deployment
+  - The hero video (`hero-wave.mp4`) is 5.7MB (1080p, 7 seconds) - well under the limit
   - Keep large assets in `/public` but monitor total size
   - Use smart loading (HeroVideo component) to optimize performance
 
