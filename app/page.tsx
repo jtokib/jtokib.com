@@ -1,19 +1,21 @@
 import Navigation from './components/Navigation'
 import AIDemo from './components/AIDemo'
 import GuestbookContainer from './components/guestbook/GuestbookContainer'
+import HeroVideo from './components/HeroVideo'
 
 export default function Home() {
   return (
     <>
       <Navigation />
-      
+
       <main>
         <section id="home" className="hero">
+          <HeroVideo />
           <div className="hero-content block-dark">
             <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
             <p className="hero-description">
               Marketing Technology Team Lead delivering scalable solutions for enterprise clients.
-              Expert in Tealium, Sitecore, and Selligent implementations with 5+ years specializing in
+              Specalized experience in custom Tealium, Sitecore, and Selligent implementations with 7+ years specializing in
               client-side/server-side tag management and analytics infrastructure.
             </p>
             <div className="hero-buttons">
@@ -44,7 +46,7 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon"></span>
                       <h4>MarTech & Ad Tech</h4>
-                      <p>5+ years implementing enterprise MarTech stacks. Specialize in tag management architecture, analytics deployment (GTM, GA4, Facebook CAPI), and infrastructure optimization for high-traffic environments.</p>
+                      <p>7+ years implementing enterprise MarTech stacks. Specialize in tag management architecture, analytics deployment (GTM, GA4, Facebook CAPI), and infrastructure optimization for high-traffic environments.</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon"></span>
@@ -54,7 +56,7 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon"></span>
                       <h4>Web Development & Infrastructure</h4>
-                      <p>Proficient in HTML, CSS, and JavaScript. Experienced with GitHub workflows, Cloudflare Workers, and modern deployment pipelines. Building cross-platform solutions including mobile applications.</p>
+                      <p>Solid background and understanding of HTML, CSS, and JavaScript. Experienced with Akamai, Vercel, Cloudflare, and modern deployment pipelines.</p>
                     </div>
                   </div>
                 </div>

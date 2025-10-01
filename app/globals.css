@@ -285,7 +285,7 @@ a:hover::after {
     box-shadow: var(--shadow-card);
 }
 
-/* Hero Section - Midnight Luxury with Ocean Depth */
+/* Hero Section - Midnight Luxury with Animated Ocean Waves */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -301,16 +301,50 @@ a:hover::after {
     overflow: hidden;
 }
 
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+/* Animated wave layers */
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image:
-        radial-gradient(circle at 20% 50%, rgba(0, 122, 255, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(30, 144, 255, 0.06) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
+    background:
+        repeating-linear-gradient(
+            110deg,
+            transparent 0%,
+            transparent 35%,
+            rgba(0, 122, 255, 0.03) 40%,
+            rgba(30, 144, 255, 0.08) 45%,
+            rgba(64, 156, 255, 0.12) 50%,
+            rgba(30, 144, 255, 0.08) 55%,
+            rgba(0, 122, 255, 0.03) 60%,
+            transparent 65%,
+            transparent 100%
+        ),
+        repeating-linear-gradient(
+            95deg,
+            transparent 0%,
+            transparent 25%,
+            rgba(0, 122, 255, 0.02) 30%,
+            rgba(30, 144, 255, 0.05) 35%,
+            rgba(0, 122, 255, 0.02) 40%,
+            transparent 45%,
+            transparent 100%
+        );
+    background-size: 250% 100%, 180% 100%;
+    animation: waveRoll1 25s ease-in-out infinite, waveRoll2 18s ease-in-out infinite;
     opacity: 0.6;
     pointer-events: none;
+    z-index: 1;
 }
 
 .hero::after {
@@ -322,6 +356,26 @@ a:hover::after {
     height: 200px;
     background: linear-gradient(to top, #1C1C1E, transparent);
     pointer-events: none;
+    z-index: 2;
+}
+
+/* Wave animation keyframes */
+@keyframes waveRoll1 {
+    0% {
+        background-position: 0% 0%, 0% 0%;
+    }
+    100% {
+        background-position: 250% 0%, 180% 0%;
+    }
+}
+
+@keyframes waveRoll2 {
+    0% {
+        background-position: 100% 0%, 50% 0%;
+    }
+    100% {
+        background-position: 350% 0%, 230% 0%;
+    }
 }
 
 .hero-content {
@@ -1049,8 +1103,17 @@ a:hover::after {
     
     .nav-link {
         margin: 0.5rem 0;
-        min-width: 200px;
+        padding: 1rem 1.5rem; /* Increased from default */
+        min-height: 48px; /* Exceed WCAG minimum */
+        min-width: auto;
+        width: 100%;
         text-align: center;
+        font-size: 1rem;
+    }
+
+    .nav-menu {
+        gap: 0.5rem;
+        padding: 2rem 1rem;
     }
 
     .nav-menu.active {
@@ -1061,22 +1124,59 @@ a:hover::after {
         display: flex;
     }
 
+    /* Hero section mobile optimizations */
+    .hero {
+        padding: 5rem 1rem 3rem; /* Reduced from 8rem */
+        min-height: auto; /* Don't force 100vh on mobile */
+    }
+
     .hero-content {
         padding: 1.5rem;
     }
 
     .hero-text h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        font-size: 1.8rem; /* Reduced from 2.2rem */
+        line-height: 1.3; /* Improved from 1.2 */
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        max-width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-buttons {
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 140px;
+    }
+
+    /* Section spacing optimizations */
+    .about,
+    .projects,
+    .ai-demo-section,
+    .guestbook {
+        padding: 3rem 0; /* Reduced from 5rem */
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduced from 2rem */
+    }
+
+    .about-sidebar {
+        margin-top: 1rem;
     }
 
     .skill-grid {
         grid-template-columns: 1fr;
+        gap: 1.25rem;
     }
 
     .projects-grid {
@@ -1085,7 +1185,16 @@ a:hover::after {
 
     .ai-demo-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduced from 2rem */
+    }
+
+    /* Project card optimizations */
+    .project-image {
+        height: 160px; /* Reduced from 200px */
+    }
+
+    .project-content {
+        padding: 1.5rem; /* Reduced from 2rem */
     }
 
     .demo-input {
@@ -1103,23 +1212,50 @@ a:hover::after {
         min-height: var(--min-touch-target);
     }
 
+    /* Form optimizations */
+    .guestbook-input {
+        padding: 1rem;
+        min-height: 48px;
+    }
+
+    .guestbook-textarea {
+        padding: 1rem;
+        min-height: 120px;
+    }
+
+    .guestbook-entry {
+        padding: 1.25rem;
+    }
+
     .hero-buttons {
         justify-content: center;
     }
 
     .social-links {
         justify-content: center;
+        gap: 1rem;
+    }
+
+    .social-links a {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 1rem; /* MORE PADDING FOR MOBILE */
+        padding: 0 1.25rem; /* Increased for better breathing room */
+    }
+
+    /* Hero optimizations for small screens */
+    .hero {
+        padding: 4rem 1rem 2rem; /* Further reduced */
     }
 
     .hero-text h1 {
-        font-size: 1.8rem;
-        line-height: 1.3;
+        font-size: 1.6rem; /* Smaller for small screens */
+        line-height: 1.35; /* Better readability */
+        word-spacing: 0.05em; /* Improve word wrap */
     }
 
     .hero-text h2 {
@@ -1129,14 +1265,47 @@ a:hover::after {
 
     .hero-description {
         font-size: 1rem;
-        line-height: 1.5;
+        line-height: 1.65; /* Improved readability */
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        gap: 0.75rem;
+        flex-direction: column; /* Full-width stacking */
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Section spacing for small screens */
+    .about,
+    .projects,
+    .ai-demo-section,
+    .guestbook {
+        padding: 2.5rem 0; /* Further reduced */
     }
 
     .about h2,
     .projects h2,
     .ai-demo h2 {
-        font-size: 1.8rem;
+        font-size: 1.75rem; /* Slightly smaller */
         line-height: 1.3;
+        margin-bottom: 2rem;
+    }
+
+    /* Project card adjustments */
+    .project-image {
+        height: 140px; /* Further reduced for small screens */
+    }
+
+    .project-content {
+        padding: 1.25rem;
+    }
+
+    .skill-item {
+        padding: 1.25rem; /* Reduced padding */
     }
 
     .profile-card {
@@ -1145,9 +1314,10 @@ a:hover::after {
     }
 
     .btn {
-        padding: 0.8rem 1.5rem;
+        padding: 0.9rem 1.75rem; /* Larger tap targets */
         font-size: 1rem;
-        min-height: var(--min-touch-target);
+        min-height: 48px; /* Exceed 44px minimum */
+        letter-spacing: 0.01em;
     }
     
     /* IMPROVED FORM INPUTS FOR MOBILE */
@@ -1156,8 +1326,14 @@ a:hover::after {
     }
     
     .nav-toggle {
-        min-height: var(--min-touch-target);
-        min-width: var(--min-touch-target);
+        min-height: 48px; /* Exceed 44px */
+        min-width: 48px;
+        padding: 0.75rem; /* Increase tap area */
+    }
+
+    .nav-toggle span {
+        width: 28px; /* Larger hamburger lines */
+        height: 3px;
     }
     
     .social-links a {
@@ -1247,14 +1423,14 @@ a:hover::after {
 .profile-card-content {
     margin-bottom: 1rem;
     color: white;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
 }
 
 .profile-card-details {
     color: white;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.9rem;
     line-height: 1.4;
     margin-bottom: 1rem;
@@ -1263,7 +1439,7 @@ a:hover::after {
 .profile-card-quote {
     font-size: 0.8rem;
     color: rgba(255,255,255,0.8);
-    font-family: 'Comic Sans MS', cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 
@@ -1281,7 +1457,12 @@ a:hover::after {
     border-radius: var(--border-radius);
     font-size: 0.8rem;
     font-weight: 600;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        'SF Pro Display',
+        'Helvetica Neue',
+        Arial,
+        sans-serif;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
     border: 1px solid var(--text-white);
@@ -1590,57 +1771,81 @@ a:hover::after {
 }
 
 /* ===== RESUME PAGE STYLES ===== */
-/* Professional styling for the resume page with Anthropic brand colors */
+/* Professional styling matching Midnight Tech + Ocean Soul theme */
 
-/* Resume-specific CSS variables */
+/* Resume-specific CSS variables - Midnight Luxury Edition */
 :root {
-    --resume-primary: #D97706;
-    --resume-primary-dark: #B45309;
-    --resume-bg-light: #FFF7ED;
-    --resume-bg-accent: #FED7AA;
-    --resume-text-dark: #2c3e50;
-    --resume-text-muted: #7f8c8d;
+    --resume-primary: #007AFF;
+    --resume-primary-dark: #005FCC;
+    --resume-secondary: #5856D6;
+    --resume-bg-dark: #3A3A3C;        /* Lightened for reduced eye strain */
+    --resume-bg-darker: #2C2C2E;      /* Lightened for better readability */
+    --resume-bg-accent: rgba(0, 122, 255, 0.1);
+    --resume-text-light: #F5F5F7;     /* Softer off-white reduces halation */
+    --resume-text-secondary: #D1D1D6; /* Comfortable light gray */
+    --resume-text-muted: #AEAEB2;     /* Fixed WCAG AA compliance */
+    --resume-glass: rgba(255, 255, 255, 0.05);
+    --resume-border: rgba(255, 255, 255, 0.1);
 }
 
 /* Reset animations and background for resume pages */
 .resume-container {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
     max-width: 8.5in;
     margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, var(--resume-bg-darker) 0%, var(--resume-bg-dark) 100%);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     line-height: 1.6;
-    color: var(--resume-text-dark);
+    color: var(--resume-text-secondary);
     padding: 0;
     animation: none !important;
 }
 
 /* Resume header styling */
 .resume-header {
-    background: linear-gradient(135deg, var(--resume-primary) 0%, var(--resume-primary-dark) 100%);
-    color: #ffffff;
+    background:
+        radial-gradient(ellipse at top right, rgba(0, 122, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(88, 86, 214, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, var(--resume-primary) 0%, var(--resume-secondary) 100%);
+    background-size: 200% 200%;
+    animation: resumeGradientShift 5s ease infinite;
+    color: var(--resume-text-light);
     padding: 40px;
     text-align: center;
+    position: relative;
+}
+
+.resume-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    animation: resumeGradientShift 5s ease infinite;
 }
 
 .resume-name {
     font-size: 36px !important;
     font-weight: 700 !important;
     margin: 0 0 8px 0 !important;
-    letter-spacing: 1px;
-    text-shadow: none !important;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
+    position: relative;
+    z-index: 1;
 }
 
 .resume-title {
     font-size: 18px !important;
-    font-weight: 300 !important;
+    font-weight: 400 !important;
     margin: 0 0 20px 0 !important;
-    opacity: 0.9;
-    text-shadow: none !important;
+    opacity: 0.95;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
+    position: relative;
+    z-index: 1;
 }
 
 .resume-contact {
@@ -1649,20 +1854,24 @@ a:hover::after {
     flex-wrap: wrap;
     gap: 20px;
     font-size: 14px;
+    position: relative;
+    z-index: 1;
 }
 
 .resume-contact a {
-    color: #ffffff !important;
+    color: var(--resume-text-light) !important;
     text-decoration: none !important;
     text-shadow: none !important;
     animation: none !important;
-    font-weight: normal !important;
+    font-weight: 500 !important;
+    transition: var(--transition);
 }
 
 .resume-contact a:hover {
-    color: var(--resume-bg-accent) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
     text-shadow: none !important;
     animation: none !important;
+    transform: translateY(-1px);
 }
 
 /* Resume grid layout */
@@ -1681,37 +1890,47 @@ a:hover::after {
 .resume-section-title {
     font-size: 20px !important;
     font-weight: 600 !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin-bottom: 20px !important;
     padding-bottom: 8px;
     border-bottom: 2px solid var(--resume-primary);
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
     text-transform: none !important;
+    letter-spacing: -0.01em;
 }
 
 /* Job styling */
 .resume-job {
     margin-bottom: 25px;
     padding: 15px;
-    border: 1px solid var(--resume-bg-accent);
-    border-radius: 8px;
+    background: var(--resume-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--resume-border);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.resume-job:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--resume-primary);
+    transform: translateY(-2px);
 }
 
 .resume-job-title {
     font-size: 16px !important;
     font-weight: 600 !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin: 0 !important;
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 .resume-job-company {
     font-size: 14px !important;
-    color: var(--resume-primary) !important;
+    color: var(--resume-text-secondary) !important;
     margin: 2px 0 0 0 !important;
     font-weight: 500 !important;
 }
@@ -1724,25 +1943,34 @@ a:hover::after {
 .resume-responsibility {
     margin-bottom: 4px;
     font-size: 14px !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-secondary) !important;
 }
 
 /* Project styling */
 .resume-project {
     margin-bottom: 25px;
     padding: 15px;
-    border: 1px solid var(--resume-bg-accent);
-    border-radius: 8px;
+    background: var(--resume-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--resume-border);
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.resume-project:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--resume-secondary);
+    transform: translateY(-2px);
 }
 
 .resume-project-title {
     font-size: 16px !important;
     font-weight: 600 !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin: 0 0 8px 0 !important;
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 .resume-project-link {
@@ -1752,10 +1980,11 @@ a:hover::after {
     font-weight: 500 !important;
     text-shadow: none !important;
     animation: none !important;
+    transition: var(--transition);
 }
 
 .resume-project-link:hover {
-    text-decoration: underline !important;
+    color: var(--resume-secondary) !important;
     text-shadow: none !important;
     animation: none !important;
 }
@@ -1764,7 +1993,7 @@ a:hover::after {
     font-size: 14px !important;
     margin: 8px 0 0 0 !important;
     line-height: 1.5;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-secondary) !important;
 }
 
 .resume-subprojects {
@@ -1802,13 +2031,13 @@ a:hover::after {
 .resume-skill-category-title {
     font-size: 14px !important;
     font-weight: 600 !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin-bottom: 8px !important;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 .resume-skill-tags {
@@ -1816,19 +2045,26 @@ a:hover::after {
 }
 
 .resume-skill-tag {
-    background-color: var(--resume-bg-light);
-    color: var(--resume-primary);
-    padding: 4px 8px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--resume-text-light);
+    padding: 6px 12px;
+    border-radius: 8px;
     font-size: 12px !important;
     font-weight: 500 !important;
-    border: 1px solid var(--resume-bg-accent);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     margin-right: 6px;
     margin-bottom: 6px;
     display: inline-block;
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
+    transition: var(--transition);
+}
+
+.resume-skill-tag:hover {
+    background: rgba(0, 122, 255, 0.2);
+    border-color: var(--resume-primary);
+    transform: translateY(-1px);
 }
 
 /* Education styling */
@@ -1839,11 +2075,11 @@ a:hover::after {
 .resume-education-institution {
     font-size: 14px !important;
     font-weight: 600 !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin: 0 0 4px 0 !important;
     text-shadow: none !important;
     animation: none !important;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 .resume-education-degree {
@@ -1854,22 +2090,29 @@ a:hover::after {
 
 .resume-education-details {
     font-size: 12px !important;
-    color: var(--resume-primary) !important;
+    color: var(--resume-text-light) !important;
     margin: 0 !important;
     font-style: italic;
 }
 
 /* Certification styling */
 .resume-certification {
-    background-color: var(--resume-bg-light);
+    background: var(--resume-glass);
+    backdrop-filter: blur(10px);
     padding: 10px 12px;
-    border-radius: 6px;
-    border: 1px solid var(--resume-bg-accent);
+    border-radius: 8px;
+    border: 1px solid var(--resume-border);
+    transition: var(--transition);
+}
+
+.resume-certification:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--resume-primary);
 }
 
 .resume-certification-name {
     font-size: 13px !important;
-    color: var(--resume-text-dark) !important;
+    color: var(--resume-text-light) !important;
     margin: 0 0 4px 0 !important;
     font-weight: 500 !important;
 }
@@ -1881,6 +2124,11 @@ a:hover::after {
     font-weight: 500 !important;
     text-shadow: none !important;
     animation: none !important;
+    transition: var(--transition);
+}
+
+.resume-certification-link:hover {
+    color: var(--resume-secondary) !important;
 }
 
 /* Navigation for resume page */
@@ -1949,21 +2197,33 @@ a:hover::after {
     text-align: center;
     color: var(--resume-text-muted) !important;
     font-size: 14px !important;
-    border-top: 1px solid var(--resume-bg-accent);
+    border-top: 1px solid var(--resume-border);
+    background: var(--resume-bg-darker);
 }
 
 .resume-footer a {
     color: var(--resume-primary) !important;
     text-decoration: none !important;
-    font-weight: normal !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: var(--transition);
+}
+
+.resume-footer a:hover {
+    color: var(--resume-secondary) !important;
     text-shadow: none !important;
     animation: none !important;
 }
 
-.resume-footer a:hover {
-    text-decoration: underline !important;
-    text-shadow: none !important;
-    animation: none !important;
+/* Resume gradient animation */
+@keyframes resumeGradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 /* Print media queries */
@@ -1972,36 +2232,58 @@ a:hover::after {
         background: white !important;
         animation: none !important;
         background-image: none !important;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif !important;
     }
-    
+
     .resume-container {
         box-shadow: none !important;
         margin: 0 !important;
         max-width: none !important;
+        background: white !important;
     }
-    
+
+    .resume-header {
+        background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
     .no-print {
         display: none !important;
     }
-    
+
     .resume-grid {
         padding: 20px !important;
     }
-    
+
     .resume-header {
         padding: 30px !important;
     }
-    
+
     /* Ensure proper page breaks */
     .resume-job, .resume-project {
         break-inside: avoid;
         page-break-inside: avoid;
     }
-    
+
     .resume-section {
         break-after: auto;
         page-break-after: auto;
+    }
+
+    /* Print dark text on white background for readability */
+    .resume-section-title,
+    .resume-job-title,
+    .resume-project-title,
+    .resume-education-institution,
+    .resume-skill-category-title {
+        color: #000000 !important;
+    }
+
+    .resume-responsibility,
+    .resume-project-description,
+    .resume-education-degree {
+        color: #333333 !important;
     }
 }
 

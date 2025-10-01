@@ -4,18 +4,18 @@ import { ResumeView } from './components/ResumeView';
 import { createResumeData } from './lib/resume-factory';
 
 export const metadata: Metadata = {
-  title: 'J. Toki Burke - Resume | Marketing Technologist & AI Solutions',
-  description: 'Professional resume of J. Toki Burke, Marketing Technologist specializing in AI solutions for small and medium businesses. Experience at Fisher Investments and technical projects.',
+  title: 'J. Toki Burke - Resume | Marketing Technologist',
+  description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
   openGraph: {
-    title: 'J. Toki Burke - Resume | Marketing Technologist & AI Solutions',
-    description: 'Professional resume of J. Toki Burke, Marketing Technologist specializing in AI solutions for small and medium businesses.',
+    title: 'J. Toki Burke - Resume | Marketing Technologist',
+    description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
     url: 'https://jtokib.com/resume',
     type: 'profile',
   },
   twitter: {
     card: 'summary',
-    title: 'J. Toki Burke - Resume | Marketing Technologist & AI Solutions',
-    description: 'Professional resume of J. Toki Burke, Marketing Technologist specializing in AI solutions for small and medium businesses.',
+    title: 'J. Toki Burke - Resume | Marketing Technologist',
+    description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
   },
 };
 
