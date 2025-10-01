@@ -4,7 +4,7 @@ export function createResumeData(): ResumeData {
   return {
     personal: {
       name: "J. Toki Burke",
-      title: "Marketing Technologist interested in unlocking AI Solutions for Small and Medium Sized Businesses",
+      title: "Marketing Technologist",
       location: "San Francisco, CA 94131",
       phone: "(415) 747-9254",
       email: "jtokib@gmail.com",
@@ -21,7 +21,7 @@ export function createResumeData(): ResumeData {
           "Develop and maintain the technology roadmap, setting project and development priorities, while leading the evaluation and onboarding of new technologies.",
           "Manage MarTech integrations across Customer Data Platform and Tag Management Systems (Tealium),Content Management System(Sitecore), Marketing Automation Platform(Selligent), Analytics(GA4 + Google BigQuery), and Data Management Platforms(Redpoint Global).",
           "Serve as technical business lead for cloud architecture migrations to Sitecore XM (Headless CMS) and Selligent Marketing Cloud platforms.",
-          "Managed a comprehensive browser automation program with 293+ browser-based tests using Ghost Inspector, reducing manual testing overhead"
+          "Oversee UI/UX, functionl, and technical QA including website browser automation and data validation efforts"
         ]
       },
       {

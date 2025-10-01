@@ -104,9 +104,10 @@ temp/
 
 # Local development files
 *.local
+.playwright-mcp
 
 # Claude Code settings (contains user-specific configurations)
-/.claude/
+.claude
 
 # Old/legacy files
 index.html
