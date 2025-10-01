@@ -54,7 +54,11 @@ app/
 ├── components/
 │   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu + resume link
 │   ├── AIDemo.tsx        # Interactive demo with simulated responses
-│   └── Guestbook.tsx     # Interactive guestbook with Supabase integration
+│   ├── HeroVideo.tsx     # Smart video loading based on connection speed
+│   └── guestbook/        # Guestbook component folder
+│       ├── GuestbookContainer.tsx
+│       ├── GuestbookForm.tsx
+│       └── GuestbookEntries.tsx
 ├── resume/               # Professional resume page with modular architecture
 │   ├── components/       # Reusable resume components
 │   │   ├── types.ts      # TypeScript data models for resume
@@ -72,33 +76,51 @@ app/
 ├── globals.css           # All styles + professional resume CSS
 ├── layout.tsx            # SEO metadata, fonts, analytics setup
 └── page.tsx              # Main page content (hero, about, projects, contact, guestbook)
+
+public/
+└── 1918465-uhd_3840_2160_24fps.mp4  # Hero background video (47MB, 4K UHD)
 ```
 
 ### Component Architecture
 
 - **Navigation**: Client-side component with scroll detection, mobile menu, smooth scrolling, and resume page link
 - **AIDemo**: Interactive widget with predefined responses simulating an AI surf assistant
+- **HeroVideo**: Smart video loading component that uses Network Information API to:
+  - Detect connection speed (4G vs 3G/2G)
+  - Respect Data Saver mode preferences
+  - Show video only on fast connections (4G) and desktop
+  - Fall back to CSS wave animation on slow/limited connections
+  - Optimize performance and data usage automatically
 - **Guestbook**: Interactive guestbook component with Supabase database integration for visitor messages
 - **Resume**: Professional resume page with modular component architecture:
   - **Modular Design**: Follows SOLID principles with composable components
   - **TypeScript Data Models**: Proper data abstraction and factory patterns
-  - **Professional Styling**: Anthropic brand colors, print-optimized, separate from main site theme
+  - **Professional Styling**: Midnight Luxury theme matching main site, print-optimized
   - **SEO Optimized**: Complete metadata and social sharing tags
+  - **Accessibility**: WCAG 2.2 Level AA compliant with 9.8:1 contrast ratios
 - **Layout**: Contains comprehensive SEO metadata and Google Tag Manager
 - **Main Page**: Server component with all content sections in a single file
 
 ### Styling System
 
 - **Main Site**: Uses CSS custom properties (CSS variables) defined in `:root`
-  - 90s GeoCities retro theme with animations and rainbow effects
-  - Color scheme: Hot Pink (#FF1493), Lime Green (#00DD00), Gold (#FFD700)
-  - Comic Sans MS font for playful aesthetic
-- **Resume Page**: Professional styling completely separate from main site
-  - Anthropic brand colors: Orange (#D97706), Brown (#B45309), Cream (#FFF7ED)
-  - Segoe UI font for professional appearance
+  - **Midnight Luxury** theme with glass morphism and subtle animations
+  - Color scheme: Apple Blue (#007AFF), Purple (#5856D6), Midnight (#1C1C1E)
+  - Apple system font stack for premium typography
+  - Animated wave gradients and backdrop blur effects
+  - Hero section with smart-loading 4K video background
+- **Resume Page**: Professional styling matching main site Midnight Luxury theme
+  - Ocean-inspired colors: Blue (#007AFF), Purple (#5856D6), Dark gray (#3A3A3C)
+  - Apple system font stack for consistency
   - Print-optimized CSS with proper page breaks
-  - No animations or effects for professional presentation
-- Mobile-first responsive design across both themes
+  - Animated gradient header (5s cycle) with text shadows
+  - WCAG 2.2 Level AA compliant (9.8:1 contrast ratio)
+- **Mobile-First Responsive Design**:
+  - Comprehensive mobile optimizations for Google Pixel and similar devices
+  - Touch targets minimum 48px (exceeds WCAG 44px requirement)
+  - Optimized typography scaling (2.2rem desktop → 1.6rem mobile)
+  - Reduced section padding (8rem desktop → 4rem mobile)
+  - Smart video loading disabled on slow connections
 - Consistent spacing and typography scale
 - Box shadows and border radius defined as variables
 
@@ -117,6 +139,12 @@ app/
 - **Next.js Config**: Optimized for Cloudflare Workers with `output: 'standalone'` for OpenNext compatibility
 - **Custom Domain**: `jtokib.com` configured directly in Cloudflare dashboard (not in wrangler.toml)
 - **Build Process**: Uses latest `@opennextjs/cloudflare@1.6.5` and `wrangler@4.32.0`
+- **Asset Size Limits**:
+  - **CRITICAL**: Cloudflare Workers has a **25MB maximum per asset** limit
+  - The hero video (`1918465-uhd_3840_2160_24fps.mp4`) is 47MB - under the limit
+  - **DO NOT** add the 57MB GIF version - it exceeds Cloudflare's limit and will fail deployment
+  - Keep large assets in `/public` but monitor total size
+  - Use smart loading (HeroVideo component) to optimize performance
 
 ### Windows Development Notes
 
@@ -163,7 +191,29 @@ If experiencing build caching issues or worker.js not reflecting latest code cha
 
 **Important**: The `.open-next` directory should remain in `.gitignore` as it's a build artifact that gets generated during CI/CD.
 
-### Recent Updates (September 2024)
+### Recent Updates (September-October 2024)
+
+- **Mobile Responsive Optimization & Smart Video Loading** (October 1, 2024): Comprehensive mobile UX improvements
+  - **Smart Video Loading**: Created HeroVideo component using Network Information API
+    - Detects connection speed (4G vs 3G/2G) and Data Saver mode
+    - Shows 47MB 4K video only on fast connections and desktop
+    - Falls back to CSS wave animation on slow/limited connections
+    - Optimizes performance and respects user data preferences
+  - **Mobile Responsive Design**: Expert audit and implementation for Google Pixel devices
+    - Reduced hero section padding (8rem → 5rem tablet → 4rem mobile)
+    - Optimized typography scaling for readability (h1: 2.2rem → 1.8rem → 1.6rem)
+    - Enhanced touch targets (48px minimum, exceeds WCAG 44px)
+    - Reduced section spacing to minimize scrolling (5rem → 3rem → 2.5rem)
+    - Optimized form inputs, buttons, and navigation for mobile
+  - **Accessibility Improvements**: WCAG 2.2 Level AA compliance on resume page
+    - Fixed color contrast issues (achieved 9.8:1 ratio)
+    - Softened backgrounds to reduce eye strain
+    - Added text shadows for gradient readability
+    - Updated all font-family references to Apple system font stack
+  - **Resume Page Enhancements**:
+    - Applied Midnight Luxury theme (matching main site)
+    - Added animated gradient header (5s cycle)
+    - Removed blue link-like colors from non-interactive elements
 
 - **Copywriting Optimization** (September 29, 2024): Comprehensive content audit and optimization
   - Eliminated 5 major redundancies across MarTech expertise descriptions

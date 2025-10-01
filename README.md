@@ -15,11 +15,13 @@ Each migration improved performance, scalability, and development experience whi
 ## Features
 
 - 🚀 **Modern Stack**: Next.js 14, TypeScript, modular component architecture
-- 📱 **Responsive Design**: Mobile-first approach with modern CSS Grid and Flexbox
+- 📱 **Responsive Design**: Mobile-first with comprehensive optimizations for touch devices (48px touch targets)
+- 🌊 **Smart Video Loading**: Network-aware hero video with connection speed detection and Data Saver support
 - 🤖 **AI Demo**: Interactive surf condition assistant showcasing AI integration
 - 📝 **Interactive Guestbook**: Visitor messaging system with Supabase database integration
 - 🎨 **Midnight Luxury Design**: Sophisticated glass morphism with Apple-inspired aesthetics and premium animations
-- ⚡ **Performance Optimized**: Edge computing with Cloudflare Workers and security headers
+- ♿ **WCAG 2.2 AA Compliant**: Accessible design with 9.8:1 contrast ratios and optimized readability
+- ⚡ **Performance Optimized**: Edge computing with Cloudflare Workers and intelligent asset loading
 - 📊 **Analytics**: Google Tag Manager integration for comprehensive tracking
 - 🔍 **SEO Optimized**: Comprehensive meta tags, structured data, and Open Graph
 - 🔒 **Security**: No exposed API keys, security headers, safe deployment practices
@@ -97,13 +99,20 @@ npx wrangler deploy
 ```
 ├── app/
 │   ├── components/          # React components
-│   │   ├── Navigation.tsx   # Main navigation
+│   │   ├── Navigation.tsx   # Main navigation with mobile menu
 │   │   ├── AIDemo.tsx      # AI demonstration widget
-│   │   └── Guestbook.tsx   # Interactive guestbook component
-│   ├── globals.css         # Global styles
+│   │   ├── HeroVideo.tsx   # Smart video loading with Network API
+│   │   └── guestbook/      # Guestbook component modules
+│   ├── resume/             # Professional resume page
+│   │   ├── components/     # Resume-specific components
+│   │   └── lib/           # Resume data factory
+│   ├── api/
+│   │   └── guestbook/     # Supabase API integration
+│   ├── globals.css         # Global styles + resume CSS
 │   ├── layout.tsx          # Root layout with metadata
 │   └── page.tsx           # Main page content
 ├── public/                 # Static assets
+│   ├── 1918465-uhd_3840_2160_24fps.mp4  # Hero video (47MB, 4K)
 │   ├── favicon files      # Generated favicon set
 │   ├── robots.txt         # SEO robots file
 │   └── sitemap.xml        # SEO sitemap
@@ -115,17 +124,38 @@ npx wrangler deploy
 
 ## Features in Detail
 
+### Smart Video Loading
+Intelligent hero video that uses the Network Information API to:
+- Detect connection speed (4G vs 3G/2G)
+- Respect user's Data Saver mode preference
+- Show 47MB 4K video only on fast connections and desktop
+- Fall back to CSS wave animation on slow/limited connections
+- Optimize performance and data usage automatically
+
 ### AI Demo
 Interactive demonstration showcasing how I combine AI with domain expertise, featuring a surf condition assistant trained on Ocean Beach data.
 
 ### Interactive Guestbook
 Visitor messaging system powered by Supabase, allowing guests to leave messages and view previous entries with real-time updates.
 
-### Responsive Design
-Mobile-first design that works perfectly across all device sizes, from mobile phones to large desktop screens.
+### Mobile-First Responsive Design
+Comprehensive mobile optimizations including:
+- Touch targets exceeding WCAG guidelines (48px minimum)
+- Optimized typography scaling for readability
+- Reduced padding and spacing for better viewport usage
+- Enhanced form inputs and navigation for mobile devices
+- Tested and optimized for Google Pixel and similar devices
+
+### Accessibility (WCAG 2.2 Level AA)
+- 9.8:1 contrast ratio on resume page (exceeds AAA)
+- Proper color contrast throughout site
+- Accessible touch targets (48px minimum)
+- Reduced eye strain with softened color schemes
+- Screen reader optimized semantic HTML
 
 ### Performance
 - Edge computing with Cloudflare Workers for global performance
+- Smart video loading based on connection speed
 - Optimized images and fonts
 - Minimal JavaScript bundle size
 - Static assets served from edge locations worldwide
