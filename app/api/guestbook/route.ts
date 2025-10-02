@@ -1,45 +1,45 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createGuestbookServiceForEnvironment, type CreateGuestbookEntryInput } from '../../../lib/guestbook/server'
+import { createClient } from '@supabase/supabase-js'
+import { validateEntry, sanitizeEntry, type CreateEntryInput } from '../../../lib/guestbook-simple'
+import { CORS_HEADERS } from '../cors'
+
+function getSupabaseClient() {
+  return createClient(
+    process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
 
 export async function GET() {
   try {
-    const service = createGuestbookServiceForEnvironment()
-    const result = await service.getEntries()
+    const supabase = getSupabaseClient()
+    const { data, error } = await supabase
+      .from('guestbook')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(10)
 
-    if (!result.success) {
-      console.error('Service error:', result.error)
-      const errorMessage = result.error?.message || result.error?.userMessage || 'Failed to fetch guestbook entries'
+    if (error) {
+      console.error('Database error:', error)
       return NextResponse.json(
-        { error: errorMessage },
-        { 
+        { error: 'Failed to fetch guestbook entries' },
+        {
           status: 500,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-          }
+          headers: CORS_HEADERS
         }
       )
     }
 
-    return NextResponse.json(result.data || [], {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      }
+    return NextResponse.json(data || [], {
+      headers: CORS_HEADERS
     })
   } catch (error) {
     console.error('API error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
-      { 
+      {
         status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
+        headers: CORS_HEADERS
       }
     )
   }
@@ -48,47 +48,52 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, message } = body as CreateGuestbookEntryInput
+    const input = body as CreateEntryInput
 
-    const service = createGuestbookServiceForEnvironment()
-    const result = await service.createEntry({ name, message })
-
-    if (!result.success) {
-      const errorMessage = result.error?.message || result.error?.userMessage || ''
-      const status = errorMessage.includes('validation') || errorMessage.includes('required') || 
-                     errorMessage.includes('characters') || errorMessage.includes('words') ? 400 : 500
-      
+    // Validate input
+    const validationError = validateEntry(input)
+    if (validationError) {
       return NextResponse.json(
-        { error: errorMessage || 'Failed to create guestbook entry' },
-        { 
-          status,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers': 'Content-Type',
-          }
+        { error: validationError },
+        {
+          status: 400,
+          headers: CORS_HEADERS
         }
       )
     }
 
-    return NextResponse.json(result.data, {
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
-      }
+    // Sanitize input
+    const sanitized = sanitizeEntry(input)
+
+    // Insert into database
+    const supabase = getSupabaseClient()
+    const { data, error } = await supabase
+      .from('guestbook')
+      .insert([sanitized])
+      .select()
+      .single()
+
+    if (error) {
+      console.error('Database error:', error)
+      return NextResponse.json(
+        { error: 'Failed to create guestbook entry' },
+        {
+          status: 500,
+          headers: CORS_HEADERS
+        }
+      )
+    }
+
+    return NextResponse.json(data, {
+      headers: CORS_HEADERS
     })
   } catch (error) {
     console.error('API error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
-      { 
+      {
         status: 500,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
+        headers: CORS_HEADERS
       }
     )
   }
@@ -97,10 +102,6 @@ export async function POST(request: NextRequest) {
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
+    headers: CORS_HEADERS,
   })
 }

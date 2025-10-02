@@ -1,151 +1,97 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { 
-  useFormValidation, 
-  useInputCounts, 
-  GuestbookValidationService,
-  DEFAULT_GUESTBOOK_CONFIG,
-  type CreateGuestbookEntryInput 
-} from '../../../lib/guestbook/client';
+import { useState } from 'react';
+import { validateEntry, type CreateEntryInput } from '../../../lib/guestbook-simple';
 
-interface GuestbookFormProps {
-  onSubmit: (input: CreateGuestbookEntryInput) => Promise<void>;
-  isLoading: boolean;
-  error: string | null;
-  success: string | null;
-  onClearMessages: () => void;
-}
-
-export function GuestbookForm({ 
-  onSubmit, 
-  isLoading, 
-  error, 
-  success, 
-  onClearMessages 
-}: GuestbookFormProps) {
+export function GuestbookForm() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  // Create validator instance
-  const validator = useMemo(() => 
-    new GuestbookValidationService(DEFAULT_GUESTBOOK_CONFIG), 
-    []
-  );
-
-  const { validation, validateField, validateForm, clearValidation } = useFormValidation(validator);
-  const { getCharacterCount, getWordCount, getCharacterLimit, getWordLimit } = useInputCounts(validator);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    onClearMessages();
+    setError('');
+    setSuccess('');
 
-    const input = { name, message };
-    
-    if (!validateForm(input)) {
+    const validationError = validateEntry({ name, message });
+    if (validationError) {
+      setError(validationError);
       return;
     }
 
+    setLoading(true);
     try {
-      await onSubmit(input);
-      // Reset form on success
+      const res = await fetch('/api/guestbook', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, message }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to submit');
+      }
+
+      setSuccess('Thank you for signing the guestbook!');
       setName('');
       setMessage('');
-      clearValidation();
-    } catch (err) {
-      // Error is handled by the parent component
+    } catch (err: any) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setName(value);
-    validateField('name', value);
-    onClearMessages();
-  };
-
-  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const value = e.target.value;
-    setMessage(value);
-    validateField('message', value);
-    onClearMessages();
-  };
+  const wordCount = message.trim().split(/\s+/).filter(w => w).length;
 
   return (
     <div className="guestbook-form-container">
-      <h3 className="guestbook-form-title">
-        Share Your Thoughts
-      </h3>
+      <h3 className="guestbook-form-title">Share Your Thoughts</h3>
+
+      {error && <div className="guestbook-alert error">{error}</div>}
+      {success && <div className="guestbook-alert success">{success}</div>}
 
       <form onSubmit={handleSubmit}>
         <div className="guestbook-form-group">
-          <label className="guestbook-label">
-            Your Name *
-          </label>
+          <label className="guestbook-label">Your Name *</label>
           <input
             type="text"
-            name="name"
             value={name}
-            onChange={handleNameChange}
-            maxLength={getCharacterLimit.name}
+            onChange={(e) => setName(e.target.value)}
+            maxLength={50}
             required
-            className={`guestbook-input ${!validation.name.isValid && validation.name.errors.length > 0 ? 'error' : ''}`}
+            className="guestbook-input"
             placeholder="Enter your name"
           />
-          <div className="guestbook-char-count">
-            <small className={!validation.name.isValid && validation.name.errors.length > 0 ? 'error' : ''}>
-              {validation.name.errors.length > 0 ? validation.name.errors[0] : `${getCharacterCount(name)}/${getCharacterLimit.name} characters`}
-            </small>
-          </div>
+          <small>{name.length}/50 characters</small>
         </div>
 
         <div className="guestbook-form-group">
-          <label className="guestbook-label">
-            Your Message *
-          </label>
+          <label className="guestbook-label">Your Message *</label>
           <textarea
-            name="message"
             value={message}
-            onChange={handleMessageChange}
-            maxLength={getCharacterLimit.message}
+            onChange={(e) => setMessage(e.target.value)}
+            maxLength={1000}
             required
             rows={4}
-            className={`guestbook-textarea ${!validation.message.isValid && validation.message.errors.length > 0 ? 'error' : ''}`}
+            className="guestbook-textarea"
             placeholder="Share your thoughts..."
           />
           <div className="guestbook-char-count">
-            <small className={!validation.message.isValid && validation.message.errors.length > 0 ? 'error' : ''}>
-              {validation.message.errors.length > 0 ? validation.message.errors[0] : `${getWordCount(message)}/${getWordLimit} words`}
-            </small>
-            <small>
-              {getCharacterCount(message)}/{getCharacterLimit.message} characters
-            </small>
+            <small>{wordCount}/250 words</small>
+            <small>{message.length}/1000 characters</small>
           </div>
         </div>
 
-        {error && (
-          <div className="guestbook-alert error">
-            {error}
-          </div>
-        )}
-
-        {success && (
-          <div className="guestbook-alert success">
-            {success}
-          </div>
-        )}
-
         <button
           type="submit"
-          disabled={isLoading || !validation.isFormValid}
+          disabled={loading}
           className="btn btn-primary"
-          style={{
-            width: '100%',
-            opacity: isLoading || !validation.isFormValid ? 0.6 : 1,
-            cursor: isLoading || !validation.isFormValid ? 'not-allowed' : 'pointer'
-          }}
+          style={{ width: '100%' }}
         >
-          {isLoading ? 'Submitting...' : 'Sign Guestbook'}
+          {loading ? 'Submitting...' : 'Sign Guestbook'}
         </button>
       </form>
     </div>

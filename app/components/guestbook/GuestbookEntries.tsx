@@ -5,7 +5,7 @@
 
 'use client';
 
-import type { GuestbookEntry } from '../../../lib/guestbook/client';
+import type { GuestbookEntry } from '../../../lib/guestbook-simple';
 
 interface GuestbookEntriesProps {
   entries: GuestbookEntry[];

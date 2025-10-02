@@ -1,49 +1,45 @@
 'use client';
 
-import { useMemo } from 'react';
-import {
-  useGuestbook,
-  createClientGuestbookService,
-  type GuestbookEntry
-} from '../../../lib/guestbook/client';
+import { useState, useEffect } from 'react';
 import { GuestbookForm } from './GuestbookForm';
 import { GuestbookEntries } from './GuestbookEntries';
+import { type GuestbookEntry } from '../../../lib/guestbook-simple';
 
-interface GuestbookContainerProps {
-  initialEntries?: GuestbookEntry[];
-}
+export default function GuestbookContainer() {
+  const [entries, setEntries] = useState<GuestbookEntry[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-export default function GuestbookContainer({ initialEntries = [] }: GuestbookContainerProps) {
-  // Create service instance with dependency injection
-  const service = useMemo(() => {
-    return createClientGuestbookService();
+  // Fetch entries on mount
+  useEffect(() => {
+    fetchEntries();
   }, []);
 
-  const { entries, isLoading, error, success, createEntry, clearMessages } = useGuestbook(service);
+  const fetchEntries = async () => {
+    try {
+      const res = await fetch('/api/guestbook');
+      if (res.ok) {
+        const data = await res.json();
+        setEntries(data);
+      }
+    } catch (error) {
+      console.error('Failed to fetch entries:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <section id="guestbook" className="guestbook">
       <div className="container">
-        <h2 className="guestbook-header">
-          Sign the Guestbook
-        </h2>
+        <h2 className="guestbook-header">Sign the Guestbook</h2>
 
         <div className="guestbook-intro">
           Leave your mark! Share your thoughts about marketing technology, surf forecasting, or just say hello.
         </div>
 
-        <GuestbookForm
-          onSubmit={createEntry}
-          isLoading={isLoading}
-          error={error}
-          success={success}
-          onClearMessages={clearMessages}
-        />
+        <GuestbookForm />
 
-        <GuestbookEntries
-          entries={entries}
-          isLoading={isLoading}
-        />
+        <GuestbookEntries entries={entries} isLoading={isLoading} />
 
         <div className="guestbook-footer">
           Powered by Supabase • Latest 10 entries shown

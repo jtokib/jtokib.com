@@ -15,7 +15,7 @@ export default function Home() {
             <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
             <p className="hero-description">
               Marketing Technology Team Lead delivering scalable solutions for enterprise clients.
-              Specialized experience in custom Tealium, Sitecore, and Selligent implementations with 7+ years specializing in
+              Specialized experience in Tealium, Sitecore, and Selligent implementations with 7+ years in custom
               client-side/server-side tag management and analytics infrastructure.
             </p>
             <div className="hero-buttons">
