@@ -4,7 +4,7 @@ export function createResumeData(): ResumeData {
   return {
     personal: {
       name: "J. Toki Burke",
-      title: "Marketing Technologist",
+      title: "Marketing Technology Leader | Global Privacy & Tag Governance",
       location: "San Francisco, CA 94131",
       phone: "(415) 747-9254",
       email: "jtokib@gmail.com",
@@ -17,11 +17,12 @@ export function createResumeData(): ResumeData {
         duration: "July 2021 – Present",
         location: "San Francisco, CA",
         responsibilities: [
-          "Lead a technical team driving marketing technology initiatives across web, mobile, and emerging digital channels",
-          "Develop and maintain the technology roadmap, setting project and development priorities, while leading the evaluation and onboarding of new technologies.",
-          "Manage MarTech integrations across Customer Data Platform and Tag Management Systems (Tealium),Content Management System(Sitecore), Marketing Automation Platform(Selligent), Analytics(GA4 + Google BigQuery), and Data Management Platforms(Redpoint Global).",
-          "Serve as technical business lead for cloud architecture migrations to Sitecore XM (Headless CMS) and Selligent Marketing Cloud platforms.",
-          "Oversee UI/UX, functionl, and technical QA including website browser automation and data validation efforts"
+          "Lead technical team implementing marketing technology across web, mobile, and digital channels for Fisher Investments' global operations spanning EMEA, APAC, and LATAM markets",
+          "Architect tag governance infrastructure handling both opt-in (GDPR) and opt-out (CCPA/CPRA) consent models across global markets, implementing Global Privacy Control (GPC) support and custom CMP integrations",
+          "Manage enterprise MarTech stack integrations: Tealium (CDP/iQ Tag Management), Sitecore (Headless CMS), Selligent (Marketing Automation), GA4 + Google BigQuery (Analytics), and Redpoint Global (Data Management Platform)",
+          "Serve as technical business lead for cloud architecture migrations to Sitecore XM Cloud and Selligent Marketing Cloud platforms",
+          "Develop technology roadmap and evaluation criteria for new platform adoption, balancing innovation with compliance requirements across multiple regulatory frameworks",
+          "Oversee UI/UX, functional, and technical QA including automated browser testing and server-side data validation"
         ]
       },
       {
@@ -30,10 +31,10 @@ export function createResumeData(): ResumeData {
         duration: "November 2019 – July 2021",
         location: "San Francisco, CA",
         responsibilities: [
-          "Managed technical integrations across the full marketing technology stack, including Tealium, Sitecore, Akamai, Rackspace, and Optimizely",
-          "Implemented server-side data collection using Tealium EventStream, integrating with Facebook CAPI, Google Ads API, and LinkedIn Ads CAPI",
-          "Developed a comprehensive QA framework with Selenium and Puppeteer, using Mocha/Chai for robust front-end validation",
-          "Led the technical conversion of an Excel-based financial calculator to ES6-compatible JavaScript with eCharts visualization"
+          "Managed technical integrations across enterprise MarTech stack (Tealium, Sitecore, Akamai, Rackspace, Optimizely) supporting multi-region lead generation and performance marketing",
+          "Implemented server-side data collection using Tealium EventStream with Facebook Conversions API, Google Ads API, and LinkedIn CAPI, maintaining attribution integrity while respecting user consent choices",
+          "Built comprehensive QA automation framework using Selenium and Puppeteer with Mocha/Chai for front-end validation and data accuracy verification",
+          "Led technical conversion of Excel-based financial calculator to production-ready ES6 JavaScript with eCharts data visualization"
         ]
       },
       {
@@ -42,10 +43,10 @@ export function createResumeData(): ResumeData {
         duration: "August 2018 – November 2019",
         location: "San Francisco, CA",
         responsibilities: [
-          "Administered Tealium iQ, managing custom tag configurations and deployment workflows as a power user",
-          "Configured Optimizely Full Stack and Web X testing solutions, integrating with Sitecore and Contao CMS",
-          "Optimized web performance by implementing Real User Monitoring (RUM) and synthetic monitoring tools, establishing benchmarks for TTFB and FCP",
-          "Administered GDPR and CCPA compliance through Tealium and OneTrust across global markets"
+          "Administered global privacy compliance across EMEA, APAC, and LATAM markets using Tealium iQ and OneTrust, implementing GDPR (opt-in) and CCPA (opt-out) consent frameworks with region-specific tag governance",
+          "Managed Tealium iQ tag management configurations and deployment workflows, including custom JavaScript extensions and data layer standardization",
+          "Configured Optimizely Full Stack and Web Experimentation platforms, integrating with Sitecore and Contao CMS for multivariate testing",
+          "Optimized web performance using Real User Monitoring (RUM) and synthetic monitoring, establishing performance benchmarks for Time to First Byte (TTFB) and First Contentful Paint (FCP)"
         ]
       },
       {
@@ -133,11 +134,20 @@ export function createResumeData(): ResumeData {
     ],
     skills: [
       {
+        category: "Specializations",
+        skills: [
+          "Global Privacy Compliance (GDPR, CCPA/CPRA, Global Privacy Control)",
+          "Tag Governance & Consent Management (OneTrust, Tealium Privacy Manager)",
+          "Server-Side Data Collection (Facebook CAPI, Google Ads API, LinkedIn CAPI)",
+          "Multi-Region Marketing Infrastructure (EMEA, APAC, LATAM)"
+        ]
+      },
+      {
         category: "Platforms",
         skills: [
           "Tealium (CDP/TMS)", "Sitecore (CMS)", "WordPress (CMS)", "Selligent/Marigold",
-          "Google Marketing Platform", "Google Cloud", "Optimizely", "Cloudflare","Akamai", "Vercel", 
-          "Firebase", "Atlassian (JIRA/Confluence/Bitbucket)", "Git/GitHub"
+          "Google Marketing Platform", "Google Cloud", "Optimizely", "OneTrust (CMP)",
+          "Cloudflare", "Akamai", "Vercel", "Firebase", "Atlassian (JIRA/Confluence/Bitbucket)", "Git/GitHub"
         ]
       },
       {
