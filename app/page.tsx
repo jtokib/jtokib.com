@@ -14,9 +14,7 @@ export default function Home() {
           <div className="hero-content block-dark">
             <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
             <p className="hero-description">
-              Marketing Technology Team Lead delivering scalable solutions for enterprise clients.
-              Specialized experience in Tealium, Sitecore, and Selligent implementations with 7+ years in custom
-              client-side/server-side tag management and analytics infrastructure.
+              I build measurement infrastructure that works across continents, consent models, and compliance frameworks—turning global privacy complexity into competitive advantage for enterprise brands.
             </p>
             <div className="hero-buttons">
               <a href="#projects" className="btn btn-primary">View Projects</a>
@@ -32,13 +30,7 @@ export default function Home() {
             <div className="about-content">
               <div className="about-text">
                 <p>
-                  I build marketing technology solutions that scale. My current focus includes
-                  cloud infrastructure (Firebase, Google Cloud, Supabase), modern deployment workflows,
-                  and AI integration for enhanced user experiences.
-                </p>
-                <p>
-                  Outside of tech, I enjoy family adventures, Ocean Beach surf forecasting projects,
-                  and cultivating California native plants.
+                  For seven years at one of the largest investment advisors in the country, I&apos;ve helped build marketing technology infrastructure that most teams don&apos;t realize is hard until they try it themselves: tag governance that handles both opt-in (GDPR) and opt-out (CCPA) consent models across EMEA, APAC, and LATAM. Server-side implementations that respect Global Privacy Control while maintaining attribution integrity. Lead generation funnels where precision isn&apos;t optional and compliance isn&apos;t negotiable. I help architect measurement systems that turn privacy constraints into better data—because when you&apos;re optimizing for performance marketing at a global financial services brand, &quot;we think it&apos;s working&quot; doesn&apos;t cut it. Whether I&apos;m forecasting Ocean Beach surf conditions or building cross-region analytics infrastructure, it&apos;s the same skillset: finding reliable patterns in complex systems, then making them work for humans.
                 </p>
                 <div className="skills">
                   <h3>Skills & Expertise</h3>
@@ -46,17 +38,17 @@ export default function Home() {
                     <div className="skill-item">
                       <span className="skill-icon"></span>
                       <h4>MarTech & Ad Tech</h4>
-                      <p>7+ years implementing enterprise MarTech stacks. Specialize in tag management architecture, analytics deployment (GTM, GA4, Facebook CAPI), and infrastructure optimization for high-traffic environments.</p>
+                      <p>Seven years deep in enterprise tag management (Tealium CDP/iQ), building server-side data collection with Facebook CAPI, Google Ads API, and LinkedIn CAPI integrations. I specialize in the unglamorous-but-critical work: tag governance across global consent models, GA4 + BigQuery analytics pipelines, and performance optimization for sites handling millions of visitors. My superpower? Making compliance architecture feel invisible to users while giving marketers clean attribution data they can actually trust.</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon"></span>
                       <h4>AI & Cloud Platforms</h4>
-                      <p>Implementing AI-powered features and cloud-native architectures. Current projects integrate Claude Code, ChatGPT APIs, Firebase backend services, and Supabase for real-time data management.</p>
+                      <p>Currently exploring what happens when you combine AI models with real user problems: Claude API integrations for document intelligence, Firebase + Supabase backends powering real-time applications, and GPT-4 implementations that actually solve workflows instead of just sounding clever. I&apos;m less interested in &quot;AI-powered&quot; marketing speak, more interested in shipping tools that make someone&apos;s Tuesday easier—like obsf.surf&apos;s AI surf analysis trained on a decade of my own session logs.</p>
                     </div>
                     <div className="skill-item">
                       <span className="skill-icon"></span>
                       <h4>Web Development & Infrastructure</h4>
-                      <p>Solid background and understanding of HTML, CSS, and JavaScript. Experienced with Akamai, Vercel, Cloudflare, and modern deployment pipelines.</p>
+                      <p>JavaScript (ES6+), React/Next.js, and the HTML/CSS fundamentals that never go out of style. I&apos;ve deployed projects across Vercel, Cloudflare Workers, and Akamai CDN configurations, debugged performance bottlenecks with Real User Monitoring, and built QA frameworks with Selenium and Puppeteer. My philosophy: make it fast, make it accessible, make it work on someone&apos;s janky corporate laptop—then optimize from there.</p>
                     </div>
                   </div>
                 </div>
@@ -96,13 +88,12 @@ export default function Home() {
                   </div>
                   <div className="project-description">
                     <p>
-                      Comprehensive surf forecast dashboard tailored for Ocean Beach, San Francisco.
-                      Consolidates multiple data sources into one reliable interface for local surf conditions.
+                      Ocean Beach is notoriously fickle—most surf forecasts treat it like any other break, which means they&apos;re wrong half the time. After a decade of logging sessions and watching patterns, I built obsf.surf to consolidate buoy data, tide charts, wind models, and webcam feeds into one dashboard that actually understands this specific stretch of coastline. Added &quot;Surf AI&quot; trained on my own session logs to translate raw oceanographic data into &quot;should I paddle out or go to work?&quot; recommendations. Turns out building measurement systems for unpredictable conditions is the same whether you&apos;re forecasting swells or optimizing marketing funnels.
                     </p>
                     <div className="project-tech">
-                      <span className="tech-tag">Web App</span>
                       <span className="tech-tag">Real-time Data</span>
-                      <span className="tech-tag">Surf Analytics</span>
+                      <span className="tech-tag">AI Analysis</span>
+                      <span className="tech-tag">Pattern Recognition</span>
                     </div>
                   </div>
                   <div className="project-links">
@@ -126,13 +117,12 @@ export default function Home() {
                   </div>
                   <div className="project-description">
                     <p>
-                      Custom cryptocurrency token built on the Algorand blockchain. Demonstrates blockchain development
-                      skills and understanding of tokenomics, smart contracts, and DeFi concepts on a high-performance network.
+                      Built a custom token on Algorand to understand blockchain infrastructure from the inside—wallet integrations, transaction mechanics, smart contract deployment on a high-performance network. TokiCoin taught me that decentralized systems require a different mental model than traditional web architecture: immutability means you better get it right the first time, and &quot;trustless&quot; doesn&apos;t mean simpler. The tokenomics exercise was fascinating, but the real learning was in deploying something permanent to a public ledger where mistakes live forever. Humbling and instructive in equal measure.
                     </p>
                     <div className="project-tech">
-                      <span className="tech-tag">Blockchain</span>
-                      <span className="tech-tag">Algorand</span>
-                      <span className="tech-tag">Tokenomics</span>
+                      <span className="tech-tag">Algorand ASA</span>
+                      <span className="tech-tag">Web3 Integration</span>
+                      <span className="tech-tag">Blockchain Architecture</span>
                     </div>
                   </div>
                   <div className="project-links">
@@ -159,8 +149,7 @@ export default function Home() {
             <div className="footer-main">
               <h3>Let&apos;s Connect</h3>
               <p>
-                Ready to collaborate? Whether discussing MarTech implementations,
-                web development projects, or sharing surf stories - let&apos;s connect!
+                Need someone who understands both the code and the compliance headaches? Want to talk tag governance, AI integrations, or why Ocean Beach is firing this week? Let&apos;s connect.
               </p>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/toki-burke" target="_blank" rel="noopener" 
