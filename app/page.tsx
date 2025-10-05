@@ -32,12 +32,13 @@ export default function Home() {
                 <p>
                   For seven years at one of the largest investment advisors in the country, I&apos;ve helped build marketing technology infrastructure that most teams don&apos;t realize is hard until they try it themselves:
                 </p>
-                <ul>
+                <ul className="about-highlights">
                   <li>Tag governance that handles both opt-in (GDPR) and opt-out (CCPA) consent models across EMEA, APAC, and LATAM</li>
                   <li>Server-side implementations that respect Global Privacy Control while maintaining attribution integrity</li>
                   <li>Lead generation funnels where precision isn&apos;t optional and compliance isn&apos;t negotiable</li>
                   <li>Measurement systems that turn privacy constraints into better data—because when you&apos;re optimizing for performance marketing at a global financial services brand, &quot;we think it&apos;s working&quot; doesn&apos;t cut it</li>
                 </ul>
+                <br></br>
                 <p>
                   Whether I&apos;m forecasting Ocean Beach surf conditions or building cross-region analytics infrastructure, it&apos;s the same skillset: finding reliable patterns in complex systems, then making them work for humans.
                 </p>

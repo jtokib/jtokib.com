@@ -3,7 +3,11 @@
 import { useState } from 'react';
 import { validateEntry, type CreateEntryInput } from '../../../lib/guestbook-simple';
 
-export function GuestbookForm() {
+interface GuestbookFormProps {
+  onSuccess?: () => void;
+}
+
+export function GuestbookForm({ onSuccess }: GuestbookFormProps) {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -37,6 +41,11 @@ export function GuestbookForm() {
       setSuccess('Thank you for signing the guestbook!');
       setName('');
       setMessage('');
+
+      // Refresh the entries list
+      if (onSuccess) {
+        onSuccess();
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {

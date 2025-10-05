@@ -37,7 +37,7 @@ export default function GuestbookContainer() {
           Leave your mark! Share your thoughts about marketing technology, surf forecasting, or just say hello.
         </div>
 
-        <GuestbookForm />
+        <GuestbookForm onSuccess={fetchEntries} />
 
         <GuestbookEntries entries={entries} isLoading={isLoading} />
 

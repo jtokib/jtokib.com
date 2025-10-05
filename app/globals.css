@@ -479,6 +479,24 @@ a:hover::after {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
+.about-highlights {
+    margin: 2rem 0 2rem 2.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.about-highlights li {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.7;
+    padding-left: 0.5rem;
+}
+
+.about-highlights li:last-child {
+    margin-bottom: 0;
+}
+
 .skills {
     margin-top: 2rem;
 }
@@ -1124,6 +1142,17 @@ a:hover::after {
         margin-top: 1rem;
     }
 
+    .about-highlights {
+        margin: 1.5rem 0 1.5rem 1.5rem;
+        padding-left: 0.75rem;
+    }
+
+    .about-highlights li {
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+        padding-left: 0.25rem;
+    }
+
     .skill-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
@@ -1243,6 +1272,19 @@ a:hover::after {
         font-size: 1.75rem; /* Slightly smaller */
         line-height: 1.3;
         margin-bottom: 2rem;
+    }
+
+    .about-highlights {
+        margin: 1.25rem 0 1.25rem 1rem;
+        padding-left: 0.5rem;
+        border-left-width: 2px;
+    }
+
+    .about-highlights li {
+        font-size: 1rem;
+        margin-bottom: 0.875rem;
+        padding-left: 0.25rem;
+        line-height: 1.65;
     }
 
     /* Project card adjustments */
