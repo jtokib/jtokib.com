@@ -3,8 +3,11 @@ name = "jtokib"
 compatibility_date = "2025-03-25"
 compatibility_flags = ["nodejs_compat"]
 
+[vars]
+SUPABASE_URL = "https://uqtbhutphcsfuhglpndt.supabase.co"
+
 [assets]
-directory = ".open-next/assets"  
+directory = ".open-next/assets"
 binding = "ASSETS"
 
 # wrangler.toml (wrangler v3.88.0^)

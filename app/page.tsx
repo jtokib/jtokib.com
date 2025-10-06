@@ -30,7 +30,7 @@ export default function Home() {
             <div className="about-content">
               <div className="about-text">
                 <p>
-                  For seven years at one of the largest investment advisors in the country, I&apos;ve helped build marketing technology infrastructure that most teams don&apos;t realize is hard until they try it themselves:
+                  For the last seven years I&apos;ve helped build marketing technology infrastructure that most teams don&apos;t realize is hard until they try it themselves:
                 </p>
                 <ul className="about-highlights">
                   <li>Tag governance that handles both opt-in (GDPR) and opt-out (CCPA) consent models across EMEA, APAC, and LATAM</li>
