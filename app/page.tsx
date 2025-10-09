@@ -14,7 +14,7 @@ export default function Home() {
           <div className="hero-content block-dark">
             <h1>WELCOME TO <span className="highlight">TOKI&apos;S</span> DIGITAL PORTFOLIO</h1>
             <p className="hero-description">
-              I build measurement infrastructure that works across continents, consent models, and compliance frameworks—turning global privacy complexity into competitive advantage for enterprise brands.
+              I help build marketing and advertising technology stacks that works across continents, consent models, and compliance frameworks—turning global privacy complexity into competitive advantage for enterprise brands.
             </p>
             <div className="hero-buttons">
               <a href="#projects" className="btn btn-primary">View Projects</a>
