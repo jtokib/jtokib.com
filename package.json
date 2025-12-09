@@ -9,7 +9,7 @@
     "deploy": "npx @opennextjs/cloudflare build && npx @opennextjs/cloudflare deploy"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.6.5",
+    "@opennextjs/cloudflare": "^1.14.4",
     "@supabase/supabase-js": "^2.52.1",
     "next": "^14.2.30",
     "react": "^18.2.0",
