@@ -38,30 +38,10 @@ export default function Home() {
                   <li>Lead generation funnels where precision isn&apos;t optional and compliance isn&apos;t negotiable</li>
                   <li>Measurement systems that turn privacy constraints into better data—because when you&apos;re optimizing for performance marketing at a global financial services brand, &quot;we think it&apos;s working&quot; doesn&apos;t cut it</li>
                 </ul>
-                <br></br>
+                <br />
                 <p>
                   Whether I&apos;m forecasting Ocean Beach surf conditions or building cross-region analytics infrastructure, it&apos;s the same skillset: finding reliable patterns in complex systems, then making them work for humans.
                 </p>
-                <div className="skills">
-                  <h3>Skills & Expertise</h3>
-                  <div className="skill-grid">
-                    <div className="skill-item">
-                      <span className="skill-icon"></span>
-                      <h4>MarTech & Ad Tech</h4>
-                      <p>Seven years deep in enterprise tag management (Tealium CDP/iQ), building server-side data collection with Facebook CAPI, Google Ads API, and LinkedIn CAPI integrations. I specialize in the unglamorous-but-critical work: tag governance across global consent models, GA4 + BigQuery analytics pipelines, and performance optimization for sites handling millions of visitors. My superpower? Making compliance architecture feel invisible to users while giving marketers clean attribution data they can actually trust.</p>
-                    </div>
-                    <div className="skill-item">
-                      <span className="skill-icon"></span>
-                      <h4>AI & Cloud Platforms</h4>
-                      <p>Currently exploring what happens when you combine AI models with real user problems: Claude API integrations for document intelligence, Firebase + Supabase backends powering real-time applications, and GPT-4 implementations that actually solve workflows instead of just sounding clever. I&apos;m less interested in &quot;AI-powered&quot; marketing speak, more interested in shipping tools that make someone&apos;s Tuesday easier—like obsf.surf&apos;s AI surf analysis trained on a decade of my own session logs.</p>
-                    </div>
-                    <div className="skill-item">
-                      <span className="skill-icon"></span>
-                      <h4>Web Development & Infrastructure</h4>
-                      <p>JavaScript (ES6+), React/Next.js, and the HTML/CSS fundamentals that never go out of style. I&apos;ve deployed projects across Vercel, Cloudflare Workers, and Akamai CDN configurations, debugged performance bottlenecks with Real User Monitoring, and built QA frameworks with Selenium and Puppeteer. My philosophy: make it fast, make it accessible, make it work on someone&apos;s janky corporate laptop—then optimize from there.</p>
-                    </div>
-                  </div>
-                </div>
               </div>
               <div className="about-sidebar">
                 <div className="fun-facts">
@@ -73,6 +53,26 @@ export default function Home() {
                     <li>Values clean, accessible design principles</li>
                     <li>Perpetual learner and technology explorer</li>
                   </ul>
+                </div>
+              </div>
+            </div>
+            <div className="skills">
+              <h3>Skills &amp; Expertise</h3>
+              <div className="skill-grid">
+                <div className="skill-item">
+                  <span className="skill-icon"></span>
+                  <h4>MarTech &amp; Ad Tech</h4>
+                  <p>Seven years deep in enterprise tag management (Tealium CDP/iQ), building server-side data collection with Facebook CAPI, Google Ads API, and LinkedIn CAPI integrations. I specialize in the unglamorous-but-critical work: tag governance across global consent models, GA4 + BigQuery analytics pipelines, and performance optimization for sites handling millions of visitors. My superpower? Making compliance architecture feel invisible to users while giving marketers clean attribution data they can actually trust.</p>
+                </div>
+                <div className="skill-item">
+                  <span className="skill-icon"></span>
+                  <h4>AI &amp; Cloud Platforms</h4>
+                  <p>Currently exploring what happens when you combine AI models with real user problems: Claude API integrations for document intelligence, Firebase + Supabase backends powering real-time applications, and GPT-4 implementations that actually solve workflows instead of just sounding clever. I&apos;m less interested in &quot;AI-powered&quot; marketing speak, more interested in shipping tools that make someone&apos;s Tuesday easier—like obsf.surf&apos;s AI surf analysis trained on a decade of my own session logs.</p>
+                </div>
+                <div className="skill-item">
+                  <span className="skill-icon"></span>
+                  <h4>Web Development &amp; Infrastructure</h4>
+                  <p>JavaScript (ES6+), React/Next.js, and the HTML/CSS fundamentals that never go out of style. I&apos;ve deployed projects across Vercel, Cloudflare Workers, and Akamai CDN configurations, debugged performance bottlenecks with Real User Monitoring, and built QA frameworks with Selenium and Puppeteer. My philosophy: make it fast, make it accessible, make it work on someone&apos;s janky corporate laptop—then optimize from there.</p>
                 </div>
               </div>
             </div>
