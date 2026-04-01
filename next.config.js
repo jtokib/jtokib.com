@@ -6,10 +6,8 @@ const nextConfig = {
     unoptimized: true
   },
 
-  // Add experimental features for better Cloudflare compatibility
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  }
+  // External packages to exclude from server component bundling
+  serverExternalPackages: ['@supabase/supabase-js']
 }
 
 module.exports = nextConfig
