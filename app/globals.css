@@ -468,11 +468,9 @@ a:hover::after {
     line-height: 1.7;
 }
 
-/* Bug fix: was var(--accent-color) which is undefined; corrected to var(--accent) */
 .about-highlights {
     margin: 2rem 0 2rem 2.5rem;
     padding-left: 1rem;
-    border-left: 3px solid var(--accent);
 }
 
 .about-highlights li {

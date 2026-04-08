@@ -33,22 +33,22 @@ export default function Navigation() {
       <div className="nav-container">
         {/* nav-brand removed as requested */}
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
-          <Link 
-            href="#home" 
+          <Link
+            href="/#home"
             className="nav-link"
             onClick={() => scrollToSection('home')}
           >
             Home
           </Link>
-          <Link 
-            href="#about" 
+          <Link
+            href="/#about"
             className="nav-link"
             onClick={() => scrollToSection('about')}
           >
             About
           </Link>
-          <Link 
-            href="#projects" 
+          <Link
+            href="/#projects"
             className="nav-link"
             onClick={() => scrollToSection('projects')}
           >
@@ -60,8 +60,8 @@ export default function Navigation() {
           >
             Fun
           </Link>
-          <Link 
-            href="#contact" 
+          <Link
+            href="/#contact"
             className="nav-link"
             onClick={() => scrollToSection('contact')}
           >
