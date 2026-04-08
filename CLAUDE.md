@@ -42,7 +42,7 @@ This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14
 - **Cloudflare Workers**: Deployed using `@opennextjs/cloudflare` adapter for edge computing
 - **Custom Domain**: Configured for `jtokib.com` with zone-level routing in `wrangler.toml`
 - **Single Page Application**: All content lives in one page (`app/page.tsx`) with smooth scrolling navigation
-- **Client-Side Components**: Navigation and AI Demo use `'use client'` directive for interactivity
+- **Client-Side Components**: Navigation uses `'use client'` directive for interactivity
 - **CSS Modules Approach**: Global CSS in `app/globals.css` with CSS custom properties for theming
 - **SEO Optimized**: Comprehensive metadata configuration in `app/layout.tsx`
 - **Edge Performance**: Global edge network for optimal loading speeds worldwide
@@ -52,13 +52,14 @@ This is a **personal portfolio website** for Toki Burke, built as a **Next.js 14
 ```
 app/
 ├── components/
-│   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu + resume link
-│   ├── AIDemo.tsx        # Interactive demo with simulated responses
+│   ├── Navigation.tsx    # Smooth scrolling nav with mobile menu; /fun link; resume link commented out
 │   ├── HeroVideo.tsx     # Smart video loading based on connection speed
-│   └── guestbook/        # Guestbook component folder
+│   └── guestbook/        # Guestbook component folder (used on /fun page)
 │       ├── GuestbookContainer.tsx
 │       ├── GuestbookForm.tsx
 │       └── GuestbookEntries.tsx
+├── fun/
+│   └── page.tsx          # /fun page — side projects (TokiCoin), guestbook
 ├── resume/               # Professional resume page with modular architecture
 │   ├── components/       # Reusable resume components
 │   │   ├── types.ts      # TypeScript data models for resume
@@ -75,7 +76,7 @@ app/
 │       └── route.ts      # Supabase API integration for guestbook
 ├── globals.css           # All styles + professional resume CSS
 ├── layout.tsx            # SEO metadata, fonts, analytics setup
-└── page.tsx              # Main page content (hero, about, projects, contact, guestbook)
+└── page.tsx              # Main page content (hero, about, projects, contact)
 
 public/
 └── hero-wave.mp4  # Hero background video (5.7MB, 1080p, 7s)
@@ -83,15 +84,15 @@ public/
 
 ### Component Architecture
 
-- **Navigation**: Client-side component with scroll detection, mobile menu, smooth scrolling, and resume page link
-- **AIDemo**: Interactive widget with predefined responses simulating an AI surf assistant
+- **Navigation**: Client-side component with scroll detection, mobile menu, smooth scrolling, and a `/fun` link. Resume link is commented out (live at `/resume` but not surfaced in nav — shared directly with recruiters).
 - **HeroVideo**: Smart video loading component that uses Network Information API to:
   - Detect connection speed (4G vs 3G/2G)
   - Respect Data Saver mode preferences
   - Show video only on fast connections (4G) and desktop
   - Fall back to CSS wave animation on slow/limited connections
   - Optimize performance and data usage automatically
-- **Guestbook**: Interactive guestbook component with Supabase database integration for visitor messages
+- **Guestbook**: Interactive guestbook component with Supabase database integration; lives on `/fun` page, not main portfolio
+- **Fun Page** (`/fun`): Side projects and guestbook — intentionally separate from main portfolio to keep the professional focus clean. TokiCoin project lives here.
 - **Resume**: Professional resume page with modular component architecture:
   - **Modular Design**: Follows SOLID principles with composable components
   - **TypeScript Data Models**: Proper data abstraction and factory patterns

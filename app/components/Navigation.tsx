@@ -54,12 +54,11 @@ export default function Navigation() {
           >
             Projects
           </Link>
-          <Link 
-            href="#ai-demo" 
+          <Link
+            href="/fun"
             className="nav-link"
-            onClick={() => scrollToSection('ai-demo')}
           >
-            AI Demo
+            Fun
           </Link>
           <Link 
             href="#contact" 

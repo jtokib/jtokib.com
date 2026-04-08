@@ -4,18 +4,18 @@ import { ResumeView } from './components/ResumeView';
 import { createResumeData } from './lib/resume-factory';
 
 export const metadata: Metadata = {
-  title: 'J. Toki Burke - Resume | Marketing Technologist',
-  description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
+  title: 'J. Toki Burke - Resume | Associate VP, Marketing Technology',
+  description: 'Professional resume of J. Toki Burke, Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets.',
   openGraph: {
-    title: 'J. Toki Burke - Resume | Marketing Technologist',
-    description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
+    title: 'J. Toki Burke - Resume | Associate VP, Marketing Technology',
+    description: 'Professional resume of J. Toki Burke, Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets.',
     url: 'https://jtokib.com/resume',
     type: 'profile',
   },
   twitter: {
     card: 'summary',
-    title: 'J. Toki Burke - Resume | Marketing Technologist',
-    description: 'Professional resume of J. Toki Burke, Marketing Technologist interested in AI solutions for businesses.',
+    title: 'J. Toki Burke - Resume | Associate VP, Marketing Technology',
+    description: 'Professional resume of J. Toki Burke, Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets.',
   },
 };
 

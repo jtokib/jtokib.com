@@ -6,9 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jtokib.com'),
-  title: 'Toki Burke | Marketing Technology Team Lead',
-  description: 'Toki Burke - Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions. Expert in Tealium, Sitecore, analytics infrastructure, and cloud platforms.',
-  keywords: 'Toki Burke, Marketing Technology, Surfing, California Native Plants, Ceanothus, obsf.surf',
+  title: 'Toki Burke | Associate VP, Marketing Technology',
+  description: 'Toki Burke — Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets. Expert in tag governance, consent frameworks, server-side data collection, and analytics architecture.',
+  keywords: 'Toki Burke, Marketing Technology, Associate VP, Tag Governance, Tealium, GDPR, CCPA, Server-Side Tracking, GA4, obsf.surf',
   authors: [{ name: 'Toki Burke' }],
   creator: 'Toki Burke',
   publisher: 'Toki Burke',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://jtokib.com',
-    title: 'Toki Burke | Marketing Technology Team Lead',
-    description: 'Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions and analytics infrastructure.',
+    title: 'Toki Burke | Associate VP, Marketing Technology',
+    description: 'Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets. Expert in tag governance, consent frameworks, and analytics architecture.',
     siteName: 'Toki Burke Portfolio',
     images: [
       {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Toki Burke | Marketing Technology Team Lead',
-    description: 'Marketing Technology Team Lead with 5+ years implementing enterprise MarTech solutions and analytics infrastructure.',
+    title: 'Toki Burke | Associate VP, Marketing Technology',
+    description: 'Associate VP of Marketing Technology with 7+ years building enterprise MarTech infrastructure across global markets. Expert in tag governance, consent frameworks, and analytics architecture.',
     images: ['/apple-icon-180x180.png'],
   },
   icons: {

@@ -4,7 +4,7 @@ export function createResumeData(): ResumeData {
   return {
     personal: {
       name: "J. Toki Burke",
-      title: "Marketing Technology Leader | Global Privacy & Tag Governance",
+      title: "Associate Vice President, Marketing Technology",
       location: "San Francisco, CA 94131",
       phone: "(415) 747-9254",
       email: "jtokib@gmail.com",
@@ -12,17 +12,29 @@ export function createResumeData(): ResumeData {
     },
     experience: [
       {
-        title: "Marketing Technology Group Manager",
+        title: "Associate Vice President, Marketing Technology",
         company: "Fisher Investments",
-        duration: "July 2021 – Present",
+        duration: "January 2026 – Present",
         location: "San Francisco, CA",
         responsibilities: [
-          "Lead technical team implementing marketing technology across web, mobile, and digital channels for Fisher Investments' global operations spanning EMEA, APAC, and LATAM markets",
-          "Architect tag governance infrastructure handling both opt-in (GDPR) and opt-out (CCPA/CPRA) consent models across global markets, implementing Global Privacy Control (GPC) support and custom CMP integrations",
-          "Manage enterprise MarTech stack integrations: Tealium (CDP/iQ Tag Management), Sitecore (Headless CMS), Selligent (Marketing Automation), GA4 + Google BigQuery (Analytics), and Redpoint Global (Data Management Platform)",
-          "Serve as technical business lead for cloud architecture migrations to Sitecore XM Cloud and Selligent Marketing Cloud platforms",
-          "Develop technology roadmap and evaluation criteria for new platform adoption, balancing innovation with compliance requirements across multiple regulatory frameworks",
-          "Oversee UI/UX, functional, and technical QA including automated browser testing and server-side data validation"
+          "Lead technical operations team driving marketing technology initiatives across web, mobile, and digital channels for global enterprise operations spanning EMEA, APAC, and LATAM markets",
+          "Architect cloud-native solutions spanning Content Management (Sitecore XM Cloud), Marketing Automation (Selligent/Marigold), and Customer Data Platforms (Tealium CDP)",
+          "Maintain enterprise-scale tag management infrastructure supporting 36+ vendor configurations for client-side and server-side data collection, including 25+ Conversion API integrations optimizing data quality for digital advertising platforms",
+          "Deploy identity resolution solutions (Horizon BluID, LiveRamp eCST/ATS) and maintain GA4 + BigQuery ML data pipelines for advanced measurement",
+          "Drive API strategy and integrations across marketing automation, analytics, and advertising platforms; led migration of SMS/MMS integrations from SOAP to REST architecture"
+        ]
+      },
+      {
+        title: "Marketing Technology Group Manager",
+        company: "Fisher Investments",
+        duration: "July 2021 – January 2026",
+        location: "San Francisco, CA",
+        responsibilities: [
+          "Managed technical team implementing marketing technology across global operations; architected tag governance infrastructure handling GDPR (opt-in) and CCPA/CPRA (opt-out) consent models with Global Privacy Control (GPC) support",
+          "Implemented comprehensive QA automation framework with 293+ browser-based tests using Ghost Inspector, reducing manual testing overhead by 80%",
+          "Served as technical business lead for cloud architecture migrations to Sitecore XM Cloud and Selligent Marketing Cloud platforms",
+          "Developed technology roadmap and evaluation criteria for platform adoption, balancing innovation with compliance requirements across multiple regulatory frameworks",
+          "Administered Atlassian suite (JIRA/Confluence) with custom issue types, workflows, and automation schemes for cross-functional engineering and marketing teams"
         ]
       },
       {
@@ -32,9 +44,9 @@ export function createResumeData(): ResumeData {
         location: "San Francisco, CA",
         responsibilities: [
           "Managed technical integrations across enterprise MarTech stack (Tealium, Sitecore, Akamai, Rackspace, Optimizely) supporting multi-region lead generation and performance marketing",
-          "Implemented server-side data collection using Tealium EventStream with Facebook Conversions API, Google Ads API, and LinkedIn CAPI, maintaining attribution integrity while respecting user consent choices",
-          "Built comprehensive QA automation framework using Selenium and Puppeteer with Mocha/Chai for front-end validation and data accuracy verification",
-          "Led technical conversion of Excel-based financial calculator to production-ready ES6 JavaScript with eCharts data visualization"
+          "Onboarded Tealium EventStream for server-side data collection; implemented Facebook CAPI, Google Ads API, and LinkedIn CAPI integrations maintaining attribution integrity within consent constraints",
+          "Built comprehensive QA automation framework using Selenium and Puppeteer with Mocha/Chai for front-end validation and custom data layer verification; developed Node.js scripts for data processing and platform automation",
+          "Led technical conversion of Excel-based retirement calculator to production-ready ES6 JavaScript with eCharts data visualization"
         ]
       },
       {
@@ -93,7 +105,7 @@ export function createResumeData(): ResumeData {
       {
         title: "OBSF Surf – Real-time Oceanographic Data Application",
         url: "https://obsf.surf",
-        description: "AI-Powered Analysis: Developed \"Surf AI\" using machine learning algorithms to analyze real-time oceanographic conditions based on 10 years of personal surf logs."
+        description: "Developed \"Surf AI\" system analyzing real-time oceanographic conditions using machine learning trained on 13 years of personal surf logs (2012–2025). Built API pipeline consuming live feeds from CDIP buoy networks and NOAA weather services, with a full-stack responsive dashboard for real-time data and predictive analytics."
       },
       {
         title: "TokiCoin – Blockchain Development & Tokenomics",

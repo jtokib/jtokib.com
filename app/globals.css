@@ -1,37 +1,36 @@
 /* Midnight Luxury Portfolio - Sophisticated Apple-Inspired Design */
-/* Professional transformation with glass morphism and premium aesthetics */
 
 /* CSS Variables - Midnight Luxury Palette */
 :root {
     /* Primary Colors */
-    --primary: #007AFF; /* Apple blue */
-    --secondary: #5856D6; /* Apple purple */
-    --accent: #30D158; /* Apple green */
-    --accent2: #FF9F0A; /* Apple orange */
-    
+    --primary: #007AFF;
+    --secondary: #5856D6;
+    --accent: #30D158;
+    --accent2: #FF9F0A;
+
     /* Background System */
     --bg-main: linear-gradient(180deg, #000000 0%, #1C1C1E 50%, #2C2C2E 100%);
     --bg-card: rgba(28, 28, 30, 0.8);
     --bg-nav: rgba(0, 0, 0, 0.95);
     --bg-accent: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
     --bg-glass: rgba(255, 255, 255, 0.1);
-    
+
     /* Text Colors */
     --text-primary: #FFFFFF;
     --text-secondary: #E5E5E7;
     --text-muted: #8E8E93;
     --text-accent: #007AFF;
-    
+
     /* Shadows & Effects */
     --shadow-luxury: 0 25px 50px rgba(0, 0, 0, 0.5);
     --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.4);
-    
+
     /* Borders */
     --border-accent: rgba(255, 255, 255, 0.2);
     --border-glass: rgba(255, 255, 255, 0.1);
     --border-light: rgba(243, 232, 232, 0.884);
-    
+
     /* Transitions */
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -66,6 +65,11 @@ body {
     letter-spacing: 0.01em;
 }
 
+/* Form elements don't inherit font by default in all browsers */
+input, textarea, button, select {
+    font-family: inherit;
+    font-size: inherit;
+}
 
 /* Premium link styling */
 a {
@@ -97,7 +101,14 @@ a:hover::after {
     width: 100%;
 }
 
-/* Navigation - Glass Morphism Luxury Design */
+/* Suppress the global underline animation on pill/button-style links */
+.nav-link::after,
+.btn::after,
+.social-links a::after {
+    display: none;
+}
+
+/* Navigation - Glass Morphism */
 .navbar {
     position: fixed;
     top: 0;
@@ -134,7 +145,6 @@ a:hover::after {
     color: var(--text-primary);
     text-decoration: none;
     transition: var(--transition);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: -0.02em;
 }
 
@@ -160,7 +170,6 @@ a:hover::after {
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-glass);
     border-radius: var(--border-radius);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.9rem;
     letter-spacing: 0.01em;
     min-height: var(--min-touch-target);
@@ -229,14 +238,14 @@ a:hover::after {
     background: var(--primary);
 }
 
-/* Container - Clean Professional Layout */
+/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-/* Buttons - Premium Glass Morphism */
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -249,7 +258,6 @@ a:hover::after {
     border: 1px solid var(--border-glass);
     cursor: pointer;
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1rem;
     position: relative;
     min-height: var(--min-touch-target);
@@ -285,7 +293,7 @@ a:hover::after {
     box-shadow: var(--shadow-card);
 }
 
-/* Hero Section - Midnight Luxury with Animated Ocean Waves */
+/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -359,23 +367,14 @@ a:hover::after {
     z-index: 2;
 }
 
-/* Wave animation keyframes */
 @keyframes waveRoll1 {
-    0% {
-        background-position: 0% 0%, 0% 0%;
-    }
-    100% {
-        background-position: 250% 0%, 180% 0%;
-    }
+    0%   { background-position: 0% 0%, 0% 0%; }
+    100% { background-position: 250% 0%, 180% 0%; }
 }
 
 @keyframes waveRoll2 {
-    0% {
-        background-position: 100% 0%, 50% 0%;
-    }
-    100% {
-        background-position: 350% 0%, 230% 0%;
-    }
+    0%   { background-position: 100% 0%, 50% 0%; }
+    100% { background-position: 350% 0%, 230% 0%; }
 }
 
 .hero-content {
@@ -395,13 +394,13 @@ a:hover::after {
     display: inline-block;
 }
 
+/* Bug fix: added margin: 0 auto to center the constrained block; widened to 720px */
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     line-height: 1.6;
-    max-width: 600px;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    max-width: 720px;
     font-weight: 400;
 }
 
@@ -412,13 +411,6 @@ a:hover::after {
     justify-content: center;
 }
 
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .tag {
     background: var(--bg-glass);
     color: var(--text-secondary);
@@ -426,13 +418,12 @@ a:hover::after {
     border-radius: var(--border-radius);
     font-size: 0.9rem;
     font-weight: 500;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     border: 1px solid var(--border-glass);
     backdrop-filter: blur(10px);
     transition: var(--transition);
 }
 
-/* About Section - Professional Glass Design with Subtle Gradient */
+/* About Section */
 .about {
     padding: 5rem 0;
     background: linear-gradient(180deg, #1C1C1E 0%, #252527 100%);
@@ -460,7 +451,6 @@ a:hover::after {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: -0.02em;
 }
 
@@ -476,13 +466,13 @@ a:hover::after {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.7;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Bug fix: was var(--accent-color) which is undefined; corrected to var(--accent) */
 .about-highlights {
     margin: 2rem 0 2rem 2.5rem;
     padding-left: 1rem;
-    border-left: 3px solid var(--accent-color);
+    border-left: 3px solid var(--accent);
 }
 
 .about-highlights li {
@@ -506,7 +496,6 @@ a:hover::after {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: -0.01em;
 }
 
@@ -533,14 +522,12 @@ a:hover::after {
 }
 
 .skill-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 1rem;
-    position: relative;
-    height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    height: 64px;
+    margin-bottom: 1rem;
 }
 
 .skill-icon::before {
@@ -560,36 +547,25 @@ a:hover::after {
 }
 
 .skill-icon::after {
-    content: '';
     font-size: 2rem;
     position: relative;
     z-index: 1;
 }
 
-.skill-item:nth-child(1) .skill-icon::after {
-    content: '📊'; /* MarTech & Ad Tech */
-}
-
-.skill-item:nth-child(2) .skill-icon::after {
-    content: '🤖'; /* AI & Cloud Platforms */
-}
-
-.skill-item:nth-child(3) .skill-icon::after {
-    content: '⚡'; /* Web Development & Infrastructure */
-}
+.skill-item:nth-child(1) .skill-icon::after { content: '📊'; }
+.skill-item:nth-child(2) .skill-icon::after { content: '🤖'; }
+.skill-item:nth-child(3) .skill-icon::after { content: '⚡'; }
 
 .skill-item h4 {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .skill-item p {
     color: var(--text-secondary);
     font-size: 0.9rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .about-sidebar {
@@ -606,7 +582,6 @@ a:hover::after {
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .fun-facts ul {
@@ -618,14 +593,13 @@ a:hover::after {
     color: var(--text-secondary);
     font-size: 0.95rem;
     border-bottom: 1px solid var(--border-glass);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .fun-facts li:last-child {
     border-bottom: none;
 }
 
-/* Projects Section - Glass Morphism Cards with Ocean Wave */
+/* Projects Section */
 .projects {
     padding: 5rem 0;
     background: linear-gradient(135deg,
@@ -653,14 +627,16 @@ a:hover::after {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: -0.02em;
 }
 
+/* Bug fix: changed auto-fit/1fr to auto-fit/560px + justify-content:center
+   so a single card doesn't stretch full-width */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 560px));
     gap: 2rem;
+    justify-content: center;
 }
 
 .project-card {
@@ -726,7 +702,6 @@ a:hover::after {
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-status {
@@ -736,7 +711,6 @@ a:hover::after {
     border-radius: 1rem;
     font-size: 0.7rem;
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-card p {
@@ -744,7 +718,6 @@ a:hover::after {
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-size: 0.95rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-tags {
@@ -762,10 +735,42 @@ a:hover::after {
     backdrop-filter: blur(10px);
 }
 
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Bug fix: was using undefined vars (--accent-color, --primary-color, --text-white,
+   --shadow-light) and a non-existent blink keyframe. Now uses design system vars. */
+.tech-tag {
+    background: var(--bg-glass);
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: var(--border-radius);
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border-glass);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.tech-tag:hover {
+    background: rgba(0, 122, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 .project-links a {
     text-decoration: none;
     font-weight: 600;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .project-links a:hover {
@@ -773,201 +778,7 @@ a:hover::after {
     transform: translateY(-1px);
 }
 
-/* AI Demo Section - Luxury Glass Interface with Tech Grid */
-.ai-demo-section {
-    padding: 5rem 0;
-    background: linear-gradient(135deg, #1C1C1E 0%, #252527 100%);
-    position: relative;
-}
-
-.ai-demo-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 122, 255, 0.03) 2px,
-            rgba(0, 122, 255, 0.03) 4px
-        ),
-        repeating-linear-gradient(90deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 122, 255, 0.03) 2px,
-            rgba(0, 122, 255, 0.03) 4px
-        );
-    opacity: 0.3;
-    pointer-events: none;
-}
-
-.ai-demo {
-    padding: 5rem 0;
-    background: transparent;
-    position: relative;
-}
-
-.ai-demo h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-    letter-spacing: -0.02em;
-}
-
-.ai-demo-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
-
-.ai-demo-text p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.7;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.ai-features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-.ai-feature {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    background: var(--bg-glass);
-    backdrop-filter: blur(20px);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-    border: 1px solid var(--border-glass);
-}
-
-.ai-feature:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-card);
-    border-color: var(--border-accent);
-}
-
-.feature-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-}
-
-.ai-feature h4 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.ai-feature p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.4;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.ai-demo-widget {
-    background: var(--bg-glass);
-    backdrop-filter: blur(40px);
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    border: 1px solid var(--border-accent);
-    position: relative;
-    box-shadow:
-        var(--shadow-card),
-        0 0 0 1px rgba(0, 122, 255, 0.1),
-        0 0 40px rgba(0, 122, 255, 0.15);
-}
-
-.demo-placeholder {
-    text-align: center;
-}
-
-.demo-placeholder h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.demo-placeholder p {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.demo-input {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.demo-input input {
-    flex: 1;
-    min-width: 200px;
-    padding: 0.75rem;
-    border: 1px solid var(--border-glass);
-    border-radius: var(--border-radius);
-    font-size: 0.9rem;
-    background: var(--bg-glass);
-    backdrop-filter: blur(10px);
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.demo-input input:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-}
-
-.demo-input button {
-    white-space: nowrap;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-}
-
-.demo-response {
-    background: linear-gradient(135deg,
-        rgba(0, 122, 255, 0.05),
-        rgba(88, 86, 214, 0.05)
-    );
-    backdrop-filter: blur(20px);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--secondary);
-    margin-bottom: 1rem;
-    border: 1px solid var(--border-glass);
-    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.demo-response p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-.demo-placeholder small {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    font-style: italic;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
-}
-
-/* Footer - Premium Luxury Design with Ocean Accent */
+/* Footer */
 .footer {
     background: linear-gradient(135deg,
         #0A1F44 0%,
@@ -1003,14 +814,12 @@ a:hover::after {
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .footer-main p {
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1.5rem;
     line-height: 1.6;
-    /* max-width: 600px; */
 }
 
 .social-links {
@@ -1030,7 +839,6 @@ a:hover::after {
     border-radius: var(--border-radius);
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .social-links a:hover {
@@ -1049,7 +857,7 @@ a:hover::after {
     font-size: 0.9rem;
 }
 
-/* Responsive Design - Enhanced */
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1062,49 +870,45 @@ a:hover::after {
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 2rem;
+        padding: 2rem 1rem;
+        gap: 0.5rem;
         transition: var(--transition);
         box-shadow: var(--shadow-luxury);
         z-index: 999;
         border-top: 1px solid var(--border-glass);
-    }
-    
-    .nav-link {
-        margin: 0.5rem 0;
-        padding: 1rem 1.5rem; /* Increased from default */
-        min-height: 48px; /* Exceed WCAG minimum */
-        min-width: auto;
-        width: 100%;
-        text-align: center;
-        font-size: 1rem;
-    }
-
-    .nav-menu {
-        gap: 0.5rem;
-        padding: 2rem 1rem;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .nav-link {
+        margin: 0.5rem 0;
+        padding: 1rem 1.5rem;
+        min-height: 48px;
+        min-width: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+
     .nav-toggle {
         display: flex;
     }
 
-    /* Hero section mobile optimizations */
     .hero {
-        padding: 5rem 1rem 3rem; /* Reduced from 8rem */
-        min-height: auto; /* Don't force 100vh on mobile */
+        padding: 5rem 1rem 3rem;
+        min-height: auto;
     }
 
     .hero-content {
         padding: 1.5rem;
     }
 
-    .hero-text h1 {
-        font-size: 1.8rem; /* Reduced from 2.2rem */
-        line-height: 1.3; /* Improved from 1.2 */
+    /* Bug fix: was .hero-text h1 which doesn't exist; h1 is in .hero-content */
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.3;
         margin-bottom: 1.5rem;
     }
 
@@ -1118,6 +922,7 @@ a:hover::after {
     .hero-buttons {
         gap: 1rem;
         width: 100%;
+        justify-content: center;
     }
 
     .hero-buttons .btn {
@@ -1125,17 +930,15 @@ a:hover::after {
         min-width: 140px;
     }
 
-    /* Section spacing optimizations */
     .about,
     .projects,
-    .ai-demo-section,
     .guestbook {
-        padding: 3rem 0; /* Reduced from 5rem */
+        padding: 3rem 0;
     }
 
     .about-content {
         grid-template-columns: 1fr;
-        gap: 1.5rem; /* Reduced from 2rem */
+        gap: 1.5rem;
     }
 
     .about-sidebar {
@@ -1162,52 +965,12 @@ a:hover::after {
         grid-template-columns: 1fr;
     }
 
-    .ai-demo-content {
-        grid-template-columns: 1fr;
-        gap: 1.5rem; /* Reduced from 2rem */
-    }
-
-    /* Project card optimizations */
     .project-image {
-        height: 160px; /* Reduced from 200px */
+        height: 160px;
     }
 
     .project-content {
-        padding: 1.5rem; /* Reduced from 2rem */
-    }
-
-    .demo-input {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .demo-input input {
-        min-width: auto;
-        min-height: var(--min-touch-target);
-        font-size: 16px; /* PREVENT ZOOM ON iOS */
-    }
-    
-    .demo-input button {
-        min-height: var(--min-touch-target);
-    }
-
-    /* Form optimizations */
-    .guestbook-input {
-        padding: 1rem;
-        min-height: 48px;
-    }
-
-    .guestbook-textarea {
-        padding: 1rem;
-        min-height: 120px;
-    }
-
-    .guestbook-entry {
-        padding: 1.25rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
+        padding: 1.5rem;
     }
 
     .social-links {
@@ -1223,34 +986,29 @@ a:hover::after {
 
 @media (max-width: 480px) {
     .container {
-        padding: 0 1.25rem; /* Increased for better breathing room */
+        padding: 0 1.25rem;
     }
 
-    /* Hero optimizations for small screens */
     .hero {
-        padding: 4rem 1rem 2rem; /* Further reduced */
+        padding: 4rem 1rem 2rem;
     }
 
-    .hero-text h1 {
-        font-size: 1.6rem; /* Smaller for small screens */
-        line-height: 1.35; /* Better readability */
-        word-spacing: 0.05em; /* Improve word wrap */
-    }
-
-    .hero-text h2 {
-        font-size: 1.1rem;
-        line-height: 1.4;
+    /* Bug fix: was .hero-text h1 which doesn't exist */
+    .hero-content h1 {
+        font-size: 1.6rem;
+        line-height: 1.35;
+        word-spacing: 0.05em;
     }
 
     .hero-description {
         font-size: 1rem;
-        line-height: 1.65; /* Improved readability */
+        line-height: 1.65;
         margin-bottom: 2rem;
     }
 
     .hero-buttons {
         gap: 0.75rem;
-        flex-direction: column; /* Full-width stacking */
+        flex-direction: column;
     }
 
     .hero-buttons .btn {
@@ -1258,18 +1016,15 @@ a:hover::after {
         max-width: 320px;
     }
 
-    /* Section spacing for small screens */
     .about,
     .projects,
-    .ai-demo-section,
     .guestbook {
-        padding: 2.5rem 0; /* Further reduced */
+        padding: 2.5rem 0;
     }
 
     .about h2,
-    .projects h2,
-    .ai-demo h2 {
-        font-size: 1.75rem; /* Slightly smaller */
+    .projects h2 {
+        font-size: 1.75rem;
         line-height: 1.3;
         margin-bottom: 2rem;
     }
@@ -1287,9 +1042,8 @@ a:hover::after {
         line-height: 1.65;
     }
 
-    /* Project card adjustments */
     .project-image {
-        height: 140px; /* Further reduced for small screens */
+        height: 140px;
     }
 
     .project-content {
@@ -1297,59 +1051,44 @@ a:hover::after {
     }
 
     .skill-item {
-        padding: 1.25rem; /* Reduced padding */
-    }
-
-    .profile-card {
-        padding: 1.5rem;
-        margin: 0 1rem;
+        padding: 1.25rem;
     }
 
     .btn {
-        padding: 0.9rem 1.75rem; /* Larger tap targets */
+        padding: 0.9rem 1.75rem;
         font-size: 1rem;
-        min-height: 48px; /* Exceed 44px minimum */
+        min-height: 48px;
         letter-spacing: 0.01em;
     }
-    
-    /* IMPROVED FORM INPUTS FOR MOBILE */
+
+    /* Prevent iOS zoom on form inputs */
     input, textarea, button {
-        font-size: 16px !important; /* PREVENT ZOOM ON iOS */
+        font-size: 16px !important;
     }
-    
+
     .nav-toggle {
-        min-height: 48px; /* Exceed 44px */
+        min-height: 48px;
         min-width: 48px;
-        padding: 0.75rem; /* Increase tap area */
+        padding: 0.75rem;
     }
 
     .nav-toggle span {
-        width: 28px; /* Larger hamburger lines */
+        width: 28px;
         height: 3px;
     }
-    
+
     .social-links a {
         min-height: var(--min-touch-target);
         padding: 0.8rem 1.2rem;
     }
 }
 
-/* Luxury Animation System */
+/* Animation System */
 
 @keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%, 0% 50%, 0% 0%;
-    }
-    50% {
-        background-position: 100% 50%, 100% 50%, 0% 0%;
-    }
+    0%, 100% { background-position: 0% 50%, 0% 50%, 0% 0%; }
+    50%       { background-position: 100% 50%, 100% 50%, 0% 0%; }
 }
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-
 
 @keyframes fadeInUp {
     from {
@@ -1373,33 +1112,14 @@ a:hover::after {
     }
 }
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Apply luxury animations to sections */
-.hero-text {
-    animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hero-image {
-    animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
-}
-
+/* Removed: @keyframes float (unused), @keyframes slideInRight (unused),
+   .hero-image animation (element doesn't exist), .ai-demo-content (component removed) */
 .about-content,
-.project-card,
-.ai-demo-content {
+.project-card {
     animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ACCESSIBILITY: RESPECT REDUCED MOTION PREFERENCE */
+/* Accessibility: Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -1410,47 +1130,7 @@ a:hover::after {
 }
 
 
-
-
-.project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
-    color: var(--text-white);
-    padding: 0.3rem 0.8rem;
-    border-radius: var(--border-radius);
-    font-size: 0.8rem;
-    font-weight: 600;
-    font-family: -apple-system,
-        BlinkMacSystemFont,
-        'SF Pro Display',
-        'Helvetica Neue',
-        Arial,
-        sans-serif;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-    border: 1px solid var(--text-white);
-    animation: blink 2s infinite alternate;
-    box-shadow: var(--shadow-light);
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-
-
-
-
 /* ===== GUESTBOOK SECTION STYLES ===== */
-/* Midnight Luxury Edition - Matches main design system */
 
 .guestbook {
     padding: 5rem 0;
@@ -1477,7 +1157,6 @@ a:hover::after {
     text-align: center;
     margin-bottom: 2rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     letter-spacing: -0.02em;
     background: var(--bg-accent);
     -webkit-background-clip: text;
@@ -1494,7 +1173,6 @@ a:hover::after {
     border: 1px solid var(--border-accent);
     border-radius: var(--border-radius);
     color: var(--text-secondary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 500;
     box-shadow: var(--shadow-card);
 }
@@ -1514,7 +1192,6 @@ a:hover::after {
     font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     text-align: center;
 }
 
@@ -1527,7 +1204,6 @@ a:hover::after {
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: var(--text-secondary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.95rem;
 }
 
@@ -1537,8 +1213,7 @@ a:hover::after {
     padding: 0.75rem;
     border: 1px solid var(--border-glass);
     border-radius: var(--border-radius);
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px; /* Prevents iOS zoom */
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
     color: var(--text-primary);
@@ -1573,7 +1248,6 @@ a:hover::after {
 .guestbook-char-count small {
     font-size: 0.85rem;
     color: var(--text-muted);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
 }
 
 .guestbook-char-count small.error {
@@ -1584,7 +1258,6 @@ a:hover::after {
     padding: 1rem;
     border-radius: var(--border-radius);
     margin-bottom: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 500;
     text-align: center;
 }
@@ -1615,7 +1288,6 @@ a:hover::after {
     font-weight: 600;
     margin-bottom: 2rem;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     text-align: center;
 }
 
@@ -1623,7 +1295,6 @@ a:hover::after {
     text-align: center;
     padding: 2rem;
     color: var(--text-secondary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.1rem;
 }
 
@@ -1631,7 +1302,6 @@ a:hover::after {
     text-align: center;
     padding: 2rem;
     color: var(--text-secondary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     background: rgba(0, 122, 255, 0.03);
     border: 2px dashed var(--border-glass);
     border-radius: var(--border-radius);
@@ -1690,21 +1360,18 @@ a:hover::after {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     word-break: break-word;
 }
 
 .guestbook-entry-date {
     font-size: 0.85rem;
     color: var(--text-muted);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     white-space: nowrap;
 }
 
 .guestbook-entry-message {
     font-size: 1rem;
     color: var(--text-secondary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     padding: 0.75rem;
     background: rgba(255, 255, 255, 0.03);
@@ -1723,11 +1390,9 @@ a:hover::after {
     border: 1px solid var(--border-glass);
     border-radius: var(--border-radius);
     color: var(--text-muted);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.9rem;
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
     .guestbook-header {
         font-size: 2rem;
@@ -1738,6 +1403,7 @@ a:hover::after {
         padding: 1.5rem;
     }
 }
+
 
 /* ===== RESUME PAGE STYLES ===== */
 /* Professional styling matching Midnight Tech + Ocean Soul theme */
@@ -2187,12 +1853,8 @@ a:hover::after {
 
 /* Resume gradient animation */
 @keyframes resumeGradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
 }
 
 /* Print media queries */
@@ -2262,25 +1924,25 @@ a:hover::after {
         margin: 1rem !important;
         max-width: none !important;
     }
-    
+
     .resume-grid {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
         padding: 20px !important;
     }
-    
+
     .resume-header {
         padding: 20px !important;
     }
-    
+
     .resume-name {
         font-size: 28px !important;
     }
-    
+
     .resume-title {
         font-size: 16px !important;
     }
-    
+
     .resume-contact {
         flex-direction: column;
         gap: 10px;
