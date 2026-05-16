@@ -7,7 +7,7 @@ interface ProjectsSectionProps {
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <section className="resume-section">
-      <h3 className="resume-section-title">Technical Projects</h3>
+      <h3 className="resume-section-title">Personal Hobby Projects</h3>
 
       {projects.map((project, index) => (
         <div key={index} className="resume-project">

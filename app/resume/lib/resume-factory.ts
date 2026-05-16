@@ -103,18 +103,8 @@ export function createResumeData(): ResumeData {
     ],
     projects: [
       {
-        title: "OBSF Surf – Real-time Oceanographic Data Application",
-        url: "https://obsf.surf",
-        description: "Developed \"Surf AI\" system analyzing real-time oceanographic conditions using machine learning trained on 13 years of personal surf logs (2012–2025). Built API pipeline consuming live feeds from CDIP buoy networks and NOAA weather services, with a full-stack responsive dashboard for real-time data and predictive analytics."
-      },
-      {
-        title: "TokiCoin – Blockchain Development & Tokenomics",
-        url: "https://tokicoin.netlify.app",
-        description: "Blockchain Integration: Developed and deployed a custom cryptocurrency token on the Algorand network."
-      },
-      {
-        title: "Claude Artifacts",
-        description: "Interactive web applications and tools built using Claude's artifact system:",
+        title: "Claude Artifacts – AI-Assisted Application Development",
+        description: "Self-directed exploration of AI-powered development using Claude's artifact system, building interactive tools across multiple domains:",
         subProjects: [
           {
             title: "Child Safety Check",
@@ -142,7 +132,17 @@ export function createResumeData(): ResumeData {
             description: "An app that helps create fun and engaging prompts for AI models"
           },
         ]
-      }
+      },
+      {
+        title: "OBSF Surf – Real-time Oceanographic Data Application",
+        url: "https://obsf.surf",
+        description: "Developed \"Surf AI\" system analyzing real-time oceanographic conditions using machine learning trained on 13 years of personal surf logs (2012–2025). Built API pipeline consuming live feeds from CDIP buoy networks and NOAA weather services, with a full-stack responsive dashboard for real-time data and predictive analytics."
+      },
+      {
+        title: "TokiCoin – Blockchain Development & Tokenomics",
+        url: "https://tokicoin.netlify.app",
+        description: "Blockchain Integration: Developed and deployed a custom cryptocurrency token on the Algorand network."
+      },
     ],
     skills: [
       {
@@ -159,13 +159,13 @@ export function createResumeData(): ResumeData {
         skills: [
           "Tealium (CDP/TMS)", "Sitecore (CMS)", "WordPress (CMS)", "Selligent/Marigold",
           "Google Marketing Platform", "Google Cloud", "Optimizely", "OneTrust (CMP)",
-          "Cloudflare", "Akamai", "Vercel", "Firebase", "Atlassian (JIRA/Confluence/Bitbucket)", "Git/GitHub"
+          "Cloudflare", "Akamai", "Vercel", "Firebase", "Claude AI", "Atlassian (JIRA/Confluence/Bitbucket)", "Git/GitHub"
         ]
       },
       {
         category: "Development",
         skills: [
-          "JavaScript (ES6+)", "Node.js", "React/Next.js", "HTML/CSS", "API Development"
+          "JavaScript (ES6+)", "TypeScript", "Node.js", "React/Next.js", "HTML/CSS", "API Development"
         ]
       }
     ],

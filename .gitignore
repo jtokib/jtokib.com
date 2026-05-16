@@ -113,3 +113,7 @@ temp/
 index.html
 files/
 ignore/
+
+# Generated resume exports
+toki-burke-resume.pdf
+toki-burke-resume.md
