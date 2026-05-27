@@ -17,7 +17,7 @@ export function createResumeData(): ResumeData {
         duration: "January 2026 – Present",
         location: "San Francisco, CA",
         responsibilities: [
-          "Lead technical operations team driving marketing technology initiatives across web, mobile, and digital channels for global enterprise operations spanning EMEA, APAC, and LATAM markets",
+          "Lead technical operations team driving marketing technology initiatives across web, mobile, and digital channels for global enterprise operations spanning NA, EMEA, and APAC markets",
           "Architect cloud-native solutions spanning Content Management (Sitecore XM Cloud), Marketing Automation (Selligent/Marigold), and Customer Data Platforms (Tealium CDP)",
           "Maintain enterprise-scale tag management infrastructure supporting 36+ vendor configurations for client-side and server-side data collection, including 25+ Conversion API integrations optimizing data quality for digital advertising platforms",
           "Deploy identity resolution solutions (Horizon BluID, LiveRamp eCST/ATS) and maintain GA4 + BigQuery ML data pipelines for advanced measurement",
@@ -55,7 +55,7 @@ export function createResumeData(): ResumeData {
         duration: "August 2018 – November 2019",
         location: "San Francisco, CA",
         responsibilities: [
-          "Administered global privacy compliance across EMEA, APAC, and LATAM markets using Tealium iQ and OneTrust, implementing GDPR (opt-in) and CCPA (opt-out) consent frameworks with region-specific tag governance",
+          "Administered global privacy compliance across NA, EMEA, and APAC markets using Tealium iQ and OneTrust, implementing GDPR (opt-in) and CCPA (opt-out) consent frameworks with region-specific tag governance",
           "Managed Tealium iQ tag management configurations and deployment workflows, including custom JavaScript extensions and data layer standardization",
           "Configured Optimizely Full Stack and Web Experimentation platforms, integrating with Sitecore and Contao CMS for multivariate testing",
           "Optimized web performance using Real User Monitoring (RUM) and synthetic monitoring, establishing performance benchmarks for Time to First Byte (TTFB) and First Contentful Paint (FCP)"
@@ -151,7 +151,7 @@ export function createResumeData(): ResumeData {
           "Global Privacy Compliance (GDPR, CCPA/CPRA, Global Privacy Control)",
           "Tag Governance & Consent Management (OneTrust, Tealium Privacy Manager)",
           "Server-Side Data Collection (Facebook CAPI, Google Ads API, LinkedIn CAPI)",
-          "Multi-Region Marketing Infrastructure (EMEA, APAC, LATAM)"
+          "Multi-Region Marketing Infrastructure (NA, EMEA, APAC)"
         ]
       },
       {

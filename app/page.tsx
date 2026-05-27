@@ -30,7 +30,7 @@ export default function Home() {
                   For the last eight years I&apos;ve helped build marketing technology infrastructure that most teams don&apos;t realize is hard until they try it themselves:
                 </p>
                 <ul className="about-highlights">
-                  <li>Tag governance that handles both opt-in (GDPR) and opt-out (CCPA) consent models across EMEA, APAC, and LATAM</li>
+                  <li>Tag governance that handles both opt-in (GDPR) and opt-out (CCPA) consent models across NA, EMEA, and APAC</li>
                   <li>Server-side implementations that respect Global Privacy Control while maintaining attribution integrity</li>
                   <li>Lead generation funnels where precision isn&apos;t optional and compliance isn&apos;t negotiable</li>
                   <li>Measurement systems that turn privacy constraints into better data—because when you&apos;re optimizing for performance marketing at a global financial services brand, &quot;we think it&apos;s working&quot; doesn&apos;t cut it</li>
