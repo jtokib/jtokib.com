@@ -24,7 +24,7 @@
     "eslint": "^8.56.0",
     "eslint-config-next": "15.5.18",
     "typescript": "^5.3.3",
-    "wrangler": "^4.95.0"
+    "wrangler": "^4.103.0"
   },
   "overrides": {
     "brace-expansion": "^5.0.6",
